@@ -5,9 +5,11 @@ Repository: [github.com/rufatpro/ide-plugins](https://github.com/rufatpro/ide-pl
 
 IntelliJ Platform plugin for **PyCharm**, **IntelliJ IDEA**, and other **JetBrains** IDEs.
 
-This repository also hosts **VS Code** extensions under the `vscode/` directory (see [repo index](../../README.md)); this package is **JetBrains-only** — it does not install in VS Code. In VS Code / Cursor desktop, file links in chat are handled by the editor itself.
+**The issue:** in **AI Chat**, when an agent (e.g. **Cursor** via [ACP](https://agentclientprotocol.com/)) returns a project file path, **clicking that link in PyCharm often did not open the file** — you only saw IDE errors, although the file exists under the project root. This plugin makes those links work.
 
-When you use the **Cursor** agent via [ACP](https://agentclientprotocol.com/) in **AI Chat**, file links in agent responses often fail on Windows with errors like:
+The [ide-plugins](../../README.md) monorepo may host other plugins later (including **VS Code** under `vscode/`). **This package is only for JetBrains** — it does not install in **VS Code** or the **Cursor** desktop app, where chat links are handled differently.
+
+Typical errors before the fix (especially on **Windows**):
 
 - `Cannot open a URL`
 - `File src\app\some\file.py does not exist`
@@ -161,4 +163,4 @@ File logging to `C:\tmp\` is **disabled** in release builds. To enable it, set `
 
 ## License
 
-[MIT](../../license) — free to use, modify, and distribute (repo covers JetBrains and VS Code extensions). **Use at your own risk**; see disclaimer in [license](../../license).
+[MIT](../../license) — free to use, modify, and distribute. **Use at your own risk**; see disclaimer in [license](../../license) (shared MIT for the ide-plugins monorepo).

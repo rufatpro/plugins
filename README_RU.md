@@ -4,14 +4,18 @@
 
 **Репозиторий:** [github.com/rufatpro/ide-plugins](https://github.com/rufatpro/ide-plugins)
 
-Плагины и расширения для IDE. Платформы — в подкаталогах:
+Монорепозиторий плагинов и расширений для IDE (**JetBrains**, **VS Code**, …). У каждого плагина свой каталог и `readme.md`.
+
+**Сейчас в репозитории — [AI Chat File Links](jetbrains/ai-chat-file-links/):** в **PyCharm** и других IDE **JetBrains** ссылки на файлы в **AI Chat** (агент **Cursor** через ACP и др.) **часто не открывались** по клику — только «Cannot open a URL» / «файл не существует», хотя файл в корне проекта. Этот плагин это исправляет; будущие плагины здесь могут решать другие задачи.
+
+Платформы:
 
 | Платформа | Каталог | Среда |
 |-----------|---------|--------|
 | **JetBrains** | [JetBrains](jetbrains/) (`jetbrains/`) | PyCharm, IntelliJ IDEA, WebStorm, … — плагины IntelliJ Platform |
 | **VS Code** | [VS Code](vscode/) (`vscode/`, планируется) | Visual Studio Code и совместимые редакторы — расширения (Extension API) |
 
-Сейчас в репозитории есть плагин для **JetBrains**; расширения для **VS Code** будут добавляться в `vscode/<имя>/` по той же схеме (`readme.md`, сборка, лицензия MIT из корня).
+Сейчас опубликован один плагин **JetBrains** — **AI Chat File Links**. Расширения **VS Code** появятся в `vscode/<имя>/`, когда будут готовы (та же схема: `readme.md`, сборка, MIT [license](license) в корне).
 
 **Корень git-репозитория** — этот каталог (`README.md`, `README_RU.md`, `license`, JetBrains/… в `jetbrains/`; `git init` здесь). Сборка:
 
@@ -33,7 +37,7 @@ cd jetbrains/ai-chat-file-links
 
 | Плагин | Платформа | ID | Версия | Описание | Документация |
 |--------|-----------|-----|--------|----------|--------------|
-| [AI Chat File Links](jetbrains/ai-chat-file-links/) | JetBrains (PyCharm, IDEA, …) | `com.aichat.filelinks` | 0.2.0 | Открывает файлы по ссылкам из **AI Chat** при ошибках URL/«файл не существует»; настройка **Dismiss error notification when the file opens successfully** (Settings → Tools → AI Chat File Links) закрывает balloon после открытия | [readme.md](jetbrains/ai-chat-file-links/readme.md) · [readme_ru.md](jetbrains/ai-chat-file-links/readme_ru.md) |
+| [AI Chat File Links](jetbrains/ai-chat-file-links/) | JetBrains (PyCharm, IDEA, …) | `com.aichat.filelinks` | 0.2.0 | **Исправление:** ссылки на файлы из **AI Chat** открываются в PyCharm и др., а не падают с ошибкой; опция закрывает balloon после успешного открытия | [readme.md](jetbrains/ai-chat-file-links/readme.md) · [readme_ru.md](jetbrains/ai-chat-file-links/readme_ru.md) |
 
 ---
 
@@ -41,9 +45,9 @@ cd jetbrains/ai-chat-file-links
 
 ### [AI Chat File Links](jetbrains/ai-chat-file-links/)
 
-**Назначение:** обходной путь для битых ссылок на файлы в **JetBrains AI Chat** при работе с агентом **Cursor** (и другими через [ACP](https://agentclientprotocol.com/)) — в первую очередь на **Windows**. Разработан **с помощью AI** (Cursor / LLM).
+**Назначение:** когда в **PyCharm** / IntelliJ / WebStorm в **AI Chat** в ответе агента (**Cursor**, [ACP](https://agentclientprotocol.com/) и др.) есть путь к файлу, а **по клику файл не открывается** в редакторе — плагин открывает его от корня проекта. Разработан **с помощью AI** (Cursor / LLM).
 
-**Проблема:** в ответе агента есть относительный путь (например `src/app/settings.py` или `docs/readme.md`), файл есть под корнем проекта, но по клику IDE не открывает его (ошибка URL или «файл не существует»).
+**Проблема:** клик по ссылке в AI Chat (например `src/app/settings.py`); файл на диске есть, но IDE пишет «Cannot open a URL» или «файл не существует» и редактор пустой — часто на **Windows** с ACP-агентами.
 
 **Решение:**
 
@@ -87,7 +91,7 @@ cd jetbrains\ai-chat-file-links
 
 Расширения для **Visual Studio Code** (и форков вроде VSCodium) размещаются в `vscode/<имя>/` (TypeScript/JavaScript, `package.json`, `.vsix`). Публикация — [Visual Studio Marketplace](https://marketplace.visualstudio.com/) и/или [Open VSX](https://open-vsx.org/).
 
-Аналог сценария «битые ссылки на файлы из чата агента» для VS Code/Cursor в этом репозитории пока **не реализован**; при появлении расширения строка появится в таблице каталога и здесь будет блок с путём сборки.
+Плагина для **VS Code** в репозитории пока **нет**. Если добавят — он появится в каталоге со своим описанием (не обязательно та же проблема с ссылками в AI Chat).
 
 ---
 

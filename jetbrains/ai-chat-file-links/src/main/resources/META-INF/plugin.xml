@@ -10,9 +10,13 @@
 
     <description><![CDATA[
 
-        JetBrains IDE plugin: opens project-relative files from AI Chat when agent links (Cursor, ACP, and others)
+        Fixes a common PyCharm / JetBrains issue: file links in &lt;b&gt;AI Chat&lt;/b&gt; (Cursor, ACP, and other agents)
 
-        fail with &quot;Cannot open a URL&quot; or &quot;File does not exist&quot;. For VS Code extensions see the ide-plugins repo (VS Code: vscode/).
+        did &lt;b&gt;not open in the editor&lt;/b&gt; when clicked — only &quot;Cannot open a URL&quot; or &quot;File does not exist&quot;,
+
+        even if the file exists under the project root. Opens project-relative paths from chat and error balloons.
+
+        For VS Code extensions see the ide-plugins repo (VS Code: vscode/).
 
         &lt;br&gt;&lt;br&gt;&lt;b&gt;Settings&lt;/b&gt; (Settings → Tools → AI Chat File Links):
 

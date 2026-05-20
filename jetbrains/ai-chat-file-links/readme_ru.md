@@ -5,9 +5,11 @@
 
 **English:** [readme.md](readme.md) · [README.md](../../README.md)
 
-Плагин для **JetBrains** (IntelliJ / PyCharm / WebStorm): открывает файлы по путям относительно корня проекта из **AI Chat** (агент Cursor и другие через ACP), когда IDE на Windows не может открыть ссылку («Cannot open a URL», «File … does not exist»).
+Плагин для **PyCharm**, IntelliJ, WebStorm и других IDE **JetBrains**.
 
-Репозиторий также предназначен для расширений **VS Code** (каталог `vscode/`, см. [README_RU.md](../../README_RU.md)); **этот** пакет — только JetBrains, в VS Code не ставится. В Cursor/VS Code ссылки в чате обрабатывает сам редактор.
+**Суть проблемы:** в **AI Chat** агент (например **Cursor** через ACP) присылает путь к файлу в проекте, но **по клику в PyCharm файл не открывался** — только «Cannot open a URL» или «файл не существует», хотя файл на диске есть. Плагин открывает такие пути от корня проекта.
+
+Монорепозиторий [ide-plugins](../../README_RU.md) может пополняться другими плагинами (в т.ч. **VS Code** в `vscode/`). **Этот** zip — только **JetBrains**; в **VS Code** и десктопном **Cursor** не устанавливается, ссылки в чате там обрабатывает сам редактор.
 
 **Настройки** (`Settings → Tools → AI Chat File Links`): **Dismiss error notification when the file opens successfully** (по умолчанию включено) — после успешного открытия файла закрывает всплывающее уведомление об ошибке («Cannot open a URL», «File … does not exist»).
 
@@ -108,4 +110,4 @@ Windows: `build.bat` или `gradlew.bat buildPlugin`
 
 ## Лицензия
 
-[MIT](../../license) — свободная лицензия (репозиторий: JetBrains и VS Code). Использование **на свой страх и риск**; см. [license](../../license) (Marketplace JetBrains, VS Code Marketplace / Open VSX). Индекс: [README_RU.md](../../README_RU.md). Сборки: [Releases](https://github.com/rufatpro/ide-plugins/releases).
+[MIT](../../license) — свободная лицензия монорепозитория ide-plugins. Использование **на свой страх и риск**; см. [license](../../license). Индекс репозитория: [README_RU.md](../../README_RU.md). Сборки этого плагина: [Releases](https://github.com/rufatpro/ide-plugins/releases).
