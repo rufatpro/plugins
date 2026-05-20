@@ -157,7 +157,7 @@ AI Chat uses **Jewel / Compose** for rendering; link handling is not the standar
 
 ## Debug logging (optional)
 
-File logging to `C:\tmp\` is **disabled** in release builds. To enable it, set `ENABLED = true` in `DebugLog.kt`, uncomment the write block, register debug listeners in `plugin.xml`, and uncomment `NotificationDebugPoller.start()` in `SubscribeOnAppStartListener.kt`. Log file names and hooks: [readme_ru.md](readme_ru.md) (section «отладка»).
+File logging to `C:\tmp\` is **disabled** in release builds. To enable it, set `ENABLED = true` in `DebugLog.kt`, uncomment the write block, register debug listeners in `plugin.xml`, and uncomment `NotificationDebugPoller.start()` in `SubscribeOnAppStartListener.kt`. Log file names and hooks: [readme_ru.md](readme_ru.md) (section «Отладка»).
 
 ## License
 

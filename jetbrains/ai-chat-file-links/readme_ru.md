@@ -13,13 +13,13 @@
 
 **Примечание:** плагин создан **с помощью AI** (Cursor / LLM).
 
-## что делает
+## Что делает
 
 1. **UrlOpener** — при клике по ссылке пытается открыть `project.basePath + путь` раньше стандартного обработчика URL.
 2. **Перехват ошибки в чате** — при balloon «File … does not exist» / «Cannot open a URL» путь **копируется в буфер** и запоминается для **Open Last Failed Path**.
 3. **Tools → AI Chat File Links** (подменю) или **Find Action** (`Shift` дважды) → `Open Path from Clipboard` / `Open Last Failed Path`. Горячие клавиши не назначены (чтобы не конфликтовать с IDE).
 
-## настройки
+## Настройки
 
 **Settings → Tools → AI Chat File Links**
 
@@ -27,7 +27,7 @@
 |--------|--------------|----------|
 | **Dismiss error notification when the file opens successfully** | включено | После успешного открытия файла (клик в чате, в balloon или авто-открытие) закрывает всплывающее уведомление «Cannot open a URL» / «File … does not exist». |
 
-## логи сборки
+## Логи сборки
 
 `log.1main.log` — вывод Gradle. При успехе в конце: `BUILD SUCCESSFUL`.
 
@@ -35,7 +35,7 @@
 
 В `build.gradle.kts` задача `buildSearchableOptions` отключена — логи короче, zip собирается так же.
 
-## сборка и запуск
+## Сборка и запуск
 
 Из **корня git** (`ide-plugins/`):
 
@@ -66,7 +66,7 @@ Windows: `cd ide-plugins\jetbrains\ai-chat-file-links` — те же `build.bat`
 
 В песочнице IDE (`runIde`) откройте проект с **корнем репозитория** (`project.basePath`). Для проверки этого плагина — git-корень `ide-plugins/` или workspace `projects_work/ide-plugins/`.
 
-## установка
+## Установка
 
 ```bash
 ./build.sh
@@ -81,7 +81,7 @@ Windows: `build.bat` или `gradlew.bat buildPlugin`
 
 Пункты меню: **Tools → AI Chat File Links**. Если в Tools пусто — откройте проект и найдите действие через **Shift Shift** → `AI Chat` или `Open Path`.
 
-## отладка (0.1.6+)
+## Отладка (0.1.6+)
 
 После клика по битой ссылке в AI Chat смотрите логи в `C:\tmp\`:
 
@@ -100,12 +100,12 @@ Windows: `build.bat` или `gradlew.bat buildPlugin`
 | `ai-chat-file-links-file-opened.log` | файл открылся в редакторе |
 | `ai-chat-file-links-action-before.log` | действия в AI Chat (выборочно) |
 
-## замечания
+## Замечания
 
 - Корнем проекта в PyCharm должен быть **корень репозитория** (каталог с `.git` / `build.gradle.kts` вашего приложения), а не вложенная подпапка без остальных файлов.
 - Если `UrlOpener` не вызывается (в AI Chat только Compose), используйте клик в уведомлении или действие с буфером обмена.
 - `sinceBuild` 243 — для более старых IDE при необходимости измените `build.gradle.kts`.
 
-## лицензия
+## Лицензия
 
 [MIT](../../license) — свободная лицензия (репозиторий: JetBrains и VS Code). Использование **на свой страх и риск**; см. [license](../../license) (Marketplace JetBrains, VS Code Marketplace / Open VSX). Индекс: [README_RU.md](../../README_RU.md). Сборки: [Releases](https://github.com/rufatpro/ide-plugins/releases).

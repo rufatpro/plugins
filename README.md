@@ -29,7 +29,7 @@ cd jetbrains/ai-chat-file-links
 
 ---
 
-## plugin catalog
+## Plugin catalog
 
 | Plugin | Platform | ID | Version | Summary | Docs |
 |--------|----------|-----|--------|---------|------|
@@ -91,7 +91,7 @@ The “broken agent chat file links” scenario for VS Code/Cursor is **not impl
 
 ---
 
-## layout (for new plugins)
+## Layout (for new plugins)
 
 ```text
 <git root ide-plugins/>/
