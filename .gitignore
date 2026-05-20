@@ -1,0 +1,10 @@
+# Gradle / IntelliJ Platform (все плагины)
+**/build/
+**/.gradle/
+**/.intellijPlatform/
+**/.kotlin/
+**/.idea/
+**/out/
+**/run/
+**/log.*.log
+**/local.properties

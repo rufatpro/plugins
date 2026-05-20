@@ -1,0 +1,122 @@
+<idea-plugin>
+
+    <id>com.aichat.filelinks</id>
+
+    <name>AI Chat File Links</name>
+
+    <vendor email="ide-plugins@users.noreply.github.com" url="https://github.com/rufatpro/ide-plugins">rufatpro/ide-plugins</vendor>
+
+
+
+    <description><![CDATA[
+
+        JetBrains IDE plugin: opens project-relative files from AI Chat when agent links (Cursor, ACP, and others)
+
+        fail with &quot;Cannot open a URL&quot; or &quot;File does not exist&quot;. For VS Code extensions see the ide-plugins repo (vscode/).
+
+        &lt;br&gt;&lt;br&gt;&lt;b&gt;Settings&lt;/b&gt; (Settings → Tools → AI Chat File Links):
+
+        &lt;ul&gt;
+        &lt;li&gt;&lt;b&gt;Dismiss error notification when the file opens successfully&lt;/b&gt; (on by default) —
+        after the file opens from a chat link or error balloon, closes the IDE popup
+        &quot;Cannot open a URL&quot; / &quot;File does not exist&quot;.&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;br&gt;Developed with AI assistance (Cursor / LLM).
+
+    ]]></description>
+
+
+
+    <depends>com.intellij.modules.platform</depends>
+
+
+
+    <extensions defaultExtensionNs="com.intellij">
+
+        <applicationService serviceImplementation="com.aichat.filelinks.AiChatFileLinksSettings"/>
+
+        <applicationConfigurable
+                parentId="tools"
+                instance="com.aichat.filelinks.AiChatFileLinksSettingsConfigurable"
+                id="com.aichat.filelinks.settings"
+                displayName="AI Chat File Links"/>
+
+        <projectActivity implementation="com.aichat.filelinks.SubscribeFailedPathNotificationsActivity"/>
+
+    </extensions>
+
+
+
+    <extensions defaultExtensionNs="org.jetbrains">
+
+        <urlOpener implementation="com.aichat.filelinks.ProjectRelativePathUrlOpener" order="first"/>
+
+        <!-- <urlOpener implementation="com.aichat.filelinks.DebugUrlOpenerLast" order="last"/> -->
+
+    </extensions>
+
+
+
+    <applicationListeners>
+
+        <listener class="com.aichat.filelinks.SubscribeOnAppStartListener"
+
+                  topic="com.intellij.ide.AppLifecycleListener"/>
+
+        <!-- <listener class="com.aichat.filelinks.DebugProjectManagerListener"
+
+                  topic="com.intellij.openapi.project.ProjectManagerListener"/> -->
+
+        <listener class="com.aichat.filelinks.FileNotFoundNotificationListener"
+
+                  topic="com.intellij.notification.NotificationListener"/>
+
+        <listener class="com.aichat.filelinks.FailedPathBalloonListener"
+
+                  topic="com.intellij.openapi.ui.popup.BalloonListener"/>
+
+        <!-- <listener class="com.aichat.filelinks.DebugAnActionListener"
+
+                  topic="com.intellij.openapi.actionSystem.ex.AnActionListener"/> -->
+
+    </applicationListeners>
+
+
+
+    <actions>
+
+        <group id="AiChatFileLinks.ToolsGroup"
+
+               text="AI Chat File Links"
+
+               popup="true">
+
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+
+
+
+            <action id="AiChatFileLinks.OpenLastFailed"
+
+                    class="com.aichat.filelinks.OpenLastFailedPathAction"
+
+                    text="Open Last Failed Path"
+
+                    description="Open the last file path from an AI Chat error"/>
+
+
+
+            <action id="AiChatFileLinks.OpenFromClipboard"
+
+                    class="com.aichat.filelinks.OpenPathFromClipboardAction"
+
+                    text="Open Path from Clipboard"
+
+                    description="Open a project-relative path copied from AI Chat"/>
+
+        </group>
+
+    </actions>
+
+</idea-plugin>
+
