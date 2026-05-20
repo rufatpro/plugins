@@ -8,12 +8,12 @@
 
 | Платформа | Каталог | Среда |
 |-----------|---------|--------|
-| **JetBrains** | [`jetbrains/`](jetbrains/) | PyCharm, IntelliJ IDEA, WebStorm, … — плагины IntelliJ Platform |
-| **VS Code** | `vscode/` (планируется) | Visual Studio Code и совместимые редакторы — расширения (Extension API) |
+| **JetBrains** | [JetBrains](jetbrains/) (`jetbrains/`) | PyCharm, IntelliJ IDEA, WebStorm, … — плагины IntelliJ Platform |
+| **VS Code** | [VS Code](vscode/) (`vscode/`, планируется) | Visual Studio Code и совместимые редакторы — расширения (Extension API) |
 
 Сейчас в репозитории есть плагин для **JetBrains**; расширения для **VS Code** будут добавляться в `vscode/<имя>/` по той же схеме (`readme.md`, сборка, лицензия MIT из корня).
 
-**Корень git-репозитория** — этот каталог (`README.md`, `README_RU.md`, `license`, `jetbrains/…`; `git init` здесь). Сборка:
+**Корень git-репозитория** — этот каталог (`README.md`, `README_RU.md`, `license`, JetBrains/… в `jetbrains/`; `git init` здесь). Сборка:
 
 ```bash
 cd jetbrains/ai-chat-file-links
@@ -37,7 +37,7 @@ cd jetbrains/ai-chat-file-links
 
 ---
 
-## jetbrains
+## JetBrains
 
 ### [AI Chat File Links](jetbrains/ai-chat-file-links/)
 
@@ -83,7 +83,7 @@ cd jetbrains\ai-chat-file-links
 
 ---
 
-## vscode
+## VS Code
 
 Расширения для **Visual Studio Code** (и форков вроде VSCodium) размещаются в `vscode/<имя>/` (TypeScript/JavaScript, `package.json`, `.vsix`). Публикация — [Visual Studio Marketplace](https://marketplace.visualstudio.com/) и/или [Open VSX](https://open-vsx.org/).
 
@@ -99,18 +99,18 @@ cd jetbrains\ai-chat-file-links
   README_RU.md           # индекс (RU)
   license                # MIT + disclaimer
   .gitignore             # **/build/, **/.gradle/, …
-  jetbrains/             # IntelliJ Platform (.zip)
+  jetbrains/             # JetBrains — IntelliJ Platform (.zip)
     <plugin-name>/
       build.gradle.kts
       src/
-  vscode/                # VS Code Extension (.vsix), когда появится
+  vscode/                # VS Code — Extension (.vsix), когда появится
     <extension-name>/
       package.json
       src/
   <platform>/<name>/
       readme.md          # EN (основной)
       readme_ru.md       # RU (опционально)
-      build.sh / build.bat   # jetbrains
+      build.sh / build.bat   # JetBrains
       clean.sh / clean.bat
 ```
 

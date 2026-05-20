@@ -1,13 +1,13 @@
 # AI Chat — ссылки на файлы
 
-Путь от корня git: `jetbrains/ai-chat-file-links/` ([`README_RU.md`](../../README_RU.md) репозитория).  
+Путь от корня git (JetBrains): `jetbrains/ai-chat-file-links/` ([`README_RU.md`](../../README_RU.md) репозитория).  
 Репозиторий: [github.com/rufatpro/ide-plugins](https://github.com/rufatpro/ide-plugins)
 
 **English:** [readme.md](readme.md) · [README.md](../../README.md)
 
 Плагин для **JetBrains** (IntelliJ / PyCharm / WebStorm): открывает файлы по путям относительно корня проекта из **AI Chat** (агент Cursor и другие через ACP), когда IDE на Windows не может открыть ссылку («Cannot open a URL», «File … does not exist»).
 
-Репозиторий также предназначен для расширений **VS Code** (`vscode/`, см. [README_RU.md](../../README_RU.md)); **этот** пакет — только JetBrains, в VS Code не ставится. В Cursor/VS Code ссылки в чате обрабатывает сам редактор.
+Репозиторий также предназначен для расширений **VS Code** (каталог `vscode/`, см. [README_RU.md](../../README_RU.md)); **этот** пакет — только JetBrains, в VS Code не ставится. В Cursor/VS Code ссылки в чате обрабатывает сам редактор.
 
 **Настройки** (`Settings → Tools → AI Chat File Links`): **Dismiss error notification when the file opens successfully** (по умолчанию включено) — после успешного открытия файла закрывает всплывающее уведомление об ошибке («Cannot open a URL», «File … does not exist»).
 

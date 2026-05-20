@@ -8,12 +8,12 @@ IDE plugins and extensions. Platforms live in subdirectories:
 
 | Platform | Directory | Environment |
 |----------|-----------|-------------|
-| **JetBrains** | [`jetbrains/`](jetbrains/) | PyCharm, IntelliJ IDEA, WebStorm, … — IntelliJ Platform plugins |
-| **VS Code** | `vscode/` (planned) | Visual Studio Code and compatible editors — extensions (Extension API) |
+| **JetBrains** | [JetBrains](jetbrains/) (`jetbrains/`) | PyCharm, IntelliJ IDEA, WebStorm, … — IntelliJ Platform plugins |
+| **VS Code** | [VS Code](vscode/) (`vscode/`, planned) | Visual Studio Code and compatible editors — extensions (Extension API) |
 
 The repository currently ships a **JetBrains** plugin; **VS Code** extensions will be added under `vscode/<name>/` using the same layout (`readme.md`, build scripts, MIT [license](license) at the repo root).
 
-**Git repository root** is this directory (`README.md`, `README_RU.md`, [license](license), `jetbrains/…`; run `git init` here). Build:
+**Git repository root** is this directory (`README.md`, `README_RU.md`, [license](license), JetBrains plugins under `jetbrains/…`; run `git init` here). Build:
 
 ```bash
 cd jetbrains/ai-chat-file-links
@@ -99,18 +99,18 @@ The “broken agent chat file links” scenario for VS Code/Cursor is **not impl
   README_RU.md           # index (RU)
   license                # MIT + disclaimer
   .gitignore             # **/build/, **/.gradle/, …
-  jetbrains/             # IntelliJ Platform (.zip)
+  jetbrains/             # JetBrains — IntelliJ Platform (.zip)
     <plugin-name>/
       build.gradle.kts
       src/
-  vscode/                # VS Code extension (.vsix), when added
+  vscode/                # VS Code — extension (.vsix), when added
     <extension-name>/
       package.json
       src/
   <platform>/<name>/
       readme.md          # EN (plugin)
       readme_ru.md       # RU (optional)
-      build.sh / build.bat   # jetbrains
+      build.sh / build.bat   # JetBrains
       clean.sh / clean.bat
 ```
 
