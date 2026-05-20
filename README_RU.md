@@ -1,6 +1,6 @@
 # ide-plugins
 
-**Русский** · [README](README) (English)
+**Русский** · [README](README.md) (English)
 
 **Репозиторий:** [github.com/rufatpro/ide-plugins](https://github.com/rufatpro/ide-plugins)
 
@@ -13,7 +13,7 @@
 
 Сейчас в репозитории есть плагин для **JetBrains**; расширения для **VS Code** будут добавляться в `vscode/<имя>/` по той же схеме (`readme.md`, сборка, лицензия MIT из корня).
 
-**Корень git-репозитория** — этот каталог (`README`, `README_RU`, `license`, `jetbrains/…`; `git init` здесь). Сборка:
+**Корень git-репозитория** — этот каталог (`README.md`, `README_RU.md`, `license`, `jetbrains/…`; `git init` здесь). Сборка:
 
 ```bash
 cd jetbrains/ai-chat-file-links
@@ -22,14 +22,14 @@ cd jetbrains/ai-chat-file-links
 
 **Workspace шире репозитория** (родитель с `chat-specstory-history/`): тот же плагин — `cd ide-plugins/jetbrains/ai-chat-file-links` (или `ide-plugins\jetbrains\ai-chat-file-links` на Windows).
 
-**Имена файлов:** документация и лицензия в нижнем регистре — `readme.md`, `readme_ru.md`, `license` (не `README.md` / `LICENSE`).
+**Имена файлов:** документация и лицензия в нижнем регистре — `readme.md`, `readme_ru.md`, `license` (не `LICENSE` в каталогах плагинов).
 
 **Лицензия:** [MIT](license) — свободное использование, изменение и распространение (JetBrains и VS Code).  
 **Важно:** всё ПО здесь предоставляется «как есть», **на свой страх и риск**; авторы не несут ответственности за сбои IDE/редактора, потерю данных и т.п. Подробности — в [license](license) (в т.ч. JetBrains Marketplace и VS Code Marketplace / Open VSX).
 
 ---
 
-## Каталог плагинов
+## каталог плагинов
 
 | Плагин | Платформа | ID | Версия | Описание | Документация |
 |--------|-----------|-----|--------|----------|--------------|
@@ -37,7 +37,7 @@ cd jetbrains/ai-chat-file-links
 
 ---
 
-## JetBrains
+## jetbrains
 
 ### [AI Chat File Links](jetbrains/ai-chat-file-links/)
 
@@ -83,7 +83,7 @@ cd jetbrains\ai-chat-file-links
 
 ---
 
-## VS Code
+## vscode
 
 Расширения для **Visual Studio Code** (и форков вроде VSCodium) размещаются в `vscode/<имя>/` (TypeScript/JavaScript, `package.json`, `.vsix`). Публикация — [Visual Studio Marketplace](https://marketplace.visualstudio.com/) и/или [Open VSX](https://open-vsx.org/).
 
@@ -95,8 +95,8 @@ cd jetbrains\ai-chat-file-links
 
 ```text
 <корень git ide-plugins/>/
-  README                 # индекс (EN)
-  README_RU              # индекс (RU)
+  README.md              # индекс (EN)
+  README_RU.md           # индекс (RU)
   license                # MIT + disclaimer
   .gitignore             # **/build/, **/.gradle/, …
   jetbrains/             # IntelliJ Platform (.zip)

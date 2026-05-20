@@ -1,11 +1,11 @@
 # AI Chat File Links
 
-Path in repo: `jetbrains/ai-chat-file-links/` (from git root [`README`](../../README)).  
+Path in repo: `jetbrains/ai-chat-file-links/` (from git root [`README.md`](../../README.md)).  
 Repository: [github.com/rufatpro/ide-plugins](https://github.com/rufatpro/ide-plugins)
 
 IntelliJ Platform plugin for **PyCharm**, **IntelliJ IDEA**, and other **JetBrains** IDEs.
 
-This repository also hosts **VS Code** extensions under `vscode/` (see [repo index](../../README)); this package is **JetBrains-only** — it does not install in VS Code. In VS Code / Cursor desktop, file links in chat are handled by the editor itself.
+This repository also hosts **VS Code** extensions under `vscode/` (see [repo index](../../README.md)); this package is **JetBrains-only** — it does not install in VS Code. In VS Code / Cursor desktop, file links in chat are handled by the editor itself.
 
 When you use the **Cursor** agent via [ACP](https://agentclientprotocol.com/) in **AI Chat**, file links in agent responses often fail on Windows with errors like:
 
