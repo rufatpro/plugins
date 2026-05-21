@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+- Fixed VS Code Marketplace publisher ID: `rufat` (was `rufatpro`).
+
 ## 0.2.0
 
 - Added tolerant parsing/resolve for `:py:func:`module.py.func`` and `:func:`module.py.func``.

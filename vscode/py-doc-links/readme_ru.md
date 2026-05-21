@@ -56,7 +56,7 @@ build.bat
 
 Итоговый файл пакета:
 
-`vscode/py-doc-links/build/py-doc-links-0.2.0.vsix`
+`vscode/py-doc-links/build/py-doc-links-0.2.1.vsix`
 
 ## Ограничения
 
