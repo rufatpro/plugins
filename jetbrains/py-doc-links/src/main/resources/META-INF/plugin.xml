@@ -1,0 +1,46 @@
+<idea-plugin>
+
+    <id>com.pydoclinks</id>
+
+    <name>Python Doc Links</name>
+
+    <vendor email="ide-plugins@users.noreply.github.com" url="https://github.com/rufatpro/ide-plugins">rufatpro/ide-plugins</vendor>
+
+    <description><![CDATA[
+
+        Makes file and function references in Python <b>docstrings</b> and <b>line comments</b>
+        <b>Ctrl+Clickable</b> — navigates to the referenced file or function in the editor.<br><br>
+
+        <b>Supported patterns:</b>
+        <ul>
+          <li><code>filename.py</code> — opens the file</li>
+          <li><code>:py:func:`module.func`</code> — navigates to the function</li>
+          <li><code>:func:`module.func`</code> — short Sphinx form</li>
+          <li><code>:py:mod:`module`</code> — opens the module file</li>
+        </ul>
+
+        <br>Example:<br>
+        <pre>
+def my_func():
+    """
+    See also: tmp2.py
+    Calls :py:func:`tmp2.tmp_func`.
+    """
+        </pre>
+
+        <br>Developed with AI assistance (Cursor / LLM).
+
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.python</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+        <psi.referenceContributor
+                language="Python"
+                implementation="com.pydoclinks.DocstringReferenceContributor"/>
+
+    </extensions>
+
+</idea-plugin>
