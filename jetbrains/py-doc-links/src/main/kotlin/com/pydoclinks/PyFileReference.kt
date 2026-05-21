@@ -9,7 +9,7 @@ import com.intellij.psi.search.GlobalSearchScope
 
 /**
  * Reference to a .py file found by filename anywhere in the project.
- * Used for patterns like `tmp2.py` in docstrings / comments.
+ * Used for patterns like `submodule.py` in docstrings / comments.
  */
 class PyFileReference(
     element: PsiElement,

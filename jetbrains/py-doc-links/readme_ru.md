@@ -4,7 +4,7 @@
 
 **Плагин JetBrains** для PyCharm, IntelliJ IDEA, WebStorm и других JetBrains IDE.
 
-Решает распространённое ограничение: ссылки на Python-файлы и функции внутри **docstring** и **комментариев** обычно остаются обычным текстом. Плагин добавляет Ctrl+Click-навигацию для поддерживаемых паттернов, например `tmp2.py` и `:py:func:`tmp2.tmp_func``.
+Решает распространённое ограничение: ссылки на Python-файлы и функции внутри **docstring** и **комментариев** обычно остаются обычным текстом. Плагин добавляет Ctrl+Click-навигацию для поддерживаемых паттернов, например `submodule.py` и `:py:func:`submodule.process_submodule_data``.
 
 > **Только JetBrains** — не устанавливается в VS Code и десктопный Cursor.  
 > Разработан с помощью AI (Cursor / LLM). Часть монорепозитория [ide-plugins](https://github.com/rufatpro/ide-plugins).
@@ -28,14 +28,14 @@
 ```python
 def example():
     """
-    File: tmp2.py
-    Function: :py:func:`tmp2.tmp_func`
-    Function (filename form): :py:func:`tmp2.py.tmp_func`
-    Function (current module): :func:`tmp`
-    Module: :py:mod:`tmp2`
-    Module (filename form): :py:mod:`tmp2.py`
+    File: submodule.py
+    Function: :py:func:`submodule.process_submodule_data`
+    Function (filename form): :py:func:`submodule.py.process_submodule_data`
+    Function (current module): :func:`run_main_flow`
+    Module: :py:mod:`submodule`
+    Module (filename form): :py:mod:`submodule.py`
     """
-    # see tmp2.py
+    # see submodule.py
 ```
 
 Далее используйте **Ctrl+Click** (или Go to Declaration) по поддерживаемой ссылке.

@@ -1,0 +1,44 @@
+{
+  "name": "py-doc-links",
+  "displayName": "Python Doc Links",
+  "description": "Ctrl+Click navigation for Python docstring/comment references (filename.py, :py:func:, :func:, :py:mod:) in VS Code and Cursor.",
+  "version": "0.2.0",
+  "publisher": "rufatpro",
+  "license": "MIT",
+  "readme": "readme.md",
+  "changelog": "CHANGELOG.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rufatpro/ide-plugins.git"
+  },
+  "homepage": "https://github.com/rufatpro/ide-plugins",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "python",
+    "docstring",
+    "sphinx",
+    "navigation",
+    "cursor"
+  ],
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pyDocLinks.showSupportedFormats",
+        "title": "Python Doc Links: Show Supported Formats"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package",
+    "lint": "echo \"No lint configured\""
+  }
+}

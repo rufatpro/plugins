@@ -1,0 +1,20 @@
+# Changelog
+
+## 0.2.0
+
+- Added tolerant parsing/resolve for `:py:func:`module.py.func`` and `:func:`module.py.func``.
+- Added support for `:func:`func`` in the current file.
+- Improved matcher priority so Sphinx references win over plain `filename.py` overlaps.
+- Updated examples and docs to use `main.py` / `submodule.py`.
+
+## 0.1.0
+
+- Initial release.
+- Added go-to-definition for Python docstring/comment references:
+  - `filename.py`
+  - `:py:func:`module.func``
+  - `:py:func:`module.py.func`` (tolerant)
+  - `:func:`module.func``
+  - `:func:`module.py.func`` (tolerant)
+  - `:func:`func`` (current file)
+  - `:py:mod:`module`` / `:py:mod:`module.py``

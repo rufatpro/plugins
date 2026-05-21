@@ -13,12 +13,12 @@ import com.intellij.psi.util.PsiTreeUtil
  * Reference to a Python function resolved by qualified name `module.func`
  * or `pkg.module.func` (uses the last component before the function as filename).
  *
- * Used for Sphinx patterns like `:py:func:`tmp2.tmp_func``.
+ * Used for Sphinx patterns like `:py:func:`submodule.process_submodule_data``.
  */
 class PyFuncReference(
     element: PsiElement,
     range: TextRange,
-    /** e.g. "tmp2.tmp_func" or "pkg.module.func" */
+    /** e.g. "submodule.process_submodule_data" or "pkg.module.func" */
     private val qualifiedName: String,
 ) : PsiReferenceBase<PsiElement>(element, range) {
 
@@ -27,7 +27,7 @@ class PyFuncReference(
         val funcName = parts.last()
         if (funcName.isBlank()) return null
 
-        // Support :func:`tmp` — resolve inside current file first.
+        // Support :func:`run_main_flow` — resolve inside current file first.
         if (parts.size == 1) {
             val currentFile = element.containingFile ?: return null
             return findFunctionInFile(currentFile, funcName)

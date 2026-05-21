@@ -23,8 +23,8 @@
         <pre>
 def my_func():
     """
-    See also: tmp2.py
-    Calls :py:func:`tmp2.tmp_func`.
+    See also: submodule.py
+    Calls :py:func:`submodule.process_submodule_data`.
     """
         </pre>
 

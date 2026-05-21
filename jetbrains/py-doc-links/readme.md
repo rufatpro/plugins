@@ -4,7 +4,7 @@
 
 **JetBrains plugin** for PyCharm, IntelliJ IDEA, WebStorm, and other JetBrains IDEs.
 
-Fixes a common limitation: Python references inside **docstrings** and **line comments** are usually plain text in PyCharm. This plugin adds Ctrl+Click navigation for supported patterns such as `tmp2.py` and `:py:func:`tmp2.tmp_func``.
+Fixes a common limitation: Python references inside **docstrings** and **line comments** are usually plain text in PyCharm. This plugin adds Ctrl+Click navigation for supported patterns such as `submodule.py` and `:py:func:`submodule.process_submodule_data``.
 
 > **JetBrains only** — does not install in VS Code or the Cursor desktop app.  
 > Developed with AI assistance (Cursor / LLM). Part of the [ide-plugins](https://github.com/rufatpro/ide-plugins) monorepo.
@@ -28,14 +28,14 @@ Add references inside Python docstrings or comments:
 ```python
 def example():
     """
-    File: tmp2.py
-    Function: :py:func:`tmp2.tmp_func`
-    Function (filename form): :py:func:`tmp2.py.tmp_func`
-    Function (current module): :func:`tmp`
-    Module: :py:mod:`tmp2`
-    Module (filename form): :py:mod:`tmp2.py`
+    File: submodule.py
+    Function: :py:func:`submodule.process_submodule_data`
+    Function (filename form): :py:func:`submodule.py.process_submodule_data`
+    Function (current module): :func:`run_main_flow`
+    Module: :py:mod:`submodule`
+    Module (filename form): :py:mod:`submodule.py`
     """
-    # see tmp2.py
+    # see submodule.py
 ```
 
 Then **Ctrl+Click** (or use Go to Declaration) on a supported reference.
