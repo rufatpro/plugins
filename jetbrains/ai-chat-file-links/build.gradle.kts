@@ -1,7 +1,18 @@
+import java.util.Properties
+
 plugins {
     kotlin("jvm") version "2.1.0"
     id("org.jetbrains.intellij.platform") version "2.5.0"
 }
+
+val localProperties = Properties().apply {
+    val file = rootDir.resolve("local.properties")
+    if (file.isFile) file.inputStream().use { load(it) }
+}
+
+fun publishToken(): String? =
+    localProperties.getProperty("publishToken")?.takeIf { it.isNotBlank() }
+        ?: System.getenv("PUBLISH_TOKEN")?.takeIf { it.isNotBlank() }
 
 group = providers.gradleProperty("pluginGroup").get()
 version = providers.gradleProperty("pluginVersion").get()
@@ -35,6 +46,11 @@ intellijPlatform {
         ideaVersion {
             sinceBuild = "243"
         }
+    }
+
+    publishing {
+        token = providers.provider { publishToken() }
+        channels = listOf("default")
     }
 }
 

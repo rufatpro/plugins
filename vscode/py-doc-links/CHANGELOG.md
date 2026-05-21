@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2
+
+- Fixed README links for VS Code Marketplace (absolute GitHub URLs, `vsce.baseContentUrl` for monorepo).
+
 ## 0.2.1
 
 - Fixed VS Code Marketplace publisher ID: `rufat` (was `rufatpro`).

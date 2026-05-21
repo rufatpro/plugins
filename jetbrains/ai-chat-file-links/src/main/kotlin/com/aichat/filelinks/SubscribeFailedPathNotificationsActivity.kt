@@ -12,6 +12,7 @@ class SubscribeFailedPathNotificationsActivity : ProjectActivity {
         val connection = project.messageBus.connect(project)
         connection.subscribe(Notifications.TOPIC, FailedPathNotificationSubscriber())
         connection.subscribe(BalloonListener.TOPIC, FailedPathBalloonListener())
+        // NotificationDebugPoller.start() — debug only (C:\tmp logs)
     }
 }
 

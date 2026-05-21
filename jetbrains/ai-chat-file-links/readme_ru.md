@@ -121,7 +121,7 @@ clean.bat     # Windows
 
 ## Отладка (опционально)
 
-Файловое логирование в `C:\tmp\` **отключено** в релизных сборках. Чтобы включить, установите `ENABLED = true` в `DebugLog.kt`, раскомментируйте блок записи, зарегистрируйте debug-листенеры в `plugin.xml` и раскомментируйте `NotificationDebugPoller.start()` в `SubscribeOnAppStartListener.kt`.
+Файловое логирование в `C:\tmp\` **отключено** в релизных сборках. Чтобы включить, установите `ENABLED = true` в `DebugLog.kt`, раскомментируйте блок записи, зарегистрируйте debug-листенеры в `plugin.xml` и раскомментируйте `NotificationDebugPoller.start()` в `SubscribeFailedPathNotificationsActivity.kt`.
 
 | Файл | Хук |
 |------|-----|
@@ -132,8 +132,7 @@ clean.bat     # Windows
 | `ai-chat-file-links-notification-hyperlink.log` | клик в balloon |
 | `ai-chat-file-links-capture.log` | разбор пути / буфер |
 | `ai-chat-file-links-poller.log` | опрос модели уведомлений (1 раз/с) |
-| `ai-chat-file-links-app-start.log` | старт плагина |
-| `ai-chat-file-links-project-start.log` | открытие проекта |
+| `ai-chat-file-links-project-start.log` | ProjectActivity (открытие проекта) |
 | `ai-chat-file-links-project-opened.log` | ProjectManagerListener |
 | `ai-chat-file-links-file-opened.log` | файл открылся в редакторе |
 | `ai-chat-file-links-action-before.log` | действия в AI Chat (выборочно) |

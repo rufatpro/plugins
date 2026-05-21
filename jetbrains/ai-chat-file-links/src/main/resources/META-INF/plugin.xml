@@ -64,9 +64,9 @@
 
     <applicationListeners>
 
-        <listener class="com.aichat.filelinks.SubscribeOnAppStartListener"
+        <listener class="com.aichat.filelinks.FailedPathNotificationSubscriber"
 
-                  topic="com.intellij.ide.AppLifecycleListener"/>
+                  topic="com.intellij.notification.Notifications"/>
 
         <!-- <listener class="com.aichat.filelinks.DebugProjectManagerListener"
 

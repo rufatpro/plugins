@@ -121,7 +121,7 @@ Removes `build/`, `.gradle/`, `.intellijPlatform/`, `.kotlin/`, and log files.
 
 ## Debug logging (optional)
 
-File logging to `C:\tmp\` is **disabled** in release builds. To enable it, set `ENABLED = true` in `DebugLog.kt`, uncomment the write block, register debug listeners in `plugin.xml`, and uncomment `NotificationDebugPoller.start()` in `SubscribeOnAppStartListener.kt`.
+File logging to `C:\tmp\` is **disabled** in release builds. To enable it, set `ENABLED = true` in `DebugLog.kt`, uncomment the write block, register debug listeners in `plugin.xml`, and uncomment `NotificationDebugPoller.start()` in `SubscribeFailedPathNotificationsActivity.kt`.
 
 Full log file reference: [readme_ru.md](readme_ru.md) → section «Отладка».
 

@@ -1,6 +1,6 @@
 # Python Doc Links (VS Code / Cursor)
 
-[Русский](readme_ru.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Repository](https://github.com/rufatpro/ide-plugins)
+[Русский](https://github.com/rufatpro/ide-plugins/blob/main/vscode/py-doc-links/readme_ru.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Repository](https://github.com/rufatpro/ide-plugins)
 
 **VS Code / Cursor extension** that enables go-to-definition from Python docstring/comment references.
 
@@ -56,7 +56,7 @@ Then install the generated `.vsix`.
 
 Resulting package file:
 
-`vscode/py-doc-links/build/py-doc-links-0.2.1.vsix`
+`vscode/py-doc-links/build/py-doc-links-0.2.2.vsix`
 
 ## Limitations
 
@@ -71,5 +71,5 @@ Related upstream context:
 
 ## License
 
-[MIT](../../license) — free to use, modify, and distribute, at your own risk.  
+[MIT](https://github.com/rufatpro/ide-plugins/blob/main/license) — free to use, modify, and distribute, at your own risk.  
 [ide-plugins monorepo](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
