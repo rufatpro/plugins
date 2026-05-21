@@ -22,8 +22,6 @@ Fixes a common problem: when an AI agent (Cursor via ACP, or other ACP agents) r
 2. **Settings → Plugins → ⚙ → Install Plugin from Disk…**
 3. Select the zip file and **restart** the IDE.
 
-> **Upgrading from `acp-path-opener`:** uninstall the old plugin (`com.acp.pathopener`) first — plugin IDs differ and both cannot be active at the same time.
-
 ## Usage
 
 1. Open your project at the repository root.
