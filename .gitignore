@@ -12,3 +12,5 @@
 # VS Code / Cursor extensions
 **/node_modules/
 **/*.vsix
+
+local.properties

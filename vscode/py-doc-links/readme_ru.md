@@ -1,6 +1,6 @@
 # Python Doc Links (VS Code / Cursor)
 
-[English](readme.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Репозиторий](https://github.com/rufatpro/ide-plugins)
+[English](https://github.com/rufatpro/ide-plugins/blob/main/vscode/py-doc-links/readme.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Репозиторий](https://github.com/rufatpro/ide-plugins)
 
 **Расширение VS Code / Cursor**, которое добавляет переход к определению из ссылок в Python docstring/комментариях.
 
@@ -56,7 +56,7 @@ build.bat
 
 Итоговый файл пакета:
 
-`vscode/py-doc-links/build/py-doc-links-0.2.1.vsix`
+`vscode/py-doc-links/build/py-doc-links-0.2.2.vsix`
 
 ## Ограничения
 
@@ -71,5 +71,5 @@ build.bat
 
 ## Лицензия
 
-[MIT](../../license) — свободное использование, изменение и распространение, на ваш риск.  
+[MIT](https://github.com/rufatpro/ide-plugins/blob/main/license) — свободное использование, изменение и распространение, на ваш риск.  
 [Монорепозиторий ide-plugins](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
