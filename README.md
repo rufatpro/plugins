@@ -10,7 +10,7 @@ Each plugin lives in its own directory with a `readme.md`.
 | Plugin | Platform | Version | Summary | Docs |
 |--------|----------|---------|---------|------|
 <<<<<<< HEAD
-| [AI Chat File Links](jetbrains/ai-chat-file-links/) | JetBrains | 0.3.0 | Fixes file links from **AI Chat** not opening in the editor (PyCharm, IntelliJ, WebStorm, …) | [EN](jetbrains/ai-chat-file-links/readme.md) · [RU](jetbrains/ai-chat-file-links/readme_ru.md) |
+| [AI Chat File Links](jetbrains/ai-chat-file-links/) | JetBrains | 0.3.1 | Fixes file links from **AI Chat** not opening in the editor (PyCharm, IntelliJ, WebStorm, …) | [EN](jetbrains/ai-chat-file-links/readme.md) · [RU](jetbrains/ai-chat-file-links/readme_ru.md) |
 =======
 | [AI Chat File Links](jetbrains/ai-chat-file-links/) | JetBrains | 0.2.0 | Fixes file links from **AI Chat** not opening in the editor (PyCharm, IntelliJ, WebStorm, …) | [EN](jetbrains/ai-chat-file-links/readme.md) · [RU](jetbrains/ai-chat-file-links/readme_ru.md) |
 >>>>>>> 338229b82f454cc642873c5a3c62b60b0cbc8fed

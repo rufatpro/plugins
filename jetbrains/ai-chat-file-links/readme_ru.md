@@ -133,8 +133,7 @@ clean.bat     # Windows
 | `ai-chat-file-links-capture.log` | разбор пути / буфер |
 | `ai-chat-file-links-poller.log` | опрос модели уведомлений (1 раз/с) |
 | `ai-chat-file-links-project-start.log` | ProjectActivity (открытие проекта) |
-| `ai-chat-file-links-project-opened.log` | ProjectManagerListener |
-| `ai-chat-file-links-file-opened.log` | файл открылся в редакторе |
+| `ai-chat-file-links-file-opened.log` | файл открылся в редакторе (debug-хук в `plugin.xml`, если включён) |
 | `ai-chat-file-links-action-before.log` | действия в AI Chat (выборочно) |
 
 ## Ссылки

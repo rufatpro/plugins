@@ -68,10 +68,6 @@
 
                   topic="com.intellij.notification.Notifications"/>
 
-        <!-- <listener class="com.aichat.filelinks.DebugProjectManagerListener"
-
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/> -->
-
         <listener class="com.aichat.filelinks.FileNotFoundNotificationListener"
 
                   topic="com.intellij.notification.NotificationListener"/>

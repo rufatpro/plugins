@@ -10,7 +10,7 @@
 | Плагин | Платформа | Версия | Описание | Документация |
 |--------|-----------|--------|----------|--------------|
 <<<<<<< HEAD
-| [AI Chat File Links](jetbrains/ai-chat-file-links/) | JetBrains | 0.3.0 | Исправляет проблему: ссылки на файлы из **AI Chat** не открывались в редакторе (PyCharm, IntelliJ, WebStorm, …) | [EN](jetbrains/ai-chat-file-links/readme.md) · [RU](jetbrains/ai-chat-file-links/readme_ru.md) |
+| [AI Chat File Links](jetbrains/ai-chat-file-links/) | JetBrains | 0.3.1 | Исправляет проблему: ссылки на файлы из **AI Chat** не открывались в редакторе (PyCharm, IntelliJ, WebStorm, …) | [EN](jetbrains/ai-chat-file-links/readme.md) · [RU](jetbrains/ai-chat-file-links/readme_ru.md) |
 =======
 | [AI Chat File Links](jetbrains/ai-chat-file-links/) | JetBrains | 0.2.0 | Исправляет проблему: ссылки на файлы из **AI Chat** не открывались в редакторе (PyCharm, IntelliJ, WebStorm, …) | [EN](jetbrains/ai-chat-file-links/readme.md) · [RU](jetbrains/ai-chat-file-links/readme_ru.md) |
 >>>>>>> 338229b82f454cc642873c5a3c62b60b0cbc8fed
