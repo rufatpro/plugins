@@ -37,3 +37,7 @@ ide-plugins/            ← git root
 ## License
 
 [MIT](license) — free to use, modify, and distribute, at your own risk (JetBrains Marketplace, VS Code Marketplace / Open VSX).
+
+## Author
+
+[Rufat](https://rufat.top/)

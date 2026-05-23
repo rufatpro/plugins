@@ -116,3 +116,7 @@ Removes `build/`, `.gradle/`, `.intellijPlatform/`, `.kotlin/`, and log files.
 
 [MIT](../../license) — free to use, modify, and distribute, at your own risk.  
 [ide-plugins monorepo](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+
+## Author
+
+[Rufat](https://rufat.top/)

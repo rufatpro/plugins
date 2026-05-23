@@ -116,3 +116,7 @@ clean.bat
 
 [MIT](../../license) — свободное использование, изменение и распространение, на ваш риск.  
 [Монорепозиторий ide-plugins](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+
+## Автор
+
+[Руфат Нуриев](https://rufat.top/)

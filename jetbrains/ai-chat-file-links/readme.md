@@ -135,3 +135,7 @@ Full log file reference: [readme_ru.md](readme_ru.md) → section «Отладк
 
 [MIT](../../license) — free to use, modify, and distribute, at your own risk.  
 [ide-plugins monorepo](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+
+## Author
+
+[Rufat](https://rufat.top/)

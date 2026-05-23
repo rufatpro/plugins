@@ -73,3 +73,7 @@ build.bat
 
 [MIT](https://github.com/rufatpro/ide-plugins/blob/main/license) — свободное использование, изменение и распространение, на ваш риск.  
 [Монорепозиторий ide-plugins](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+
+## Автор
+
+[Руфат Нуриев](https://rufat.top/)

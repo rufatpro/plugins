@@ -73,3 +73,7 @@ Related upstream context:
 
 [MIT](https://github.com/rufatpro/ide-plugins/blob/main/license) — free to use, modify, and distribute, at your own risk.  
 [ide-plugins monorepo](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+
+## Author
+
+[Rufat](https://rufat.top/)
