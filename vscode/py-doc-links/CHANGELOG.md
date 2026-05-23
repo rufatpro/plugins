@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.3
+
+- JetBrains: optional Python plugin dependency (Marketplace verification on IntelliJ IDEA without bundled Python).
+- Version aligned with JetBrains `0.2.3` release.
+
 ## 0.2.2
 
 - Fixed README links for VS Code Marketplace (absolute GitHub URLs, `vsce.baseContentUrl` for monorepo).

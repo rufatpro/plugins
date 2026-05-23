@@ -33,14 +33,6 @@ def my_func():
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
-    <depends>com.intellij.modules.python</depends>
-
-    <extensions defaultExtensionNs="com.intellij">
-
-        <psi.referenceContributor
-                language="Python"
-                implementation="com.pydoclinks.DocstringReferenceContributor"/>
-
-    </extensions>
+    <depends optional="true" config-file="python.xml">com.intellij.modules.python</depends>
 
 </idea-plugin>

@@ -11,8 +11,8 @@ Fixes a common limitation: Python references inside **docstrings** and **line co
 
 ## Requirements
 
-- JetBrains IDE **2024.3+** (PyCharm, IntelliJ IDEA, WebStorm, ...)
-- Python plugin (`com.intellij.modules.python`) enabled in the IDE
+- JetBrains IDE **2024.3+** (PyCharm, IntelliJ IDEA, WebStorm, …)
+- **Python support** in the IDE: built into PyCharm; on IntelliJ IDEA / WebStorm install the **Python** plugin from the JetBrains plugin repository first
 - Project opened at the **repository root** (not a nested subfolder)
 
 ## Installation

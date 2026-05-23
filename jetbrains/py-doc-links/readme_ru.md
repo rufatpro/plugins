@@ -11,8 +11,8 @@
 
 ## Требования
 
-- JetBrains IDE **2024.3+** (PyCharm, IntelliJ IDEA, WebStorm, ...)
-- В IDE должен быть включён Python-плагин (`com.intellij.modules.python`)
+- JetBrains IDE **2024.3+** (PyCharm, IntelliJ IDEA, WebStorm, …)
+- **Поддержка Python** в IDE: в PyCharm уже есть; в IntelliJ IDEA / WebStorm сначала установите плагин **Python** из репозитория JetBrains
 - Проект открыт в **корне репозитория** (не во вложенной папке)
 
 ## Установка

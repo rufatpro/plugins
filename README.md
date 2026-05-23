@@ -14,8 +14,8 @@ Each plugin lives in its own directory with a `readme.md`.
 =======
 | [AI Chat File Links](jetbrains/ai-chat-file-links/) | JetBrains | 0.2.0 | Fixes file links from **AI Chat** not opening in the editor (PyCharm, IntelliJ, WebStorm, …) | [EN](jetbrains/ai-chat-file-links/readme.md) · [RU](jetbrains/ai-chat-file-links/readme_ru.md) |
 >>>>>>> 338229b82f454cc642873c5a3c62b60b0cbc8fed
-| [Python Doc Links](jetbrains/py-doc-links/) | JetBrains | 0.2.2 | Adds Ctrl+Click navigation for file/function references in Python **docstrings** and **comments** (`filename.py`, `:py:func:`, `:func:`, `:py:mod:`) | [EN](jetbrains/py-doc-links/readme.md) · [RU](jetbrains/py-doc-links/readme_ru.md) |
-| [Python Doc Links](vscode/py-doc-links/) | VS Code / Cursor | 0.2.2 | Adds Ctrl+Click navigation for Python docstring/comment references (`filename.py`, `:py:func:`, `:func:`, `:py:mod:`) | [EN](vscode/py-doc-links/readme.md) · [RU](vscode/py-doc-links/readme_ru.md) |
+| [Python Doc Links](jetbrains/py-doc-links/) | JetBrains | 0.2.3 | Adds Ctrl+Click navigation for file/function references in Python **docstrings** and **comments** (`filename.py`, `:py:func:`, `:func:`, `:py:mod:`) | [EN](jetbrains/py-doc-links/readme.md) · [RU](jetbrains/py-doc-links/readme_ru.md) |
+| [Python Doc Links](vscode/py-doc-links/) | VS Code / Cursor | 0.2.3 | Adds Ctrl+Click navigation for Python docstring/comment references (`filename.py`, `:py:func:`, `:func:`, `:py:mod:`) | [EN](vscode/py-doc-links/readme.md) · [RU](vscode/py-doc-links/readme_ru.md) |
 
 > VS Code/Cursor extensions live under `vscode/<name>/`.
 
