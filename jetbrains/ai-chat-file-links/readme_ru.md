@@ -149,4 +149,4 @@ clean.bat     # Windows
 
 ## Автор
 
-[Руфат Нуриев](https://rufat.top/)
+[Руфат](https://rufat.top/)

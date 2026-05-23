@@ -119,4 +119,4 @@ clean.bat
 
 ## Автор
 
-[Руфат Нуриев](https://rufat.top/)
+[Руфат](https://rufat.top/)
