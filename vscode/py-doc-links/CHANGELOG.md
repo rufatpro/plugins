@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.4
+
+- LICENSE copyright line aligned with monorepo (`Rufat Nuriyev and ide-plugins contributors`).
+- Version aligned with JetBrains `0.2.4` release.
+
 ## 0.2.3
 
 - JetBrains: optional Python plugin dependency (Marketplace verification on IntelliJ IDEA without bundled Python).

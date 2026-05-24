@@ -1,0 +1,63 @@
+{
+  "name": "multiline-find",
+  "displayName": "Multiline Find",
+  "description": "PyCharm-like Ctrl+F: search multiline selections across the whole file in VS Code and Cursor.",
+  "version": "0.1.1",
+  "publisher": "rufat",
+  "license": "MIT",
+  "readme": "readme.md",
+  "changelog": "CHANGELOG.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rufatpro/ide-plugins.git"
+  },
+  "homepage": "https://github.com/rufatpro/ide-plugins",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "find",
+    "search",
+    "multiline",
+    "pycharm",
+    "cursor"
+  ],
+  "activationEvents": [
+    "onCommand:multilineFind.open"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "multilineFind.open",
+        "title": "Find (Multiline Selection)"
+      }
+    ],
+    "keybindings": [
+      {
+        "key": "ctrl+f",
+        "command": "-actions.find",
+        "when": "editorFocus"
+      },
+      {
+        "key": "ctrl+f",
+        "command": "multilineFind.open",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configurationDefaults": {
+      "editor.find.autoFindInSelection": "never",
+      "editor.find.seedSearchStringFromSelection": "selection"
+    }
+  },
+  "scripts": {
+    "package": "vsce package",
+    "lint": "echo \"No lint configured\""
+  },
+  "vsce": {
+    "baseContentUrl": "https://github.com/rufatpro/ide-plugins/tree/main/vscode/multiline-find"
+  }
+}
