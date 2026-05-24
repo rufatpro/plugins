@@ -59,7 +59,7 @@ build.bat
 Установка:
 
 ```powershell
-cursor --install-extension build/multiline-find-0.1.1.vsix
+cursor --install-extension build/multiline-find-0.1.3.vsix
 ```
 
 Или в Cursor/VS Code: Extensions → `...` → **Install from VSIX...**

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.3
+
+- Fixed no matches on CRLF files (Windows): normalize `\r\n` in the search string to `\n` before find (VS Code multiline search uses LF internally).
+
+## 0.1.2
+
+- Fixed no matches when the cursor was left at the end of the selection: collapse to **start**, not `active`, before opening find.
+
 ## 0.1.1
 
 - LICENSE copyright aligned with monorepo.
