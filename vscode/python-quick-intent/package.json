@@ -1,0 +1,97 @@
+{
+  "name": "python-quick-intent",
+  "displayName": "Python Quick Intent",
+  "description": "PyCharm-style intentions for Python in Cursor/VS Code: import, AI fix (Alt+Enter), and Quick Edit.",
+  "version": "0.4.0",
+  "publisher": "rufat",
+  "license": "MIT",
+  "readme": "readme.md",
+  "changelog": "CHANGELOG.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rufatpro/ide-plugins.git"
+  },
+  "homepage": "https://github.com/rufatpro/ide-plugins",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "python",
+    "pycharm",
+    "quick fix",
+    "intention",
+    "import",
+    "cursor",
+    "alt+enter"
+  ],
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pythonQuickIntent.showMenu",
+        "title": "Quick Intent: Show Menu",
+        "category": "Python Quick Intent"
+      },
+      {
+        "command": "pythonQuickIntent.addImport",
+        "title": "Quick Intent: Add Import",
+        "category": "Python Quick Intent"
+      },
+      {
+        "command": "pythonQuickIntent.fixWithAI",
+        "title": "Quick Intent: Fix with AI",
+        "category": "Python Quick Intent"
+      },
+      {
+        "command": "pythonQuickIntent.aiComplete",
+        "title": "Quick Intent: Quick Edit",
+        "category": "Python Quick Intent"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "pythonQuickIntent.showMenu",
+          "group": "pythonQuickIntent@1",
+          "when": "editorLangId == python"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "pythonQuickIntent.showMenu",
+        "key": "alt+enter",
+        "when": "editorLangId == python && editorTextFocus && !editorReadonly"
+      },
+      {
+        "command": "pythonQuickIntent.addImport",
+        "key": "alt+i",
+        "when": "editorLangId == python && editorTextFocus && !editorReadonly"
+      },
+      {
+        "command": "pythonQuickIntent.fixWithAI",
+        "key": "ctrl+alt+enter",
+        "when": "editorLangId == python && editorTextFocus"
+      },
+      {
+        "command": "pythonQuickIntent.aiComplete",
+        "key": "ctrl+shift+space",
+        "when": "editorLangId == python && editorTextFocus && !editorReadonly"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package",
+    "lint": "echo \"No lint configured\""
+  },
+  "vsce": {
+    "baseContentUrl": "https://github.com/rufatpro/ide-plugins/tree/main/vscode/python-quick-intent"
+  }
+}
