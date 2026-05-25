@@ -43,7 +43,16 @@ class DocstringReferenceProvider : PsiReferenceProvider() {
                     PyFileReference(element, match.rangeInElement, match.qualifiedName)
 
                 MatchType.SPHINX_FUNC ->
-                    PyFuncReference(element, match.rangeInElement, match.qualifiedName)
+                    PySymbolReference(element, match.rangeInElement, match.qualifiedName, SymbolKind.FUNC)
+
+                MatchType.SPHINX_CLASS ->
+                    PySymbolReference(element, match.rangeInElement, match.qualifiedName, SymbolKind.CLASS)
+
+                MatchType.SPHINX_DATA ->
+                    PySymbolReference(element, match.rangeInElement, match.qualifiedName, SymbolKind.DATA)
+
+                MatchType.SPHINX_ATTR ->
+                    PySymbolReference(element, match.rangeInElement, match.qualifiedName, SymbolKind.ATTR)
 
                 MatchType.SPHINX_MOD -> {
                     // Support both:

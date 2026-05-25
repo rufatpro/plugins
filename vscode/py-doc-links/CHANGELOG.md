@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.2.7
+
+- Added Sphinx navigation for classes and module-level variables: `:py:class:`, `:class:`, `:py:data:`, `:data:`, `:py:attr:`, `:attr:` (VS Code and JetBrains `PySymbolReference`).
+- `:py:func:` / `:func:` fall back to class and assignment when no `def` is found (e.g. `:py:func:`config.hosters_data`` → `hosters_data =` in `config.py`).
+- JetBrains: `CHANGELOG.md`, Marketplace `changeNotes`, updated `plugin.xml` / `build.gradle.kts` description.
+- Version aligned with JetBrains `0.2.7` release.
+
+## 0.2.6
+
+- File/module/function resolution prefers `main.py` (and other duplicates) in the **same directory** as the source file; de-prioritizes matches under `docs/`, `!to_tg/`, and `examples/`.
+- Version aligned with JetBrains `0.2.6` release.
+
 ## 0.2.5
 
 - Fixed README/Markdown rendering of Sphinx patterns with inner backticks (use `<code>` so `:py:func:`module.func`` displays correctly on Marketplace and in the extension Details view).

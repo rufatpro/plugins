@@ -8,14 +8,16 @@
 
     <description><![CDATA[
 
-        Makes file and function references in Python <b>docstrings</b> and <b>line comments</b>
-        <b>Ctrl+Clickable</b> — navigates to the referenced file or function in the editor.<br><br>
+        Makes file, function, class, and module-level variable references in Python
+        <b>docstrings</b> and <b>line comments</b> <b>Ctrl+Clickable</b>.<br><br>
 
         <b>Supported patterns:</b>
         <ul>
           <li><code>filename.py</code> — opens the file</li>
-          <li><code>:py:func:`module.func`</code> — navigates to the function</li>
-          <li><code>:func:`module.func`</code> — short Sphinx form</li>
+          <li><code>:py:func:`module.func`</code> — function (falls back to class/variable)</li>
+          <li><code>:py:class:`module.Class`</code> — class definition</li>
+          <li><code>:py:data:`module.var`</code> — module-level variable</li>
+          <li><code>:func:` / `:class:` / `:data:` — short Sphinx forms</li>
           <li><code>:py:mod:`module`</code> — opens the module file</li>
         </ul>
 
@@ -24,7 +26,9 @@
 def my_func():
     """
     See also: submodule.py
-    Calls :py:func:`submodule.process_submodule_data`.
+    Calls :py:func:`submodule.process_submodule_data`
+    Variable: :py:data:`config.hosters_data`
+    Class: :py:class:`ObjectWithProperties`
     """
         </pre>
 

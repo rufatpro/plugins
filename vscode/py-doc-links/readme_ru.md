@@ -18,6 +18,12 @@
 | <code>:func:`module.func`</code> | Определение функции |
 | <code>:func:`module.py.func`</code> | Определение функции (толерантная форма с именем файла) |
 | <code>:func:`func`</code> | Функция в текущем файле |
+| <code>:py:class:`module.Class`</code> | Определение класса |
+| <code>:class:`Class`</code> | Класс в текущем файле |
+| <code>:py:data:`module.var`</code> | Переменная модуля (`var = …`) |
+| <code>:data:`var`</code> | Переменная в текущем файле |
+| <code>:py:attr:`module.attr`</code> | То же, что data (имя на уровне модуля) |
+| <code>:py:func:`module.name`</code> | Если нет `def`, ищет также class и присваивание |
 | <code>:py:mod:`module`</code> | Файл модуля (`module.py`) |
 | <code>:py:mod:`module.py`</code> | Файл модуля (форма с именем файла) |
 
@@ -30,6 +36,8 @@ def example():
     Function: :py:func:`submodule.process_submodule_data`
     Function (filename form): :py:func:`submodule.py.process_submodule_data`
     Function (current module): :func:`run_main_flow`
+    Variable: :py:data:`config.hosters_data`
+    Class: :py:class:`ObjectWithProperties`
     Module: :py:mod:`submodule`
     Module (filename form): :py:mod:`submodule.py`
     """
@@ -56,12 +64,12 @@ build.bat
 
 Итоговый файл пакета:
 
-`vscode/py-doc-links/build/py-doc-links-0.2.5.vsix`
+`vscode/py-doc-links/build/py-doc-links-0.2.7.vsix`
 
 ## Ограничения
 
 - Поиск функций эвристический (`module.func` -> `module.py` + `def func(...)`).
-- Если в workspace несколько файлов с одинаковым именем, берётся первый найденный.
+- Если в workspace несколько файлов с одинаковым именем, приоритет у файла в той же папке, что и исходник; копии в `docs/` и похожих каталогах понижаются в приоритете.
 - Нет интеграции rename/find-usages для таких текстовых ссылок.
 - Работает только в Python-файлах (`language: python`).
 

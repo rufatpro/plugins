@@ -3,11 +3,19 @@ const vscode = require("vscode");
 
 /**
  * @typedef {Object} RefMatch
- * @property {"file"|"func"|"mod"} kind
+ * @property {"file"|"func"|"class"|"data"|"attr"|"mod"} kind
  * @property {string} value
  * @property {number} start
  * @property {number} end
  */
+
+/** @type {Record<string, string[]>} */
+const SYMBOL_SEARCH_ORDER = {
+  func: ["func", "class", "data"],
+  class: ["class", "func", "data"],
+  data: ["data", "attr", "class"],
+  attr: ["attr", "data", "class"],
+};
 
 function activate(context) {
   const selector = [{ language: "python", scheme: "file" }];
@@ -16,7 +24,7 @@ function activate(context) {
 
   const infoCmd = vscode.commands.registerCommand("pyDocLinks.showSupportedFormats", async () => {
     await vscode.window.showInformationMessage(
-      "Py Doc Links formats: filename.py, :py:func:`module.func`, :func:`module.func`, :func:`func`, :py:mod:`module`"
+      "Py Doc Links: filename.py, :py:func:/:py:class:/:py:data:/:py:mod: (and :func:/:class:/:data: short forms)"
     );
   });
 
@@ -60,11 +68,23 @@ async function resolveReference(sourceDocument, ref) {
     return new vscode.Location(targetFile, new vscode.Position(0, 0));
   }
 
-  // kind === "func"
-  const parsed = parseFunctionRef(ref.value);
+  if (ref.kind === "func" || ref.kind === "class" || ref.kind === "data" || ref.kind === "attr") {
+    return resolveSymbolReference(sourceDocument, ref);
+  }
+
+  return undefined;
+}
+
+/**
+ * @param {vscode.TextDocument} sourceDocument
+ * @param {RefMatch} ref
+ * @returns {Promise<vscode.Location | undefined>}
+ */
+async function resolveSymbolReference(sourceDocument, ref) {
+  const parsed = parseQualifiedSymbolRef(ref.value);
   if (!parsed) return undefined;
 
-  const { fileName, funcName, currentFile } = parsed;
+  const { fileName, symbolName, currentFile } = parsed;
   const targetUri = currentFile
     ? sourceDocument.uri
     : await resolveFileInWorkspace(sourceDocument, fileName);
@@ -74,12 +94,12 @@ async function resolveReference(sourceDocument, ref) {
     ? sourceDocument
     : await vscode.workspace.openTextDocument(targetUri);
 
-  const funcLoc = findFunctionLocation(targetDoc, funcName);
-  if (funcLoc) {
-    return new vscode.Location(targetUri, funcLoc);
+  const kinds = SYMBOL_SEARCH_ORDER[ref.kind] ?? SYMBOL_SEARCH_ORDER.func;
+  const symbolLoc = findSymbolLocation(targetDoc, symbolName, kinds);
+  if (symbolLoc) {
+    return new vscode.Location(targetUri, symbolLoc);
   }
 
-  // Fallback: open file even if function wasn't found
   return new vscode.Location(targetUri, new vscode.Position(0, 0));
 }
 
@@ -103,6 +123,24 @@ function parseReferences(line) {
   });
   collectGroupMatches(line, /:func:`([\w]+(?:\.[\w]+)*)`/g, (value, start, end) => {
     add("func", value, start, end);
+  });
+  collectGroupMatches(line, /:py:class:`([\w]+(?:\.[\w]+)*)`/g, (value, start, end) => {
+    add("class", value, start, end);
+  });
+  collectGroupMatches(line, /:class:`([\w]+(?:\.[\w]+)*)`/g, (value, start, end) => {
+    add("class", value, start, end);
+  });
+  collectGroupMatches(line, /:py:data:`([\w]+(?:\.[\w]+)*)`/g, (value, start, end) => {
+    add("data", value, start, end);
+  });
+  collectGroupMatches(line, /:data:`([\w]+(?:\.[\w]+)*)`/g, (value, start, end) => {
+    add("data", value, start, end);
+  });
+  collectGroupMatches(line, /:py:attr:`([\w]+(?:\.[\w]+)*)`/g, (value, start, end) => {
+    add("attr", value, start, end);
+  });
+  collectGroupMatches(line, /:attr:`([\w]+(?:\.[\w]+)*)`/g, (value, start, end) => {
+    add("attr", value, start, end);
   });
   collectGroupMatches(line, /:py:mod:`([\w]+(?:\.[\w]+)*)`/g, (value, start, end) => {
     add("mod", value, start, end);
@@ -136,21 +174,19 @@ function collectGroupMatches(line, regex, onMatch) {
 
 /**
  * @param {string} raw
- * @returns {{fileName: string, funcName: string, currentFile: boolean} | undefined}
+ * @returns {{fileName: string, symbolName: string, currentFile: boolean} | undefined}
  */
-function parseFunctionRef(raw) {
+function parseQualifiedSymbolRef(raw) {
   const parts = raw.split(".").filter(Boolean);
   if (parts.length === 0) return undefined;
 
-  const funcName = parts[parts.length - 1];
-  if (!funcName) return undefined;
+  const symbolName = parts[parts.length - 1];
+  if (!symbolName) return undefined;
 
-  // :func:`run_main_flow` -> current file
   if (parts.length === 1) {
-    return { fileName: "", funcName, currentFile: true };
+    return { fileName: "", symbolName, currentFile: true };
   }
 
-  // Tolerant filename form: module.py.func
   let moduleName;
   if (parts.length >= 3 && parts[parts.length - 2].toLowerCase() === "py") {
     moduleName = parts[parts.length - 3];
@@ -159,22 +195,34 @@ function parseFunctionRef(raw) {
   }
   if (!moduleName) return undefined;
 
-  return { fileName: `${moduleName}.py`, funcName, currentFile: false };
+  return { fileName: `${moduleName}.py`, symbolName, currentFile: false };
 }
 
 /**
  * @param {vscode.TextDocument} doc
- * @param {string} funcName
+ * @param {string} symbolName
+ * @param {string[]} kinds
  * @returns {vscode.Position | undefined}
  */
-function findFunctionLocation(doc, funcName) {
-  const escaped = escapeRegExp(funcName);
-  const re = new RegExp(`^\\s*(?:async\\s+def|def)\\s+${escaped}\\s*\\(`);
-  for (let i = 0; i < doc.lineCount; i += 1) {
-    const line = doc.lineAt(i).text;
-    if (re.test(line)) {
-      const col = Math.max(0, line.indexOf(funcName));
-      return new vscode.Position(i, col);
+function findSymbolLocation(doc, symbolName, kinds) {
+  const escaped = escapeRegExp(symbolName);
+  /** @type {Record<string, RegExp>} */
+  const patterns = {
+    func: new RegExp(`^\\s*(?:async\\s+)?def\\s+${escaped}\\s*\\(`),
+    class: new RegExp(`^\\s*class\\s+${escaped}\\s*[\\(:]`),
+    data: new RegExp(`^\\s*${escaped}\\s*(?::[^=]+)?\\s*=`),
+    attr: new RegExp(`^\\s*${escaped}\\s*(?::[^=]+)?\\s*=`),
+  };
+
+  for (const kind of kinds) {
+    const re = patterns[kind];
+    if (!re) continue;
+    for (let i = 0; i < doc.lineCount; i += 1) {
+      const line = doc.lineAt(i).text;
+      if (re.test(line)) {
+        const col = Math.max(0, line.indexOf(symbolName));
+        return new vscode.Position(i, col);
+      }
     }
   }
   return undefined;
@@ -186,6 +234,17 @@ function findFunctionLocation(doc, funcName) {
  * @returns {Promise<vscode.Uri | undefined>}
  */
 async function resolveFileInWorkspace(sourceDocument, fileName) {
+  const sourceDir = path.dirname(sourceDocument.uri.fsPath);
+  const siblingUri = vscode.Uri.file(path.join(sourceDir, fileName));
+  try {
+    const stat = await vscode.workspace.fs.stat(siblingUri);
+    if (stat.type === vscode.FileType.File) {
+      return siblingUri;
+    }
+  } catch {
+    // sibling not present — search workspace
+  }
+
   const workspaceFolder = vscode.workspace.getWorkspaceFolder(sourceDocument.uri);
   const include = workspaceFolder
     ? new vscode.RelativePattern(workspaceFolder, `**/${fileName}`)
@@ -194,9 +253,99 @@ async function resolveFileInWorkspace(sourceDocument, fileName) {
   const found = await vscode.workspace.findFiles(include, exclude, 50);
   if (found.length === 0) return undefined;
 
-  // Prefer exact basename match first.
-  const exact = found.find((u) => path.basename(u.fsPath) === fileName);
-  return exact ?? found[0];
+  return pickBestFileCandidate(sourceDocument, found);
+}
+
+/**
+ * When several files share a basename (e.g. many main.py), prefer the copy next
+ * to the source file and de-prioritize docs/examples trees.
+ *
+ * @param {vscode.TextDocument} sourceDocument
+ * @param {vscode.Uri[]} candidates
+ * @returns {vscode.Uri}
+ */
+function pickBestFileCandidate(sourceDocument, candidates) {
+  const sourceDir = path.dirname(sourceDocument.uri.fsPath);
+  let best = candidates[0];
+  let bestScore = Number.NEGATIVE_INFINITY;
+
+  for (const uri of candidates) {
+    const score = scoreFileCandidate(sourceDir, uri.fsPath);
+    if (score > bestScore) {
+      bestScore = score;
+      best = uri;
+    }
+  }
+  return best;
+}
+
+/** @type {string[]} */
+const DEPRIORITIZED_PATH_SEGMENTS = [
+  "/docs/",
+  "\\docs\\",
+  "/!to_tg/",
+  "\\!to_tg\\",
+  "/examples/",
+  "\\examples\\",
+];
+
+/**
+ * @param {string} sourceDir
+ * @param {string} candidatePath
+ * @returns {number}
+ */
+function scoreFileCandidate(sourceDir, candidatePath) {
+  const anchorDir = normalizePath(sourceDir);
+  const candidate = normalizePath(candidatePath);
+  const candidateDir = normalizePath(path.dirname(candidatePath));
+
+  let score = 0;
+
+  if (candidateDir === anchorDir) {
+    score += 10_000;
+  }
+
+  if (candidate.startsWith(`${anchorDir}/`)) {
+    score += 1_000;
+  }
+
+  for (const segment of DEPRIORITIZED_PATH_SEGMENTS) {
+    if (candidate.includes(normalizePath(segment))) {
+      score -= 2_000;
+    }
+  }
+
+  score += commonPrefixLength(anchorDir, candidateDir);
+
+  const relDir = path.relative(sourceDir, path.dirname(candidatePath));
+  const hops = relDir.split(/[/\\]/).filter((part) => part && part !== "." && part !== "..").length;
+  score -= hops * 50;
+
+  return score;
+}
+
+/**
+ * @param {string} value
+ * @returns {string}
+ */
+function normalizePath(value) {
+  return value.replace(/\\/g, "/").toLowerCase();
+}
+
+/**
+ * @param {string} a
+ * @param {string} b
+ * @returns {number}
+ */
+function commonPrefixLength(a, b) {
+  const normA = normalizePath(a);
+  const normB = normalizePath(b);
+  const limit = Math.min(normA.length, normB.length);
+  let i = 0;
+  while (i < limit && normA[i] === normB[i]) {
+    i += 1;
+  }
+  return i;
 }
 
 function lastSegment(value) {

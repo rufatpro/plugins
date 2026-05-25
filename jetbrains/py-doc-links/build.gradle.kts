@@ -40,9 +40,16 @@ intellijPlatform {
         id = "com.pydoclinks"
         version = project.version.toString()
         description =
-            "Makes file and function references in Python docstrings and comments Ctrl+Clickable. " +
-            "Supports filename.py patterns and Sphinx :py:func:`module.func` / :py:mod:`module` roles. " +
+            "Makes file, function, class, and module-level variable references in Python docstrings " +
+            "and comments Ctrl+Clickable. Supports filename.py, Sphinx :py:func:, :py:class:, " +
+            ":py:data:, :py:mod: (and short :func:/:class:/:data: forms). " +
             "Developed with AI assistance."
+        changeNotes = """
+            <ul>
+              <li><b>0.2.7</b> — :py:class:, :py:data:, :py:attr:; :py:func: fallback to class/variable</li>
+              <li><b>0.2.6</b> — prefer same-folder files for duplicate names (e.g. main.py)</li>
+            </ul>
+        """.trimIndent()
         ideaVersion {
             sinceBuild = "243"
         }

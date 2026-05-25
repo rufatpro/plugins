@@ -32,6 +32,8 @@ def example():
     Function: :py:func:`submodule.process_submodule_data`
     Function (filename form): :py:func:`submodule.py.process_submodule_data`
     Function (current module): :func:`run_main_flow`
+    Variable: :py:data:`config.hosters_data`
+    Class: :py:class:`ObjectWithProperties`
     Module: :py:mod:`submodule`
     Module (filename form): :py:mod:`submodule.py`
     """
@@ -50,6 +52,10 @@ Then **Ctrl+Click** (or use Go to Declaration) on a supported reference.
 | <code>:func:`module.func`</code> | Function definition (short form) |
 | <code>:func:`module.py.func`</code> | Function definition (tolerant filename form) |
 | <code>:func:`func`</code> | Function in the current module/file |
+| <code>:py:class:`module.Class`</code> | Class definition |
+| <code>:class:`Class`</code> | Class in the current file |
+| <code>:py:data:`module.var`</code> | Module-level variable |
+| <code>:py:func:`module.name`</code> | Falls back to class/variable if not a `def` |
 | <code>:py:mod:`module`</code> | Module file (`module.py`) |
 | <code>:py:mod:`module.py`</code> | Module file (filename form) |
 
@@ -58,13 +64,13 @@ Then **Ctrl+Click** (or use Go to Declaration) on a supported reference.
 The plugin registers a **PsiReferenceContributor** for Python PSI elements and builds references from text matches:
 
 1. Scans Python string literals (docstrings) and line comments.
-2. Matches supported patterns (file / Sphinx function / Sphinx module).
+2. Matches supported patterns (file / Sphinx function, class, data, module).
 3. Resolves targets via project indexes (`FilenameIndex`) and PSI traversal.
 4. Returns `PsiReference` so standard IDE navigation works.
 
 ## Limitations
 
-- **Filename-based resolution**: `filename.py` resolves by file name in project scope.
+- **Filename-based resolution**: `filename.py` resolves by file name in project scope; same-folder siblings are preferred over duplicate names under `docs/` and similar trees.
 - **Function resolution is heuristic**: `module.func` maps to `module.py` + `def func(...)`.
 - **No rename/find-usages integration yet** for these textual references.
 - **Depends on IDE PSI behavior**: future platform changes may require updates.

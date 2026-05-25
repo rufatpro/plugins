@@ -32,6 +32,8 @@ def example():
     Function: :py:func:`submodule.process_submodule_data`
     Function (filename form): :py:func:`submodule.py.process_submodule_data`
     Function (current module): :func:`run_main_flow`
+    Variable: :py:data:`config.hosters_data`
+    Class: :py:class:`ObjectWithProperties`
     Module: :py:mod:`submodule`
     Module (filename form): :py:mod:`submodule.py`
     """
@@ -50,6 +52,10 @@ def example():
 | <code>:func:`module.func`</code> | Определение функции (короткая форма) |
 | <code>:func:`module.py.func`</code> | Определение функции (толерантная форма с именем файла) |
 | <code>:func:`func`</code> | Функция в текущем модуле/файле |
+| <code>:py:class:`module.Class`</code> | Определение класса |
+| <code>:class:`Class`</code> | Класс в текущем файле |
+| <code>:py:data:`module.var`</code> | Переменная модуля |
+| <code>:py:func:`module.name`</code> | Если нет `def`, ищет class и присваивание |
 | <code>:py:mod:`module`</code> | Файл модуля (`module.py`) |
 | <code>:py:mod:`module.py`</code> | Файл модуля (форма с именем файла) |
 
@@ -58,13 +64,13 @@ def example():
 Плагин регистрирует **PsiReferenceContributor** для Python PSI-элементов и создаёт ссылки из текстовых совпадений:
 
 1. Сканирует Python string literals (docstring) и line comments.
-2. Находит поддерживаемые паттерны (файл / Sphinx function / Sphinx module).
+2. Находит поддерживаемые паттерны (файл / Sphinx function, class, data, module).
 3. Разрешает цель через индексы проекта (`FilenameIndex`) и обход PSI.
 4. Возвращает `PsiReference`, после чего работает стандартная навигация IDE.
 
 ## Ограничения
 
-- **Разрешение по имени файла**: `filename.py` ищется по имени файла в рамках project scope.
+- **Разрешение по имени файла**: `filename.py` ищется по имени в project scope; файл в той же папке, что и исходник, предпочтительнее дубликатов в `docs/` и похожих каталогах.
 - **Разрешение функций эвристическое**: `module.func` сопоставляется как `module.py` + `def func(...)`.
 - Пока нет полноценной интеграции с **rename/find usages** для таких текстовых ссылок.
 - Поведение зависит от PSI платформы IDE; при обновлениях JetBrains могут потребоваться правки.

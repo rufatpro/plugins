@@ -23,9 +23,9 @@ class PyFileReference(
             fileName,
             GlobalSearchScope.projectScope(project),
         )
-        return vFiles.firstOrNull()?.let { vf ->
-            PsiManager.getInstance(project).findFile(vf)
-        }
+        val anchor = element.containingFile?.virtualFile
+        val best = FileResolvePriority.best(anchor, vFiles) ?: return null
+        return PsiManager.getInstance(project).findFile(best)
     }
 
     override fun getVariants(): Array<Any> = emptyArray()
