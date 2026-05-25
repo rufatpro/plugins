@@ -2,7 +2,7 @@
   "name": "py-doc-links",
   "displayName": "Python Doc Links",
   "description": "Ctrl+Click navigation for Python docstring/comment references (filename.py, :py:func:, :func:, :py:mod:) in VS Code and Cursor.",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "publisher": "rufat",
   "license": "MIT",
   "readme": "readme.md",

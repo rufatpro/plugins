@@ -4,7 +4,7 @@
 
 **Плагин JetBrains** для PyCharm, IntelliJ IDEA, WebStorm и других JetBrains IDE.
 
-Решает распространённое ограничение: ссылки на Python-файлы и функции внутри **docstring** и **комментариев** обычно остаются обычным текстом. Плагин добавляет Ctrl+Click-навигацию для поддерживаемых паттернов, например `submodule.py` и `:py:func:`submodule.process_submodule_data``.
+Решает распространённое ограничение: ссылки на Python-файлы и функции внутри **docstring** и **комментариев** обычно остаются обычным текстом. Плагин добавляет Ctrl+Click-навигацию для поддерживаемых паттернов, например `submodule.py` и <code>:py:func:`submodule.process_submodule_data`</code>.
 
 > **Только JetBrains** — не устанавливается в VS Code и десктопный Cursor.  
 > Разработан с помощью AI (Cursor / LLM). Часть монорепозитория [ide-plugins](https://github.com/rufatpro/ide-plugins).
@@ -45,13 +45,13 @@ def example():
 | Паттерн | Переход к |
 |--------|-----------|
 | `filename.py` | Файл в проекте |
-| `:py:func:`module.func`` | Определение функции |
-| `:py:func:`module.py.func`` | Определение функции (толерантная форма с именем файла) |
-| `:func:`module.func`` | Определение функции (короткая форма) |
-| `:func:`module.py.func`` | Определение функции (толерантная форма с именем файла) |
-| `:func:`func`` | Функция в текущем модуле/файле |
-| `:py:mod:`module`` | Файл модуля (`module.py`) |
-| `:py:mod:`module.py`` | Файл модуля (форма с именем файла) |
+| <code>:py:func:`module.func`</code> | Определение функции |
+| <code>:py:func:`module.py.func`</code> | Определение функции (толерантная форма с именем файла) |
+| <code>:func:`module.func`</code> | Определение функции (короткая форма) |
+| <code>:func:`module.py.func`</code> | Определение функции (толерантная форма с именем файла) |
+| <code>:func:`func`</code> | Функция в текущем модуле/файле |
+| <code>:py:mod:`module`</code> | Файл модуля (`module.py`) |
+| <code>:py:mod:`module.py`</code> | Файл модуля (форма с именем файла) |
 
 ## Как работает
 

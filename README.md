@@ -10,9 +10,10 @@ Each plugin lives in its own directory with a `readme.md`.
 | Plugin | Platform | Version | Summary | Docs |
 |--------|----------|---------|---------|------|
 | [AI Chat File Links](jetbrains/ai-chat-file-links/) | JetBrains | 0.3.1 | Fixes file links from **AI Chat** not opening in the editor (PyCharm, IntelliJ, WebStorm, …) | [EN](jetbrains/ai-chat-file-links/readme.md) · [RU](jetbrains/ai-chat-file-links/readme_ru.md) |
-| [Python Doc Links](jetbrains/py-doc-links/) | JetBrains | 0.2.4 | Adds Ctrl+Click navigation for file/function references in Python **docstrings** and **comments** (`filename.py`, `:py:func:`, `:func:`, `:py:mod:`) | [EN](jetbrains/py-doc-links/readme.md) · [RU](jetbrains/py-doc-links/readme_ru.md) |
-| [Python Doc Links](vscode/py-doc-links/) | VS Code / Cursor | 0.2.4 | Adds Ctrl+Click navigation for Python docstring/comment references (`filename.py`, `:py:func:`, `:func:`, `:py:mod:`) | [EN](vscode/py-doc-links/readme.md) · [RU](vscode/py-doc-links/readme_ru.md) |
+| [Python Doc Links](jetbrains/py-doc-links/) | JetBrains | 0.2.5 | Adds Ctrl+Click navigation for file/function references in Python **docstrings** and **comments** (`filename.py`, `:py:func:`, `:func:`, `:py:mod:`) | [EN](jetbrains/py-doc-links/readme.md) · [RU](jetbrains/py-doc-links/readme_ru.md) |
+| [Python Doc Links](vscode/py-doc-links/) | VS Code / Cursor | 0.2.5 | Adds Ctrl+Click navigation for Python docstring/comment references (`filename.py`, `:py:func:`, `:func:`, `:py:mod:`) | [EN](vscode/py-doc-links/readme.md) · [RU](vscode/py-doc-links/readme_ru.md) |
 | [Multiline Find](vscode/multiline-find/) | VS Code / Cursor | 0.1.3 | PyCharm-like **Ctrl+F** for multiline selections; **F3** searches the whole file | [EN](vscode/multiline-find/readme.md) · [RU](vscode/multiline-find/readme_ru.md) |
+| [Python Quick Intent](vscode/python-quick-intent/) | VS Code / Cursor | 0.4.0 | PyCharm-style **Alt+Enter** intentions for Python: import, Fix with AI, Quick Edit in Cursor | [EN](vscode/python-quick-intent/readme.md) · [RU](vscode/python-quick-intent/readme_ru.md) |
 
 > VS Code/Cursor extensions live under `vscode/<name>/`.
 

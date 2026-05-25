@@ -4,7 +4,7 @@
 
 **Расширение VS Code / Cursor**, которое добавляет переход к определению из ссылок в Python docstring/комментариях.
 
-Делает навигацию по `submodule.py`, `:py:func:`submodule.process_submodule_data``, `:func:`run_main_flow`` через Ctrl+Click (или F12).
+Делает навигацию по `submodule.py`, <code>:py:func:`submodule.process_submodule_data`</code>, <code>:func:`run_main_flow`</code> через Ctrl+Click (или F12).
 
 > Разработано с помощью AI (Cursor / LLM). Часть монорепозитория [ide-plugins](https://github.com/rufatpro/ide-plugins).
 
@@ -13,13 +13,13 @@
 | Паттерн | Переход к |
 |--------|-----------|
 | `filename.py` | Файл в workspace |
-| `:py:func:`module.func`` | Определение функции |
-| `:py:func:`module.py.func`` | Определение функции (толерантная форма с именем файла) |
-| `:func:`module.func`` | Определение функции |
-| `:func:`module.py.func`` | Определение функции (толерантная форма с именем файла) |
-| `:func:`func`` | Функция в текущем файле |
-| `:py:mod:`module`` | Файл модуля (`module.py`) |
-| `:py:mod:`module.py`` | Файл модуля (форма с именем файла) |
+| <code>:py:func:`module.func`</code> | Определение функции |
+| <code>:py:func:`module.py.func`</code> | Определение функции (толерантная форма с именем файла) |
+| <code>:func:`module.func`</code> | Определение функции |
+| <code>:func:`module.py.func`</code> | Определение функции (толерантная форма с именем файла) |
+| <code>:func:`func`</code> | Функция в текущем файле |
+| <code>:py:mod:`module`</code> | Файл модуля (`module.py`) |
+| <code>:py:mod:`module.py`</code> | Файл модуля (форма с именем файла) |
 
 ## Пример
 
@@ -56,7 +56,7 @@ build.bat
 
 Итоговый файл пакета:
 
-`vscode/py-doc-links/build/py-doc-links-0.2.4.vsix`
+`vscode/py-doc-links/build/py-doc-links-0.2.5.vsix`
 
 ## Ограничения
 

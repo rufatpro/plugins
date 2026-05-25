@@ -4,7 +4,7 @@
 
 **JetBrains plugin** for PyCharm, IntelliJ IDEA, WebStorm, and other JetBrains IDEs.
 
-Fixes a common limitation: Python references inside **docstrings** and **line comments** are usually plain text in PyCharm. This plugin adds Ctrl+Click navigation for supported patterns such as `submodule.py` and `:py:func:`submodule.process_submodule_data``.
+Fixes a common limitation: Python references inside **docstrings** and **line comments** are usually plain text in PyCharm. This plugin adds Ctrl+Click navigation for supported patterns such as `submodule.py` and <code>:py:func:`submodule.process_submodule_data`</code>.
 
 > **JetBrains only** — does not install in VS Code or the Cursor desktop app.  
 > Developed with AI assistance (Cursor / LLM). Part of the [ide-plugins](https://github.com/rufatpro/ide-plugins) monorepo.
@@ -45,13 +45,13 @@ Then **Ctrl+Click** (or use Go to Declaration) on a supported reference.
 | Pattern | Resolves to |
 |--------|-------------|
 | `filename.py` | File in project |
-| `:py:func:`module.func`` | Function definition |
-| `:py:func:`module.py.func`` | Function definition (tolerant filename form) |
-| `:func:`module.func`` | Function definition (short form) |
-| `:func:`module.py.func`` | Function definition (tolerant filename form) |
-| `:func:`func`` | Function in the current module/file |
-| `:py:mod:`module`` | Module file (`module.py`) |
-| `:py:mod:`module.py`` | Module file (filename form) |
+| <code>:py:func:`module.func`</code> | Function definition |
+| <code>:py:func:`module.py.func`</code> | Function definition (tolerant filename form) |
+| <code>:func:`module.func`</code> | Function definition (short form) |
+| <code>:func:`module.py.func`</code> | Function definition (tolerant filename form) |
+| <code>:func:`func`</code> | Function in the current module/file |
+| <code>:py:mod:`module`</code> | Module file (`module.py`) |
+| <code>:py:mod:`module.py`</code> | Module file (filename form) |
 
 ## How it works
 

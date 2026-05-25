@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.5
+
+- Fixed README/Markdown rendering of Sphinx patterns with inner backticks (use `<code>` so `:py:func:`module.func`` displays correctly on Marketplace and in the extension Details view).
+- Version aligned with JetBrains `0.2.5` release.
+
 ## 0.2.4
 
 - LICENSE copyright line aligned with monorepo (`Rufat Nuriyev and ide-plugins contributors`).
@@ -20,7 +25,7 @@
 
 ## 0.2.0
 
-- Added tolerant parsing/resolve for `:py:func:`module.py.func`` and `:func:`module.py.func``.
+- Added tolerant parsing/resolve for <code>:py:func:`module.py.func`</code> and <code>:func:`module.py.func`</code>.
 - Added support for `:func:`func`` in the current file.
 - Improved matcher priority so Sphinx references win over plain `filename.py` overlaps.
 - Updated examples and docs to use `main.py` / `submodule.py`.
@@ -30,9 +35,9 @@
 - Initial release.
 - Added go-to-definition for Python docstring/comment references:
   - `filename.py`
-  - `:py:func:`module.func``
-  - `:py:func:`module.py.func`` (tolerant)
-  - `:func:`module.func``
-  - `:func:`module.py.func`` (tolerant)
-  - `:func:`func`` (current file)
-  - `:py:mod:`module`` / `:py:mod:`module.py``
+  - <code>:py:func:`module.func`</code>
+  - <code>:py:func:`module.py.func`</code> (tolerant)
+  - <code>:func:`module.func`</code>
+  - <code>:func:`module.py.func`</code> (tolerant)
+  - <code>:func:`func`</code> (current file)
+  - <code>:py:mod:`module`</code> / <code>:py:mod:`module.py`</code>

@@ -4,7 +4,7 @@
 
 **VS Code / Cursor extension** that enables go-to-definition from Python docstring/comment references.
 
-It makes references like `submodule.py`, `:py:func:`submodule.process_submodule_data``, and `:func:`run_main_flow`` navigable with Ctrl+Click (or F12).
+It makes references like `submodule.py`, <code>:py:func:`submodule.process_submodule_data`</code>, and <code>:func:`run_main_flow`</code> navigable with Ctrl+Click (or F12).
 
 > Developed with AI assistance (Cursor / LLM). Part of the [ide-plugins](https://github.com/rufatpro/ide-plugins) monorepo.
 
@@ -13,13 +13,13 @@ It makes references like `submodule.py`, `:py:func:`submodule.process_submodule_
 | Pattern | Resolves to |
 |--------|-------------|
 | `filename.py` | File in workspace |
-| `:py:func:`module.func`` | Function definition |
-| `:py:func:`module.py.func`` | Function definition (tolerant filename form) |
-| `:func:`module.func`` | Function definition |
-| `:func:`module.py.func`` | Function definition (tolerant filename form) |
-| `:func:`func`` | Function in the current file |
-| `:py:mod:`module`` | Module file (`module.py`) |
-| `:py:mod:`module.py`` | Module file (filename form) |
+| <code>:py:func:`module.func`</code> | Function definition |
+| <code>:py:func:`module.py.func`</code> | Function definition (tolerant filename form) |
+| <code>:func:`module.func`</code> | Function definition |
+| <code>:func:`module.py.func`</code> | Function definition (tolerant filename form) |
+| <code>:func:`func`</code> | Function in the current file |
+| <code>:py:mod:`module`</code> | Module file (`module.py`) |
+| <code>:py:mod:`module.py`</code> | Module file (filename form) |
 
 ## Example
 
@@ -56,7 +56,7 @@ Then install the generated `.vsix`.
 
 Resulting package file:
 
-`vscode/py-doc-links/build/py-doc-links-0.2.4.vsix`
+`vscode/py-doc-links/build/py-doc-links-0.2.5.vsix`
 
 ## Limitations
 
