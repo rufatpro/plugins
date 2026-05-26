@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.4
+
+- Cursor referral link in readme **Author** / **Автор** section.
+
 ## 0.1.3
 
 - Fixed no matches on CRLF files (Windows): normalize `\r\n` in the search string to `\n` before find (VS Code multiline search uses LF internally).

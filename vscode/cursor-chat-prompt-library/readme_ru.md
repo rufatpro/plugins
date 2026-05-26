@@ -37,7 +37,7 @@
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-0.4.2.vsix
+cursor --install-extension build\cursor-chat-prompt-library-0.4.3.vsix
 ```
 
 Перезагрузите окно.

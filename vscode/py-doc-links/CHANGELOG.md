@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.8
+
+- Cursor referral link in readme **Author** / **Автор** section.
+
 ## 0.2.7
 
 - Added Sphinx navigation for classes and module-level variables: `:py:class:`, `:class:`, `:py:data:`, `:data:`, `:py:attr:`, `:attr:` (VS Code and JetBrains `PySymbolReference`).

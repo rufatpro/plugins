@@ -2,7 +2,7 @@
   "name": "cursor-chat-prompt-library",
   "displayName": "Cursor Chat Prompt Library",
   "description": "620 prompt templates for Cursor AI chat — 31 categories × 20 (Website, Python, Next.js, Docker, Testing, Vue, Laravel, AWS, Kubernetes, GraphQL, and more). QuickPick → insert into chat.",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "publisher": "rufat",
   "license": "MIT",
   "readme": "readme.md",

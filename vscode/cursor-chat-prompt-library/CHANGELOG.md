@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.3
+
+- Cursor referral link in readme **Author** / **Автор** section.
+
 ## 0.4.2
 
 - Author block aligned with other ide-plugins extensions (`## Author` / `## Автор`, link [Rufat](https://rufat.top/)).

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.4 — 2026-05-26
+
+- Cursor referral link in readme **Author** / **Автор** section.
+
 ## 0.1.3 — 2026-05-26
 
 - Display name: **TypeScript Doc Links** (package id remains `ts-doc-links`).

@@ -58,7 +58,7 @@ Then install the generated `.vsix`.
 
 1. **F1** / **Ctrl+Shift+P** → `Install from VSIX`
 2. Select **Extensions: Install from VSIX...**
-3. Pick `vscode/ts-doc-links/build/ts-doc-links-0.1.3.vsix`
+3. Pick `vscode/ts-doc-links/build/ts-doc-links-0.1.4.vsix`
 
 ## Limitations
 
