@@ -5,6 +5,8 @@
 Monorepo of IDE plugins and extensions — **JetBrains**, **VS Code**, and more.  
 Each plugin lives in its own directory with a `readme.md`.
 
+**Research:** [Possible plugins for Cursor](../possible_plugins/possible_plugins.md) — community gaps and 10 plugin ideas (RU).
+
 ## Plugin catalog
 
 | Plugin | Platform | Version | Summary | Docs |
@@ -14,13 +16,14 @@ Each plugin lives in its own directory with a `readme.md`.
 | [Python Doc Links](vscode/py-doc-links/) | VS Code / Cursor | 0.2.7 | Ctrl+Click for Python docstring/comment references (`filename.py`, `:py:func:`, `:py:class:`, `:py:data:`, `:py:mod:`, short forms) | [EN](vscode/py-doc-links/readme.md) · [RU](vscode/py-doc-links/readme_ru.md) |
 | [Multiline Find](vscode/multiline-find/) | VS Code / Cursor | 0.1.3 | PyCharm-like **Ctrl+F** for multiline selections; **F3** searches the whole file | [EN](vscode/multiline-find/readme.md) · [RU](vscode/multiline-find/readme_ru.md) |
 | [Python Quick Intent](vscode/python-quick-intent/) | VS Code / Cursor | 0.4.0 | PyCharm-style **Alt+Enter** intentions for Python: import, Fix with AI, Quick Edit in Cursor | [EN](vscode/python-quick-intent/readme.md) · [RU](vscode/python-quick-intent/readme_ru.md) |
+| [TypeScript Doc Links](vscode/ts-doc-links/) | VS Code / Cursor | 0.1.3 | Ctrl+Click in TS/JS **comments** / **JSDoc** (`@see`, `{@link ./file.ts}`, `File:`, `// See`, `@/` aliases) | [EN](vscode/ts-doc-links/readme.md) · [RU](vscode/ts-doc-links/readme_ru.md) |
 
 > VS Code/Cursor extensions live under `vscode/<name>/`.
 
 ## Repository layout
 
 ```
-ide-plugins/            ← git root
+ide-plugins/            ← git root (plugins)
   README.md             # index (EN)
   README_RU.md          # index (RU)
   license               # MIT
@@ -34,6 +37,7 @@ ide-plugins/            ← git root
       readme.md
       package.json
       src/
+../possible_plugins/    # research (plugin ideas for Cursor)
 ```
 
 ## License

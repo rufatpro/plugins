@@ -1,0 +1,50 @@
+{
+  "name": "ts-doc-links",
+  "displayName": "TypeScript Doc Links",
+  "description": "Ctrl+Click navigation for TypeScript/JavaScript doc and comment references (@see, {@link ./file.ts}, File:, // See, path aliases) in VS Code and Cursor.",
+  "version": "0.1.3",
+  "publisher": "rufat",
+  "license": "MIT",
+  "readme": "readme.md",
+  "changelog": "CHANGELOG.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rufatpro/ide-plugins.git"
+  },
+  "homepage": "https://github.com/rufatpro/ide-plugins",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "typescript",
+    "javascript",
+    "jsdoc",
+    "navigation",
+    "cursor"
+  ],
+  "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:javascript",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascriptreact"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "tsDocLinks.showSupportedFormats",
+        "title": "TypeScript Doc Links: Show Supported Formats"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package",
+    "lint": "echo \"No lint configured\""
+  },
+  "vsce": {
+    "baseContentUrl": "https://github.com/rufatpro/ide-plugins/tree/main/vscode/ts-doc-links"
+  }
+}

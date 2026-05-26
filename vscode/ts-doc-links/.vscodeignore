@@ -1,0 +1,8 @@
+.vscode/**
+.specstory/**
+.cursorindexingignore
+**/.DS_Store
+**/Thumbs.db
+**/node_modules/**
+**/.git/**
+**/*.vsix
