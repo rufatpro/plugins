@@ -75,3 +75,5 @@ Then install the generated `.vsix`.
 ## Author
 
 [Rufat](https://rufat.top/)
+
+**Cursor IDE:** [Sign up with referral link](https://cursor.com/referral?code=GCE2SLLVIM87) — supports the author when you subscribe.

@@ -57,3 +57,5 @@ cursor --install-extension build\cursor-chat-prompt-library-0.4.2.vsix
 ## Автор
 
 [Руфат](https://rufat.top/)
+
+**Cursor IDE:** [Регистрация по реферальной ссылке](https://cursor.com/referral?code=GCE2SLLVIM87) — при подписке поддерживаете автора.

@@ -50,3 +50,5 @@ ide-plugins/            ← корень git (плагины)
 ## Автор
 
 [Руфат](https://rufat.top/)
+
+**Cursor IDE:** [Регистрация по реферальной ссылке](https://cursor.com/referral?code=GCE2SLLVIM87) — при подписке поддерживаете автора.

@@ -76,3 +76,5 @@ cursor --install-extension build/multiline-find-0.1.3.vsix
 ## Автор
 
 [Руфат](https://rufat.top/)
+
+**Cursor IDE:** [Регистрация по реферальной ссылке](https://cursor.com/referral?code=GCE2SLLVIM87) — при подписке поддерживаете автора.

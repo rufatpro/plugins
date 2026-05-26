@@ -68,3 +68,5 @@ cursor --install-extension build/python-quick-intent-0.4.0.vsix
 ## Автор
 
 [Руфат](https://rufat.top/)
+
+**Cursor IDE:** [Регистрация по реферальной ссылке](https://cursor.com/referral?code=GCE2SLLVIM87) — при подписке поддерживаете автора.
