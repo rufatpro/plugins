@@ -1,0 +1,193 @@
+// @ts-check
+const fs = require("fs");
+const path = require("path");
+const vscode = require("vscode");
+
+/** @typedef {{ id: string, label: string, description?: string, detail?: string, text: string }} PromptEntry */
+
+/** @typedef {{ category: string, categoryLabel: string, prompts: PromptEntry[] }} PromptCategoryFile */
+
+/** Display order in QuickPick (step 1). Files not listed are appended alphabetically. */
+const CATEGORY_FILE_ORDER = [
+  "website.json",
+  "python.json",
+  "javascript.json",
+  "typescript.json",
+  "react.json",
+  "sql.json",
+  "git.json",
+  "django.json",
+  "nextjs.json",
+  "fastapi.json",
+  "docker.json",
+  "testing.json",
+  "tailwind.json",
+  "nodejs.json",
+  "vue.json",
+  "php-laravel.json",
+  "csharp.json",
+  "java.json",
+  "linux.json",
+  "cicd.json",
+  "rest-api.json",
+  "mongodb.json",
+  "mobile.json",
+  "go.json",
+  "rust.json",
+  "kubernetes.json",
+  "aws.json",
+  "wordpress.json",
+  "data.json",
+  "security.json",
+  "graphql.json",
+];
+
+/**
+ * @param {string} promptsDir
+ * @returns {string[]}
+ */
+function listCategoryFiles(promptsDir) {
+  if (!fs.existsSync(promptsDir)) {
+    return [];
+  }
+  const onDisk = fs
+    .readdirSync(promptsDir)
+    .filter((f) => f.endsWith(".json"));
+  const ordered = [];
+  for (const file of CATEGORY_FILE_ORDER) {
+    if (onDisk.includes(file)) {
+      ordered.push(file);
+    }
+  }
+  for (const file of onDisk.sort()) {
+    if (!ordered.includes(file)) {
+      ordered.push(file);
+    }
+  }
+  return ordered;
+}
+
+/**
+ * @param {string} extensionPath
+ * @returns {PromptCategoryFile[]}
+ */
+function loadAllCategories(extensionPath) {
+  const promptsDir = path.join(extensionPath, "prompts");
+  /** @type {PromptCategoryFile[]} */
+  const categories = [];
+
+  for (const file of listCategoryFiles(promptsDir)) {
+    const filePath = path.join(promptsDir, file);
+    const raw = fs.readFileSync(filePath, "utf8");
+    /** @type {PromptCategoryFile} */
+    const data = JSON.parse(raw);
+    categories.push(data);
+  }
+
+  return categories;
+}
+
+/**
+ * @param {PromptCategoryFile[]} categories
+ * @param {string | undefined} categoryFilter
+ * @returns {(vscode.QuickPickItem & { prompt?: PromptEntry })[]}
+ */
+function toQuickPickItems(categories, categoryFilter) {
+  /** @type {(vscode.QuickPickItem & { prompt?: PromptEntry })[]} */
+  const items = [];
+
+  for (const cat of categories) {
+    if (categoryFilter && cat.category !== categoryFilter) {
+      continue;
+    }
+    if (!categoryFilter) {
+      items.push({
+        label: cat.categoryLabel,
+        kind: vscode.QuickPickItemKind.Separator,
+      });
+    }
+    for (const p of cat.prompts) {
+      items.push({
+        label: p.label,
+        description: p.description || cat.categoryLabel,
+        detail: p.detail,
+        prompt: p,
+      });
+    }
+  }
+
+  return items;
+}
+
+/**
+ * @param {vscode.ExtensionContext} context
+ * @param {string | undefined} categoryFilter
+ * @returns {Promise<PromptEntry | undefined>}
+ */
+async function pickPrompt(context, categoryFilter) {
+  const categories = loadAllCategories(context.extensionPath);
+  const items = toQuickPickItems(categories, categoryFilter);
+
+  const placeHolder = categoryFilter
+    ? "Step 2 — choose a prompt template"
+    : "Choose a prompt template";
+
+  const picked = await vscode.window.showQuickPick(items, {
+    title: categoryFilter
+      ? "Cursor Chat Prompt Library — prompt"
+      : "Cursor Chat Prompt Library",
+    placeHolder,
+    matchOnDescription: true,
+    matchOnDetail: true,
+  });
+
+  if (!picked || !picked.prompt) {
+    return undefined;
+  }
+  return picked.prompt;
+}
+
+/**
+ * @param {vscode.ExtensionContext} context
+ * @returns {Promise<string | undefined>}
+ */
+async function pickCategory(context) {
+  const categories = loadAllCategories(context.extensionPath);
+  if (categories.length === 0) {
+    return undefined;
+  }
+
+  const items = categories.map((cat) => ({
+    label: cat.categoryLabel,
+    description: `${cat.prompts.length} templates`,
+    category: cat.category,
+  }));
+
+  const picked = await vscode.window.showQuickPick(items, {
+    title: "Cursor Chat Prompt Library",
+    placeHolder: `Step 1 — choose category (${categories.length} types)`,
+    matchOnDescription: true,
+  });
+
+  return picked?.category;
+}
+
+/**
+ * @param {vscode.ExtensionContext} context
+ * @returns {Promise<PromptEntry | undefined>}
+ */
+async function pickPromptTwoStep(context) {
+  const category = await pickCategory(context);
+  if (!category) {
+    return undefined;
+  }
+  return pickPrompt(context, category);
+}
+
+module.exports = {
+  loadAllCategories,
+  pickPrompt,
+  pickCategory,
+  pickPromptTwoStep,
+  listCategoryFiles,
+};

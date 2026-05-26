@@ -1,0 +1,146 @@
+{
+  "category": "csharp",
+  "categoryLabel": "C# / .NET",
+  "prompts": [
+    {
+      "id": "csharp-01",
+      "label": "Console Hello .NET",
+      "description": "console",
+      "detail": "dotnet new",
+      "text": "Create first C# console app with dotnet CLI.\n\n- dotnet new console, Program.cs top-level statements\n- dotnet run\n\nExplain SDK vs Runtime briefly."
+    },
+    {
+      "id": "csharp-02",
+      "label": "ASP.NET Core Web API",
+      "description": "api",
+      "detail": "Minimal API",
+      "text": "Minimal API with GET /hello returning JSON.\n\n- dotnet new web, MapGet\n- launchSettings https URL\n\n.NET 8 style."
+    },
+    {
+      "id": "csharp-03",
+      "label": "Entity Framework Core intro",
+      "description": "ef",
+      "detail": "DbContext",
+      "text": "Outline EF Core with SQLite for a Todo entity.\n\n- Models, DbContext, migration commands\n- CRUD endpoints sketch\n\nLearning path not full app."
+    },
+    {
+      "id": "csharp-04",
+      "label": "Dependency injection built-in",
+      "description": "di",
+      "detail": "builder.Services",
+      "text": "Explain DI in ASP.NET Core with ITodoService and implementation.\n\n- Register AddScoped in Program.cs\n- Inject in endpoint or controller\n\nWhy interfaces help tests."
+    },
+    {
+      "id": "csharp-05",
+      "label": "MVC Razor page",
+      "description": "mvc",
+      "detail": "Views Home Index",
+      "text": "Create MVC project with Home Index view.\n\n- dotnet new mvc difference from web api\n- Views/Home/Index.cshtml simple html\n\nWhen to pick MVC vs Razor Pages vs API — 3 bullets."
+    },
+    {
+      "id": "csharp-06",
+      "label": "async await C# HTTP",
+      "description": "async",
+      "detail": "HttpClient",
+      "text": "Fetch JSON with HttpClient async in a console or minimal API.\n\n- GetStringAsync try/catch\n- Why async matters for servers\n\nShort sample."
+    },
+    {
+      "id": "csharp-07",
+      "label": "xUnit first test",
+      "description": "testing",
+      "detail": "dotnet test",
+      "text": "Add xUnit test project for a Calculator class.\n\n- dotnet new xunit, reference main project\n- One Fact test Add\n\nRun dotnet test."
+    },
+    {
+      "id": "csharp-08",
+      "label": "Configuration appsettings.json",
+      "description": "config",
+      "detail": "IOptions",
+      "text": "Read settings from appsettings.json in minimal API.\n\n- Bind section AppSettings\n- Never commit secrets — User Secrets for dev\n\nExample JSON."
+    },
+    {
+      "id": "csharp-09",
+      "label": "Blazor WebAssembly overview",
+      "description": "blazor",
+      "detail": "client SPA",
+      "text": "What is Blazor WASM vs Server in simple terms?\n\n- When beginners should choose React instead\n- dotnet new blazorwasm mention\n\nNo full tutorial — decision guide."
+    },
+    {
+      "id": "csharp-10",
+      "label": "Publish to folder",
+      "description": "deploy",
+      "detail": "dotnet publish",
+      "text": "dotnet publish -c Release steps and output folder.\n\n- Self-contained vs framework-dependent one line each\n\nDeployment checklist for IIS or Linux."
+    },
+    {
+      "id": "csharp-11",
+      "label": "Record types for DTOs",
+      "description": "dotnet",
+      "detail": "immutability basics",
+      "text": "Teach records for data transfer objects vs classes reference equality nuance.\nDemonstrate with expression copies adjusting immutably.\nExplain init-only interplay.\nMention positional record ToString ergonomics.\nRelate structural equality performance note lightly."
+    },
+    {
+      "id": "csharp-12",
+      "label": "Primary constructors dependency capture",
+      "description": "syntax",
+      "detail": "DI fields",
+      "text": "Show primary constructor capturing ILogger into implicit fields.\nExplain readability debates vs classic constructors.\nWarn validation placement remains explicit responsibility.\nMention testing substitution doubles.\nKeep example web focused mentally."
+    },
+    {
+      "id": "csharp-13",
+      "label": "IAsyncEnumerable streaming",
+      "description": "async",
+      "detail": "yield async enumerable",
+      "text": "Sketch IAsyncEnumerable chunked lines streamed from ASP endpoint.\nExplain backpressure memory cautions lightly verbally.\nRelate CancellationToken propagation.\nMention SSE alternative comparison.\nAvoid huge framework stack depth."
+    },
+    {
+      "id": "csharp-14",
+      "label": "Span ReadOnlySpan intro",
+      "description": "performance",
+      "detail": "slicing stack",
+      "text": "Introduce Span slicing without allocating substrings arrays.\nExplain stackalloc constrained scenarios safety.\nWhen beginners postpone micro optimizations honestly.\nRelate Memory for async bridging optional.\nCaution benchmarking noise."
+    },
+    {
+      "id": "csharp-15",
+      "label": "IHttpClientFactory named clients",
+      "description": "HTTP",
+      "detail": "socket pooling",
+      "text": "Explain injecting HttpClient factory avoiding socket exhaustion from new-ing clients.\nShow named typed client registrations.\nMention resilience Polly teaser optional layering.\nAdvise timeouts configuration.\nDebunk IDisposable myths HttpClient."
+    },
+    {
+      "id": "csharp-16",
+      "label": "EF Core AsNoTracking projections",
+      "description": "data",
+      "detail": "readonly queries",
+      "text": "Demonstrate read-only listings using AsNoTracking.\nShow Select projecting DTOs lowering payloads.\nMention Include split queries teaser optional heavyweight graphs.\nWarn lazy load surprises verbally.\nMap compiled queries teaser optional."
+    },
+    {
+      "id": "csharp-17",
+      "label": "ASP.NET middleware pipeline order",
+      "description": "HTTP",
+      "detail": "exception placement",
+      "text": "Explain sequencing UseRouting Authentication Authorization MapEndpoints.\nShow custom middleware class constructor injection mentally.\nMention branching MapWhen optional.\nEmphasize exception handler early placement verbally.\nDraw onion analogy verbally only."
+    },
+    {
+      "id": "csharp-18",
+      "label": "BackgroundService PeriodicTimer loops",
+      "description": "workers",
+      "detail": "hosted lifecycle",
+      "text": "Sketch BackgroundService using PeriodicTimer loops cooperative cancellation.\nContrast heavier schedulers Hangfire Quartz optional.\nMention scoped service resolution via scope factory pattern caution swallowing exceptions.\nAdvise structured logging inside loops."
+    },
+    {
+      "id": "csharp-19",
+      "label": "xUnit Theory InlineData matrices",
+      "description": "testing",
+      "detail": "data driven",
+      "text": "Demonstrate Theory InlineData matrix multiplication cases.\nCompare ClassData alternative.\nArgue naming clarity matters readability.\nMention snapshot testing caution optional.\nOptional FluentAssertions readability mention."
+    },
+    {
+      "id": "csharp-20",
+      "label": "Options pattern IOptionsMonitor",
+      "description": "config",
+      "detail": "reloadable settings",
+      "text": "Bind appsettings section to FeatureOptions record class.\nExplain IOptions vs IOptionsSnapshot vs IOptionsMonitor differences briefly.\nShow startup validation optional DataAnnotations.\nRelate user-secrets development mention.\nWarn hot reload expectations tempered."
+    }
+  ]
+}

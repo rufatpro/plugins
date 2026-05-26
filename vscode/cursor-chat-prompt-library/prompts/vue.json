@@ -1,0 +1,146 @@
+{
+  "category": "vue",
+  "categoryLabel": "Vue",
+  "prompts": [
+    {
+      "id": "vue-01",
+      "label": "Vue 3 Vite create project",
+      "description": "setup",
+      "detail": "npm create vue",
+      "text": "Create Vue 3 + Vite project for a beginner.\n\n- Official create command options explained simply\n- Hello in App.vue\n- npm run dev\n\nList generated files."
+    },
+    {
+      "id": "vue-02",
+      "label": "ref and reactive",
+      "description": "reactivity",
+      "detail": "counter",
+      "text": "Teach ref vs reactive with a counter and form field.\n\n- script setup syntax\n- Why ref for primitives\n\nSingle App.vue example."
+    },
+    {
+      "id": "vue-03",
+      "label": "v-for and :key",
+      "description": "template",
+      "detail": "todo list",
+      "text": "Render todo list with v-for and :key.\n\n- Add todo from input\n- Explain key importance\n\nComposition API."
+    },
+    {
+      "id": "vue-04",
+      "label": "computed and watch",
+      "description": "reactivity",
+      "detail": "filtered list",
+      "text": "Use computed for filtered todos and watch for side effect.\n\n- filter text input\n- watch logs count change\n\nOne component."
+    },
+    {
+      "id": "vue-05",
+      "label": "Props and emit",
+      "description": "components",
+      "detail": "ChildButton",
+      "text": "Parent passes title prop, child emits click event.\n\n- defineProps and defineEmits in script setup\n\nTwo components."
+    },
+    {
+      "id": "vue-06",
+      "label": "Vue Router two routes",
+      "description": "router",
+      "detail": "Home About",
+      "text": "Add vue-router with Home and About views.\n\n- router/index.js and router-view in App.vue\n- router-link navigation\n\nFull minimal setup."
+    },
+    {
+      "id": "vue-07",
+      "label": "Pinia store counter",
+      "description": "state",
+      "detail": "defineStore",
+      "text": "Introduce Pinia for shared counter state.\n\n- stores/counter.js and use in two components\n- Compare to prop drilling in 2 bullets\n\nVue 3 + Pinia."
+    },
+    {
+      "id": "vue-08",
+      "label": "Fetch onMounted",
+      "description": "async",
+      "detail": "load users",
+      "text": "Fetch users from jsonplaceholder onMounted.\n\n- loading and error refs\n- template v-if states\n\nComposition API."
+    },
+    {
+      "id": "vue-09",
+      "label": "Form v-model",
+      "description": "forms",
+      "detail": "two-way binding",
+      "text": "Contact form with v-model on fields and submit handler.\n\n- prevent default, show JSON in alert\n\nAccessible labels."
+    },
+    {
+      "id": "vue-10",
+      "label": "Deploy Vue static build",
+      "description": "deploy",
+      "detail": "npm run build",
+      "text": "Build static dist and deploy options (Netlify, GitHub Pages).\n\n- npm run build output dist/\n- SPA fallback note for history mode\n\nChecklist."
+    },
+    {
+      "id": "vue-11",
+      "label": "defineProps with TypeScript generics",
+      "description": "Vue 3",
+      "detail": "typed props",
+      "text": "Show defineProps<{ title: string; count?: number }>() pattern cautiously.\nExplain withDefaults helpers for refs defaults.\nRelate runtime props validation optional plugins.\nMention Volar editor features lightly.\nGive minimal Single File Component excerpt verbally."
+    },
+    {
+      "id": "vue-12",
+      "label": "defineModel in child components Vue 3.4+",
+      "description": "sugar",
+      "detail": "two-way binding",
+      "text": "Teach defineModel replacing modelValue boilerplate.\nDemonstrate checkbox boolean models.\nCompare v-model naming modifiers.\nWarn about syncing large objects pitfalls.\nLink to emits typing briefly."
+    },
+    {
+      "id": "vue-13",
+      "label": "composable extracting useMouse",
+      "description": "composition",
+      "detail": "shared logic",
+      "text": "Refactor duplicated mouse tracking into useMouse.ts composable returning refs.\nExplain naming use* conventions.\nShow testing composables mounting hooks idea.\nMention SSR window guards.\nContrast with mixin legacy briefly."
+    },
+    {
+      "id": "vue-14",
+      "label": "Teleport modals escape stacking",
+      "description": "DOM",
+      "detail": "body target",
+      "text": "Demonstrate Teleport targeting body for modal roots.\nExplain event path differences subtly.\nMention teleport disable prop SSR safety notes.\nRelate accessibility focus trapping pointer.\nShow z-index token guidance."
+    },
+    {
+      "id": "vue-15",
+      "label": "provide inject versus Pinia",
+      "description": "state",
+      "detail": "dependency contrast",
+      "text": "Explain injection for theme tokens avoiding app-wide spaghetti.\nShow symbol keys avoiding collisions lightly.\nCompare Pinia for shared mutable stores.\nMention readability trade-offs layering providers near routes.\nAdvise when either fits."
+    },
+    {
+      "id": "vue-16",
+      "label": "defineAsyncComponent code splitting routes",
+      "description": "build",
+      "detail": "lazy routes",
+      "text": "Show wrapping heavy chart component with defineAsyncComponent loading spinner.\nRelate router lazy import similarity.\nExplain error component handling.\nMention prefetch strategies optional.\nCaution SSR hydration mismatch if misused."
+    },
+    {
+      "id": "vue-17",
+      "label": ":deep scoped style penetrating",
+      "description": "SFC",
+      "detail": "third-party internals",
+      "text": "Teach :deep selectors sparingly overriding library internals.\nExplain scoped attribute mechanics simply.\nWarn about brittle coupling.\nAlternative wrapper patterns suggestion.\nMention sass nesting interplay."
+    },
+    {
+      "id": "vue-18",
+      "label": "Suspense boundaries async setup",
+      "description": "async",
+      "detail": "experimental literacy",
+      "text": "Outline suspense around async branches at reading level.\nExplain loading fallback slots analogous concept to other frameworks lightly.\nMention SSR caveats moderated advice.\nAdvise juniors pace adoption.\nPoint to changelog reading habit."
+    },
+    {
+      "id": "vue-19",
+      "label": "Transition classes enter leave",
+      "description": "animation",
+      "detail": "CSS hooks",
+      "text": "Explain Transition enter-active-class patterns for dialogs.\nShow mode out-in sequencing concept.\nRelate prefers-reduced-motion toggles cooperating.\nMention JS hooks preference trade-off.\nGive micro snippet string names."
+    },
+    {
+      "id": "vue-20",
+      "label": "Vitest plus Vue Test Utils smoke",
+      "description": "testing",
+      "detail": "mount stubs",
+      "text": "Mount a counter component asserting click increments.\nShow stubbing child RouterLink mentally.\nExplain flushPromises awaiting watcher ticks optional.\nMention happy-dom vs jsdom picker.\nEncourage factories for props ergonomics."
+    }
+  ]
+}

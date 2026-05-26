@@ -1,0 +1,146 @@
+{
+  "category": "django",
+  "categoryLabel": "Django",
+  "prompts": [
+    {
+      "id": "django-01-startproject",
+      "label": "Create Django project",
+      "description": "setup",
+      "detail": "django-admin startproject",
+      "text": "I'm a beginner with Django. Guide me to create a new project from scratch.\n\n- venv, pip install django, django-admin startproject config .\n- Explain settings.py, urls.py, manage.py\n- python manage.py runserver and open admin URL path\n\nUse Django 5.x commands. List files created."
+    },
+    {
+      "id": "django-02-startapp",
+      "label": "First app and hello view",
+      "description": "views",
+      "detail": "pages app, path hello/",
+      "text": "Add a Django app with one view.\n\n- python manage.py startapp pages\n- Register app in INSTALLED_APPS\n- View hello returning HttpResponse Hello Django\n- Wire urlpatterns in project urls.py\n\nShow every file change."
+    },
+    {
+      "id": "django-03-templates",
+      "label": "Render HTML template",
+      "description": "templates",
+      "detail": "base.html and home.html",
+      "text": "Teach Django templates for a beginner.\n\n- templates/home.html extending base.html with block content\n- View uses render(request, 'home.html', context)\n- Pass title variable in context\n- Configure TEMPLATES DIRS in settings\n\nProvide template syntax for {{ title }} and {% block %}."
+    },
+    {
+      "id": "django-04-models",
+      "label": "Model and makemigrations",
+      "description": "ORM",
+      "detail": "Article model title body",
+      "text": "Create a first Django model.\n\n- Model Article: title (CharField max 200), body (TextField), created_at (auto)\n- makemigrations and migrate commands explained\n- Register in admin.py\n- Create superuser steps\n\nShow models.py and admin registration."
+    },
+    {
+      "id": "django-05-admin",
+      "label": "Customize Django admin",
+      "description": "admin",
+      "detail": "list_display search_fields",
+      "text": "Improve Django admin for the Article model.\n\n- list_display, list_filter, search_fields\n- readonly_fields for created_at\n- Short explanation of admin site for development\n\nAssume Article model exists."
+    },
+    {
+      "id": "django-06-forms",
+      "label": "ModelForm create article",
+      "description": "forms",
+      "detail": "CreateView or function view",
+      "text": "Add a form to create an Article (beginner).\n\n- ModelForm for Article (title, body)\n- View + template with {% csrf_token %} and form.as_p\n- Redirect to list after success\n- URL route /articles/new/\n\nExplain CSRF in one sentence."
+    },
+    {
+      "id": "django-07-class-views",
+      "label": "ListView and DetailView",
+      "description": "CBV",
+      "detail": "article list and detail pages",
+      "text": "Refactor to class-based views for Article.\n\n- ArticleListView, ArticleDetailView\n- Templates article_list.html and article_detail.html\n- urls.py with pk in path\n\nCompare CBV vs function view in 3 bullets for beginners."
+    },
+    {
+      "id": "django-08-static-files",
+      "label": "Static CSS in Django",
+      "description": "static",
+      "detail": "styles.css in dev",
+      "text": "Add CSS to a Django project for development.\n\n- static/css/styles.css linked in base.html with {% load static %}\n- STATIC_URL and STATICFILES_DIRS in settings\n- collectstatic mentioned for production only\n\nSimple example: style the navbar."
+    },
+    {
+      "id": "django-09-drf-intro",
+      "label": "DRF hello API endpoint",
+      "description": "API",
+      "detail": "GET /api/hello/",
+      "text": "Introduce Django REST framework with one endpoint.\n\n- pip install djangorestframework, add to INSTALLED_APPS\n- APIView or @api_view GET returning JSON { message: 'hello' }\n- Wire url /api/hello/\n- Test with browser or curl\n\nDo not build full CRUD yet; explain what DRF is for."
+    },
+    {
+      "id": "django-10-deploy-checklist",
+      "label": "Before deploy checklist",
+      "description": "production",
+      "detail": "DEBUG, SECRET_KEY, ALLOWED_HOSTS",
+      "text": "Give a beginner checklist before deploying Django (conceptual, any host).\n\n- Set DEBUG=False, configure ALLOWED_HOSTS\n- Environment variable for SECRET_KEY\n- Database not sqlite for production (mention Postgres)\n- Static files whitenoise or CDN one line\n\nNo full deploy steps — learning checklist only."
+    },
+    {
+      "id": "django-11",
+      "label": "reverse() and URL names in templates",
+      "description": "routing",
+      "detail": "no hard-coded paths",
+      "text": "I hard-code href paths. Show url tag with name= and kwargs.\nExplain why route renames become safer.\nDemonstrate reverse() in tests or views building redirects.\nTouch on app namespace patterns lightly.\nInclude a mini urls.py + path name example."
+    },
+    {
+      "id": "django-12",
+      "label": "Middleware request/response flow",
+      "description": "HTTP",
+      "detail": "ordering in settings",
+      "text": "Explain Django middleware as onion layers with process_request and process_response.\nGive a toy middleware adding X-Process-Time without external libs.\nHighlight order significance in MIDDLEWARE list.\nNote async middleware caution briefly for beginners.\nSuggest security middlewares as read-the-docs homework."
+    },
+    {
+      "id": "django-13",
+      "label": "select_related and prefetch_related",
+      "description": "ORM",
+      "detail": "N+1 queries",
+      "text": "Teach the N+1 problem with a blog author example.\nShow select_related for forward ForeignKey and prefetch_related for reverse many-to-many.\nExplain prefetch_related query count intuition.\nDemonstrate Prefetch object name-drop for advanced control.\nRelate to django-debug-toolbar as a visual aid mention only."
+    },
+    {
+      "id": "django-14",
+      "label": "Custom template filter registration",
+      "description": "templates",
+      "detail": "@register.filter",
+      "text": "Build a filter currency_cents that formats integers safely.\nShow app ready in apps.py or traditional templatetags package layout.\nExplain autoescaping interaction for HTML-returning filters.\nAdd simple unit test idea using RequestFactory render.\nWarn about business logic drowning in filters."
+    },
+    {
+      "id": "django-15",
+      "label": "Management command scaffold",
+      "description": "DX",
+      "detail": "BaseCommand",
+      "text": "Create a Django management command export_users_csv with options dry-run.\nSketch handle() argparse-style arguments.\nExplain stdout.write style messaging.\nShow discovery under management/commands/*.py.\nMention transactional behavior when touching DB lightly."
+    },
+    {
+      "id": "django-16",
+      "label": "Messages framework flashes",
+      "description": "UX",
+      "detail": "notify after redirect",
+      "text": "Wire django.contrib.messages for success alerts after POST-redirect-get.\nShow MessageMiddleware requirement and template iteration.\nDifferentiate levels info/success/error.\nExplain cookie vs session backends at a headline level.\nGive security note about escaping message content."
+    },
+    {
+      "id": "django-17",
+      "label": "File uploads overview",
+      "description": "forms",
+      "detail": "MEDIA_ROOT settings",
+      "text": "Outline FileField/ImageField modeling and form enctype multipart.\nDescribe MEDIA_ROOT/MEDIA_URL split concerns.\nMention validating size/extension at form layer.\nTouch on serving files in dev vs prod (whitenoise/S3 conceptual).\nList one security pitfall executing user uploads."
+    },
+    {
+      "id": "django-18",
+      "label": "LoginRequired mixin on CBVs",
+      "description": "auth",
+      "detail": "class-based views",
+      "text": "Show LoginRequiredMixin order placement with CBVs.\nCompare to @login_required for function views.\nExplain redirect LOGIN_URL interplay.\nAdd UserPassesTestMixin teaser for roles.\nConnect to middleware AuthenticationMiddleware."
+    },
+    {
+      "id": "django-19",
+      "label": "Testing with Django Client",
+      "description": "tests",
+      "detail": "assertContains",
+      "text": "Write tests hitting a view with self.client.post including CSRF exempt testing notes.\nUse assertRedirects and assertContains.\nExplain TransactionTestCase vs TestCase casually.\nShow factory-boy mention as optional ergonomics.\nEmphasize speed of keeping DB tests focused."
+    },
+    {
+      "id": "django-20",
+      "label": "Settings split DEV and PROD",
+      "description": "deployment",
+      "detail": "DJANGO_SETTINGS_MODULE",
+      "text": "Pattern a settings package: base.py, dev.py, prod.py.\nDemonstrate getenv with defaults carefully (no secrets in git).\nExplain DEBUG flag implications.\nMention ALLOWED_HOSTS gotcha.\nList static files collectors difference briefly."
+    }
+  ]
+}

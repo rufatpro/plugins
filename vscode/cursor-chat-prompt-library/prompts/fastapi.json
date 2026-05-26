@@ -1,0 +1,146 @@
+{
+  "category": "fastapi",
+  "categoryLabel": "FastAPI",
+  "prompts": [
+    {
+      "id": "fastapi-01",
+      "label": "First FastAPI app",
+      "description": "setup",
+      "detail": "GET /",
+      "text": "Create a minimal FastAPI app for a beginner.\n\n- main.py with GET / returning {\"message\": \"hello\"}\n- uvicorn run command\n- requirements.txt with fastapi and uvicorn\n\nExplain automatic OpenAPI docs URL."
+    },
+    {
+      "id": "fastapi-02",
+      "label": "Path and query parameters",
+      "description": "routing",
+      "detail": "/items/{id}",
+      "text": "Teach path and query params in FastAPI.\n\n- GET /items/{item_id} with item_id: int\n- Optional query q: str | None\n- Example URLs to try in browser\n\nInclude type hints and validation benefits."
+    },
+    {
+      "id": "fastapi-03",
+      "label": "POST with Pydantic model",
+      "description": "body",
+      "detail": "ItemCreate schema",
+      "text": "Add POST /items with a Pydantic model.\n\n- Models ItemCreate and ItemResponse\n- In-memory list store for demo\n- Return 201 and created item\n\nExplain Pydantic vs dict in 2 sentences."
+    },
+    {
+      "id": "fastapi-04",
+      "label": "Dependency injection intro",
+      "description": "deps",
+      "detail": "get_db stub",
+      "text": "Introduce Depends() with a fake database dependency.\n\n- def get_db() generator yielding connection stub\n- Route uses db=Depends(get_db)\n- Why DI helps testing — 3 bullets\n\nKeep code short."
+    },
+    {
+      "id": "fastapi-05",
+      "label": "HTTPException 404",
+      "description": "errors",
+      "detail": "raise HTTPException",
+      "text": "Show proper 404 errors in FastAPI.\n\n- GET /users/{id} with fake list\n- raise HTTPException(status_code=404, detail=\"User not found\")\n- How it appears in OpenAPI docs\n\nOne file example."
+    },
+    {
+      "id": "fastapi-06",
+      "label": "Router APIRouter modules",
+      "description": "structure",
+      "detail": "routers/users.py",
+      "text": "Split FastAPI into routers for a small API.\n\n- routers/users.py and routers/items.py\n- Include_router in main.py with prefix /api\n\nExplain project growth pattern."
+    },
+    {
+      "id": "fastapi-07",
+      "label": "CORS for frontend dev",
+      "description": "middleware",
+      "detail": "CORSMiddleware",
+      "text": "Enable CORS for local React/Vite on port 5173.\n\n- CORSMiddleware settings\n- Why browsers block cross-origin\n\nShow main.py snippet only."
+    },
+    {
+      "id": "fastapi-08",
+      "label": "Async endpoint",
+      "description": "async",
+      "detail": "async def read",
+      "text": "Explain async def routes in FastAPI briefly.\n\n- One async route simulating await asyncio.sleep\n- When to use async vs def for beginners\n\nRunnable example."
+    },
+    {
+      "id": "fastapi-09",
+      "label": "JWT auth overview",
+      "description": "auth",
+      "detail": "conceptual",
+      "text": "High-level JWT auth plan for FastAPI (no full production code).\n\n- Login issues token, protected route needs Authorization header\n- Outline libraries: python-jose, passlib\n- Security warnings: HTTPS, secret key in env\n\nBullet roadmap for learning."
+    },
+    {
+      "id": "fastapi-10",
+      "label": "Connect SQLAlchemy later",
+      "description": "database",
+      "detail": "roadmap",
+      "text": "Explain steps to add SQLAlchemy + FastAPI after the tutorial API.\n\n- Models, Session, lifespan event\n- Migrations with Alembic mention\n- Do not implement full ORM now — checklist only\n\nFor someone who finished in-memory CRUD."
+    },
+    {
+      "id": "fastapi-11",
+      "label": "lifespan context startup shutdown",
+      "description": "app lifecycle",
+      "detail": "Async context manager",
+      "text": "Replace deprecated on_event with lifespan context manager.\nShow yielding control after DB engine init and closing pools on shutdown.\nExplain why this beats scattered globals for beginners.\nTouch test client lifespan behavior.\nKeep example ~15 lines."
+    },
+    {
+      "id": "fastapi-12",
+      "label": "BackgroundTasks email pattern",
+      "description": "async",
+      "detail": "return response then work",
+      "text": "Demonstrate enqueueing BackgroundTasks after request returns vs blocking.\nDiscuss idempotency and retry limitations honestly.\nMention Celery/RQ upgrade path verbally.\nShow logging hygiene inside tasks.\nWarn about accessing request state after completion pitfalls."
+    },
+    {
+      "id": "fastapi-13",
+      "label": "UploadFile streams safely",
+      "description": "files",
+      "detail": "spooling to disk",
+      "text": "Walk through awaiting upload.read() cautiously vs streaming chunks.\nShow saving under a sanitized filename pattern.\nList size limits validation at settings layer.\nMention antivirus scanning hook idea.\nRelate multipart parsing costs lightly."
+    },
+    {
+      "id": "fastapi-14",
+      "label": "Depends chains for permissions",
+      "description": "DI",
+      "detail": "layered deps",
+      "text": "Compose Depends(get_db) chaining into Depends(require_role(\"admin\")).\nExplain caching Depends results per-request.\nShow HTTPException layering.\nDiscuss testing overrides with app.dependency_overrides.\nRelate OpenAPI docs visibility."
+    },
+    {
+      "id": "fastapi-15",
+      "label": "Response model excludes unset fields",
+      "description": "schemas",
+      "detail": "JSON shape control",
+      "text": "Teach response_model_exclude_unset controlling optional pydantic defaults.\nDifferentiate serialization vs validation steps.\nShow returning ORM rows with computed fields caveat.\nMention aliases for outward JSON keys.\nPoint beginners to warnings about lazy loading ORM."
+    },
+    {
+      "id": "fastapi-16",
+      "label": "WebSocket echo minimal",
+      "description": "realtime",
+      "detail": "accept iterate",
+      "text": "Provide tiny /ws endpoint echo with receive_text loop.\nExplain disconnect handling try/except.\nContrast with Socket.IO feature set without diving deep.\nMention scaling websockets behind load balancers high level.\nInclude security note on auth subprotocols brief."
+    },
+    {
+      "id": "fastapi-17",
+      "label": "Settings via pydantic-settings",
+      "description": "config",
+      "detail": "env driven",
+      "text": "Show BaseSettings model reading DATABASE_URL and DEBUG bool coercions.\nExplain case sensitivity and env_file for local dev.\nWarn about committing .env.\nDiscuss nested settings pattern optional.\nCompare to plain os.getenv verbosity."
+    },
+    {
+      "id": "fastapi-18",
+      "label": "Exception handlers customizing JSON",
+      "description": "errors",
+      "detail": "uniform envelope",
+      "text": "Register handler for RequestValidationError returning { error: { type, details } } shape.\nShow logging integration points.\nDifferentiate validation vs HTTP errors.\nMention tracing ids option.\nProvide client-friendly vs internal detail split idea."
+    },
+    {
+      "id": "fastapi-19",
+      "label": "TestClient pytest fixture",
+      "description": "testing",
+      "detail": "override DB",
+      "text": "Create app fixture yielding TestClient with dependency overrides using sqlite.\nDemonstrate transactional rollback pattern idea.\nShow assert response.json() schema roughly.\nExplain async client note for newer httpx stacks lightly.\nAdd marker for integration vs unit separation."
+    },
+    {
+      "id": "fastapi-20",
+      "label": "OpenAPI tags and summary polish",
+      "description": "docs",
+      "detail": "group routes",
+      "text": "Decorate routers with tags and summarize operations for Swagger UI.\nExplain include_router prefixes impact on paths.\nShow response description examples.\nMention exporting OpenAPI JSON for clients.\nFinish with hiding internal routes from docs pattern."
+    }
+  ]
+}

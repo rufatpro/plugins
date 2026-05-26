@@ -1,0 +1,146 @@
+{
+  "category": "javascript",
+  "categoryLabel": "JavaScript",
+  "prompts": [
+    {
+      "id": "js-01-node-hello",
+      "label": "Node.js Hello World",
+      "description": "Node",
+      "detail": "index.js and npm init",
+      "text": "I'm new to Node.js. Create a minimal project.\n\n- package.json with name and type module (ESM) OR CommonJS — pick one and explain\n- index.js that logs Hello from Node\n- Commands: npm init, node index.js\n\nMention Node LTS version briefly."
+    },
+    {
+      "id": "js-02-dom-counter",
+      "label": "DOM click counter",
+      "description": "browser",
+      "detail": "Button increments a number",
+      "text": "Build a beginner DOM exercise: click counter.\n\n- index.html with a button and a span showing count starting at 0\n- script.js: click increments count, second button resets to 0\n- Link script with defer\n- No frameworks\n\nExplain querySelector, addEventListener, and textContent."
+    },
+    {
+      "id": "js-03-fetch-json",
+      "label": "fetch() load JSON",
+      "description": "browser API",
+      "detail": "Display API data on page",
+      "text": "Create a small page that loads JSON with fetch.\n\n- Fetch https://jsonplaceholder.typicode.com/users/1\n- Show name and email in the HTML after load\n- Show a loading message and an error message if fetch fails\n- Use async/await\n\nProvide index.html and script.js."
+    },
+    {
+      "id": "js-04-express-hello",
+      "label": "Express Hello server",
+      "description": "Express",
+      "detail": "GET / and package.json",
+      "text": "Create the smallest Express server for a beginner.\n\n- server.js: GET / returns Hello from Express\n- package.json with express dependency and start script\n- Steps: npm install, npm start, test in browser\n- Add GET /api/time returning current ISO time as JSON\n\nUse CommonJS or ESM consistently and say which you chose."
+    },
+    {
+      "id": "js-05-react-component",
+      "label": "React component skeleton",
+      "description": "React",
+      "detail": "Vite + one component",
+      "text": "I'm starting with React. Scaffold a minimal app with Vite (npm create vite@latest).\n\n- One App component showing a title and a button that increments a counter (useState)\n- Explain folder structure after create\n- List commands to install and run dev server\n\nKeep one file change at a time if possible; focus on JSX and props concept in 2–3 sentences."
+    },
+    {
+      "id": "js-06-form-validation",
+      "label": "Form validation (vanilla)",
+      "description": "browser",
+      "detail": "Email and password rules",
+      "text": "Build a sign-up form with client-side validation (no backend).\n\n- Fields: username (min 3 chars), email, password (min 8 chars), confirm password\n- On submit: prevent default, show inline error messages\n- Clear errors when user fixes input\n- Vanilla JS only\n\nProvide HTML, CSS, and JS."
+    },
+    {
+      "id": "js-07-todo-vanilla",
+      "label": "Todo list (vanilla JS)",
+      "description": "DOM practice",
+      "detail": "Add, complete, delete tasks",
+      "text": "Create a simple todo list app for learning JavaScript.\n\n- Input + Add button creates a list item\n- Each item: checkbox (complete), delete button\n- Completed items show strikethrough\n- Store todos in an array in memory (localStorage optional bonus)\n\nFull HTML/CSS/JS with short comments."
+    },
+    {
+      "id": "js-08-es-modules",
+      "label": "ES modules import/export",
+      "description": "modules",
+      "detail": "math.js and main.js",
+      "text": "Teach ES modules with a tiny example.\n\n- math.js exports add and multiply functions\n- main.js imports them and logs results\n- index.html loads main.js as type=\"module\"\n- Explain named vs default export in one paragraph\n\nShow exact file tree and how to run with a static server (npx serve or Live Server)."
+    },
+    {
+      "id": "js-09-async-await",
+      "label": "async/await delay demo",
+      "description": "async",
+      "detail": "Simulated API delay",
+      "text": "Explain async/await with a beginner demo (Node or browser).\n\n- Function fetchUser() that waits 1 second then returns { id: 1, name: 'Ada' }\n- Main async function prints Loading..., then user, using try/catch\n- Compare briefly with .then() chains\n\nProvide runnable code and expected console output."
+    },
+    {
+      "id": "js-10-package-scripts",
+      "label": "package.json npm scripts",
+      "description": "npm",
+      "detail": "start, dev, lint placeholders",
+      "text": "Explain package.json scripts for a beginner JS project.\n\n- Example package.json with scripts: start, dev (nodemon or vite), test (placeholder echo)\n- What npm run start does vs npx\n- devDependencies vs dependencies with one example each\n- .gitignore for node_modules\n\nUse a realistic but minimal project name."
+    },
+    {
+      "id": "js-11",
+      "label": "Fix closures inside loops",
+      "description": "functions",
+      "detail": "let vs var classic bug",
+      "text": "I'm running async callbacks in a loop and every item logs the wrong index/value.\nExplain the historical var closure pitfall and the modern fix with let or with an IIFE pattern.\nGive a clean for...of + await example for sequential calls.\nNote when Promise.all with map is appropriate instead.\nEnd with a 3-item checklist to spot similar bugs in event listeners."
+    },
+    {
+      "id": "js-12",
+      "label": "Sort arrays without mutating surprises",
+      "description": "arrays",
+      "detail": "slice copy before sort",
+      "text": "Teach me array sort pitfalls in JavaScript for interview prep level beginners.\nShow how sort() mutates in place and how to copy with slice or spread first.\nProvide a numeric comparator for numbers and a localeCompare example for names.\nExplain stable vs unstable sort at a high level.\nWarn about comparing objects without a comparator."
+    },
+    {
+      "id": "js-13",
+      "label": "AbortController for cancellable fetch",
+      "description": "async",
+      "detail": "timeout + user cancel",
+      "text": "I want a fetch that can be aborted when the user navigates away or clicks Cancel.\nWalk through AbortController + signal wiring on fetch.\nDemonstrate a timeout pattern using AbortSignal.timeout if available, with a fallback.\nShow how to catch AbortError separately from network errors.\nKeep the example under one small module with comments."
+    },
+    {
+      "id": "js-14",
+      "label": "URL and URLSearchParams parsing",
+      "description": "web platform",
+      "detail": "query string handling",
+      "text": "Compare hand-rolling query strings vs using URL and URLSearchParams.\nBuild a tiny helper that reads current page query params in the browser and safely encodes a new link.\nExplain why decodeURIComponent can be dangerous if misused.\nTouch on base URL resolution with new URL(relative, base).\nGive one Node.js example reading process.argv vs import.meta.url context briefly."
+    },
+    {
+      "id": "js-15",
+      "label": "Intl for dates and numbers",
+      "description": "i18n-lite",
+      "detail": "NumberFormat DateTimeFormat",
+      "text": "Show beginners how Intl.NumberFormat and Intl.DateTimeFormat improve presentation.\nExamples: currency in EUR, compact notation for large dashboard counts, short weekday in a locale.\nNote timezone pitfalls: what the API can and cannot infer.\nCompare to manual string concatenation anti-patterns.\nInclude feature detection thoughts for older browsers at a high level."
+    },
+    {
+      "id": "js-16",
+      "label": "Custom Error subclasses",
+      "description": "errors",
+      "detail": "name stack trace",
+      "text": "I throw plain strings sometimes and want to improve.\nDemonstrate class ValidationError extends Error with a code field and correct prototype chain.\nExplain why instanceof checks matter in catch blocks.\nShow capturing cause in modern engines when wrapping errors.\nGive a pattern for mapping errors to HTTP statuses without frameworks."
+    },
+    {
+      "id": "js-17",
+      "label": "WeakMap for private memoization idea",
+      "description": "data structures",
+      "detail": "garbage collection angle",
+      "text": "At a beginner-friendly depth, explain Map vs WeakMap and why keys must be objects.\nSketch a tiny memoizeByObject(fn) using WeakMap for per-object caches that don't leak memory.\nContrast with a global Map keyed by strings.\nCall out when this pattern is overkill.\nNo heavy algorithm analysis—just intuition and a 15-line demo."
+    },
+    {
+      "id": "js-18",
+      "label": "structuredClone for deep copies",
+      "description": "objects",
+      "detail": "clone caveats",
+      "text": "Teach structuredClone as a modern alternative to JSON.parse(JSON.stringify(obj)).\nList what types clone well and what fails (functions, symbols, DOM nodes).\nCompare shallow copy with spread for nested objects.\nMention Same-Transferable considerations only lightly.\nProvide two micro-examples: nested plain object and Date preservation."
+    },
+    {
+      "id": "js-19",
+      "label": "Event loop mental model cartoon",
+      "description": "runtime",
+      "detail": "microtasks vs macrotasks",
+      "text": "Help me predict console order for setTimeout, Promise.then, and sync code.\nExplain the call stack, task queue, and microtask queue in plain language.\nGive a short puzzle and solution walkthrough.\nRelate why await can reorder perceived execution.\nFinish with debugging advice using breakpoints vs console.log spacing."
+    },
+    {
+      "id": "js-20",
+      "label": "Module import maps in the browser",
+      "description": "ESM",
+      "detail": "bare specifier education",
+      "text": "I see import maps mentioned for using npm packages directly in browsers without bundlers.\nOutline the idea, trade-offs, and a minimal index.html snippet with script type importmap.\nExplain when beginners should still prefer Vite instead.\nNote CORS considerations for module scripts.\nList one security footgun about remote module URLs."
+    }
+  ]
+}

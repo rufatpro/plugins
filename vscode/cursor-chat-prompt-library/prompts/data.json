@@ -1,0 +1,146 @@
+{
+  "category": "data",
+  "categoryLabel": "Data / Pandas",
+  "prompts": [
+    {
+      "id": "data-01",
+      "label": "Pandas read CSV",
+      "description": "pandas",
+      "detail": "read_csv",
+      "text": "Load CSV into DataFrame and show head, info, describe.\n\n- pip install pandas\n- Handle missing values dropna fillna intro\n\nJupyter optional."
+    },
+    {
+      "id": "data-02",
+      "label": "Select columns filter rows",
+      "description": "pandas",
+      "detail": "boolean indexing",
+      "text": "Filter rows where age > 30 and select name email columns.\n\n- Syntax df[df.age>30][['name','email']]\n\nExplain boolean mask."
+    },
+    {
+      "id": "data-03",
+      "label": "groupby aggregate",
+      "description": "pandas",
+      "detail": "groupby mean",
+      "text": "Group sales by region and sum amount.\n\n- reset_index\n\nSample DataFrame creation in script."
+    },
+    {
+      "id": "data-04",
+      "label": "Merge two DataFrames",
+      "description": "pandas",
+      "detail": "merge join",
+      "text": "merge users and orders on user_id.\n\n- how=inner vs left explained\n\nSmall tables example."
+    },
+    {
+      "id": "data-05",
+      "label": "Matplotlib simple plot",
+      "description": "viz",
+      "detail": "line chart",
+      "text": "Plot line chart from pandas Series dates and values.\n\n- plt.savefig\n\nOne script."
+    },
+    {
+      "id": "data-06",
+      "label": "Jupyter notebook workflow",
+      "description": "jupyter",
+      "detail": "cells",
+      "text": "Explain Jupyter cells markdown and code for data exploration.\n\n- When notebook vs plain script\n\nInstall jupyter command."
+    },
+    {
+      "id": "data-07",
+      "label": "NumPy arrays basics",
+      "description": "numpy",
+      "detail": "ndarray",
+      "text": "Intro NumPy array creation and vectorized math vs Python list.\n\n- shape, dtype\n\nBridge to pandas."
+    },
+    {
+      "id": "data-08",
+      "label": "Export to Excel CSV",
+      "description": "export",
+      "detail": "to_csv",
+      "text": "Cleaned DataFrame to_csv and to_excel.\n\n- index=False\n\nAfter simple cleaning pipeline."
+    },
+    {
+      "id": "data-09",
+      "label": "Data cleaning checklist",
+      "description": "workflow",
+      "detail": "EDA",
+      "text": "EDA checklist: dtypes, nulls, duplicates, outliers, value counts.\n\n- pandas functions for each step\n\nBullet workflow."
+    },
+    {
+      "id": "data-10",
+      "label": "Ethics data privacy",
+      "description": "ethics",
+      "detail": "PII",
+      "text": "Reminder about PII, consent, and anonymization when analyzing user data.\n\n- GDPR mention one line\n\nNot legal advice — habits."
+    },
+    {
+      "id": "data-11",
+      "label": "Parquet versus CSV for analytics",
+      "description": "file formats",
+      "detail": "columnar benefits",
+      "text": "Explain Parquet columnar storage benefits for repeated analytics reads.\nCompare to CSV simplicity for tiny human-edited files.\nMention schema embedded in files lightly.\nAdvise pandas read_parquet basics.\nPoint to Arrow ecosystem as optional reading."
+    },
+    {
+      "id": "data-12",
+      "label": "Rolling windows in pandas",
+      "description": "time series",
+      "detail": "min_periods behavior",
+      "text": "Demonstrate rolling means with min_periods handling initial NaNs.\nExplain differencing resample versus rolling mentally.\nMention timezone-aware indexes caution.\nAdvise plotting sanity checks.\nAvoid diving into heavy statistics theory."
+    },
+    {
+      "id": "data-13",
+      "label": "Train-test leakage checklist",
+      "description": "ML hygiene",
+      "detail": "pipelines encapsulate fitting",
+      "text": "List leakage examples: fit preprocessing on full dataset, shuffle time series wrongly, duplicate rows across splits.\nEncourage sklearn Pipeline-like encapsulation conceptually.\nAdvise temporal splits when time matters.\nWarn about metric optimism.\nKeep tone encouraging for beginners."
+    },
+    {
+      "id": "data-14",
+      "label": "SMOTE class imbalance caution",
+      "description": "ML techniques",
+      "detail": "try simple baselines first",
+      "text": "Explain SMOTE conceptually as synthetic oversampling.\nWarn about pipeline ordering mistakes causing leakage.\nSuggest class_weight style baselines first.\nMention metrics beyond accuracy truthfully.\nAvoid promising silver bullets."
+    },
+    {
+      "id": "data-15",
+      "label": "dbt incremental models overview",
+      "description": "analytics engineering",
+      "detail": "merge strategies",
+      "text": "Describe incremental models updating only new rows in warehouses conceptually.\nExplain full refresh escape hatches when stuck.\nMention uniqueness tests guarding keys lightly.\nDifferentiate from notebook exploration workflows.\nEncourage clear documentation of assumptions."
+    },
+    {
+      "id": "data-16",
+      "label": "Great Expectations style checks",
+      "description": "data quality",
+      "detail": "batch validation",
+      "text": "Outline expectation suites validating batches before publishing datasets conceptually.\nDiscuss scheduling checks in CI lightly.\nStart with simple not-null and range checks.\nRelate to upstream validation in apps.\nWarn about heavyweight adoption too early."
+    },
+    {
+      "id": "data-17",
+      "label": "Feature store concepts lite",
+      "description": "MLOps vocabulary",
+      "detail": "online versus offline",
+      "text": "Differentiate offline training feature tables versus online low-latency serving needs.\nMention consistency challenges honestly without vendor pitch.\nAdvise beginners to solidify batch pipelines first realistically.\nEncourage cross-team contracts on definitions.\nName-drop tools only as optional exploration."
+    },
+    {
+      "id": "data-18",
+      "label": "Airflow catchup and start_date traps",
+      "description": "orchestration",
+      "detail": "scheduler surprises",
+      "text": "Explain how start_date and catchup can accidentally enqueue huge backfills.\nAdvise reading scheduler timezone settings carefully.\nEncourage idempotent tasks.\nMention secrets backends lightly.\nKeep example conceptual not a full DAG dump."
+    },
+    {
+      "id": "data-19",
+      "label": "Survivorship bias in metrics",
+      "description": "interpretation",
+      "detail": "ask who is missing",
+      "text": "Tell a simple story where filtering survivors distorts conversion rates.\nEncourage documenting cohort definitions transparently.\nMention Simpson's paradox as optional vocabulary.\nAdvise plotting before modeling routinely.\nPromote curious friendly tone."
+    },
+    {
+      "id": "data-20",
+      "label": "Data contracts between teams",
+      "description": "governance",
+      "detail": "schema plus SLAs",
+      "text": "Describe producers publishing schemas with compatibility expectations.\nSuggest automated checks on publish conceptually.\nMention Avro/Protobuf lightly without mandating.\nWarn about committees blocking progress if overdone.\nEmphasize empathy between teams."
+    }
+  ]
+}

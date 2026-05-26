@@ -1,0 +1,146 @@
+{
+  "category": "mongodb",
+  "categoryLabel": "MongoDB",
+  "prompts": [
+    {
+      "id": "mongo-01",
+      "label": "MongoDB concepts vs SQL",
+      "description": "basics",
+      "detail": "collections documents",
+      "text": "Compare SQL tables to MongoDB collections and documents for beginners.\n\n- When document model fits\n- JSON-like _id field\n\nNo installation required in text."
+    },
+    {
+      "id": "mongo-02",
+      "label": "mongosh insert find",
+      "description": "shell",
+      "detail": "db.users.insertOne",
+      "text": "mongosh commands to create db, insert 3 users, find all, find one by filter.\n\n- Basic query operators $gt\n\nCopy-paste examples."
+    },
+    {
+      "id": "mongo-03",
+      "label": "Node mongoose connect",
+      "description": "mongoose",
+      "detail": "Schema User",
+      "text": "Connect Node app to MongoDB with mongoose.\n\n- Schema name email, model User, create and find\n- Connection string from env MONGODB_URI\n\nMinimal server snippet."
+    },
+    {
+      "id": "mongo-04",
+      "label": "Update and delete operators",
+      "description": "queries",
+      "detail": "updateMany",
+      "text": "Examples updateOne $set and deleteMany with filter.\n\n- Explain matched vs modified count\n\nmongosh or mongoose."
+    },
+    {
+      "id": "mongo-05",
+      "label": "Embed vs reference",
+      "description": "modeling",
+      "detail": "orders in user",
+      "text": "Teach embedding subdocuments vs separate collection references.\n\n- Example order items embedded in order doc\n- When to reference user_id instead\n\n2 scenarios."
+    },
+    {
+      "id": "mongo-06",
+      "label": "Indexes in MongoDB",
+      "description": "performance",
+      "detail": "createIndex",
+      "text": "Create index on email unique.\n\n- db.users.createIndex({ email: 1 }, { unique: true })\n- Query explain briefly\n\nWhy duplicates fail."
+    },
+    {
+      "id": "mongo-07",
+      "label": "Aggregation pipeline intro",
+      "description": "aggregation",
+      "detail": "$group $sum",
+      "text": "Aggregation counting orders per user with $group and $sum.\n\n- Sample docs and pipeline stages listed\n\nBeginner readable."
+    },
+    {
+      "id": "mongo-08",
+      "label": "MongoDB Atlas free tier",
+      "description": "cloud",
+      "detail": "connection string",
+      "text": "Steps to create free Atlas cluster and connect from local app.\n\n- IP allowlist 0.0.0.0/0 warning for learning only\n- Put URI in .env\n\nChecklist."
+    },
+    {
+      "id": "mongo-09",
+      "label": "Transactions when needed",
+      "description": "advanced",
+      "detail": "multi-doc",
+      "text": "When beginners need multi-document transactions (brief).\n\n- Transfer balance example story\n- Prefer single document design first\n\nConceptual."
+    },
+    {
+      "id": "mongo-10",
+      "label": "Validate with JSON Schema",
+      "description": "validation",
+      "detail": "$jsonSchema",
+      "text": "Collection validator with required fields name and email.\n\n- mongosh collMod or createCollection validator\n\nOne example."
+    },
+    {
+      "id": "mongo-11",
+      "label": "Change streams primer",
+      "description": "real-time",
+      "detail": "react to inserts and updates",
+      "text": "Explain MongoDB change streams conceptually versus polling repeatedly.\nMention prerequisites like replica sets and why Atlas often helps beginners.\nDescribe resume tokens only as \"continue after disconnect\" vocabulary.\nCompare cost and complexity to polling for toy projects.\nGive a small mental model: \"tailable cursor with benefits\" without huge code."
+    },
+    {
+      "id": "mongo-12",
+      "label": "Compound index field order",
+      "description": "indexes",
+      "detail": "equality, sort, range",
+      "text": "Teach how compound index field order impacts which queries can use the index efficiently.\nUse an example equality on status plus sort by createdAt.\nRelate this to multikey indexes on arrays cautiously.\nAdvise running explain on slow queries.\nWarn that index design is iterative, not guesswork."
+    },
+    {
+      "id": "mongo-13",
+      "label": "Schema validation on collections",
+      "description": "governance",
+      "detail": "JSON Schema rules",
+      "text": "Show how to attach a schema validator to a collection to reject bad documents early.\nDiscuss trade-offs with schema flexibility.\nMention document versioning patterns as a separate concern.\nCompare with Mongoose validation at the app layer.\nExplain how to read validation errors when inserts fail."
+    },
+    {
+      "id": "mongo-14",
+      "label": "Bucket pattern for time-series-ish data",
+      "description": "modeling",
+      "detail": "group readings together",
+      "text": "Describe bucketing many small readings into bigger documents (for example hourly buckets).\nCompare to one document per reading for write volume and query patterns.\nMention TTL indexes as a companion idea for expiring old data.\nWarn about unbounded array growth inside buckets.\nHelp decide when a SQL warehouse is still simpler."
+    },
+    {
+      "id": "mongo-15",
+      "label": "Multikey indexes for tags",
+      "description": "queries",
+      "detail": "$elemMatch intuition",
+      "text": "Explain multikey indexes when indexing array fields like tags.\nShow a query that finds documents containing multiple tags.\nWarn about index cardinality and memory growth.\nRelate to text indexes only as a pointer, not a full lesson.\nAdvise measuring query plans when tag sets grow huge."
+    },
+    {
+      "id": "mongo-16",
+      "label": "$lookup join-style queries",
+      "description": "aggregation",
+      "detail": "SQL mental bridge",
+      "text": "Introduce $lookup as a way to join two collections in an aggregation pipeline.\nCompare readability and performance to doing two queries in application code.\nMention $unwind when arrays complicate joins.\nWarn that joins can be expensive without indexes.\nGive a simple \"orders + customers\" style example story."
+    },
+    {
+      "id": "mongo-17",
+      "label": "Capped collections niche",
+      "description": "operations",
+      "detail": "fixed-size rings",
+      "text": "Explain capped collections as a fixed-size FIFO-like log.\nDiscuss when TTL indexes replaced many capped use cases.\nMention tailable cursors as advanced reading.\nWarn beginners not to treat capped collections as general storage.\nPoint to Kafka or proper logs if scale demands it."
+    },
+    {
+      "id": "mongo-18",
+      "label": "Read preference and staleness",
+      "description": "replication",
+      "detail": "secondaries read risk",
+      "text": "Describe reading from secondaries for scaling reads.\nExplain eventual consistency in plain language with a user-visible example.\nRelate write concern \"majority\" as a companion concept.\nWarn about \"read your own writes\" surprises.\nAdvise defaulting to primary until you truly need secondary reads."
+    },
+    {
+      "id": "mongo-19",
+      "label": "GridFS for large files",
+      "description": "storage",
+      "detail": "chunked binaries",
+      "text": "Explain GridFS splitting large files into chunks and metadata collections.\nCompare to storing files in S3-style object storage instead.\nDiscuss when GridFS still makes sense for an all-Mongo stack.\nWarn about backup and restore implications.\nMention streams for reading large files efficiently."
+    },
+    {
+      "id": "mongo-20",
+      "label": "mongodump and mongorestore drills",
+      "description": "operations",
+      "detail": "practice backups",
+      "text": "Walk through taking a dump of a database and restoring to another environment.\nExplain why restores should be rehearsed, not left theoretical.\nMention compression and partial dumps for large clusters.\nWarn about credentials on the command line.\nConnect this to having a real disaster recovery checklist."
+    }
+  ]
+}

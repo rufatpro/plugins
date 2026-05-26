@@ -1,0 +1,146 @@
+{
+  "category": "testing",
+  "categoryLabel": "Testing",
+  "prompts": [
+    {
+      "id": "test-01",
+      "label": "First pytest test",
+      "description": "pytest",
+      "detail": "test_add.py",
+      "text": "I'm new to testing. Write pytest for function add(a,b).\n\n- test_add.py with 3 cases including edge zero\n- Run pytest -v\n- Explain assert and arrange-act-assert\n\nPython only."
+    },
+    {
+      "id": "test-02",
+      "label": "pytest fixtures",
+      "description": "pytest",
+      "detail": "@pytest.fixture",
+      "text": "Teach pytest fixtures with a sample database dict fixture.\n\n- Fixture provides empty user db\n- Two tests insert and read users\n\nShort comments on setup/teardown idea."
+    },
+    {
+      "id": "test-03",
+      "label": "Mock requests with pytest",
+      "description": "pytest",
+      "detail": "monkeypatch",
+      "text": "Test a function that calls HTTP without real network.\n\n- Use pytest monkeypatch or unittest.mock\n- Fake response for requests.get\n\nOne module under test + test file."
+    },
+    {
+      "id": "test-04",
+      "label": "Jest first test",
+      "description": "jest",
+      "detail": "sum.test.js",
+      "text": "Set up Jest for a tiny Node or Vite project.\n\n- Install jest, sample sum.js and sum.test.js\n- npm test script\n- Expect 2+2 toBe 4\n\nShow package.json scripts."
+    },
+    {
+      "id": "test-05",
+      "label": "React Testing Library click",
+      "description": "react",
+      "detail": "render screen",
+      "text": "Test a React button click with Testing Library.\n\n- Component Counter, test increments on click\n- getByRole queries\n- npm test command\n\nTypeScript optional."
+    },
+    {
+      "id": "test-06",
+      "label": "Playwright E2E smoke test",
+      "description": "e2e",
+      "detail": "open homepage",
+      "text": "Add one Playwright test that opens localhost homepage.\n\n- npx playwright install hint\n- test expects title or heading visible\n\nFor Vite or Next dev server."
+    },
+    {
+      "id": "test-07",
+      "label": "Test coverage basics",
+      "description": "coverage",
+      "detail": "pytest --cov",
+      "text": "Explain code coverage for beginners.\n\n- Run pytest --cov=src or jest --coverage\n- What 100% does NOT mean\n- Reasonable goal for learning project\n\nNo obsession with metrics."
+    },
+    {
+      "id": "test-08",
+      "label": "TDD small kata",
+      "description": "tdd",
+      "detail": "fizzbuzz",
+      "text": "Walk through TDD on FizzBuzz in small steps.\n\n- Write failing test first, then minimal code\n- Show 3 red-green cycles in comments\n\nPick Python or JavaScript and stick to one."
+    },
+    {
+      "id": "test-09",
+      "label": "Snapshot test when to use",
+      "description": "jest",
+      "detail": "snapshots",
+      "text": "Explain Jest snapshot tests pros and cons.\n\n- One example snapshot of a small JSON export\n- When snapshots hurt maintenance\n\nBeginner warning in 3 bullets."
+    },
+    {
+      "id": "test-10",
+      "label": "CI run tests on push",
+      "description": "ci",
+      "detail": "GitHub Actions",
+      "text": "GitHub Actions workflow to run pytest or npm test on push.\n\n- Trigger on push main\n- Setup Python or Node, install deps, run tests\n\nYAML file content only."
+    },
+    {
+      "id": "test-11",
+      "label": "pytest parametrize with ids",
+      "description": "pytest",
+      "detail": "readable failures",
+      "text": "Show @pytest.mark.parametrize with explicit ids for matrix cases.\nExplain failure output readability wins.\nCombine with indirect fixtures lightly.\nContrast looping inside test anti-pattern.\nGive example for email validation cases."
+    },
+    {
+      "id": "test-12",
+      "label": "Fixture scopes session vs function",
+      "description": "pytest",
+      "detail": "shared container",
+      "text": "Teach when session-scoped engine makes sense for integration tests.\nWarn about state leakage between tests.\nShow autouse fixtures cautiously.\nExplain teardown yield patterns.\nRelate to parallel (-n) conflicts mention."
+    },
+    {
+      "id": "test-13",
+      "label": "Contract tests consumer driven",
+      "description": "quality",
+      "detail": "Pact intro",
+      "text": "Explain contract tests ensuring provider meets consumer expectations.\nContrast with integrated E2E fragility.\nOutline broker workflow at cartoon level.\nWhen beginners should skip until multiple services exist.\nList vocabulary: pact, provider states."
+    },
+    {
+      "id": "test-14",
+      "label": "Mutation testing why bother",
+      "description": "quality",
+      "detail": "Stryker name-drop",
+      "text": "Describe mutation testing as intentionally breaking code to see tests catch it.\nExplain cost and slowness trade-offs.\nSuggest starting on critical modules only.\nRelate to coverage percentage hubris.\nKeep tool-agnostic encouragement."
+    },
+    {
+      "id": "test-15",
+      "label": "Property-based Hypothesis sketch",
+      "description": "generative",
+      "detail": "finds edge cases",
+      "text": "Introduce @given strategies producing many inputs.\nShow shrinking failing examples intuition.\nExplain difference from example tables.\nWarn about flakiness if properties wrong.\nProvide tiny sort idempotent property idea."
+    },
+    {
+      "id": "test-16",
+      "label": "Playwright trace viewer workflow",
+      "description": "e2e",
+      "detail": "debug fails",
+      "text": "Teach turning trace on failure settings.\nWalk opening trace zip for timeline.\nDifferentiate headed vs headless debugging.\nMention network tab in traces.\nAdvise keeping traces out of git."
+    },
+    {
+      "id": "test-17",
+      "label": "Visual regression cautions",
+      "description": "ui",
+      "detail": "snapshots images",
+      "text": "Explain screenshot diff flakiness from fonts and animations.\nSuggest stabilizing animations in test mode.\nDiscuss threshold tuning philosophy.\nWhen component tests beat full page.\nMention accessibility snapshot abuse warning."
+    },
+    {
+      "id": "test-18",
+      "label": "Test doubles terminology map",
+      "description": "mocks",
+      "detail": "stub fake mock spy",
+      "text": "Define stub, fake, mock, spy in plain language.\nRelate to classic Fowler vocabulary lightly.\nShow when over-mocking hurts confidence.\nEncourage black-box service tests.\nGive example choosing fake in-memory repo."
+    },
+    {
+      "id": "test-19",
+      "label": "Flaky test triage checklist",
+      "description": "process",
+      "detail": "quarantine policy",
+      "text": "List triage: timing, shared state, async races, random seed, network.\nDiscuss quarantine tagging strategy.\nEmphasize root cause fixing over retries.\nRelate flaky rate metrics.\nProvide communication template for teams."
+    },
+    {
+      "id": "test-20",
+      "label": "Coverage as guardrail only",
+      "description": "metrics",
+      "detail": "meaningful asserts",
+      "text": "Warn against chasing 100 percent coverage blindly.\nShow diff coverage idea in PRs.\nEncourage asserting behavior not lines executed.\nRelate mutation testing synergy.\nFinish with pragmatic team policy example."
+    }
+  ]
+}

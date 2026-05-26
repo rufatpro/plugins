@@ -1,0 +1,146 @@
+{
+  "category": "wordpress",
+  "categoryLabel": "WordPress",
+  "prompts": [
+    {
+      "id": "wp-01",
+      "label": "Local WordPress install",
+      "description": "setup",
+      "detail": "Local WP",
+      "text": "Install WordPress locally with Local WP or Docker for development.\n\n- Admin login, change permalink structure\n\nSteps for Windows."
+    },
+    {
+      "id": "wp-02",
+      "label": "Posts vs Pages",
+      "description": "content",
+      "detail": "editor",
+      "text": "Explain difference posts blog vs static pages.\n\n- Create sample About page and Hello post\n\nBlock editor basics."
+    },
+    {
+      "id": "wp-03",
+      "label": "Theme child customize",
+      "description": "themes",
+      "detail": "child theme",
+      "text": "Why use child theme and create style.css with Template header.\n\n- Override one template safely\n\nHigh level."
+    },
+    {
+      "id": "wp-04",
+      "label": "Plugin install Akismet",
+      "description": "plugins",
+      "detail": "spam",
+      "text": "Install and configure a comment spam plugin conceptually.\n\n- Only install trusted plugins warning\n\nSecurity note."
+    },
+    {
+      "id": "wp-05",
+      "label": "Custom post type",
+      "description": "development",
+      "detail": "functions.php",
+      "text": "Register 'book' custom post type in theme functions.php snippet.\n\n- show_in_rest true for block editor\n\nCode in functions.php."
+    },
+    {
+      "id": "wp-06",
+      "label": "WooCommerce store outline",
+      "description": "woocommerce",
+      "detail": "products",
+      "text": "Outline steps to start small WooCommerce shop.\n\n- Products, payments plugin, shipping zones\n\nNot legal/tax advice."
+    },
+    {
+      "id": "wp-07",
+      "label": "Backup and update",
+      "description": "maintenance",
+      "detail": "updraft",
+      "text": "Backup before update plugins and core.\n\n- Staging site recommendation\n\nChecklist."
+    },
+    {
+      "id": "wp-08",
+      "label": "Security hardening basics",
+      "description": "security",
+      "detail": "wp-admin",
+      "text": "WordPress security for beginners: strong admin password, limit login attempts, hide wp-admin from bots concept.\n\n- Updates importance\n\n5 bullets."
+    },
+    {
+      "id": "wp-09",
+      "label": "Migrate local to hosting",
+      "description": "deploy",
+      "detail": "export",
+      "text": "Migrate local WordPress to shared hosting via export or Duplicator plugin overview.\n\n- Search-replace URLs issue\n\nSteps."
+    },
+    {
+      "id": "wp-10",
+      "label": "Headless WordPress REST",
+      "description": "api",
+      "detail": "wp-json",
+      "text": "Fetch posts from /wp-json/wp/v2/posts in Next.js fetch.\n\n- When headless makes sense\n\nExample fetch URL."
+    },
+    {
+      "id": "wp-11",
+      "label": "Hooks actions versus filters vocabulary",
+      "description": "WordPress internals",
+      "detail": "priorities",
+      "text": "Differentiate actions (side effects) versus filters (transform values).\nExplain hook priority integers and ordering surprises.\nShow a tiny functions.php example adding a body class.\nMention remove_action/remove_filter symmetry.\nEncourage child themes for real site changes."
+    },
+    {
+      "id": "wp-12",
+      "label": "Enqueue scripts and styles correctly",
+      "description": "front-end hygiene",
+      "detail": "dependencies list",
+      "text": "Teach wp_enqueue_script/register with dependency arrays.\nExplain in_footer versus header placement trade-offs.\nMention versioning files with filemtime-like cache busting.\nDiscuss dequeue conflicts debugging calmly.\ndefer/async nuances as deeper reading."
+    },
+    {
+      "id": "wp-13",
+      "label": "Nonces for admin forms CSRF bridging",
+      "description": "security basics",
+      "detail": "verify on server",
+      "text": "Demonstrate wp_nonce_field paired with nonce verification handlers.\nEmphasize capabilities checks accompany nonces.\nRelate AJAX admin flows lightly.\nMention sanitizing and validating all inputs anyhow.\nMap REST nonce differences vaguely without tangling."
+    },
+    {
+      "id": "wp-14",
+      "label": "WP_Query building listing pages",
+      "description": "loop control",
+      "detail": "meta_query intuition",
+      "text": "Construct WP_Query listing posts filtered by taxonomy or meta responsibly.\nExplain pagination preserving query vars.\nsuppress_filters cautions casually.\nMention avoiding expensive meta_query on huge sites vaguely.\nAdvise structuring args arrays readably."
+    },
+    {
+      "id": "wp-15",
+      "label": "Transients for short-lived caches",
+      "description": "performance",
+      "detail": "invalidate on change",
+      "text": "Show storing computed fragments with set_transient.\nDiscuss busting caches on_save_post hooks story.\nMention persistent object caches as optional infra.\nWarn about stale UX when TTL too long ethically.\nAdvise measuring before caching everything."
+    },
+    {
+      "id": "wp-16",
+      "label": "Capabilities and custom roles minimally",
+      "description": "authorization",
+      "detail": "least privilege",
+      "text": "Explain mapping capabilities to roles for custom post types.\nWarn against handing out administrator casually.\nMention multisite differences only lightly.\nRelate to human ops burden of over-permissioning.\nEncourage testing with non-admin accounts."
+    },
+    {
+      "id": "wp-17",
+      "label": "theme.json design tokens lite",
+      "description": "block themes",
+      "detail": "preset palette typography",
+      "text": "Explain tweaking global presets versus scattering CSS wildly.\nMention gradual adoption from classic themes honestly.\nBlock locking pointer optional teaser.\nAdvise versioning theme changes carefully.\nEncourage readability over cleverness."
+    },
+    {
+      "id": "wp-18",
+      "label": "Table prefix security myth calibration",
+      "description": "hardening expectations",
+      "detail": "real defenses matter",
+      "text": "Explain renaming DB prefix yields minor obscurity gains.\nEmphasize strong credentials salts updates backups matter more politely.\nMention prepared statements broadly via WP APIs vaguely.\nCaution messing production DB casually.\nPoint to reputable security guides."
+    },
+    {
+      "id": "wp-19",
+      "label": "wp-cli search-replace migration practice",
+      "description": "operations",
+      "detail": "dry-run first",
+      "text": "Walk search-replace with --dry-run for domain swaps.\nMention serialized data pitfalls pushing beginners toward trusted tools/options.\nAdvise verifying options tables manually after.\nEmphasize backups prior mantra.\nEncourage rehearsing on staging clones."
+    },
+    {
+      "id": "wp-20",
+      "label": "Application Passwords for integrations",
+      "description": "API automation",
+      "detail": "scoped tokens",
+      "text": "Introduce application passwords for machine clients.\nExplain revoking tokens when rotating.\nMention rate limits hosting dependent.\nAdvise logging integration actions lightly.\nOAuth providers optional advanced reading."
+    }
+  ]
+}

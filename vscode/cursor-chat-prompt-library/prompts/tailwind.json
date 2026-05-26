@@ -1,0 +1,146 @@
+{
+  "category": "tailwind",
+  "categoryLabel": "Tailwind CSS",
+  "prompts": [
+    {
+      "id": "tw-01",
+      "label": "Install Tailwind in Vite",
+      "description": "setup",
+      "detail": "tailwind.config",
+      "text": "Add Tailwind CSS to a Vite + React project step by step.\n\n- Install packages per official guide\n- tailwind.config content paths\n- Import in index.css\n\nList terminal commands."
+    },
+    {
+      "id": "tw-02",
+      "label": "Utility classes layout",
+      "description": "layout",
+      "detail": "flex gap-4",
+      "text": "Build a card row using Tailwind utilities only.\n\n- flex, gap, p-4, rounded-lg, shadow\n- Three cards responsive wrap\n\nHTML/JSX snippet."
+    },
+    {
+      "id": "tw-03",
+      "label": "Responsive md: lg:",
+      "description": "responsive",
+      "detail": "grid cols",
+      "text": "Teach responsive prefixes with a grid gallery.\n\n- grid-cols-1 md:grid-cols-2 lg:grid-cols-3\n- Explain mobile-first\n\nMinimal page example."
+    },
+    {
+      "id": "tw-04",
+      "label": "Dark mode class strategy",
+      "description": "dark",
+      "detail": "dark:bg-gray-900",
+      "text": "Enable class-based dark mode in tailwind.config.\n\n- darkMode: 'class'\n- Toggle on html element with JS\n- Example text and background colors\n\nShort script for toggle."
+    },
+    {
+      "id": "tw-05",
+      "label": "Buttons and hover focus",
+      "description": "components",
+      "detail": "btn primary",
+      "text": "Design primary and secondary buttons with Tailwind.\n\n- hover:, focus-visible:ring, disabled:opacity-50\n- Accessible contrast note\n\nReusable class string or @apply in component layer — explain both."
+    },
+    {
+      "id": "tw-06",
+      "label": "@apply component class",
+      "description": "organize",
+      "detail": "components.css",
+      "text": "When to use @apply for a .btn class vs inline utilities.\n\n- Small example in @layer components\n- Team style guide opinion\n\nOne file css excerpt."
+    },
+    {
+      "id": "tw-07",
+      "label": "Forms styling",
+      "description": "forms",
+      "detail": "input border focus",
+      "text": "Style a login form with Tailwind.\n\n- labels, inputs, error text red-600\n- spacing and w-full max-w-sm\n\nJSX or HTML form."
+    },
+    {
+      "id": "tw-08",
+      "label": "Tailwind + Next.js",
+      "description": "next",
+      "detail": "postcss",
+      "text": "Confirm Tailwind setup steps for Next.js (App Router).\n\n- postcss.config, globals.css directives\n- Avoid wrong content paths\n\nChecklist only."
+    },
+    {
+      "id": "tw-09",
+      "label": "Typography plugin prose",
+      "description": "plugin",
+      "detail": "@tailwindcss/typography",
+      "text": "Use typography plugin for a blog article page.\n\n- Install @tailwindcss/typography\n- article with class prose\n\nShort example markdown rendered as HTML block."
+    },
+    {
+      "id": "tw-10",
+      "label": "Migrate from plain CSS",
+      "description": "migration",
+      "detail": "incremental",
+      "text": "I have a site with custom CSS. Plan to migrate to Tailwind incrementally.\n\n- Start with layout utilities, keep old CSS file temporarily\n- 5 step strategy for beginners\n\nNo need to rewrite entire site in one PR."
+    },
+    {
+      "id": "tw-11",
+      "label": "Container queries with @container",
+      "description": "responsive",
+      "detail": "component breakpoints",
+      "text": "Explain @tailwindcss/container-queries plugin setup mentally.\nShow @container stacking pattern for cards.\nDifferentiate viewport vs container breakpoints.\nNote performance considerations lightly.\nGive migration tip from purely md: breakpoints."
+    },
+    {
+      "id": "tw-12",
+      "label": "Arbitrary values discipline",
+      "description": "utilities",
+      "detail": "square bracket syntax",
+      "text": "Teach w-[32rem] and bg-[#123456] sparingly.\nExplain when to hoist repeated arbitrary values into theme.extend.\nWarn about design-token drift.\nShow escaping brackets verbally if needed.\nRelate readability in code review."
+    },
+    {
+      "id": "tw-13",
+      "label": "line-clamp truncation",
+      "description": "typography",
+      "detail": "ellipsis multiline",
+      "text": "Demonstrate line-clamp-3 utility for descriptions.\nExplain compatibility vs legacy plugin.\nShow pairing overflow-hidden necessities.\nMention accessibility of truncating sensitive info.\nAdd hover expand pattern idea."
+    },
+    {
+      "id": "tw-14",
+      "label": "pointer-events layering",
+      "description": "UI",
+      "detail": "overlays clickable through",
+      "text": "Describe pointer-events-none on overlays that should not trap clicks wrongly.\nShow fixing modal backdrop interaction layering.\nRelate z-index stacking context reminder.\nCaution misuse breaking accessibility clicks.\nGive practical hero overlay scenario."
+    },
+    {
+      "id": "tw-15",
+      "label": "ring vs outline focus rings",
+      "description": "a11y",
+      "detail": "focus-visible stack",
+      "text": "Compare ring utilities with outline and focus-visible prefixes.\nShow consistent keyboard focus aesthetics.\nWarn removing outlines without replacement.\nTouch Windows high contrast mode lightly.\nProvide button example strings."
+    },
+    {
+      "id": "tw-16",
+      "label": "theme() in arbitrary properties",
+      "description": "config",
+      "detail": "CSS bridge",
+      "text": "Explain arbitrary properties using theme(colors.brand.DEFAULT) style notation.\nWhen inline style replacement still needed.\nRelate to CSS variables interplay in modern Tailwind directions lightly.\nEncourage consolidating tokens.\nShow one succinct example."
+    },
+    {
+      "id": "tw-17",
+      "label": "prettier-plugin-tailwindcss sorting",
+      "description": "DX",
+      "detail": "class order churn",
+      "text": "Describe automatic class sorting benefits in PR reviews.\nShow npm script integration stub.\nMention clashes with ESLint JSX rules verbally.\nAdvise gradual adoption strategy.\nRelate to tailwind-merge composition mentally."
+    },
+    {
+      "id": "tw-18",
+      "label": "safelist purge rare classes",
+      "description": "build",
+      "detail": "dynamic strings",
+      "text": "Explain safelist regex for dynamically built class names CMS-driven.\nWarn about bloated CSS footprint.\nSuggest deterministic mapping alternative.\nRelate JIT scanning limitations.\nGive example skeleton animation classes."
+    },
+    {
+      "id": "tw-19",
+      "label": "@layer cascade mental model deepen",
+      "description": "architecture",
+      "detail": "base components utilities",
+      "text": "Reiterate how layers reorder Tailwind versus custom CSS insertion.\nDemonstrate migrating third-party resets into @layer base.\nExplain specificity skirmishes when mis-layering.\nAdvise extracting component classes gradually.\nConnect to Cascade Layers spec names."
+    },
+    {
+      "id": "tw-20",
+      "label": "tailwind-merge dedupe conflicting classes",
+      "description": "libraries",
+      "detail": "conditional classNames",
+      "text": "Introduce tailwind-merge to resolve p-4 vs p-2 conflicts in composed components.\nShow pairing with clsx.\nExplain boolean prop driven style merges pattern.\nMention SSR compatibility note lightly.\nGive tiny React snippet sketch."
+    }
+  ]
+}

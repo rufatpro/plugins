@@ -1,0 +1,146 @@
+{
+  "category": "rust",
+  "categoryLabel": "Rust",
+  "prompts": [
+    {
+      "id": "rust-01",
+      "label": "cargo new hello",
+      "description": "basics",
+      "detail": "cargo run",
+      "text": "Create cargo new hello project and explain src/main.rs and Cargo.toml.\n\n- cargo run and cargo build\n- Ownership one sentence teaser\n\nBeginner friendly."
+    },
+    {
+      "id": "rust-02",
+      "label": "Variables mut ownership",
+      "description": "ownership",
+      "detail": "borrow",
+      "text": "Explain let, mut, and borrow &str with small examples.\n\n- Why compiler prevents double mutable borrow\n\nShort lesson not full book."
+    },
+    {
+      "id": "rust-03",
+      "label": "Struct impl methods",
+      "description": "types",
+      "detail": "impl block",
+      "text": "Rectangle struct with area method.\n\n- derive Debug and println {:?}\n\nRunnable code."
+    },
+    {
+      "id": "rust-04",
+      "label": "Result Option handling",
+      "description": "errors",
+      "detail": "? operator",
+      "text": "Read file returning Result and use match or ? in main.\n\n- Option vs Result when\n\nExample."
+    },
+    {
+      "id": "rust-05",
+      "label": "Vec and iterators",
+      "description": "collections",
+      "detail": "map filter",
+      "text": "Filter even numbers with iter filter collect.\n\n- Compare to for loop\n\nSnippets."
+    },
+    {
+      "id": "rust-06",
+      "label": "Crates.io dependency",
+      "description": "cargo",
+      "detail": "serde",
+      "text": "Add serde and serde_json to deserialize JSON string.\n\n- Cargo.toml [dependencies]\n\nTiny main."
+    },
+    {
+      "id": "rust-07",
+      "label": "Clippy and fmt",
+      "description": "tooling",
+      "detail": "cargo clippy",
+      "text": "Explain rustfmt and clippy for code quality.\n\n- cargo fmt, cargo clippy\n\nWhen to run in CI."
+    },
+    {
+      "id": "rust-08",
+      "label": "Actix or Axum hello",
+      "description": "web",
+      "detail": "async route",
+      "text": "Pick one Rust web framework and show GET /hello route hello world.\n\n- Mention async runtime tokio one line\n\nMinimal app skeleton."
+    },
+    {
+      "id": "rust-09",
+      "label": "cargo test",
+      "description": "testing",
+      "detail": "#[test]",
+      "text": "Write #[test] fn for add function.\n\n- cargo test output explain\n\nOne module."
+    },
+    {
+      "id": "rust-10",
+      "label": "When to choose Rust",
+      "description": "guide",
+      "detail": "use cases",
+      "text": "Objective list when Rust is worth learning vs staying on Go/Python.\n\n- Systems, WASM, performance critical\n- Steeper learning curve honest note\n\n5 bullets."
+    },
+    {
+      "id": "rust-11",
+      "label": "Option chains map and_then",
+      "description": "combinators",
+      "detail": "avoid nested matches",
+      "text": "Show rewriting nested match on Option using map and then and_then.\nCompare readability trade-offs for newcomers.\nMention analogous Result combinators.\nDiscuss when explicit match is still clearer.\nGive a toy parsing example."
+    },
+    {
+      "id": "rust-12",
+      "label": "derive(Debug, Clone) ergonomics",
+      "description": "traits",
+      "detail": "generated impls",
+      "text": "Explain deriving Debug for printing structs during development.\nExplain Clone versus Copy distinctions.\nMention customizing Debug formatting alternatives lightly.\nWarn about derives increasing compile times on huge structs mildly.\nPoint to serde Serialize as a later adjacent topic."
+    },
+    {
+      "id": "rust-13",
+      "label": "Cargo features toggling optional crates",
+      "description": "workspace",
+      "detail": "feature flags",
+      "text": "Explain declaring optional dependencies and enabling them via features.\nShow cfg(feature = \"...\") guarded code paths.\nWarn about unintended feature unification surprises.\nAdvise documenting feature meanings in Cargo.toml metadata.\nMention shrinking dependency graphs for binaries."
+    },
+    {
+      "id": "rust-14",
+      "label": "Mutex guard scopes shrink",
+      "description": "concurrency",
+      "detail": "hold locks briefly",
+      "text": "Demonstrate shortening critical sections using explicit scopes.\nDiscuss deadlock risks from nesting locks accidentally.\nMention RwLock read-heavy workloads lightly.\nRelate Tokio Mutex for async contexts as a branching note.\nEncourage fearless concurrency but not careless locking."
+    },
+    {
+      "id": "rust-15",
+      "label": "dyn Trait object trade-offs",
+      "description": "polymorphism",
+      "detail": "trait objects versus generics",
+      "text": "Compare trait objects versus monomorphized generics for plugin-like designs.\nMention Sized and object safety constraints at a headline level.\nDiscuss vtable overhead qualitatively without benchmarks religion.\nAdvise measuring hot paths.\nGive a pragmatic \"registry of handlers\" intuition."
+    },
+    {
+      "id": "rust-16",
+      "label": "thiserror versus anyhow boundaries",
+      "description": "errors",
+      "detail": "library crates versus apps",
+      "text": "Explain using thiserror in libraries exporting structured errors.\nExplain using anyhow in applications often needs context.\nMention chaining sources for debugging readability.\nAdvise mapping errors across boundaries cleanly.\nMention integrating with tracing casually."
+    },
+    {
+      "id": "rust-17",
+      "label": "Lifetime elision in functions",
+      "description": "borrow checker",
+      "detail": "when explicit is required",
+      "text": "Teach common elision rules returning references tied to inputs.\nShow examples where Rust forces explicit annotations.\nEncourage reading compiler errors literally and slowly.\nSuggest preferring owned data in small programs to reduce fights.\nMention the static lifetime for string literals as intuition training."
+    },
+    {
+      "id": "rust-18",
+      "label": "Iterator adapters laziness",
+      "description": "stdlib",
+      "detail": "chains before collect",
+      "text": "Explain iterators are lazy until you consume them with collect/for_each.\nShow map/filter/take chaining on a synthetic example.\nCompare readability vs handwritten loops honesty.\nMention fused adapters only as trivia.\nPoint to Clippy suggesting idioms."
+    },
+    {
+      "id": "rust-19",
+      "label": "rustfmt plus clippy in CI",
+      "description": "tooling",
+      "detail": "automatic guardrails",
+      "text": "Encourage cargo fmt --check in CI alongside clippy denying warnings selectively.\nExplain allow directives should be justified in comments culturally.\nMention pinning toolchains with rust-toolchain.toml optionally.\nAdvise newcomers to normalize editor format-on-save flows.\nConnect to reproducible CI images."
+    },
+    {
+      "id": "rust-20",
+      "label": "Integration tests folder layout",
+      "description": "testing",
+      "detail": "tests/*.rs crates",
+      "text": "Explain integration tests importing the crate externally from tests/ folder.\nMention helpers module patterns without creating dependency cycles.\nAdvise tagging slow suites separately loosely.\nMention benchmarks with criterion optionally as reading.\nEncourage deterministic tests."
+    }
+  ]
+}

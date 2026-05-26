@@ -1,0 +1,146 @@
+{
+  "category": "security",
+  "categoryLabel": "Security",
+  "prompts": [
+    {
+      "id": "sec-01",
+      "label": "OWASP Top 10 overview",
+      "description": "owasp",
+      "detail": "web risks",
+      "text": "Summarize OWASP Top 10 for a junior dev in plain language.\n\n- One example vulnerability each\n- Link learning to fixes\n\nNo scare tactics."
+    },
+    {
+      "id": "sec-02",
+      "label": "SQL injection prevention",
+      "description": "injection",
+      "detail": "parameterized",
+      "text": "Show vulnerable query string concat vs parameterized query in Python and JS.\n\n- ORM helps comment\n\nSide by side."
+    },
+    {
+      "id": "sec-03",
+      "label": "XSS stored reflected",
+      "description": "xss",
+      "detail": "escape output",
+      "text": "Explain XSS with examples and prevention escape encode CSP.\n\n- Never innerHTML with user data in JS\n\nReact escaping note."
+    },
+    {
+      "id": "sec-04",
+      "label": "CSRF tokens web forms",
+      "description": "csrf",
+      "detail": "SameSite",
+      "text": "How CSRF attacks work and token SameSite cookie defenses.\n\n- Django Flask framework support mention\n\nShort."
+    },
+    {
+      "id": "sec-05",
+      "label": "Password hashing bcrypt",
+      "description": "auth",
+      "detail": "never plain",
+      "text": "Demonstrate hashing passwords with bcrypt or argon2 concept.\n\n- Never store plaintext\n- Salt automatic\n\nPseudocode or library call."
+    },
+    {
+      "id": "sec-06",
+      "label": "Secrets in env not git",
+      "description": "secrets",
+      "detail": ".env gitignore",
+      "text": "Audit repo for leaked API keys checklist.\n\n- git history scan tools mention\n- rotate keys if leaked\n\nDeveloper habits."
+    },
+    {
+      "id": "sec-07",
+      "label": "HTTPS TLS why",
+      "description": "transport",
+      "detail": "certificates",
+      "text": "Why HTTPS matters man-in-the-middle simple explanation.\n\n- Let's Encrypt free certs\n\nFor beginners deploying first site."
+    },
+    {
+      "id": "sec-08",
+      "label": "Dependency npm audit",
+      "description": "supply chain",
+      "detail": "npm audit",
+      "text": "Run npm audit or pip audit and interpret severity.\n\n- Update transitive deps carefully\n\nWorkflow."
+    },
+    {
+      "id": "sec-09",
+      "label": "Threat modeling STRIDE lite",
+      "description": "process",
+      "detail": "diagram",
+      "text": "Lightweight threat model for a todo app: assets, trust boundaries, top 3 threats.\n\n- Mitigations per threat\n\nTable."
+    },
+    {
+      "id": "sec-10",
+      "label": "Secure headers CSP HSTS",
+      "description": "headers",
+      "detail": "helmet",
+      "text": "List security headers Content-Security-Policy, HSTS, X-Frame-Options.\n\n- Express helmet example one liner\n\nWhat each does."
+    },
+    {
+      "id": "sec-11",
+      "label": "JWT storage trade-offs honestly",
+      "description": "web security",
+      "detail": "XSS versus CSRF framing",
+      "text": "Compare HttpOnly cookies versus localStorage token access patterns.\nExplain why neither is perfect without broader protections.\nMention SameSite cookies as part of the CSRF story lightly.\nAdvise beginners to prefer established auth providers when possible.\nAvoid fear-mongering; focus on trade-offs."
+    },
+    {
+      "id": "sec-12",
+      "label": "SSRF prevention patterns",
+      "description": "backend security",
+      "detail": "URL fetching rules",
+      "text": "Explain SSRF via user-supplied URLs hitting internal services.\nRecommend allowlists over blocklists when feasible.\nMention DNS rebinding as advanced scary pointer only.\nAdvise layered controls with network egress restrictions.\nEncourage security testing stories without blaming individuals."
+    },
+    {
+      "id": "sec-13",
+      "label": "Mass assignment cautions",
+      "description": "API security",
+      "detail": "explicit permitted fields",
+      "text": "Explain unexpected fields updating sensitive columns.\nRecommend explicit DTOs or allowlists.\nMap similar ideas across frameworks without flame wars.\nRelate to validation layers always server-side.\nPatch partial updates cautiously."
+    },
+    {
+      "id": "sec-14",
+      "label": "Path traversal and ZipSlip",
+      "description": "file handling",
+      "detail": "sanitize paths",
+      "text": "Describe extracting archives writing outside intended directories.\nRecommend validating joined paths reject dot-dot segments.\nMention MIME sniffing uploads as optional pointer.\nAdvise tests covering malicious filenames.\nKeep examples ethical and non weaponized."
+    },
+    {
+      "id": "sec-15",
+      "label": "Brute force protections humanely",
+      "description": "abuse resistance",
+      "detail": "login endpoints",
+      "text": "Discuss rate limits progressive delays and optional CAPTCHAs balancing UX.\nMention distributed counters lightly.\nAdvise monitoring credential stuffing signals.\nEncourage helpful account recovery without punishing users.\nRelate to logging without storing raw passwords ever."
+    },
+    {
+      "id": "sec-16",
+      "label": "CSP rollout with Report-Only",
+      "description": "browser defenses",
+      "detail": "incremental tightening",
+      "text": "Suggest starting Content-Security-Policy-Report-Only.\nExplain tightening script-src with nonces/hashes as advanced path.\nWarn about breaking inline scripts during migration.\nAdvise testing checkout flows specifically.\nMention frame-ancestors basics lightly."
+    },
+    {
+      "id": "sec-17",
+      "label": "Logging without leaking secrets",
+      "description": "operational security",
+      "detail": "structured redaction",
+      "text": "Encourage structured logs with redaction for tokens emails etc.\nWarn about accidental debug dumps in production stories empathetically.\nMention correlation IDs without payloads.\nAdvise retention policies aligned to privacy rules lightly.\nPromote blame-aware incident culture."
+    },
+    {
+      "id": "sec-18",
+      "label": "Dependency hygiene and advisories",
+      "description": "supply chain",
+      "detail": "lockfiles plus review",
+      "text": "Advocate lockfiles and regular advisory review cadence.\nMention SBOM export as optional maturity.\nWarn about auto-update chaos versus stagnation balance.\nEncourage prioritizing exploitable issues realistically.\nRelate to CI scanning as a signal not truth."
+    },
+    {
+      "id": "sec-19",
+      "label": "Password reset token design",
+      "description": "identity hygiene",
+      "detail": "single-use expiring",
+      "text": "Explain high-entropy single-use expiring reset tokens stored hashed.\nMention notifying users on suspicious resets empathetically.\nEncourage MFA adoption gently.\nRelate timing attack awareness as optional advanced reading.\nNever store plaintext passwords reminder kindly."
+    },
+    {
+      "id": "sec-20",
+      "label": "Least privilege for developers",
+      "description": "org security",
+      "detail": "break-glass access",
+      "text": "Describe low daily privilege with temporary elevated roles audited.\nMention SSO group mappings lightly.\nEncourage periodic access reviews humanely.\nWarn about shared admin credentials anti-pattern.\nRelate to pleasant on-call practices."
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "category": "linux",
+  "categoryLabel": "Linux / Bash",
+  "prompts": [
+    {
+      "id": "linux-01",
+      "label": "Essential shell commands",
+      "description": "basics",
+      "detail": "ls cd pwd",
+      "text": "Teach 15 essential Linux commands for developers new to terminal.\n\n- ls, cd, pwd, mkdir, rm, cp, mv, cat, less, grep, chmod, man\n- One example each\n\nAssume Ubuntu or WSL."
+    },
+    {
+      "id": "linux-02",
+      "label": "Bash script variables",
+      "description": "bash",
+      "detail": "hello.sh",
+      "text": "Write hello.sh with variables and echo.\n\n- shebang, chmod +x\n- positional parameters $1\n\nSafe quoting double vs single."
+    },
+    {
+      "id": "linux-03",
+      "label": "if and loops in Bash",
+      "description": "bash",
+      "detail": "for file in",
+      "text": "Script that loops over *.txt files and counts lines.\n\n- if [ -f ], for loop, wc -l\n\nAdd comments for beginners."
+    },
+    {
+      "id": "linux-04",
+      "label": "grep and find",
+      "description": "search",
+      "detail": "find . -name",
+      "text": "Find all .py files under project and search TODO with grep -r.\n\n- Explain pipes |\n\nPractical examples."
+    },
+    {
+      "id": "linux-05",
+      "label": "chmod and chown basics",
+      "description": "permissions",
+      "detail": "755",
+      "text": "Explain rwx permissions and chmod 755 for a script.\n\n- ls -l reading drwxr-xr-x\n- Never chmod 777 on production — warning\n\nShort lesson."
+    },
+    {
+      "id": "linux-06",
+      "label": "curl test API",
+      "description": "network",
+      "detail": "curl -X POST",
+      "text": "curl examples GET and POST JSON to localhost API.\n\n- Headers Content-Type application/json\n- -d body file\n\nFor testing FastAPI or Express."
+    },
+    {
+      "id": "linux-07",
+      "label": "ssh connect to server",
+      "description": "ssh",
+      "detail": "key-based auth",
+      "text": "Beginner guide to ssh user@host and ssh-keygen.\n\n- Copy public key to server concept\n- Config file ~/.ssh/config Host alias\n\nSecurity hygiene."
+    },
+    {
+      "id": "linux-08",
+      "label": "systemd service overview",
+      "description": "services",
+      "detail": "unit file",
+      "text": "What is systemd and a simple service unit for Node app (conceptual).\n\n- systemctl start stop status\n- Not full production hardening\n\nOutline only."
+    },
+    {
+      "id": "linux-09",
+      "label": "tail journalctl logs",
+      "description": "logs",
+      "detail": "debug service",
+      "text": "Read logs with journalctl -u myapp -f and tail -f file.log.\n\n- When debugging failed deploy\n\n5 commands cheat sheet."
+    },
+    {
+      "id": "linux-10",
+      "label": "WSL2 on Windows dev",
+      "description": "wsl",
+      "detail": "Ubuntu",
+      "text": "Set up WSL2 for web development on Windows.\n\n- Install Ubuntu, git, node, docker optional\n- Access files from Windows path /mnt/c/\n\nCommon pitfalls."
+    },
+    {
+      "id": "linux-11",
+      "label": "journalctl follow systemd unit",
+      "description": "logs",
+      "detail": "bounded searches",
+      "text": "Show journalctl -u nginx -f narrowing since timestamps.\nExplain priority shorthands entry levels.\nRelate syslog bridges optional.\nMention rotation philosophies differences briefly.\nPair systemctl status mental workflow."
+    },
+    {
+      "id": "linux-12",
+      "label": "ss modern socket listing",
+      "description": "network",
+      "detail": "listening diagnostics",
+      "text": "Introduce ss -tlnp listing TCP listeners succinctly outperforming outdated netstat story.\nInterpret PID program column usefulness cautiously ambiguous packaging.\nMention firewall interplay ufw nftables optional lightly.\nAdvise binding localhost versus all interfaces distinctions.\nCaution interpreting Docker forwarded ports."
+    },
+    {
+      "id": "linux-13",
+      "label": "tar archiving exclude hygiene",
+      "description": "files",
+      "detail": "node_modules spared",
+      "text": "Teach gzipped archives excluding huge directories selectively.\nExplain trailing slash semantics cautiously impactful.\nVerify archive listing table dry runs.\nxz versus gzip compression trade verbally optional.\nRehearse restores onto fresh directory discipline."
+    },
+    {
+      "id": "linux-14",
+      "label": "rsync deltas SSH",
+      "description": "sync",
+      "detail": "incremental backups",
+      "text": "Demonstrate rsync mirrored trees remote SSH incrementally respecting trailing slashes nuance vividly warn.\nMention throttle bandwidth limiting optional leisurely.\nContrast brute scp duplication clarity.\nCaution verifying host keys trust establishment morally.\nMap backup verification spot checks."
+    },
+    {
+      "id": "linux-15",
+      "label": "nice ionice background bulk jobs",
+      "description": "scheduling",
+      "detail": "interactive responsiveness",
+      "text": "Explain lowering priority compress transcode interfering desktop sessions annoyance reduction.\nTouch ionice idle class optional disk heavy jobs vocal sketch.\nRelate systemd CPUQuota glimpsed teaser optional.\nAdvise benchmarking before tuning obsession.\nMention sudo renice pitfalls permissions."
+    },
+    {
+      "id": "linux-16",
+      "label": "strace attaching syscalls hangs",
+      "description": "debug",
+      "detail": "noisy but revealing",
+      "text": "Outline stracing hung process illuminating blocked reads optional narrative exercise.\nWarn overwhelming output verbosity.\nRelate perf top optional alternative glimpsed ethically production caution.\nLearning toy sleep binaries recommended safe playground."
+    },
+    {
+      "id": "linux-17",
+      "label": "lsof leaked deleted files space",
+      "description": "debug",
+      "detail": "disk reclamation mystery",
+      "text": "Teach recovering disk after deletion still held open fds scenario classic.\nShow port grabbing lsof -i usage complementarily casually.\nRelate ulimit descriptors exhaustion symptoms optional.\ncopytruncate logrotate caveat optional mention.\nPrefer investigating before reboot impulses."
+    },
+    {
+      "id": "linux-18",
+      "label": "cron versus systemd timers",
+      "description": "scheduling",
+      "detail": "visibility trade",
+      "text": "Compare cron familiarity versus systemd timers journal integration verbosity advantages honestly balanced.\nHighlight timezone pitfalls crontabs historically painful.\nMention accuracy random sleeps thundering herds optional humane.\nAbsolutely discourage secrets inlined either approach firmly gently."
+    },
+    {
+      "id": "linux-19",
+      "label": "POSIX ACL collaborator sharing nuance",
+      "description": "permissions",
+      "detail": "beyond naive chmod",
+      "text": "Introduce setfacl granting single collaborator read write without widening world permissions drastically.\nShow getfacl inspection hygiene.\nWarn backup tools stripping ACL silently hazard optional.\numask interplay casually mentioned.\nNFS quirks optional caution footnote."
+    },
+    {
+      "id": "linux-20",
+      "label": "container networking veth primer",
+      "description": "containers",
+      "detail": "bridge mental sketch",
+      "text": "Explain simplified bridged networking with host–container bridges at a cartoon level.\nPoint out why learning ip addr and ip route first still matters.\nMention mtu “black hole” symptoms only as troubleshooting vocabulary.\nEmphasize using packet capture ethically and rarely in production.\nDefer to distro docs (such as Netplan) for persistent network config."
+    }
+  ]
+}

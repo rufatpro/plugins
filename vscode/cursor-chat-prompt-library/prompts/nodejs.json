@@ -1,0 +1,146 @@
+{
+  "category": "nodejs",
+  "categoryLabel": "Node.js Backend",
+  "prompts": [
+    {
+      "id": "node-01",
+      "label": "Express middleware order",
+      "description": "express",
+      "detail": "json logger",
+      "text": "Explain Express middleware order for beginners.\n\n- express.json(), custom logger, routes, 404 handler\n- Why order matters with a failing example\n\nMinimal server.js."
+    },
+    {
+      "id": "node-02",
+      "label": "REST CRUD Express",
+      "description": "express",
+      "detail": "in-memory items",
+      "text": "Build CRUD /api/items with Express and in-memory array.\n\n- GET list, GET id, POST, PUT, DELETE\n- Test with curl examples\n\nNo database yet."
+    },
+    {
+      "id": "node-03",
+      "label": "Zod validation body",
+      "description": "validation",
+      "detail": "zod schema",
+      "text": "Validate POST body with Zod in Express.\n\n- Schema createItemSchema\n- Return 400 with error details on fail\n\nTypeScript preferred."
+    },
+    {
+      "id": "node-04",
+      "label": "Prisma + SQLite setup",
+      "description": "orm",
+      "detail": "schema.prisma",
+      "text": "Outline Prisma setup with SQLite for a todo API.\n\n- schema model Todo, migrate dev\n- CRUD routes sketch\n\nSteps and key files, not full 200 lines."
+    },
+    {
+      "id": "node-05",
+      "label": "JWT middleware protect route",
+      "description": "auth",
+      "detail": "bearer token",
+      "text": "Protect one Express route with JWT middleware (learning project).\n\n- Login returns fake token, GET /me requires Authorization\n- Security caveats for production\n\nSimplified code."
+    },
+    {
+      "id": "node-06",
+      "label": "File upload multer intro",
+      "description": "files",
+      "detail": "multipart",
+      "text": "Single file upload with multer conceptually.\n\n- POST /upload, save to uploads/\n- Limit file size\n\nMention security scanning in production."
+    },
+    {
+      "id": "node-07",
+      "label": "WebSocket Socket.io hello",
+      "description": "realtime",
+      "detail": "emit on connect",
+      "text": "Minimal Socket.io server and client echo.\n\n- Server logs connection, client sends hello\n- When to use WebSockets vs REST\n\nTwo small files."
+    },
+    {
+      "id": "node-08",
+      "label": "Rate limiting express-rate-limit",
+      "description": "security",
+      "detail": "100 per 15min",
+      "text": "Add basic rate limiting to public API.\n\n- express-rate-limit config\n- Explain abuse prevention\n\nSnippet only."
+    },
+    {
+      "id": "node-09",
+      "label": "Structured logging pino",
+      "description": "ops",
+      "detail": "json logs",
+      "text": "Replace console.log with pino logger in Express.\n\n- Log requests with method and url\n- Why JSON logs help in production\n\nShort integration."
+    },
+    {
+      "id": "node-10",
+      "label": "Node project structure",
+      "description": "structure",
+      "detail": "src routes",
+      "text": "Recommend folder structure for growing Node API.\n\n- src/routes, controllers, services, config\n- When to split files\n\nTree diagram in text."
+    },
+    {
+      "id": "node-11",
+      "label": "node --watch lightweight reload",
+      "description": "runtime",
+      "detail": "no nodemon dependency",
+      "text": "Teach using node --watch index.js since Node 18+.\nCompare with nodemon extras like ignore patterns.\nExplain restart vs hot module replacement honestly.\nMention Windows polling caveats casually.\nShow package.json scripts example."
+    },
+    {
+      "id": "node-12",
+      "label": "native fetch Undici glance",
+      "description": "http",
+      "detail": "global fetch Node 18+",
+      "text": "Explain fetch availability without node-fetch.\nDemonstrate duplex streaming limits briefly verbally.\nRelate timeouts via AbortSignal.timeout patterns.\nMention Undici diagnostics optional.\nWarn about localhost IPv6 quirks lightly."
+    },
+    {
+      "id": "node-13",
+      "label": "worker_threads offload CPU",
+      "description": "performance",
+      "detail": "pool pattern outline",
+      "text": "Outline moving heavy parsing into worker_threads.\nCompare vs child_process for beginners.\nShare limitations on shared buffers mental model.\nMention pitfalls passing non-cloneables.\nAdvise profiling first."
+    },
+    {
+      "id": "node-14",
+      "label": "graceful shutdown SIGTERM handlers",
+      "description": "ops",
+      "detail": "close server",
+      "text": "Show listening SIGTERM closing HTTP server and DB pools.\nExplain Kubernetes pod termination window roughly.\nDifferentiate abrupt exit data loss scenarios.\nMention draining in-flight requests idea.\nTouch Windows signal limitations briefly."
+    },
+    {
+      "id": "node-15",
+      "label": "helmet hardening Express",
+      "description": "security",
+      "detail": "headers preset",
+      "text": "Introduce helmet middleware setting security headers defaults.\nHighlight HSTS nuances behind HTTPS terminator.\nRelate CSP configuration complexity caveat.\nShow ordering with cors.\nAdvise verifying via external header scan tools optional."
+    },
+    {
+      "id": "node-16",
+      "label": "compression middleware gzip tradeoffs",
+      "description": "perf",
+      "detail": "CPU vs bandwidth",
+      "text": "Discuss enabling gzip/brotli slowing CPU but saving egress.\nMention thresholds for tiny responses.\nRelate compressible MIME types basics.\nCompare Brotli at CDN layer.\nTell beginners to benchmark realistic payloads."
+    },
+    {
+      "id": "node-17",
+      "label": "pino structured JSON logs",
+      "description": "observability",
+      "detail": "machine parse",
+      "text": "Contrast console.log unstructured vs pino child loggers carrying requestId.\nShow redacting sensitive fields verbally.\nRelate pretty transport dev-only.\nMention log levels and sampling teaser.\nPoint to correlation with OpenTelemetry downstream."
+    },
+    {
+      "id": "node-18",
+      "label": "package.json exports map modern entry",
+      "description": "modules",
+      "detail": "conditional imports",
+      "text": "Explain dual package hazard warnings simply.\nShow exports import vs require maps.\nMention TypeScript resolutions interplay.\nAdvise documenting public surfaces.\nRelate pitfalls deep-importing internals."
+    },
+    {
+      "id": "node-19",
+      "label": "dotenv-flow multiple env files",
+      "description": "config",
+      "detail": "NODE_ENV branching",
+      "text": "Describe .env.local vs .env.production layering mentally.\nEmphasize never committing secrets.\nContrast with Docker env injection in CI.\nShow minimal loader usage verbally.\nAvoid conflating frameworks beyond pattern."
+    },
+    {
+      "id": "node-20",
+      "label": "cluster module analogy today",
+      "description": "scaling",
+      "detail": "orchestrators superseding",
+      "text": "Explain historical cluster.fork exploiting CPUs.\nRelate modern horizontal scaling pods.\nDiscuss sticky sessions caveat.\nMention why beginners learn event loop before cluster.\nPoint to orchestrator adoption."
+    }
+  ]
+}

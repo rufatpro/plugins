@@ -1,0 +1,146 @@
+{
+  "category": "website",
+  "categoryLabel": "Website (HTML / CSS)",
+  "prompts": [
+    {
+      "id": "web-01-landing",
+      "label": "Simple one-page landing",
+      "description": "HTML + CSS",
+      "detail": "Hero, sections, footer",
+      "text": "Create a simple one-page website for a beginner portfolio.\n\nRequirements:\n- One index.html and one styles.css (no frameworks yet)\n- Semantic HTML: header, main, section, footer\n- Hero with name, short tagline, and a CTA button\n- About section, skills list, contact section\n- Mobile-friendly layout (flexbox is fine)\n- Clean, readable colors and spacing\n\nExplain each file briefly and what I should open in the browser to preview."
+    },
+    {
+      "id": "web-02-navbar",
+      "label": "Responsive navigation bar",
+      "description": "HTML + CSS",
+      "detail": "Desktop menu + mobile hamburger",
+      "text": "Build a responsive navigation bar for a small business site.\n\nRequirements:\n- Logo text on the left, links on the right (Home, About, Services, Contact)\n- On screens under 768px, show a hamburger button that toggles the menu\n- Use HTML + CSS only (vanilla JS allowed only for the menu toggle)\n- Accessible: button has aria-label, focus styles on links\n\nProvide complete code and short steps to test resizing in the browser."
+    },
+    {
+      "id": "web-03-contact-form",
+      "label": "Contact form (HTML)",
+      "description": "forms",
+      "detail": "Name, email, message — no backend",
+      "text": "Create a contact form page for a beginner.\n\nFields: name (required), email (required, type email), subject, message (textarea, required).\n- Use proper labels linked to inputs\n- Basic HTML5 validation attributes\n- A submit button (form action can be # for now)\n- Simple CSS so the form looks neat and centered\n\nExplain what still needs a backend later and what works without one."
+    },
+    {
+      "id": "web-04-flex-cards",
+      "label": "Card layout with Flexbox",
+      "description": "CSS flexbox",
+      "detail": "3 product or blog cards",
+      "text": "Teach me Flexbox by building a row of 3 cards that wrap on small screens.\n\nEach card: image placeholder, title, short description, \"Read more\" link.\n- Use flexbox on the container (gap, wrap)\n- Cards equal height on desktop\n- Stack vertically on mobile\n\nGive HTML + CSS with comments on the important flex properties."
+    },
+    {
+      "id": "web-05-css-grid-gallery",
+      "label": "Photo gallery with CSS Grid",
+      "description": "CSS grid",
+      "detail": "6–9 thumbnails in a grid",
+      "text": "Create an image gallery page using CSS Grid (no frameworks).\n\n- 6–9 placeholder images (use https://placehold.co or similar URLs)\n- Responsive grid: 3 columns desktop, 2 tablet, 1 mobile\n- Hover effect on images (slight scale or shadow)\n- Page title and short intro paragraph\n\nInclude HTML + CSS and explain grid-template-columns and gap."
+    },
+    {
+      "id": "web-06-dark-mode",
+      "label": "Light / dark theme toggle",
+      "description": "CSS variables + JS",
+      "detail": "Save preference in localStorage",
+      "text": "Add a light/dark theme toggle to a minimal sample page.\n\n- Use CSS custom properties for colors (background, text, card)\n- One button toggles theme\n- Save choice in localStorage and apply on page load\n- Keep code small and well-commented for a beginner\n\nProvide index.html, styles.css, and script.js."
+    },
+    {
+      "id": "web-07-header-footer",
+      "label": "Reusable header and footer",
+      "description": "layout",
+      "detail": "Multi-page site structure",
+      "text": "Show me how to structure a 3-page static site (home, about, contact) with the same header and footer on each page.\n\n- Consistent navigation highlighting the current page\n- Footer with copyright year and social links (placeholder #)\n- Shared styles.css\n- Explain whether I should duplicate HTML or use a simple include approach suitable for beginners"
+    },
+    {
+      "id": "web-08-portfolio-mobile",
+      "label": "Mobile-first portfolio skeleton",
+      "description": "mobile-first",
+      "detail": "Sections for projects and skills",
+      "text": "Create a mobile-first portfolio skeleton for a junior developer.\n\nSections: intro, skills (tags), 2–3 project cards with links, contact.\n- Start CSS with mobile styles, then min-width media query for desktop\n- No JavaScript required\n- Neutral, professional look\n\nList which files to create and what to customize with my own text."
+    },
+    {
+      "id": "web-09-faq-accordion",
+      "label": "FAQ accordion",
+      "description": "HTML + CSS + JS",
+      "detail": "Click to expand answers",
+      "text": "Build a FAQ section with 5 questions and accordion behavior.\n\n- Click question to show/hide answer (only one open at a time is optional)\n- Accessible markup (button or heading + panel)\n- Simple CSS transitions if possible\n- Vanilla JavaScript only\n\nProvide full code and how to add my own questions."
+    },
+    {
+      "id": "web-10-login-ui",
+      "label": "Login page UI mockup",
+      "description": "HTML + CSS",
+      "detail": "No real authentication",
+      "text": "Design a modern login page UI mockup (front-end only, no real auth).\n\n- Email and password fields, \"Remember me\" checkbox, Submit button\n- Link placeholders: Forgot password?, Sign up\n- Centered card on a subtle background\n- Responsive and keyboard-friendly focus states\n\nExplain that this is UI only and what would be needed for real login later."
+    },
+    {
+      "id": "web-11",
+      "label": "Skip-link accessibility pattern",
+      "description": "a11y",
+      "detail": "jump to main content",
+      "text": "I'm improving accessibility on a plain HTML/CSS page.\nExplain what a skip link is for keyboard users.\nProvide a compact example: visually hidden anchor that appears on focus, linking to main#content.\nStyle it with minimal CSS (:focus-visible) and note one common pitfall beginners miss.\nList how to test quickly with Tab in the browser."
+    },
+    {
+      "id": "web-12",
+      "label": "Responsive pricing comparison table",
+      "description": "tables",
+      "detail": "mobile scroll + zebra",
+      "text": "Build a semantic pricing table for three software plans using only HTML + CSS.\nRequirements: thead with plan names, rows for limits/features, responsive horizontal scroll on small screens.\nAdd zebra striping without hurting readability.\nExplain when a table beats a Flexbox/card layout for comparisons.\nTell me exactly which files you would change in a tiny static folder layout."
+    },
+    {
+      "id": "web-13",
+      "label": "CSS-only hover tooltip",
+      "description": "layout",
+      "detail": "aria-describedby optional",
+      "text": "Create an info icon beside a confusing label.\nRequirements: hovering or focusing shows a small tooltip anchored near the trigger, using CSS only plus minimal HTML.\nDiscuss whether this is adequate for accessibility or why a richer pattern might help.\nExplain z-index/stacking pitfalls for beginners.\nKeep JavaScript optional for later."
+    },
+    {
+      "id": "web-14",
+      "label": "Breadcrumb trail component",
+      "description": "navigation",
+      "detail": "semantic nav + separators",
+      "text": "Teach breadcrumbs for a fictional e-commerce hierarchy: Home › Books › Guides.\nUse a nav landmark and an ordered/unordered pattern that screen readers tolerate well.\nStyle separators cleanly and show two responsive variants.\nContrast URL shape vs crumb labels.\nAdd a checklist for validating in devtools."
+    },
+    {
+      "id": "web-15",
+      "label": "Sticky sidebar with flowing main column",
+      "description": "sticky",
+      "detail": "position sticky caveats",
+      "text": "Lay out a docs-style page with a sidebar on desktop and stacked layout on narrow screens.\nUse position: sticky so the sidebar summary stays visible while scrolling the article.\nList parent overflow issues that commonly break sticky for beginners.\nProvide HTML/CSS only and naming suggestions for landmarks.\nMention browser testing at two widths."
+    },
+    {
+      "id": "web-16",
+      "label": "Print stylesheet for résumé",
+      "description": "@media print",
+      "detail": "hide nav, sane margins",
+      "text": "I want a printable one-page-ish résumé that still renders nicely on screen.\nSeparate screen vs print CSS using @media print.\nGoals: suppress navigation/background ornaments for print, sane margins and font sizing, prevent awkward splits across pages.\nWalk through what to tweak in chrome print preview.\nGive file organization advice for beginners."
+    },
+    {
+      "id": "web-17",
+      "label": "prefers-color-scheme starter theme",
+      "description": "media queries",
+      "detail": "automatic light/dark",
+      "text": "Prefer automatic light/dark styling using prefers-color-scheme without a toggle button.\nUse CSS variables for core colors and typography.\nContrast this with a manual toggle driven by JS + localStorage (briefly).\nExplain how to emulate both modes quickly in Chromium devtools.\nProvide a miniature index + CSS example."
+    },
+    {
+      "id": "web-18",
+      "label": "picture element responsive art direction",
+      "description": "responsive images",
+      "detail": "sources + fallback img",
+      "text": "Explain when to upgrade from a single responsive img srcset to picture with multiple sources.\nConstruct a concise example swapping aspect ratio/layout at md breakpoint.\nComment on decoding and loading attributes beginners should know.\nList one mistake about order of source elements.\nKeep copy friendly for someone who's only used css background images before."
+    },
+    {
+      "id": "web-19",
+      "label": "prefers-reduced-motion safe animations",
+      "description": "accessibility",
+      "detail": "keyframes + media query",
+      "text": "I want tasteful motion (fade/slide) on my static site but I also care about vestibular sensitivity.\nTeach prefers-reduced-motion and how to pair it with @media (prefers-reduced-motion: reduce).\nGive a before/after CSS snippet for a hero entrance.\nExplain how to test in browser devtools.\nPoint out one animation property that is usually safer than large translation jumps."
+    },
+    {
+      "id": "web-20",
+      "label": "Long-form article semantics",
+      "description": "semantics",
+      "detail": "article, aside, figure",
+      "text": "Sketch HTML for a blog post with title, byline, reading time placeholder, main article body, pull quote, and author aside.\nUse article, header, time, blockquote, cite, figure/figcaption where appropriate.\nNote one mistake people make confusing aside with sidebar ads only.\nKeep CSS minimal but show typographic rhythm basics (max-width, line-height).\nFinish with a short checklist for heading levels."
+    }
+  ]
+}

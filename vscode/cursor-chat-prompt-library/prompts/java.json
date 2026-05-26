@@ -1,0 +1,146 @@
+{
+  "category": "java",
+  "categoryLabel": "Java / Spring",
+  "prompts": [
+    {
+      "id": "java-01",
+      "label": "Hello Java Maven project",
+      "description": "basics",
+      "detail": "mvn archetype",
+      "text": "Create Maven project printing Hello with java 17+.\n\n- pom.xml dependencies section empty\n- mvn compile exec or main class\n\nExplain JDK vs JRE."
+    },
+    {
+      "id": "java-02",
+      "label": "Spring Boot initializr",
+      "description": "spring",
+      "detail": "start.spring.io",
+      "text": "Generate Spring Boot web project from start.spring.io.\n\n- Dependencies: Spring Web\n- Application.java and @RestController /hello\n- mvn spring-boot:run\n\nList files."
+    },
+    {
+      "id": "java-03",
+      "label": "REST controller CRUD",
+      "description": "rest",
+      "detail": "@RestController",
+      "text": "Simple in-memory REST CRUD for Item in Spring Boot.\n\n- GET POST without database\n- ResponseEntity status codes\n\nJava records or class for Item."
+    },
+    {
+      "id": "java-04",
+      "label": "Spring Data JPA entity",
+      "description": "jpa",
+      "detail": "@Entity User",
+      "text": "Add User entity and JpaRepository.\n\n- application.properties H2 console for learning\n- findAll endpoint\n\nMigration with ddl-auto=update warning."
+    },
+    {
+      "id": "java-05",
+      "label": "application.yml profiles",
+      "description": "config",
+      "detail": "dev prod",
+      "text": "Explain Spring profiles dev and prod in application.yml.\n\n- Different datasource URLs placeholder\n- Activate with spring.profiles.active\n\nNo real passwords."
+    },
+    {
+      "id": "java-06",
+      "label": "Validation @Valid",
+      "description": "validation",
+      "detail": "Bean Validation",
+      "text": "POST user with @Valid and jakarta validation annotations.\n\n- @NotBlank email etc\n- Return 400 on errors\n\nController + DTO example."
+    },
+    {
+      "id": "java-07",
+      "label": "ExceptionHandler advice",
+      "description": "errors",
+      "detail": "@ControllerAdvice",
+      "text": "Global exception handler returning JSON error body.\n\n- Custom NotFoundException -> 404\n\nOne advice class snippet."
+    },
+    {
+      "id": "java-08",
+      "label": "JUnit 5 Spring Boot test",
+      "description": "testing",
+      "detail": "@SpringBootTest",
+      "text": "Slice test or @WebMvcTest for hello endpoint.\n\n- MockMvc perform get expect 200\n\nMaven surefire run."
+    },
+    {
+      "id": "java-09",
+      "label": "Gradle vs Maven choice",
+      "description": "build",
+      "detail": "build.gradle",
+      "text": "Compare Maven and Gradle for beginners picking Spring.\n\n- When IntelliJ defaults matter\n- Simple Gradle kotlin dsl hello if switching\n\nNeutral recommendation."
+    },
+    {
+      "id": "java-10",
+      "label": "Package JAR run",
+      "description": "deploy",
+      "detail": "java -jar",
+      "text": "Build executable JAR and run java -jar app.jar.\n\n- spring-boot-maven-plugin repackage\n- PORT env variable\n\nProduction note on secrets."
+    },
+    {
+      "id": "java-11",
+      "label": "Sealed classes controlled hierarchy",
+      "description": "modern Java",
+      "detail": "exhaustive switches",
+      "text": "Explain sealed class permits Circle Square limiting extension.\nRelate switch pattern matching preview stability notes careful reading.\nContrast final classes.\nTeach domain modeling wins.\nMention serialization planning lightly."
+    },
+    {
+      "id": "java-12",
+      "label": "Records compact DTOs",
+      "description": "modeling",
+      "detail": "immutable carriers",
+      "text": "Use records for API response payloads.\nShow compact constructor validation inserts.\nExplain equals hashCode synthesizing.\nRelate Jackson annotations interplay.\nMention migration from verbose POJOs narrative."
+    },
+    {
+      "id": "java-13",
+      "label": "Virtual threads conceptual tour",
+      "description": "concurrency",
+      "detail": "cheap blocking tasks",
+      "text": "Describe virtual threads improving throughput blocking IO verbally without tuning lecture.\nCompare platform thread pool sizing headaches anecdotal.\nWarn pinning pitfalls conceptually skim.\nAdvise juniors still mastering classic ExecutorService concurrently.\nMention structured concurrency teaser optional."
+    },
+    {
+      "id": "java-14",
+      "label": "HttpClient timeouts builders",
+      "description": "stdlib",
+      "detail": "Java 11 client",
+      "text": "Configure connect request timeouts HttpClient fluent builder.\nShow JSON POST BodyPublishers sample sketch.\nExplain handler choices mapping responses.\nHighlight thread-safe reuse HttpClient reminders.\nMap Spring clients migration pointer optional."
+    },
+    {
+      "id": "java-15",
+      "label": "Optional anti-patterns avoided",
+      "description": "API",
+      "detail": "null ergonomics",
+      "text": "Teach Optional return never field misuse.\nWarn get without checks anti-pattern strongly.\nShow orElse vs orElseGet lazy differences.\nRelate Streams pipeline combos.\nAdvise resisting Optional wrapping frenzy."
+    },
+    {
+      "id": "java-16",
+      "label": "JUnit 5 ParameterizedTests",
+      "description": "testing",
+      "detail": "CSV Enum sources",
+      "text": "Show ParameterizedTest CSV Enum sources interplay.\nExplain nested lifecycle classes optional.\nMention parallel execution caveat optional.\nAdvise asserting messages clarity.\nSuggest AssertJ ergonomics lightly optional."
+    },
+    {
+      "id": "java-17",
+      "label": "JPMS module-info when beginners ignore",
+      "description": "tooling",
+      "detail": "library publishing",
+      "text": "Give approachable guidance ignoring JPMS until library publishing demands.\nExplain requires transitive keywords gently.\njlink packaging teaser skipping depth.\nMention classpath versus module-path errors sympathy.\nReassure app developers often skip."
+    },
+    {
+      "id": "java-18",
+      "label": "Checked unchecked exceptions philosophies",
+      "description": "errors",
+      "detail": "API design tastes",
+      "text": "Contrast historical checked exceptions libraries versus frameworks favoring unchecked verbally.\nEmphasize documenting throws regardless.\nShow wrapping chaining patterns honestly.\nMap REST controller pragmatic defaults.\nFoster nuanced debate calm tone."
+    },
+    {
+      "id": "java-19",
+      "label": "Jackson records JSON mapping",
+      "description": "serialization",
+      "detail": "naming formats",
+      "text": "Demonstrate JsonProperty naming customizing globally snake case illustrative.\nExplain records interplay immutably constructing.\nMention Kotlin data parallels optional.\nDiscuss date ISO formats preference.\nWarn unknown property failure toggles verbally."
+    },
+    {
+      "id": "java-20",
+      "label": "try-with-resources AutoCloseable",
+      "description": "IO",
+      "detail": "suppressed exceptions",
+      "text": "Teach try with resources streams JDBC connections simplifying closes.\nExplain suppressed exception chaining reading stack traces verbally.\nMention Cleaner trivia optional rarely needed.\nAdvise adopting universally closable usage.\nContrast manual finally boilerplate."
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "category": "nextjs",
+  "categoryLabel": "Next.js",
+  "prompts": [
+    {
+      "id": "nextjs-01",
+      "label": "New Next.js app (App Router)",
+      "description": "setup",
+      "detail": "create-next-app",
+      "text": "Create a beginner Next.js 14+ project with App Router.\n\n- npx create-next-app steps (TypeScript, ESLint, Tailwind optional)\n- Explain app/page.tsx and app/layout.tsx\n- Change home page to Hello Next\n- npm run dev and open localhost URL\n\nList created folders in plain language."
+    },
+    {
+      "id": "nextjs-02",
+      "label": "Page and Link navigation",
+      "description": "routing",
+      "detail": "app/about/page.tsx",
+      "text": "Add a second page to a Next.js App Router project.\n\n- app/about/page.tsx with title and paragraph\n- Link from home using next/link\n- Explain file-based routing\n\nProvide full file contents."
+    },
+    {
+      "id": "nextjs-03",
+      "label": "Dynamic route [id]",
+      "description": "routing",
+      "detail": "blog/[slug]",
+      "text": "Teach dynamic routes in Next.js App Router.\n\n- app/blog/[slug]/page.tsx\n- Example slugs hello and world with different content\n- Explain params prop type in TypeScript\n\nKeep example minimal."
+    },
+    {
+      "id": "nextjs-04",
+      "label": "Server Component vs Client",
+      "description": "components",
+      "detail": "'use client' button",
+      "text": "Explain Server vs Client Components for a beginner.\n\n- Home as Server Component with static text\n- Counter as Client Component with useState\n- When to add 'use client'\n\nProvide both files and 4 bullet comparison."
+    },
+    {
+      "id": "nextjs-05",
+      "label": "Fetch data in Server Component",
+      "description": "data",
+      "detail": "async page fetch",
+      "text": "Fetch JSON in a Server Component (no useEffect).\n\n- async function Page() fetching jsonplaceholder post\n- Show loading not needed on server; mention error handling briefly\n- TypeScript interface for Post\n\nApp Router only."
+    },
+    {
+      "id": "nextjs-06",
+      "label": "API Route handler GET",
+      "description": "api",
+      "detail": "app/api/hello/route.ts",
+      "text": "Create a Route Handler GET /api/hello returning JSON.\n\n- app/api/hello/route.ts\n- Test with browser or curl\n- Contrast with pages in 2 sentences\n\nTypeScript."
+    },
+    {
+      "id": "nextjs-07",
+      "label": "Environment variables",
+      "description": "config",
+      "detail": ".env.local",
+      "text": "Explain env vars in Next.js for beginners.\n\n- .env.local with NEXT_PUBLIC_APP_NAME\n- Use in server vs client components (rules)\n- Never commit secrets\n\nShow .env.example without real keys."
+    },
+    {
+      "id": "nextjs-08",
+      "label": "Metadata and page title",
+      "description": "seo",
+      "detail": "export const metadata",
+      "text": "Set page title and description using Metadata API.\n\n- Static metadata on home page\n- Explain why it matters for SEO\n\nApp Router syntax only."
+    },
+    {
+      "id": "nextjs-09",
+      "label": "Deploy to Vercel checklist",
+      "description": "deploy",
+      "detail": "production build",
+      "text": "Give a beginner checklist to deploy Next.js on Vercel.\n\n- git push, import project, env vars on dashboard\n- npm run build locally first\n- Common build errors (types, env) in bullets\n\nNo account-specific steps."
+    },
+    {
+      "id": "nextjs-10",
+      "label": "Layout shared navbar",
+      "description": "layout",
+      "detail": "app/layout.tsx",
+      "text": "Add a shared navbar in root layout.\n\n- layout.tsx with html/body, nav links Home and About\n- children slot for pages\n- Minimal CSS or Tailwind if already enabled\n\nShow full layout.tsx."
+    },
+    {
+      "id": "nextjs-11",
+      "label": "Route loading.tsx streaming skeleton",
+      "description": "App Router",
+      "detail": "immediate feedback",
+      "text": "Explain loading.tsx UX for suspense boundaries in the App Router.\nShow how it relates to prefetching navigations mentally.\nCompare putting skeletons globally vs granular route segments.\nWarn about unintended layout jitter with tall skeletons.\nGive a minimalist example component structure only."
+    },
+    {
+      "id": "nextjs-12",
+      "label": "error.tsx route boundary hygiene",
+      "description": "errors",
+      "detail": "reset button pattern",
+      "text": "Teach local error.tsx boundaries versus global.\nDemonstrate resetting error state with nested routes analogy.\nList what errors propagate to boundaries vs silent failures logging only.\nConnect to reporting services conceptually.\nMention distinguishing dev overlay vs prod user message."
+    },
+    {
+      "id": "nextjs-13",
+      "label": "not-found.tsx and notFound helper",
+      "description": "routing",
+      "detail": "404 semantics",
+      "text": "Differentiate triggering notFound() in server components versus static fallback pages.\nExplain HTTP status expectation for bots vs SPA history.\nShow tiny example dynamic segment missing record.\nRelate metadata impact lightly.\nAdd SEO-friendly copy guidance for beginners."
+    },
+    {
+      "id": "nextjs-14",
+      "label": "generateStaticParams for static blogs",
+      "description": "SSG",
+      "detail": "build-time paths",
+      "text": "Outline generateStaticParams returning slug list build-time.\nContrast with ISR revalidate timelines conceptually.\nExplain what happens visiting unknown slug at runtime without dynamicParams tuning.\nMention drafting/unpublished workflows as CMS concern.\nKeep code sketch short."
+    },
+    {
+      "id": "nextjs-15",
+      "label": "revalidateTag after mutations",
+      "description": "cache",
+      "detail": "tag-based invalidation",
+      "text": "Explain fetch cache tagging and revalidateTag server usage after a form action.\nDifferentiate revalidatePath vs tag granularity.\nWarn about eventual consistency wording for juniors.\nRelate to headless CMS webhooks verbally.\nShow pseudo flow only without vendor lock."
+    },
+    {
+      "id": "nextjs-16",
+      "label": "Server Actions mental sketch",
+      "description": "forms",
+      "detail": "progressive enhancement",
+      "text": "Explain Server Actions purpose without replacing full API design course.\nShow mental model: form posts to server function with less client glue.\nList limitations around browser API usage.\nDiscuss security validations still required.\nContrast with REST route handlers for public APIs."
+    },
+    {
+      "id": "nextjs-17",
+      "label": "next/image remotePatterns config",
+      "description": "media",
+      "detail": "security allowlist",
+      "text": "Teach restricting remote image domains in next.config images.remotePatterns.\nExplain why wildcard CDNs still need deliberate rules.\nMention widths/sizes interplay for responsiveness.\nShow one mistake confusing static import vs URL string props.\nAdd note on placeholder blur data patterns high level."
+    },
+    {
+      "id": "nextjs-18",
+      "label": "middleware matcher auth gate",
+      "description": "edge",
+      "detail": "thin checks",
+      "text": "Sketch middleware exporting config matcher guarding /dashboard routes.\nEmphasize keeping checks fast and delegating DB work sparingly.\nExplain redirect vs rewrite decisions simply.\nMention middleware runtime limitations cursory.\nCaution beginners about leaking auth logic duplication with server checks."
+    },
+    {
+      "id": "nextjs-19",
+      "label": "Parallel routes dashboards concept",
+      "description": "layouts",
+      "detail": "slots mental model",
+      "text": "Introduce parallel routes using @analytics and @team slots mentally.\nExplain independent loading/error boundaries benefit.\nNote complexity cost for small apps.\nGive when not to adopt as a beginner.\nLink idea to modals as parallel intercepting routes lightly without full tutorial."
+    },
+    {
+      "id": "nextjs-20",
+      "label": "Environment variables client vs server",
+      "description": "config",
+      "detail": "NEXT_PUBLIC prefix",
+      "text": "Clarify which env vars are exposed to the browser via NEXT_PUBLIC_.\nShow rotation and preview deployment env matrix verbally.\nExplain why secrets never belong in client bundles.\nDescribe runtime env with edge constraints briefly.\nGive a checklist for debugging undefined env at build vs request time."
+    }
+  ]
+}

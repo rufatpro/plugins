@@ -1,0 +1,146 @@
+{
+  "category": "go",
+  "categoryLabel": "Go",
+  "prompts": [
+    {
+      "id": "go-01",
+      "label": "Hello Go module",
+      "description": "basics",
+      "detail": "go mod init",
+      "text": "First Go program with go mod init example.com/hello and fmt.Println.\n\n- go run .\n- Explain packages and main package\n\nGo 1.22+."
+    },
+    {
+      "id": "go-02",
+      "label": "HTTP server net/http",
+      "description": "web",
+      "detail": "ListenAndServe",
+      "text": "Minimal HTTP server /hello handler in Go.\n\n- http.HandleFunc, log.Fatal ListenAndServe\n- Test with curl\n\nStandard library only."
+    },
+    {
+      "id": "go-03",
+      "label": "Structs and methods",
+      "description": "types",
+      "detail": "receiver",
+      "text": "Define type User struct and method Greeting() string.\n\n- Pointer vs value receiver one paragraph\n\nSmall main demo."
+    },
+    {
+      "id": "go-04",
+      "label": "Error handling if err",
+      "description": "errors",
+      "detail": "return err",
+      "text": "Idiomatic Go error handling reading a file.\n\n- os.Open, if err != nil, defer Close\n\nContrast with exceptions briefly."
+    },
+    {
+      "id": "go-05",
+      "label": "Slices and range loop",
+      "description": "basics",
+      "detail": "append",
+      "text": "Examples slice literals, append, range sum function.\n\n- capacity vs length intro\n\nCode only."
+    },
+    {
+      "id": "go-06",
+      "label": "Goroutine and channel intro",
+      "description": "concurrency",
+      "detail": "chan int",
+      "text": "Teach goroutine with waitgroup or channel ping pong simple.\n\n- Warning: don't spawn unbounded goroutines\n\nTiny example."
+    },
+    {
+      "id": "go-07",
+      "label": "JSON encoding",
+      "description": "json",
+      "detail": "Marshal Unmarshal",
+      "text": "Struct tags json and handler returning application/json.\n\n- Encode User to ResponseWriter\n\nAPI snippet."
+    },
+    {
+      "id": "go-08",
+      "label": "Go test table driven",
+      "description": "testing",
+      "detail": "testing package",
+      "text": "Table driven test for Add function.\n\n- go test -v\n\nShow test file."
+    },
+    {
+      "id": "go-09",
+      "label": "Modules versioning",
+      "description": "modules",
+      "detail": "go get",
+      "text": "Explain go.mod require and upgrading dependency.\n\n- go get example.com/pkg@v1.2.3\n\nMinimal."
+    },
+    {
+      "id": "go-10",
+      "label": "Project layout std",
+      "description": "structure",
+      "detail": "cmd internal",
+      "text": "Recommend cmd/ and internal/ folder layout for Go service.\n\n- When to use internal package\n\nText tree."
+    },
+    {
+      "id": "go-11",
+      "label": "Slice length versus capacity",
+      "description": "memory intuition",
+      "detail": "append surprises",
+      "text": "Explain slices referencing a backing array, and how append can allocate a new array.\nDemonstrate inspecting len and cap on a toy example.\nShow how sharing sub-slices can create spooky mutation coupling.\nSuggest copying explicitly when isolation matters.\nRecommend pre-sizing with make when sizes are predictable."
+    },
+    {
+      "id": "go-12",
+      "label": "Struct embedding for composition",
+      "description": "types",
+      "detail": "not inheritance",
+      "text": "Teach embedded structs and promoted methods in Go.\nCompare mental models to inheritance and why Go avoids that word.\nWarn about embedding name collisions.\nDiscuss testing with embedded interfaces mock-style lightly.\nWhen explicit composition fields read clearer."
+    },
+    {
+      "id": "go-13",
+      "label": "Context timeouts and cancellation",
+      "description": "production Go",
+      "detail": "propagate deadlines",
+      "text": "Demonstrate context.WithTimeout on an HTTP handler calling downstream dial operations.\nShow checking ctx.Done in loops.\nExplain why goroutine leaks hurt.\nDiscuss passing context as the first argument as a cultural norm.\nMention cancelling work when clients disconnect."
+    },
+    {
+      "id": "go-14",
+      "label": "errors.Is and errors.As wrapping",
+      "description": "errors",
+      "detail": "fmt.Errorf with %w",
+      "text": "Demonstrate wrapping errors with %w and checking them with errors.Is.\nExplain errors.As for extracting typed errors.\nShow how wrapping improves debugging narratives.\nMention sentinel errors sparingly vs dynamic errors.\nAdvise avoiding string matching on error texts."
+    },
+    {
+      "id": "go-15",
+      "label": "Table-driven tests with subtests",
+      "description": "testing",
+      "detail": "t.Run",
+      "text": "Construct a small table of inputs and expected outputs.\nExplain naming subtests clearly for failures.\nMention pitfalls with shared mutable state between subtests.\nShow httptest for handler tests optionally.\nPoint to benchmarking as optional follow-on reading."
+    },
+    {
+      "id": "go-16",
+      "label": "init and global side effects caution",
+      "description": "packages",
+      "detail": "implicit order",
+      "text": "Explain init execution order pitfalls across packages.\nRecommend explicit setup in main for clarity.\nDiscuss blank-import side effects sparingly.\nRelate cyclic import errors and how teams fix them culturally.\nAdvise beginners to defer advanced init tricks."
+    },
+    {
+      "id": "go-17",
+      "label": "io.Reader streaming mindset",
+      "description": "stdlib",
+      "detail": "test with bytes.NewReader",
+      "text": "Explain functions accepting io.Reader for flexibility.\nShow testing by passing strings.NewReader.\nDiscuss buffering with bufio for line-based reads.\nMention always draining HTTP response bodies casually.\nConnect to graceful resource closing patterns."
+    },
+    {
+      "id": "go-18",
+      "label": "sync.Map when rarely",
+      "description": "concurrency",
+      "detail": "specialized caches",
+      "text": "Explain sync.Map as a niche concurrent map versus protecting a plain map with a mutex.\nGive intuition about when niche maps appear in hot caches.\nAdvise benchmarking before reaching for exotic structures.\nMention atomic.Value for single-value cases lightly.\nReinforce not defaulting to micro-optimization."
+    },
+    {
+      "id": "go-19",
+      "label": "go vet in CI pipelines",
+      "description": "tooling",
+      "detail": "quick static checks",
+      "text": "Encourage running go vet in CI to catch common mistakes early.\nMention golangci-lint as a broader aggregator.\nDiscuss race detector on integration tests as expensive but valuable sometimes.\nDescribe field alignment as optional tiny wins.\nEncourage consistent gofmt formatting."
+    },
+    {
+      "id": "go-20",
+      "label": "Build tags for integration tests",
+      "description": "build constraints",
+      "detail": "go:build lines",
+      "text": "Show separating slow integration tests using build tags.\nExplain file suffixes like _linux for platform code.\nAdvise documenting tags in README for teammates.\nWarn about drift when tags are forgotten in CI.\nRelate to keeping fast unit tests as default."
+    }
+  ]
+}

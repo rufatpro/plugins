@@ -1,0 +1,146 @@
+{
+  "category": "python",
+  "categoryLabel": "Python",
+  "prompts": [
+    {
+      "id": "py-01-hello-structure",
+      "label": "Hello World project structure",
+      "description": "basics",
+      "detail": "main.py and how to run",
+      "text": "I'm new to Python. Set up a minimal project structure for learning.\n\n- main.py that prints Hello, World\n- Explain how to run it with python main.py\n- Mention Python 3.11+ and using a virtual environment in 3–5 steps\n- Add a short if __name__ == \"__main__\": block and explain why it's used\n\nDo not use frameworks yet."
+    },
+    {
+      "id": "py-02-argparse-cli",
+      "label": "CLI script with argparse",
+      "description": "stdlib",
+      "detail": "greet --name flags",
+      "text": "Create a beginner-friendly command-line script using argparse.\n\n- Command: greet with optional --name (default World) and --shout flag (uppercase output)\n- File: greet.py\n- Show example terminal commands to run it\n- Add basic error handling for unknown flags (argparse handles this)\n\nExplain each part of argparse in simple terms."
+    },
+    {
+      "id": "py-03-csv-read-write",
+      "label": "Read and write CSV",
+      "description": "csv module",
+      "detail": "sample contacts.csv",
+      "text": "Teach me CSV in Python with a small example.\n\n- Create sample data: name, email (3 rows)\n- Script write_csv.py to write contacts.csv\n- Script read_csv.py to read and print rows\n- Use the csv module from the standard library\n\nInclude how to run both scripts and one common mistake to avoid."
+    },
+    {
+      "id": "py-04-flask-hello",
+      "label": "Flask Hello World API",
+      "description": "Flask",
+      "detail": "One route GET /",
+      "text": "I'm starting with Flask. Create the smallest useful web app.\n\n- app.py with GET / returning Hello from Flask as plain text or HTML\n- requirements.txt with Flask version pinned\n- Steps: create venv, pip install, flask run\n- Add a second route GET /health returning {\"status\": \"ok\"}\n\nKeep files minimal and explain what each line does."
+    },
+    {
+      "id": "py-05-django-start",
+      "label": "Django project first steps",
+      "description": "Django",
+      "detail": "startproject, one app, one view",
+      "text": "I'm a beginner with Django. Guide me through creating a new project.\n\n- Commands: django-admin startproject mysite and startapp pages\n- One view on / that renders a simple Hello Django template\n- List every file you create or change and why\n- settings.py: register the app\n- Use Django 5.x style if possible\n\nAssume I already have Python and pip. Do not skip migrations explanation."
+    },
+    {
+      "id": "py-06-venv-requirements",
+      "label": "Virtual env and requirements.txt",
+      "description": "environment",
+      "detail": "venv + pip freeze workflow",
+      "text": "Explain Python virtual environments like I'm new.\n\n- Step-by-step: create venv, activate on Windows and macOS/Linux\n- Create requirements.txt with requests and python-dotenv as example\n- pip install -r requirements.txt\n- Small script that loads a variable from .env (use python-dotenv)\n\nInclude a .gitignore snippet for venv and .env."
+    },
+    {
+      "id": "py-07-calculator-tests",
+      "label": "Calculator + pytest tests",
+      "description": "functions + pytest",
+      "detail": "add, subtract, multiply, divide",
+      "text": "Build a tiny calculator module for learning tests.\n\n- calculator.py: functions add, subtract, multiply, divide (divide by zero raises ValueError)\n- test_calculator.py using pytest with at least 5 tests\n- Show commands: pip install pytest, pytest -v\n\nExplain the arrange-act-assert pattern in one test example."
+    },
+    {
+      "id": "py-08-list-comprehensions",
+      "label": "List comprehensions practice",
+      "description": "syntax",
+      "detail": "filter and transform lists",
+      "text": "Give me a short lesson on list comprehensions in Python.\n\n- Start with a for-loop version, then rewrite as comprehension\n- Examples: squares of 1–10, even numbers only, lowercase a list of strings\n- One dict comprehension example\n- 3 exercises with solutions hidden in collapsible comments or at the end\n\nNo external libraries."
+    },
+    {
+      "id": "py-09-requests-api",
+      "label": "HTTP GET with requests",
+      "description": "requests library",
+      "detail": "Public JSON API example",
+      "text": "Show how to call a public HTTP API with the requests library.\n\n- fetch_posts.py: GET from https://jsonplaceholder.typicode.com/posts/1\n- Print title and body\n- Handle timeout and HTTP errors with try/except\n- requirements.txt with requests\n\nExplain status codes 200 vs 404 briefly."
+    },
+    {
+      "id": "py-10-try-except",
+      "label": "Error handling try/except",
+      "description": "exceptions",
+      "detail": "Safe user input parsing",
+      "text": "Teach try/except with a small interactive script.\n\n- Ask the user for two numbers in the terminal\n- Parse with float(), compute division\n- Catch ValueError (bad input) and ZeroDivisionError\n- Use else and finally in a simple, readable way\n\nProvide the full script and when to use specific except vs bare except (and why to avoid bare except)."
+    },
+    {
+      "id": "py-11",
+      "label": "pathlib for file paths",
+      "description": "stdlib",
+      "detail": "Path.read_text example",
+      "text": "I'm done with string paths and want pathlib on a small script.\nShow how to create Path objects, join segments safely, check exists/is_file, and read/write UTF-8 text.\nContrast Path with os.path in one paragraph for beginners.\nInclude a tiny CLI script that counts lines in every .txt under a folder (non-recursive is fine).\nMention one Windows-specific edge case Path helps with."
+    },
+    {
+      "id": "py-12",
+      "label": "logging instead of print",
+      "description": "observability",
+      "detail": "basicConfig levels",
+      "text": "Replace scattered print debugging with the logging module in a 50-line script.\nExplain log levels DEBUG/INFO/WARNING/ERROR and when each fits.\nShow basicConfig with a readable format string and how to log exceptions with exc_info.\nDescribe how to switch verbosity with an environment variable pattern.\nWarn about one common misconfiguration in libraries that override logging."
+    },
+    {
+      "id": "py-13",
+      "label": "datetime and time zones safely",
+      "description": "stdlib",
+      "detail": "timezone-aware UTC",
+      "text": "Teach me datetime basics without the classic naive/aware foot-gun.\nDemonstrate UTC now, converting a fixed instant to a named zone with zoneinfo (Python 3.11+).\nFormat an ISO-8601 string suitable for logs.\nHighlight why storing local wall-clock times in a database is risky.\nGive a 5-line example parsing user input defensively."
+    },
+    {
+      "id": "py-14",
+      "label": "contextlib.closing and custom context",
+      "description": "stdlib",
+      "detail": "with statement patterns",
+      "text": "Deepen my understanding of context managers beyond open().\nShow @contextmanager from contextlib for setup/teardown around a temporary file path.\nExplain when try/finally is still clearer than a context manager.\nProvide a second micro-example using closing() on a resource with a .close() method.\nEnd with a rule of thumb for beginners about exceptions inside __enter__/__exit__."
+    },
+    {
+      "id": "py-15",
+      "label": "dataclasses for simple records",
+      "description": "typing",
+      "detail": "frozen and defaults",
+      "text": "Model a small User and Order record with @dataclass.\nCompare field(default_factory=list) vs a mutable default mistake.\nShow when frozen=True is helpful for immutability-lite.\nAdd __post_init__ validation for a positive price.\nExplain how this differs from a TypedDict or Pydantic when I'm just learning."
+    },
+    {
+      "id": "py-16",
+      "label": "tomllib read project metadata",
+      "description": "stdlib",
+      "detail": "pyproject peek",
+      "text": "I see pyproject.toml files everywhere and want to read one from Python 3.11+ using tomllib.\nWrite a tiny function load_project_name(path) returning the project name from [project].\nHandle missing sections with clear errors suited to beginners.\nNote TOML types vs JSON mental model in two sentences.\nShow how I'd print the version field if present."
+    },
+    {
+      "id": "py-17",
+      "label": "urllib.request GET without requests",
+      "description": "stdlib",
+      "detail": "no third-party deps",
+      "text": "Sometimes I can't install requests yet. Walk me through urllib.request.urlopen.\nFetch a small JSON public endpoint, read bytes, decode UTF-8, json.loads into a dict.\nSet a timeout and catch HTTPError/URLError with friendly messages.\nContrast readability vs requests in one honest paragraph.\nAdd a comment about User-Agent politeness."
+    },
+    {
+      "id": "py-18",
+      "label": "itertools.groupby reporting",
+      "description": "stdlib",
+      "detail": "sorted preface",
+      "text": "Explain why itertools.groupby requires sorted input for many use cases.\nBuild a toy report: given a list of dict rows with category, group and print subtotals.\nWarn about iterator exhaustion pitfalls with groupby.\nOffer an alternative using collections.defaultdict for confused beginners.\nKeep the whole example under ~25 lines."
+    },
+    {
+      "id": "py-19",
+      "label": "typing.Protocol structural duck typing",
+      "description": "typing",
+      "detail": "file-like interface",
+      "text": "Introduce typing.Protocol for \"anything with a read()\".\nShow a function parse_payload(source: Readable) that accepts pathlib.Path.open() objects and io.StringIO.\nExplain @runtime_checkable cautiously.\nContrast nominal inheritance vs structural typing.\nProvide a minimal mypy-friendly example without advanced generics."
+    },
+    {
+      "id": "py-20",
+      "label": "zipfile backups mini exercise",
+      "description": "stdlib",
+      "detail": "archive CSV folder",
+      "text": "Write a beginner script that bundles a handful of *.csv files into a dated zip archive using zipfile.\nInclude Path.glob, arcname basename handling, and a dry-run flag printed to the console.\nDescribe security warnings about unpacking untrusted zips at a high level.\nExplain how I'd run this on Windows and macOS similarly.\nFinish with ideas for scheduling later without implementing cron."
+    }
+  ]
+}

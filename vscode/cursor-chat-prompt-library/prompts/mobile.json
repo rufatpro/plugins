@@ -1,0 +1,146 @@
+{
+  "category": "mobile",
+  "categoryLabel": "Mobile (Flutter & RN)",
+  "prompts": [
+    {
+      "id": "mobile-01",
+      "label": "Flutter first app",
+      "description": "flutter",
+      "detail": "flutter create",
+      "text": "Create Flutter counter app explaining lib/main.dart.\n\n- flutter create, hot reload\n- StatefulWidget increment button\n\nInstall SDK overview."
+    },
+    {
+      "id": "mobile-02",
+      "label": "Flutter layout Column Row",
+      "description": "flutter",
+      "detail": "widgets",
+      "text": "Build profile card with Column, Row, Image.network placeholder.\n\n- Padding and Expanded explained\n\nOne screen code."
+    },
+    {
+      "id": "mobile-03",
+      "label": "Flutter navigation push",
+      "description": "flutter",
+      "detail": "Navigator.push",
+      "text": "Two routes Home and Details with push/pop.\n\n- MaterialApp routes map or Navigator 2 mention only briefly\n\nSimple imperative navigation."
+    },
+    {
+      "id": "mobile-04",
+      "label": "React Native Expo start",
+      "description": "react-native",
+      "detail": "npx create-expo-app",
+      "text": "Start Expo app with TypeScript template.\n\n- npx create-expo-app, npm start, scan QR\n- Edit App.tsx text\n\nWindows + Android emulator note."
+    },
+    {
+      "id": "mobile-05",
+      "label": "RN View Text StyleSheet",
+      "description": "react-native",
+      "detail": "components",
+      "text": "Screen with View, Text, Pressable styled via StyleSheet.\n\n- Flexbox similar to web\n\nExpo snippet."
+    },
+    {
+      "id": "mobile-06",
+      "label": "RN FlatList data",
+      "description": "react-native",
+      "detail": "list",
+      "text": "FlatList of items with keyExtractor and renderItem.\n\n- Pull sample JSON from const array\n\nPerformance tip one line."
+    },
+    {
+      "id": "mobile-07",
+      "label": "Flutter fetch http package",
+      "description": "flutter",
+      "detail": "async FutureBuilder",
+      "text": "Load post from JSON placeholder with http and FutureBuilder.\n\n- loading and error UI states\n\nAdd dependency pubspec."
+    },
+    {
+      "id": "mobile-08",
+      "label": "RN fetch useEffect",
+      "description": "react-native",
+      "detail": "fetch api",
+      "text": "Fetch users in useEffect with loading state in Expo app.\n\n- Same API as web fetch\n\nFunctional component."
+    },
+    {
+      "id": "mobile-09",
+      "label": "App icons splash Expo",
+      "description": "expo",
+      "detail": "app.json",
+      "text": "Configure app name icon and splash in app.json for Expo.\n\n- asset paths\n- Build preview optional\n\nSteps."
+    },
+    {
+      "id": "mobile-10",
+      "label": "Flutter vs RN choose",
+      "description": "compare",
+      "detail": "decision",
+      "text": "Compare Flutter vs React Native for a beginner with web background.\n\n- Learning curve, job market, native modules\n- Neutral 5 bullet comparison\n\nNo flame war."
+    },
+    {
+      "id": "mobile-11",
+      "label": "InheritedWidget intuition in Flutter",
+      "description": "Flutter fundamentals",
+      "detail": "context lookups",
+      "text": "Explain InheritedWidget as the primitive pattern behind a lot of Flutter \"magic\" APIs.\nRelate it to accessing Theme.of(context).\nDiscuss rebuild boundaries at a beginner level.\nMention Provider as ergonomics layered on inherited patterns.\nAdvise newcomers not to memorize everything before building UI."
+    },
+    {
+      "id": "mobile-12",
+      "label": "React Native Gesture Handler basics",
+      "description": "React Native",
+      "detail": "smoother interactions",
+      "text": "Explain why some gestures benefit from native-driven handling.\nRelate \"JS thread busy\" freezes to UX symptoms users feel.\nStart with simpler Pressable basics before gestures.\nMention expo-router navigation only lightly if relevant.\nEncourage profiling when interactions feel sluggish."
+    },
+    {
+      "id": "mobile-13",
+      "label": "Deep links and universal links",
+      "description": "navigation",
+      "detail": "opening the right screen",
+      "text": "Compare URL schemes versus HTTPS universal links (and why universal links take more setup).\nExplain deferred deep linking as vocabulary only.\nWarn about simulator vs device mismatches.\nDiscuss privacy respecting campaign parameters.\nAdvise documenting supported routes for testers."
+    },
+    {
+      "id": "mobile-14",
+      "label": "Offline-first sketches",
+      "description": "data",
+      "detail": "sync is the hard part",
+      "text": "Describe storing data locally while offline and syncing later.\nExplain conflict resolution options at a headline level.\nWarn beginners that offline-first is heavier than caching.\nRecommend starting online-only MVP for learning.\nMention SQLite or embedded stores as possibilities without picking a winner."
+    },
+    {
+      "id": "mobile-15",
+      "label": "Push notification permission UX",
+      "description": "permissions",
+      "detail": "ask after value",
+      "text": "Explain prompting for notification permission only after showing why it helps.\nRelate declines to degraded features and graceful UI fallback.\nMention respecting OS settings redirects.\nAdvise instrumentation as an advanced improvement.\nKeep tone practical, not spammy."
+    },
+    {
+      "id": "mobile-16",
+      "label": "App foreground and background refreshes",
+      "description": "lifecycle",
+      "detail": "AppState refresher",
+      "text": "Explain reacting when the app resumes from background to refresh stale data.\nDiscuss debouncing refreshes when users tab quickly.\nMention battery/network friendliness briefly.\nRelate biometric lock overlays as an edge-case pointer.\nShow a conceptual state machine \"active/inactive/background\"."
+    },
+    {
+      "id": "mobile-17",
+      "label": "Safe areas and notches",
+      "description": "layout",
+      "detail": "respect device cutouts",
+      "text": "Teach respecting safe-area insets for notches and rounded corners.\nCompare Flutter SafeArea/MediaQuery.padding with RN SafeAreaView patterns.\nWarn against magic numbers tuned to one phone model.\nMention keyboards covering inputs as a sibling problem.\nEncourage testing on small and large phones."
+    },
+    {
+      "id": "mobile-18",
+      "label": "OTA updates caution",
+      "description": "delivery",
+      "detail": "JS versus native coupling",
+      "text": "Explain OTA-style JS updates versus full store releases.\nEmphasize store policy realities at a headline level.\nDiscuss rollback strategies and staged rollouts verbally.\nWarn about native module mismatches breaking OTA bundles.\nAdvise versioning discipline between native and JS layers."
+    },
+    {
+      "id": "mobile-19",
+      "label": "Profiling jank casually",
+      "description": "performance",
+      "detail": "measure before rewriting",
+      "text": "Encourage distinguishing animation jank versus slow network spinner waits.\nMention Xcode Instruments / Android Studio Profiler as starting points alongside Flutter DevTools/React DevTools analogs.\nAdvise profiling release builds periodically.\nWarn about micro-optimization during prototyping.\nRecommend one concrete profiling scenario to practice."
+    },
+    {
+      "id": "mobile-20",
+      "label": "Store listings localization lite",
+      "description": "release polish",
+      "detail": "screenshots text",
+      "text": "Explain tailoring screenshots and store text for locales you truly support.\nMention following platform-required dimensions.\nAdvise honest descriptions and changelog habits.\nRelate phased rollout percentages as a risk reducer.\nKeep this light: not full ASO marketing."
+    }
+  ]
+}

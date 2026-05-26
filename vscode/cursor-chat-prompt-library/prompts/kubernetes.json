@@ -1,0 +1,146 @@
+{
+  "category": "kubernetes",
+  "categoryLabel": "Kubernetes",
+  "prompts": [
+    {
+      "id": "k8s-01",
+      "label": "Pods Deployments concepts",
+      "description": "concepts",
+      "detail": "kubectl get",
+      "text": "Explain Pod vs Deployment vs Service for beginners using analogies.\n\n- Desired state idea\n- kubectl get pods\n\nNo cluster required for theory."
+    },
+    {
+      "id": "k8s-02",
+      "label": "Deployment nginx yaml",
+      "description": "yaml",
+      "detail": "replicas 3",
+      "text": "Minimal Deployment and Service yaml for nginx.\n\n- replicas 3, selector labels app=nginx\n- Service type NodePort 30080\n\nApply order."
+    },
+    {
+      "id": "k8s-03",
+      "label": "ConfigMap and Secret",
+      "description": "config",
+      "detail": "envFrom",
+      "text": "Mount ConfigMap as env vars in Pod spec.\n\n- Secret for password base64 note\n- Never commit real secrets\n\nYaml excerpts."
+    },
+    {
+      "id": "k8s-04",
+      "label": "Ingress HTTP routing",
+      "description": "ingress",
+      "detail": "host rules",
+      "text": "Explain Ingress routing / to frontend and /api to backend service.\n\n- Needs ingress controller note\n\nDiagram text."
+    },
+    {
+      "id": "k8s-05",
+      "label": "kubectl logs debug",
+      "description": "debug",
+      "detail": "logs describe",
+      "text": "Debug CrashLoopBackOff checklist.\n\n- kubectl logs, describe pod events\n- ImagePullBackOff causes\n\n7 steps."
+    },
+    {
+      "id": "k8s-06",
+      "label": "Helm chart overview",
+      "description": "helm",
+      "detail": "package manager",
+      "text": "What Helm charts are vs raw yaml.\n\n- helm install bitnami example concept\n\nWhen teams adopt helm."
+    },
+    {
+      "id": "k8s-07",
+      "label": "Local cluster minikube",
+      "description": "local",
+      "detail": "minikube start",
+      "text": "Steps minikube or kind for local learning on laptop.\n\n- Resource requirements RAM\n\nCompare minikube vs kind 3 bullets."
+    },
+    {
+      "id": "k8s-08",
+      "label": "Liveness readiness probes",
+      "description": "health",
+      "detail": "httpGet /health",
+      "text": "Add livenessProbe and readinessProbe to deployment yaml.\n\n- Difference restart vs remove from service\n\nExample paths."
+    },
+    {
+      "id": "k8s-09",
+      "label": "Namespaces dev staging",
+      "description": "organize",
+      "detail": "kubectl -n",
+      "text": "Organize environments with namespaces.\n\n- kubectl create namespace dev\n- Resource quotas mention only\n\nBest practice."
+    },
+    {
+      "id": "k8s-10",
+      "label": "K8s vs Docker Compose",
+      "description": "compare",
+      "detail": "when which",
+      "text": "When beginners should use Compose vs Kubernetes.\n\n- Single machine dev vs scaled production\n\nHonest complexity warning."
+    },
+    {
+      "id": "k8s-11",
+      "label": "PodDisruptionBudget basics",
+      "description": "availability",
+      "detail": "protect during disruptions",
+      "text": "Define PodDisruptionBudget as limiting voluntary disruptions.\nExplain how it interacts with draining nodes responsibly.\nMention not replacing human capacity planning realistically.\nAdvise aligning PDBs with app redundancy expectations honestly.\nConnect to kubectl drain vocabulary briefly."
+    },
+    {
+      "id": "k8s-12",
+      "label": "Requests limits and QoS classes",
+      "description": "scheduling",
+      "detail": "why OOM happens",
+      "text": "Explain CPU requests/limits versus memory limits qualitatively.\nDescribe QoS classes in plain outcomes for beginners.\nMention kubelet killing processes when exceeding memory constraints.\nAdvise measuring before copying random numbers.\nWarn that unset limits invite noisy neighbors."
+    },
+    {
+      "id": "k8s-13",
+      "label": "Horizontal Pod Autoscaler intro",
+      "description": "scaling",
+      "detail": "CPU targets starter",
+      "text": "Explain scaling replicas based on average CPU utilization target.\nMention stabilization windows informally.\nDescribe custom metrics adapters as advanced optional.\nWarn about thrashing if probes and apps misbehave.\nDifferentiate Cluster Autoscaler mentally."
+    },
+    {
+      "id": "k8s-14",
+      "label": "NetworkPolicy phased tightening",
+      "description": "security",
+      "detail": "default deny gradual",
+      "text": "Outline moving toward tighter network policies staged by namespace.\nMention CNIs differing in enforcement realistically.\nAdvise validating DNS egress rules early.\nEncourage rehearsals in staging clusters.\nAvoid claiming zero trust completeness overnight."
+    },
+    {
+      "id": "k8s-15",
+      "label": "RBAC least privilege verbs",
+      "description": "auth",
+      "detail": "Roles and Bindings",
+      "text": "Contrast Role vs ClusterRole bindings.\nEncourage verbs being explicit instead of wildcard star.\nMention impersonation caution for admins.\nAdvise auditing permissions periodically lightly.\nMap namespace boundaries mentally."
+    },
+    {
+      "id": "k8s-16",
+      "label": "Jobs and CronJobs operational tips",
+      "description": "batch workloads",
+      "detail": "retries backoff",
+      "text": "Explain parallelism and completions distinctions for Jobs.\nDiscuss CronJob missed schedules jitter lightly.\nMention backoff limits diagnosing failing jobs.\nAdvise ensuring jobs are retry-safe idempotent realistically.\nPoint to alerting on repeated failures."
+    },
+    {
+      "id": "k8s-17",
+      "label": "PVC provisioning mental model",
+      "description": "storage",
+      "detail": "claims and volumes",
+      "text": "Explain PersistentVolumeClaims requesting storage from StorageClasses.\nMention reclaim policies Retain versus Delete verbally.\nAdvise sizing realistically for beginners learning DBs-on-k8s.\nWarn about resizing support varying by CSI.\nConnect to StatefulSets casually."
+    },
+    {
+      "id": "k8s-18",
+      "label": "kubectl port-forward carefully",
+      "description": "debugging",
+      "detail": "temporary tunnels",
+      "text": "Explain port-forward as a debugging convenience not architecture.\nWarn about exposing sensitive endpoints locally.\nMention ephemeral containers as an advanced adjunct.\nAdvise approvals for accessing prod.\nPrefer VPN/bastion patterns for repeatable access."
+    },
+    {
+      "id": "k8s-19",
+      "label": "kustomize overlays environments",
+      "description": "config layering",
+      "detail": "patches patches patches",
+      "text": "Describe base plus overlays tweaking images replicas.\nCompare briefly to templating philosophies without flame wars.\nMention generating secrets thoughtfully not dumping raw keys.\nGitOps Flux/Argo as optional directional reading.\nEncourage deterministic renders."
+    },
+    {
+      "id": "k8s-20",
+      "label": "Topology spread zones",
+      "description": "HA layout",
+      "detail": "avoid single-zone clumping",
+      "text": "Introduce spreading pods across topology zones cautiously balancing skew.\nMention affinity interplay at headline level.\nAdvise PDB cooperation with spread.\nChaos injecting zone failures optionally as maturity reading.\nRemind juniors failure domains are partly business decisions."
+    }
+  ]
+}

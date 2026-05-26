@@ -1,0 +1,146 @@
+{
+  "category": "aws",
+  "categoryLabel": "AWS / Cloud",
+  "prompts": [
+    {
+      "id": "aws-01",
+      "label": "AWS account free tier",
+      "description": "basics",
+      "detail": "billing alarm",
+      "text": "Safe start on AWS free tier for students.\n\n- Enable billing alarm, MFA on root avoid daily use\n- IAM user vs root\n\nSecurity first bullets."
+    },
+    {
+      "id": "aws-02",
+      "label": "S3 static website",
+      "description": "s3",
+      "detail": "bucket policy",
+      "text": "Host static HTML on S3 website hosting outline.\n\n- Public read bucket policy caution\n- CloudFront mention optional\n\nSteps high level."
+    },
+    {
+      "id": "aws-03",
+      "label": "EC2 SSH deploy app",
+      "description": "ec2",
+      "detail": "security group",
+      "text": "Launch t2.micro Ubuntu, SSH, install Node app with systemd.\n\n- Security group port 22 and 3000\n- Elastic IP note\n\nChecklist."
+    },
+    {
+      "id": "aws-04",
+      "label": "IAM role for Lambda",
+      "description": "iam",
+      "detail": "least privilege",
+      "text": "Explain IAM roles vs keys for Lambda accessing S3.\n\n- Principle of least privilege example policy skeleton\n\nNo real ARNs."
+    },
+    {
+      "id": "aws-05",
+      "label": "Lambda hello function",
+      "description": "lambda",
+      "detail": "event handler",
+      "text": "Create hello Lambda in console or SAM concept returning JSON.\n\n- Test event button\n- Cold start mention\n\nPython or Node runtime."
+    },
+    {
+      "id": "aws-06",
+      "label": "RDS vs DynamoDB pick",
+      "description": "database",
+      "detail": "managed",
+      "text": "When to choose RDS SQL vs DynamoDB vs running Postgres on EC2.\n\n- Beginner decision table\n\n3 rows."
+    },
+    {
+      "id": "aws-07",
+      "label": "CloudWatch logs basics",
+      "description": "monitoring",
+      "detail": "log groups",
+      "text": "View Lambda or EC2 logs in CloudWatch.\n\n- Alarms on errors concept\n\nShort guide."
+    },
+    {
+      "id": "aws-08",
+      "label": "Terraform AWS intro",
+      "description": "iac",
+      "detail": "provider aws",
+      "text": "Outline first Terraform aws provider s3 bucket resource.\n\n- terraform init plan apply\n- State file warning\n\nNot full production module."
+    },
+    {
+      "id": "aws-09",
+      "label": "Azure/GCP compare one page",
+      "description": "cloud",
+      "detail": "multi-cloud",
+      "text": "Map AWS services to Azure and GCP names (S3->Blob/Storage, EC2->VM).\n\n- Learning one cloud first advice\n\nTable format in text."
+    },
+    {
+      "id": "aws-10",
+      "label": "Destroy resources cost",
+      "description": "billing",
+      "detail": "cleanup",
+      "text": "Checklist tear down labs to avoid surprise bills.\n\n- Stop EC2, delete buckets, remove elastic IPs\n\nStudent habit."
+    },
+    {
+      "id": "aws-11",
+      "label": "VPC public and private tiers",
+      "description": "networking",
+      "detail": "where resources live",
+      "text": "Explain public subnets for load balancers versus private subnets for application tasks.\nMention NAT gateway cost as a common surprise.\nAdvise planning CIDR ranges to avoid collisions across peered networks.\nEncourage tagging owners as early hygiene.\nPoint to flow logs as optional deeper visibility."
+    },
+    {
+      "id": "aws-12",
+      "label": "IAM conditions tighten policies",
+      "description": "security",
+      "detail": "SecureTransport example",
+      "text": "Show an S3 bucket policy condition requiring aws:SecureTransport.\nExplain explicit deny power carefully.\nMention policy simulator as a learning tool.\nWarn about wildcards expanding blast radius.\nRelate to organization SCPs as optional context."
+    },
+    {
+      "id": "aws-13",
+      "label": "S3 lifecycle policies",
+      "description": "cost",
+      "detail": "tier older objects",
+      "text": "Describe transitions to infrequent access or colder tiers for old objects.\nExplain retrieval cost trade-offs simply.\nMention cleaning up failed multipart uploads.\nAdvise notifications for unusual access patterns only lightly.\nConnect to event-driven fanout ideas briefly."
+    },
+    {
+      "id": "aws-14",
+      "label": "CloudFront signed URLs",
+      "description": "CDN",
+      "detail": "protecting origins",
+      "text": "Explain serving private content through CloudFront with signed URLs or cookies.\nMention origin access control concepts at a modern naming level.\nWarn about cache invalidation costs operationally.\nDiscuss compression benefits.\nAdvise testing signed URL expiry behavior."
+    },
+    {
+      "id": "aws-15",
+      "label": "SQS visibility timeout behavior",
+      "description": "messaging",
+      "detail": "retries and DLQs",
+      "text": "Explain why consumers extend or fail visibility when processing takes longer.\nDescribe dead-letter queues after repeated failures.\nEmphasize idempotent processing.\nCompare standard versus FIFO when ordering matters.\nMention SNS fan-out as related reading."
+    },
+    {
+      "id": "aws-16",
+      "label": "ECS Fargate sizing",
+      "description": "containers",
+      "detail": "CPU memory pairings",
+      "text": "Explain Fargate task CPU/memory combinations affect billing steps.\nMention awsvpc networking as default mental model.\nDiscuss secrets injection via task definitions lightly.\nAdvise sidecars for observability only as a pointer.\nEncourage rolling deployments understanding."
+    },
+    {
+      "id": "aws-17",
+      "label": "RDS Multi-AZ versus replicas",
+      "description": "databases",
+      "detail": "failover versus scaling reads",
+      "text": "Contrast Multi-AZ synchronous failover with asynchronous read replicas.\nExplain replica lag as user-visible sometimes.\nMention backups and maintenance windows casually.\nAdvise connection pooling at the app layer.\nPosition Aurora as optional advanced reading."
+    },
+    {
+      "id": "aws-18",
+      "label": "API Gateway plus Lambda proxy",
+      "description": "serverless",
+      "detail": "HTTP mapping",
+      "text": "Describe proxy integration passing request context to Lambda.\nMention cold starts as a learning curve.\nDiscuss throttling and quotas at a high level.\nAdvise structuring routes cleanly.\nMention authorizers as an advanced follow-on."
+    },
+    {
+      "id": "aws-19",
+      "label": "Cost anomalies and budgets",
+      "description": "FinOps-lite",
+      "detail": "catch spikes early",
+      "text": "Recommend budget alerts plus anomaly detection for surprise spend.\nDiscuss tagging completeness enabling attribution.\nMention separating sandbox accounts politely.\nAdvise blaming processes not people in incident reviews culturally.\nPoint to Saving Plans versus Reserved comparisons lightly."
+    },
+    {
+      "id": "aws-20",
+      "label": "STS AssumeRole across accounts",
+      "description": "identity federation",
+      "detail": "short-lived credentials",
+      "text": "Explain trusting another account via role assumption.\nDiscuss external IDs preventing confused deputy issues lightly.\nReiterate avoiding long-lived access keys wherever possible.\nMention SCP guardrails restricting role usage.\nMap to SSO permission sets casually."
+    }
+  ]
+}

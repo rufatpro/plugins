@@ -1,0 +1,146 @@
+{
+  "category": "react",
+  "categoryLabel": "React",
+  "prompts": [
+    {
+      "id": "react-01-vite-setup",
+      "label": "Create React app with Vite",
+      "description": "setup",
+      "detail": "npm create vite@latest",
+      "text": "I'm a beginner with React. Guide me to create a project with Vite + React + TypeScript.\n\n- Exact terminal commands\n- Explain src/App.tsx, main.tsx, index.html\n- Replace default content with a heading Hello React\n- How to run dev server and open in browser\n\nList common errors (port in use) and fixes in one line each."
+    },
+    {
+      "id": "react-02-props",
+      "label": "Component with props",
+      "description": "props",
+      "detail": "Greeting name and age",
+      "text": "Teach React props with a simple example (TypeScript if possible).\n\n- Greeting component: props { name: string; age?: number }\n- App renders 2–3 Greeting instances\n- Explain props are read-only\n\nOne file per component or single App.tsx for simplicity — your choice, but explain structure."
+    },
+    {
+      "id": "react-03-usestate",
+      "label": "Counter with useState",
+      "description": "hooks",
+      "detail": "increment and decrement",
+      "text": "Build a counter component using useState.\n\n- Display count, buttons +1, -1, Reset\n- Explain useState syntax and re-render in plain language\n- Optional: set minimum 0\n\nProvide full App.tsx (or Counter.tsx + App)."
+    },
+    {
+      "id": "react-04-list-keys",
+      "label": "Render a list with keys",
+      "description": "lists",
+      "detail": "todo items array",
+      "text": "Show how to render a list in React correctly.\n\n- Array of items { id, text }\n- map() to <li> with key={id}\n- Explain why index as key is bad when list can reorder\n\nInclude adding one item via useState and a text input."
+    },
+    {
+      "id": "react-05-forms",
+      "label": "Controlled form input",
+      "description": "forms",
+      "detail": "name field + submit",
+      "text": "Create a controlled form in React for beginners.\n\n- Input for name, submit button\n- On submit: preventDefault, alert or show message below (no backend)\n- Store value in useState\n\nExplain controlled vs uncontrolled in 2 sentences."
+    },
+    {
+      "id": "react-06-useeffect-fetch",
+      "label": "useEffect + fetch data",
+      "description": "hooks",
+      "detail": "load users on mount",
+      "text": "Fetch data in React with useEffect (beginner level).\n\n- On mount, fetch https://jsonplaceholder.typicode.com/users/1\n- Show loading, error, and data states\n- Type the user shape with TypeScript interface\n\nWarn about missing dependency array mistakes briefly."
+    },
+    {
+      "id": "react-07-conditional",
+      "label": "Conditional rendering",
+      "description": "UI",
+      "detail": "login vs logout message",
+      "text": "Teach conditional rendering in React.\n\n- Boolean isLoggedIn in state, toggle button\n- Show different JSX when true/false\n- Use both && pattern and ternary once each\n\nKeep UI minimal, no router."
+    },
+    {
+      "id": "react-08-custom-hook",
+      "label": "Custom hook useCounter",
+      "description": "hooks",
+      "detail": "extract counter logic",
+      "text": "Introduce a custom hook useCounter(initial).\n\n- Returns { count, increment, decrement, reset }\n- Use it in App.tsx\n- Explain rules of hooks in 3 bullets\n\nTypeScript preferred."
+    },
+    {
+      "id": "react-09-react-router",
+      "label": "Two pages with React Router",
+      "description": "routing",
+      "detail": "Home and About",
+      "text": "Add React Router to a small Vite React app (beginner).\n\n- Install react-router-dom\n- Routes: / home, /about about page\n- Link navigation in a header\n- Explain BrowserRouter and Routes structure\n\nList install command and which files to create."
+    },
+    {
+      "id": "react-10-context",
+      "label": "Theme context (light/dark)",
+      "description": "context",
+      "detail": "toggle without prop drilling",
+      "text": "Show React Context API with a simple theme toggle.\n\n- ThemeContext: 'light' | 'dark'\n- Provider at top, button in child to toggle\n- Apply a CSS class or inline style on a wrapper\n\nExplain when Context is overkill vs props."
+    },
+    {
+      "id": "react-11",
+      "label": "React.memo pragmatic rules",
+      "description": "performance",
+      "detail": "props reference stability",
+      "text": "Explain memo at a beginner level with props reference equality.\nDemonstrate when wrapping a purely presentational list item helps versus hurts readability.\nConnect to stable callback pitfalls with inline functions.\nShow React DevTools highlight updates as a debugging tip.\nConclude with a heuristic: memo after measuring, not by default."
+    },
+    {
+      "id": "react-12",
+      "label": "useReducer for form wizard",
+      "description": "state",
+      "detail": "step transitions",
+      "text": "Replace several useState calls with useReducer for a 3-step checkout wizard.\nModel actions like NEXT, BACK, SET_SHIPPING, RESET.\nShow how to keep related state cohesive.\nCompare mental overhead to useState for learners.\nInclude a tiny reducer with exhaustive switch and default guard."
+    },
+    {
+      "id": "react-13",
+      "label": "useRef focus management",
+      "description": "a11y",
+      "detail": "modal open focus",
+      "text": "Build a dialog that moves focus to the first input on open and returns focus to the trigger on close.\nUse useRef<HTMLInputElement>(null) and optional useEffect timing notes.\nMention tab traps only as a follow-up reading pointer.\nKeep the example dependency-light.\nAdd keyboard Escape handling hook stub."
+    },
+    {
+      "id": "react-14",
+      "label": "Error boundary class component",
+      "description": "resilience",
+      "detail": "fallback UI",
+      "text": "I only know function components. Teach the minimal class-based ErrorBoundary pattern.\nShow componentDidCatch logging and getDerivedStateFromError.\nExplain what boundaries cannot catch (event handlers, async).\nWire a simple fallback UI with retry button pattern.\nNote React 19 future directions only lightly without derailing."
+    },
+    {
+      "id": "react-15",
+      "label": "useLayoutEffect for measured DOM",
+      "description": "effects",
+      "detail": "before paint",
+      "text": "Contrast useEffect vs useLayoutEffect with a tooltip positioning example.\nExplain why useLayoutEffect can reduce visual flicker.\nWarn about SSR considerations and suppressHydrationWarning tangents briefly.\nGive a rule of thumb on when beginners should still default to useEffect.\nInclude a dev-only performance note."
+    },
+    {
+      "id": "react-16",
+      "label": "createPortal for modals",
+      "description": "DOM",
+      "detail": "escape parent overflow",
+      "text": "Show ReactDOM.createPortal rendering a modal into document.body.\nExplain why this helps with z-index and clipped parents.\nDiscuss event bubbling through the React tree vs DOM tree at a high level.\nPair with a simple focus outline style.\nList one accessibility follow-up (aria-modal) as homework."
+    },
+    {
+      "id": "react-17",
+      "label": "Keys beyond id: composition pitfalls",
+      "description": "lists",
+      "detail": "stable identity",
+      "text": "Deepen my understanding of key when list items lack database ids yet.\nExplain why index-as-key is risky with reordering or insertion.\nShow generating composite keys carefully.\nRelate to deduplication in React reconciliation without deep internals.\nGive a quick exercise: sortable list bug story."
+    },
+    {
+      "id": "react-18",
+      "label": "forwardRef on design-system button",
+      "description": "components",
+      "detail": "displayName",
+      "text": "Teach forwardRef so a parent can focus my <Button>.\nInclude TypeScript generic props pattern at a friendly level.\nSet displayName for devtools.\nContrast with callback ref pattern.\nMention ref forwarding limitations on host components vs wrappers."
+    },
+    {
+      "id": "react-19",
+      "label": "useId for server-friendly form wiring",
+      "description": "hooks",
+      "detail": "label htmlFor",
+      "text": "Replace Math.random() keys in forms with useId for linking labels and inputs.\nExplain hydration mismatch risks useId avoids.\nShow pairing with aria-describedby for helper text.\nNote multiple ids via suffix pattern.\nKeep example in a small component only."
+    },
+    {
+      "id": "react-20",
+      "label": "Deferred value for search suggestions",
+      "description": "concurrency",
+      "detail": "useDeferredValue intro",
+      "text": "Introduce useDeferredValue for keeping input snappy while a heavy filtered list updates.\nContrast with debouncing in userland.\nExplain perceived lag trade-offs simply.\nShow a toy list filter example without external libraries.\nMention profiling in React DevTools as validation."
+    }
+  ]
+}

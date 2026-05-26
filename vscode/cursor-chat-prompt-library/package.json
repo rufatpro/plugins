@@ -1,0 +1,112 @@
+{
+  "name": "cursor-chat-prompt-library",
+  "displayName": "Cursor Chat Prompt Library",
+  "description": "620 prompt templates for Cursor AI chat — 31 categories × 20. QuickPick → insert into chat. Author: Rufat Nuriyev — https://rufat.top/",
+  "version": "0.4.1",
+  "publisher": "rufat",
+  "author": {
+    "name": "Rufat Nuriyev",
+    "url": "https://rufat.top/"
+  },
+  "license": "MIT",
+  "readme": "readme.md",
+  "changelog": "CHANGELOG.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rufatpro/ide-plugins.git"
+  },
+  "homepage": "https://github.com/rufatpro/ide-plugins",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "cursor",
+    "chat",
+    "AI",
+    "composer",
+    "agent",
+    "prompt",
+    "prompt library",
+    "templates",
+    "python",
+    "javascript",
+    "html",
+    "typescript",
+    "react",
+    "sql",
+    "git",
+    "django",
+    "nextjs",
+    "fastapi",
+    "docker",
+    "testing",
+    "tailwind",
+    "vue",
+    "laravel",
+    "dotnet",
+    "spring",
+    "kubernetes",
+    "graphql",
+    "mongodb",
+    "flutter",
+    "wordpress",
+    "pandas",
+    "security",
+    "devops",
+    "beginner"
+  ],
+  "activationEvents": [
+    "onCommand:cursorChatPromptLibrary.pick",
+    "onCommand:cursorChatPromptLibrary.insert",
+    "onCommand:cursorChatPromptLibrary.insertWebsite",
+    "onCommand:cursorChatPromptLibrary.insertPython",
+    "onCommand:cursorChatPromptLibrary.insertJavaScript"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cursorChatPromptLibrary.pick",
+        "title": "Pick Prompt (Category, then Template)",
+        "category": "Cursor Chat Prompt Library"
+      },
+      {
+        "command": "cursorChatPromptLibrary.insert",
+        "title": "Insert Prompt into Chat (All Categories)",
+        "category": "Cursor Chat Prompt Library"
+      },
+      {
+        "command": "cursorChatPromptLibrary.insertWebsite",
+        "title": "Insert Website Prompt",
+        "category": "Cursor Chat Prompt Library"
+      },
+      {
+        "command": "cursorChatPromptLibrary.insertPython",
+        "title": "Insert Python Prompt",
+        "category": "Cursor Chat Prompt Library"
+      },
+      {
+        "command": "cursorChatPromptLibrary.insertJavaScript",
+        "title": "Insert JavaScript Prompt",
+        "category": "Cursor Chat Prompt Library"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "cursorChatPromptLibrary.pick",
+        "key": "ctrl+alt+p",
+        "mac": "cmd+alt+p"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package",
+    "lint": "echo \"No lint configured\""
+  },
+  "vsce": {
+    "baseContentUrl": "https://github.com/rufatpro/ide-plugins/tree/main/vscode/cursor-chat-prompt-library"
+  }
+}

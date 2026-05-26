@@ -1,0 +1,146 @@
+{
+  "category": "docker",
+  "categoryLabel": "Docker",
+  "prompts": [
+    {
+      "id": "docker-01",
+      "label": "Dockerfile for Node app",
+      "description": "image",
+      "detail": "node:20-alpine",
+      "text": "Write a beginner Dockerfile for a simple Node Express app.\n\n- FROM node:20-alpine, WORKDIR, COPY package*, npm ci, COPY ., CMD\n- .dockerignore for node_modules\n- docker build and docker run commands\n\nExplain each instruction."
+    },
+    {
+      "id": "docker-02",
+      "label": "Dockerfile for Python app",
+      "description": "image",
+      "detail": "python:3.12-slim",
+      "text": "Dockerfile for a FastAPI or Flask app with uvicorn.\n\n- Slim Python image, requirements.txt, expose port\n- Run uvicorn command\n- Build and run example\n\nKeep layers minimal for learning."
+    },
+    {
+      "id": "docker-03",
+      "label": "docker-compose two services",
+      "description": "compose",
+      "detail": "web + db",
+      "text": "Create docker-compose.yml with web and postgres services.\n\n- web builds from Dockerfile, depends_on db\n- db uses postgres image with env POSTGRES_PASSWORD\n- Volumes for db data\n\nExplain docker compose up -d."
+    },
+    {
+      "id": "docker-04",
+      "label": "Environment variables in Compose",
+      "description": "compose",
+      "detail": "env_file",
+      "text": "Show .env with docker-compose for a web app.\n\n- env_file: .env\n- Do not commit secrets\n- Variable substitution in compose\n\nExample .env.example safe template."
+    },
+    {
+      "id": "docker-05",
+      "label": "Volumes for persistent data",
+      "description": "storage",
+      "detail": "named volume",
+      "text": "Explain Docker volumes vs bind mounts for beginners.\n\n- Named volume for database\n- When bind mount is useful for development\n\nShort compose snippet."
+    },
+    {
+      "id": "docker-06",
+      "label": "Docker networks basics",
+      "description": "network",
+      "detail": "service DNS name",
+      "text": "How do containers talk in Compose?\n\n- Default network, service name as hostname\n- Example: web connects to postgres://db:5432\n\nDiagram in ASCII optional."
+    },
+    {
+      "id": "docker-07",
+      "label": "Multi-stage build smaller image",
+      "description": "optimize",
+      "detail": "builder stage",
+      "text": "Introduce multi-stage Dockerfile for a Node TypeScript build.\n\n- Stage 1 npm run build, stage 2 copy dist only\n- Why image size matters\n\nSimplified Dockerfile."
+    },
+    {
+      "id": "docker-08",
+      "label": "Debug container won't start",
+      "description": "troubleshoot",
+      "detail": "logs exec",
+      "text": "Checklist when docker run fails for beginners.\n\n- docker logs, docker ps -a\n- Wrong port mapping -p 3000:3000\n- File permissions and ENTRYPOINT typos\n\n5–7 bullet fixes."
+    },
+    {
+      "id": "docker-09",
+      "label": ".dockerignore essentials",
+      "description": "config",
+      "detail": "ignore patterns",
+      "text": "Create .dockerignore for Node and Python projects.\n\n- node_modules, .git, .env, __pycache__, dist\n- Why smaller context speeds build\n\nFull file content."
+    },
+    {
+      "id": "docker-10",
+      "label": "Dev vs prod containers",
+      "description": "workflow",
+      "detail": "compose override",
+      "text": "Explain dev vs production Docker workflow.\n\n- Dev: bind mount source, hot reload\n- Prod: slim image, no dev dependencies\n- Mention compose.override.yml idea\n\nConceptual, 2 scenarios."
+    },
+    {
+      "id": "docker-11",
+      "label": "HEALTHCHECK in Dockerfile",
+      "description": "ops",
+      "detail": "restart policies",
+      "text": "Add HEALTHCHECK curl/wget hitting /health with intervals.\nExplain difference from process running vs app ready.\nRelate to orchestrator restart policies conceptually.\nWarn about flapping health checks due to cold start.\nShow minimal Node or Python example comment."
+    },
+    {
+      "id": "docker-12",
+      "label": "Compose profiles dev-only services",
+      "description": "compose",
+      "detail": "profile: dev",
+      "text": "Teach docker compose --profile dev up including admin UIs.\nKeep default profile lean for CI.\nExplain dependency services toggling.\nShow env file per profile pattern verbally.\nMention avoiding accidental prod profile usage."
+    },
+    {
+      "id": "docker-13",
+      "label": "docker exec interactive debugging",
+      "description": "debug",
+      "detail": "shell inside",
+      "text": "Walk docker ps, docker exec -it sh into running container.\nExplain why missing tools in distroless images frustrates newcomers.\nShow copying files out vs mounting volumes.\nCaution against changing running prod containers.\nSuggest reproduce locally workflow."
+    },
+    {
+      "id": "docker-14",
+      "label": "Resource limits cpus memory compose",
+      "description": "stability",
+      "detail": "no silent thrash",
+      "text": "Demonstrate cpus and mem_limit directives effects at high level.\nExplain OOM kill signals simply.\nRelate to k8s requests/limits teaser.\nAdvise measuring baselines.\nWarn WSL/mac vm bridging differences briefly."
+    },
+    {
+      "id": "docker-15",
+      "label": "Bind mount uid gid mismatch",
+      "description": "volumes",
+      "detail": "permission errors",
+      "text": "Explain Linux uid mapping pain when mounting host code.\nDiscuss running as non-root inside image benefits.\nShow quick diagnostic ls -la on mount.\nMention named volumes for databases.\nContrast Mac/Windows virtualization easing some issues."
+    },
+    {
+      "id": "docker-16",
+      "label": "Multi-stage recap for caches",
+      "description": "build",
+      "detail": "order layers",
+      "text": "Re-teach separating deps install from src copy order for caching.\nShow ARG build-time pinning.\nExplain BuildKit syntax benefits name-drop.\nCompare CI layer cache vs registry cache verbally.\nList smell when image rebuild always invalidates."
+    },
+    {
+      "id": "docker-17",
+      "label": "docker save docker load transfers",
+      "description": "airgap",
+      "detail": "tar bundles",
+      "text": "Explain archiving images for offline servers.\nContrast with docker push registry workflow.\nMention verifying digests verbally.\nShow compress pipeline idea.\nCaution beginners about stale tags."
+    },
+    {
+      "id": "docker-18",
+      "label": "compose watch dev sync sketch",
+      "description": "DX",
+      "detail": "hot reload",
+      "text": "Outline compose watch syncing source into containers for interpreters.\nRelate trade-offs vs bind mounts performance.\nMention ignoring node_modules nuances.\nKeep example conceptual for beginners.\nPoint to README team standards."
+    },
+    {
+      "id": "docker-19",
+      "label": "Network aliases service discovery",
+      "description": "networking",
+      "detail": "DNS between services",
+      "text": "Explain default bridge DNS naming service names in compose.\nShow connecting api to db host db:5432 mental model.\nWarn about hardcoding localhost inside containers.\nTouch custom networks isolation.\nRelate to k8s services analogy."
+    },
+    {
+      "id": "docker-20",
+      "label": "Image slimming checklist verbal",
+      "description": "security",
+      "detail": "attack surface",
+      "text": "List steps: choose smaller base, remove build deps, pin versions, run as non-root.\nExplain distroless when you need shells vs not.\nMention scanning with Trivy high level.\nDiscuss secrets in build args anti-pattern.\nEncourage reproducible builds."
+    }
+  ]
+}

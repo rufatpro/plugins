@@ -1,0 +1,146 @@
+{
+  "category": "git",
+  "categoryLabel": "Git",
+  "prompts": [
+    {
+      "id": "git-01-first-repo",
+      "label": "First Git repository",
+      "description": "basics",
+      "detail": "init, add, commit",
+      "text": "I'm new to Git. Walk me through my first local repository.\n\n- git init, create README.md, git add, git commit\n- git status before and after each step explained\n- What is .git folder in one sentence\n\nAssume Windows terminal; mention git --version check."
+    },
+    {
+      "id": "git-02-clone",
+      "label": "Clone a GitHub repo",
+      "description": "remote",
+      "detail": "git clone and cd",
+      "text": "Explain git clone for a beginner.\n\n- Clone a generic hello-repo URL pattern (placeholder)\n- What files appear locally\n- How to open the project in Cursor/VS Code\n- Difference clone vs download ZIP\n\nDo not use a real private repo; use public example style."
+    },
+    {
+      "id": "git-03-branch",
+      "label": "Create and switch branch",
+      "description": "branches",
+      "detail": "feature/add-footer",
+      "text": "Teach Git branches for beginners.\n\n- git branch, git switch (or checkout) to feature/add-footer\n- Make a small commit on the branch\n- git log --oneline --graph with 2–3 commits described\n\nExplain why branches exist on a team."
+    },
+    {
+      "id": "git-04-merge",
+      "label": "Merge branch into main",
+      "description": "branches",
+      "detail": "fast-forward vs merge commit",
+      "text": "Show merging a feature branch into main.\n\n- Steps: switch to main, git merge feature/...\n- Explain fast-forward vs merge commit simply\n- What if both branches edited the same line? (introduce conflict concept)\n\nUse a toy example file app.txt."
+    },
+    {
+      "id": "git-05-conflict",
+      "label": "Resolve a merge conflict",
+      "description": "conflicts",
+      "detail": "markers <<<< ==== >>>>",
+      "text": "Simulate a merge conflict and how to fix it.\n\n- Show conflict markers in a file\n- Steps: open file, edit to final text, git add, git commit\n- How to abort merge with git merge --abort\n\nKeep calm tone for beginners who panic at conflicts."
+    },
+    {
+      "id": "git-06-push-pull",
+      "label": "push and pull with origin",
+      "description": "remote",
+      "detail": "git push -u origin main",
+      "text": "Explain git push and git pull for GitHub beginners.\n\n- Set upstream: git push -u origin main\n- Someone else pushed: git pull before you push\n- What is origin?\n\nMention authentication (HTTPS token or SSH) at high level without secrets."
+    },
+    {
+      "id": "git-07-stash",
+      "label": "git stash save work",
+      "description": "stash",
+      "detail": "switch branch safely",
+      "text": "When should a beginner use git stash?\n\n- Scenario: unfinished changes but must switch branch\n- git stash push -m message, git switch, later git stash pop\n- Warn about stash pop conflicts briefly\n\nShort exercise steps."
+    },
+    {
+      "id": "git-08-gitignore",
+      "label": ".gitignore essentials",
+      "description": "config",
+      "detail": "node_modules, .env, dist",
+      "text": "Create a useful .gitignore for a JavaScript + Python learning folder.\n\n- node_modules/, __pycache__/, .env, dist/, .venv/\n- Explain why secrets must not be committed\n- What if I already committed .env by mistake? (git rm --cached high level)\n\nProvide full .gitignore file content."
+    },
+    {
+      "id": "git-09-log-diff",
+      "label": "git log and git diff",
+      "description": "history",
+      "detail": "see what changed",
+      "text": "Teach reading history with git log and git diff.\n\n- git log --oneline -5\n- git diff before commit\n- git diff main..feature/branch name\n\nExplain what + and - lines mean in diff output."
+    },
+    {
+      "id": "git-10-pr-flow",
+      "label": "Pull request workflow",
+      "description": "collaboration",
+      "detail": "branch → PR → review → merge",
+      "text": "Explain the GitHub Pull Request workflow for a junior developer.\n\n- Steps from feature branch to merged main\n- What to write in PR description (checklist example)\n- Code review etiquette in 4 bullets\n\nNo need for GitHub CLI; web UI is fine."
+    },
+    {
+      "id": "git-11",
+      "label": "git bisect find bad commit",
+      "description": "debugging",
+      "detail": "binary search history",
+      "text": "My main branch broke last week. Walk me through git bisect start, good, bad, run a test command, bisect reset.\nExplain the binary search intuition for beginners.\nShow how to bisect with a script exit code.\nMention bisect skip for flaky tests cautiously.\nGive a safety tip about detached HEAD confusion."
+    },
+    {
+      "id": "git-12",
+      "label": "git worktree parallel checkouts",
+      "description": "workflow",
+      "detail": "two folders one repo",
+      "text": "Teach git worktree add ../hotfix hotfix-branch for parallel folders.\nExplain when this beats stashing for quick reviews.\nShow listing and pruning worktrees.\nWarn about uncommitted changes conflicts between worktrees.\nRelate to CI clone depth only tangentially."
+    },
+    {
+      "id": "git-13",
+      "label": "Cherry-pick with conflict resolution",
+      "description": "history",
+      "detail": "single commit port",
+      "text": "Explain cherry-pick use case: backport a bugfix commit to a release branch.\nWalk through conflict markers, add, cherry-pick --continue.\nContrast with merge and rebase mentally.\nNote empty commits and --mainline for merges briefly as vocabulary.\nAdvise recording the original SHA in the PR description."
+    },
+    {
+      "id": "git-14",
+      "label": "Safe undo: revert vs reset rules",
+      "description": "collaboration",
+      "detail": "public branch etiquette",
+      "text": "Clarify when git revert is preferred over reset --hard on shared branches.\nShow revert -m for merge commits at a conceptual level.\nExplain reflog as a local safety net with limits.\nProvide a decision flowchart in words for beginners panicking after a bad push.\nEmphasize communication with teammates after history repair."
+    },
+    {
+      "id": "git-15",
+      "label": "Interactive add patch hunks",
+      "description": "staging",
+      "detail": "git add -p",
+      "text": "Teach staging part of a file with git add -p / --patch.\nWalk through y/n/s/e choices intuitively.\nRelate to crafting atomic commits readable in review.\nShow split hunk tips at a high level.\nMention GUI alternatives without endorsing a specific tool."
+    },
+    {
+      "id": "git-16",
+      "label": "Annotated tags for releases",
+      "description": "versioning",
+      "detail": "tag -a message",
+      "text": "Compare lightweight vs annotated tags for semver releases.\nShow git tag -a v1.2.0 -m \"...\" and pushing tags.\nExplain how tags differ from branches mentally.\nNote signed tags concept as optional advanced reading.\nDescribe releasing from a tag in CI in one sentence."
+    },
+    {
+      "id": "git-17",
+      "label": "Hooks outline without breaking flows",
+      "description": "automation",
+      "detail": "pre-commit concept",
+      "text": "Outline what a pre-commit hook can validate (format, lint, secrets scan).\nExplain local vs CI enforcement complement.\nWarn about slow hooks frustrating teams.\nShow a pseudo-hook script structure without vendor lock-in.\nDiscuss bypass policies and when they are acceptable."
+    },
+    {
+      "id": "git-18",
+      "label": "Submodules mental model warning",
+      "description": "dependencies",
+      "detail": "pinned commit",
+      "text": "Introduce submodules as separate repos pinned to a commit.\nList three pain points beginners hit (forgot init, detached state, PR noise).\nSuggest alternatives like monorepo or package managers when appropriate.\nGive minimal clone --recurse-submodules workflow.\nKeep depth conceptual; no flame war."
+    },
+    {
+      "id": "git-19",
+      "label": "Blame and log story arc",
+      "description": "forensics",
+      "detail": "who changed line",
+      "text": "Teach git blame -L for narrowing lines and ignoring whitespace option idea.\nPair with git log -S for finding when a string disappeared.\nExplain how to keep investigations blameless in team culture.\nShow linking to issue trackers in commit messages habit.\nFinish with a note about moved code limitations."
+    },
+    {
+      "id": "git-20",
+      "label": "Pull with rebase vs merge defaults",
+      "description": "sync",
+      "detail": "linear history preference",
+      "text": "Compare git pull --rebase vs merge for feature branch updates.\nExplain diverged history diagrams in words.\nDescribe autostash interaction with rebase pulls.\nGive team policy guidance for beginners joining a repo.\nMention configurable pull.rebase safe advice."
+    }
+  ]
+}

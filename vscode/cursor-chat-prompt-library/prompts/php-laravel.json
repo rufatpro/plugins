@@ -1,0 +1,146 @@
+{
+  "category": "php-laravel",
+  "categoryLabel": "PHP / Laravel",
+  "prompts": [
+    {
+      "id": "laravel-01",
+      "label": "New Laravel project",
+      "description": "setup",
+      "detail": "composer create-project",
+      "text": "Install Laravel for a beginner on Windows.\n\n- composer create-project, .env copy, php artisan key:generate\n- php artisan serve\n- Explain routes/web.php first route\n\nLaravel 11 style if possible."
+    },
+    {
+      "id": "laravel-02",
+      "label": "Blade template hello",
+      "description": "views",
+      "detail": "resources/views",
+      "text": "Create a Blade view and return from route.\n\n- welcome customization with @section @yield layout\n\nShow routes and two blade files."
+    },
+    {
+      "id": "laravel-03",
+      "label": "Migration and Eloquent model",
+      "description": "database",
+      "detail": "posts table",
+      "text": "Create Post model with migration title and body.\n\n- php artisan make:model -m\n- migrate, tinker create one post\n\nExplain Eloquent ORM simply."
+    },
+    {
+      "id": "laravel-04",
+      "label": "Controller resource index",
+      "description": "mvc",
+      "detail": "PostController",
+      "text": "Resource controller for posts index and show only.\n\n- Route::resource limited actions\n- Return Blade views with compact posts\n\nList artisan commands used."
+    },
+    {
+      "id": "laravel-05",
+      "label": "Form validation Request",
+      "description": "forms",
+      "detail": "store post",
+      "text": "Store post with validation rules title required max 255.\n\n- Form Request or validate in controller\n- Show errors in Blade @error\n\nCSRF @csrf mention."
+    },
+    {
+      "id": "laravel-06",
+      "label": "Auth Breeze overview",
+      "description": "auth",
+      "detail": "starter kit",
+      "text": "Explain Laravel Breeze for login/register at high level.\n\n- composer require, npm build, migrations\n- What routes appear\n\nNot full install log — learning map."
+    },
+    {
+      "id": "laravel-07",
+      "label": "API routes Sanctum intro",
+      "description": "api",
+      "detail": "json tokens",
+      "text": "Outline API + Sanctum token auth for SPA.\n\n- routes/api.php GET /user with auth:sanctum\n- Difference web vs api middleware\n\nConceptual steps."
+    },
+    {
+      "id": "laravel-08",
+      "label": "Seeder fake data",
+      "description": "database",
+      "detail": "DatabaseSeeder",
+      "text": "Create factory and seeder for 20 fake posts.\n\n- php artisan db:seed\n- Use Faker via factory\n\nWhy seeders help development."
+    },
+    {
+      "id": "laravel-09",
+      "label": "Queue jobs concept",
+      "description": "queues",
+      "detail": "ShouldQueue",
+      "text": "Explain queues and jobs without full Redis setup.\n\n- When to dispatch slow mail send\n- database driver mention\n\nDiagram optional."
+    },
+    {
+      "id": "laravel-10",
+      "label": "Deploy shared hosting notes",
+      "description": "deploy",
+      "detail": "public folder",
+      "text": "Laravel deployment basics: public docroot, storage link, optimize.\n\n- php artisan config:cache on server\n- Never expose .env\n\nBullet checklist."
+    },
+    {
+      "id": "laravel-11",
+      "label": "Implicit route model binding",
+      "description": "routing",
+      "detail": "type-hint injection",
+      "text": "Explain implicit route model binding fetching {post:slug} or id.\nShow customizing route key signatures.\nHandle ModelNotFoundException mapping 404 gracefully.\nCompare explicit binding registrations.\nMention localized route keys lightly."
+    },
+    {
+      "id": "laravel-12",
+      "label": "FormRequest authorize plus validate",
+      "description": "HTTP",
+      "detail": "thin controllers",
+      "text": "Create PostStoreRequest validating title and body with authorize() boolean.\nShow messages customization.\nExplain dependency injection inside requests.\nRelate Policy checks placement.\nKeep controller skinny example narrative."
+    },
+    {
+      "id": "laravel-13",
+      "label": "Eloquent Attribute accessors mutators",
+      "description": "ORM",
+      "detail": "modern casts",
+      "text": "Demonstrate Attribute::make accessor mutator pattern.\nCompare older getFooAttribute verbosity.\nShow JSON column casting subtly.\nMention immutable date casting.\nProvide debugging pitfalls dd accidentally in production."
+    },
+    {
+      "id": "laravel-14",
+      "label": "Database transactions closure",
+      "description": "integrity",
+      "detail": "automatic rollback",
+      "text": "Wrap transfers in DB::transaction.\nExplain rollback on exceptions.\nMention deadlock retries optional teaser.\nRelate asserting final balances in Pest or PHPUnit verbally.\nPoint to pessimistic locking teaser."
+    },
+    {
+      "id": "laravel-15",
+      "label": "Events listeners queued",
+      "description": "async",
+      "detail": "ShouldQueue listener",
+      "text": "Fire OrderShipped event with listener implementing ShouldQueue.\nDiscuss monitoring failed jobs verbally.\nCompare synchronous listeners debugging ease.\nMention subscriber class grouping optional.\nRelate to domain boundaries discussion lightly."
+    },
+    {
+      "id": "laravel-16",
+      "label": "Policy abilities in Blade",
+      "description": "auth",
+      "detail": "@can directives",
+      "text": "Register PostPolicy update checking ownership.\nUse @can in Blade views alongside @cannot.\nShow Gate authorize in controllers.\nExplain middleware auth layering difference.\nMention streamlined Laravel skeleton variance lightly."
+    },
+    {
+      "id": "laravel-17",
+      "label": "Vite plugin with artisan serve duo",
+      "description": "frontend",
+      "detail": "hot refresh",
+      "text": "Explain pairing npm run dev with php artisan serve mental model.\nShow @vite Blade directives referencing built assets.\nMention APP_URL host trust pitfalls briefly historically.\nRelate migration from Mix philosophically concise.\nList production vite build sequencing."
+    },
+    {
+      "id": "laravel-18",
+      "label": "RateLimiter middleware configuration",
+      "description": "security",
+      "detail": "named limiters",
+      "text": "Define RateLimiter::for keyed APIs using Redis driver concept.\nAttach throttle middleware routes.\nDifferentiate burst vs sustained verbally.\nExplain Retry-After header exposure basics.\nMention customizing response JSON optional."
+    },
+    {
+      "id": "laravel-19",
+      "label": "optimize clear caches playbook",
+      "description": "ops",
+      "detail": "config route view",
+      "text": "List config route view optimize clears when baffled caches.\nExplain production config caching benefits cautions forgetting env.\nSuggest deploy scripts codifying clears.\nMention queue restart after deploy note.\nTie supervisors lightly optional."
+    },
+    {
+      "id": "laravel-20",
+      "label": "API Resource transformers masking fields",
+      "description": "JSON",
+      "detail": "presentation layer",
+      "text": "Create PostResource masking internal columns shaping outward JSON responses.\nShow conditional wrapping when appended relationships.\nRelate Pagination Resource collections briefly.\nMention merging additional meta optional.\nCompare general transformer libraries philosophy lightly."
+    }
+  ]
+}

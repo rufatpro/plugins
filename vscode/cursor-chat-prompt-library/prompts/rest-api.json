@@ -1,0 +1,146 @@
+{
+  "category": "rest-api",
+  "categoryLabel": "REST / OpenAPI",
+  "prompts": [
+    {
+      "id": "api-01",
+      "label": "Design REST resources",
+      "description": "design",
+      "detail": "nouns not verbs",
+      "text": "Explain REST resource naming for beginners.\n\n- Good: GET /users, POST /users, bad: /getUsers\n- HTTP methods map to CRUD table\n\n5 examples."
+    },
+    {
+      "id": "api-02",
+      "label": "Status codes cheat sheet",
+      "description": "http",
+      "detail": "200 201 400 404",
+      "text": "Teach common HTTP status codes with when to use each.\n\n- 200, 201, 204, 400, 401, 403, 404, 500\n- One sentence per code\n\nNo memorizing entire RFC."
+    },
+    {
+      "id": "api-03",
+      "label": "OpenAPI YAML skeleton",
+      "description": "openapi",
+      "detail": "paths /items",
+      "text": "Write minimal openapi 3 yaml for items CRUD paths.\n\n- info, servers, paths, components schemas Item\n\nValid structure beginners can extend."
+    },
+    {
+      "id": "api-04",
+      "label": "Pagination query params",
+      "description": "design",
+      "detail": "page limit",
+      "text": "Design pagination with ?page=1&limit=20 and response meta total.\n\n- JSON response shape example\n\nBest practices."
+    },
+    {
+      "id": "api-05",
+      "label": "Error JSON format",
+      "description": "errors",
+      "detail": "RFC 7807 idea",
+      "text": "Propose consistent error body: code, message, details array.\n\n- Example 400 validation errors field map\n\nFramework agnostic."
+    },
+    {
+      "id": "api-06",
+      "label": "Versioning /api/v1",
+      "description": "versioning",
+      "detail": "breaking changes",
+      "text": "When to bump API version and strategies URL vs header.\n\n- Backward compatible changes list\n\nShort guide."
+    },
+    {
+      "id": "api-07",
+      "label": "Idempotency POST",
+      "description": "design",
+      "detail": "Idempotency-Key",
+      "text": "Explain idempotent POST for payments with Idempotency-Key header.\n\n- Why retries matter\n\nConceptual, no real payment API."
+    },
+    {
+      "id": "api-08",
+      "label": "Generate client from OpenAPI",
+      "description": "tools",
+      "detail": "openapi-generator",
+      "text": "Steps to generate TypeScript fetch client from openapi.yaml.\n\n- Mention openapi-generator or orval\n\nHigh level CLI example."
+    },
+    {
+      "id": "api-09",
+      "label": "Mock server Prism",
+      "description": "tools",
+      "detail": "mock api",
+      "text": "Use mock API from OpenAPI for frontend dev before backend ready.\n\n- Stoplight Prism or similar one-liner concept\n\nWorkflow benefit."
+    },
+    {
+      "id": "api-10",
+      "label": "Document auth in OpenAPI",
+      "description": "security",
+      "detail": "bearerAuth",
+      "text": "Add components.securitySchemes bearer JWT to OpenAPI and apply globally.\n\n- Example security requirement on paths\n\nYaml snippet."
+    },
+    {
+      "id": "api-11",
+      "label": "HEAD and OPTIONS in real APIs",
+      "description": "HTTP verbs",
+      "detail": "beyond GET and POST",
+      "text": "Explain HEAD for checking existence and headers without downloading a body.\nExplain OPTIONS as part of discovering allowed methods (and how it interacts with browser CORS preflights).\nGive an example endpoint where HEAD is genuinely useful.\nWarn against cramming unrelated operations into POST just to avoid verbs.\nSuggest how to document these endpoints in OpenAPI."
+    },
+    {
+      "id": "api-12",
+      "label": "Content negotiation with Accept",
+      "description": "formats",
+      "detail": "406 responses",
+      "text": "Teach honoring the Accept header and returning 406 when you cannot satisfy it.\nShow a simple negotiation between JSON and a legacy XML format.\nSeparate this from gzip Content-Encoding negotiation.\nAdvise documenting supported representations clearly.\nMention testing negotiation with curl -H Accept:..."
+    },
+    {
+      "id": "api-13",
+      "label": "Conditional GETs with ETag",
+      "description": "caching",
+      "detail": "304 Not Modified",
+      "text": "Walk through issuing ETag on GET responses and validating with If-None-Match.\nExplain why a 304 can save bandwidth and CPU.\nBriefly relate to optimistic concurrency with If-Match on writes.\nMention weak vs strong ETags as vocabulary only.\nGive a troubleshooting tip when clients always appear \"out of date\"."
+    },
+    {
+      "id": "api-14",
+      "label": "Rate limiting response contract",
+      "description": "abuse prevention",
+      "detail": "Retry-After culture",
+      "text": "Describe communicating rate limits (limits, remaining, reset) in response headers.\nExplain why clients should use exponential backoff with jitter.\nDifferentiate limiting by IP vs by authenticated user vs by API key.\nWarn about punitive limits that wreck UX.\nDiscuss putting limits at gateway vs application layer."
+    },
+    {
+      "id": "api-15",
+      "label": "Bulk endpoints and partial failures",
+      "description": "design",
+      "detail": "arrays in one call",
+      "text": "Design POST /imports that accepts a list but returns per-item success and error details.\nCompare all-or-nothing transactions vs tolerant partial accepts.\nAdvise documenting max batch size.\nDiscuss idempotency keys for repeated bulk submits.\nMention duplicates and how callers should reconcile."
+    },
+    {
+      "id": "api-16",
+      "label": "Light hypermedia hints",
+      "description": "discoverability",
+      "detail": "without full HATEOAS zeal",
+      "text": "Suggest pragmatic \"next\" links in JSON for common flows (pagination, onboarding steps).\nCompare this to heavyweight hypermedia formats you may defer.\nDiscuss client complexity versus discoverability gains.\nAdvise versioning link relations when semantics evolve.\nState when beginners should skip HATEOAS entirely."
+    },
+    {
+      "id": "api-17",
+      "label": "Problem Details shaped errors",
+      "description": "errors",
+      "detail": "machine-readable",
+      "text": "Show errors modeled after RFC7807 fields like type, title, detail, and instance.\nExtend with a violations array for validation problems.\nExplain why consistent error shapes simplify client code.\nMention localization as an advanced concern.\nAdvise correlation IDs separately from user-facing titles."
+    },
+    {
+      "id": "api-18",
+      "label": "Deprecation and Sunset headers",
+      "description": "lifecycle",
+      "detail": "communicating removal",
+      "text": "Describe using Deprecation and Sunset headers alongside documentation and changelog notes.\nExplain running old and new versions in parallel briefly.\nAdvise observing traffic on deprecated routes before deleting.\nDiscuss kind communication with API consumers.\nMention versioning strategies only at a headline level."
+    },
+    {
+      "id": "api-19",
+      "label": "Multi-tenant routing strategies",
+      "description": "design",
+      "detail": "where tenant lives",
+      "text": "Compare subdomain-based tenancy versus a header versus a path prefix.\nWarn about leaking tenant identifiers into logs insecurely.\nRelate tenancy checks to authenticated identity claims.\nSuggest integration tests that prove tenant isolation basics.\nNote that \"custom headers\" names should be deliberate, not accidental secrets."
+    },
+    {
+      "id": "api-20",
+      "label": "Webhooks signatures and retries",
+      "description": "integrations",
+      "detail": "tamper-evident payloads",
+      "text": "Explain verifying HMAC signatures using the raw request body.\nDiscuss why buffering the body conflicts with naive JSON middleware.\nExplain idempotent webhook handlers vs duplicate deliveries.\nMention backoff on sender side and storms on receiver side.\nAdvise separating test webhook endpoints from production."
+    }
+  ]
+}

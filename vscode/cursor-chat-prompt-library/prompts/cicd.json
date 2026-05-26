@@ -1,0 +1,146 @@
+{
+  "category": "cicd",
+  "categoryLabel": "CI/CD",
+  "prompts": [
+    {
+      "id": "cicd-01",
+      "label": "GitHub Actions Node test",
+      "description": "github",
+      "detail": "actions/checkout",
+      "text": "YAML workflow: on push run npm ci and npm test for Node project.\n\n- ubuntu-latest, setup-node with version\n\nFull workflow file."
+    },
+    {
+      "id": "cicd-02",
+      "label": "GitHub Actions Python pytest",
+      "description": "github",
+      "detail": "setup-python",
+      "text": "Workflow for Python with pip install -r requirements and pytest.\n\n- Cache pip optional mention\n\nComplete yaml."
+    },
+    {
+      "id": "cicd-03",
+      "label": "Lint job separate stage",
+      "description": "quality",
+      "detail": "eslint ruff",
+      "text": "Split CI into lint and test jobs.\n\n- Fail fast on lint\n- needs: dependency between jobs optional\n\nExample for JS or Python."
+    },
+    {
+      "id": "cicd-04",
+      "label": "Build Docker image in CI",
+      "description": "docker",
+      "detail": "docker/build-push-action",
+      "text": "High-level steps to build Docker image on GitHub Actions.\n\n- login to registry secrets DOCKER_TOKEN\n- tags and push main branch only\n\nOutline yaml sections."
+    },
+    {
+      "id": "cicd-05",
+      "label": "Deploy to Vercel automatic",
+      "description": "deploy",
+      "detail": "vercel action",
+      "text": "Connect GitHub repo to Vercel for Next.js — conceptual CI/CD.\n\n- Preview deployments on PR\n- Production on main\n\nNo secrets in chat."
+    },
+    {
+      "id": "cicd-06",
+      "label": "GitLab CI basic pipeline",
+      "description": "gitlab",
+      "detail": ".gitlab-ci.yml",
+      "text": "Minimal .gitlab-ci.yml with test stage for Node or Python.\n\n- image node:20 or python:3.12\n- script commands\n\nCompare to GitHub Actions in 3 bullets."
+    },
+    {
+      "id": "cicd-07",
+      "label": "Environment secrets in CI",
+      "description": "secrets",
+      "detail": "GITHUB_SECRET",
+      "text": "How to store API keys in GitHub Actions secrets and use in workflow.\n\n- Never print secrets in logs\n- Rotation reminder\n\nExample env: API_KEY: ${{ secrets.API_KEY }}"
+    },
+    {
+      "id": "cicd-08",
+      "label": "Matrix build Node versions",
+      "description": "matrix",
+      "detail": "18 and 20",
+      "text": "strategy.matrix node-version [18, 20] run tests on both.\n\n- Why matrix helps\n\nYaml snippet."
+    },
+    {
+      "id": "cicd-09",
+      "label": "Manual approval production",
+      "description": "deploy",
+      "detail": "environment",
+      "text": "GitHub environments with required reviewers before prod deploy.\n\n- When teams use manual gate\n\nProcess description."
+    },
+    {
+      "id": "cicd-10",
+      "label": "CI failure debug checklist",
+      "description": "troubleshoot",
+      "detail": "works locally",
+      "text": "Checklist when tests pass locally but fail in CI.\n\n- env vars, node version, timezone, file paths case sensitivity\n- Re-run with debug logging\n\n7 bullets."
+    },
+    {
+      "id": "cicd-11",
+      "label": "Reusable GitHub workflows",
+      "description": "DRY",
+      "detail": "workflow_call",
+      "text": "Extract a shared Node build workflow that other workflows call with workflow_call.\nExplain how to pass inputs and inherit secrets without leaking them in logs.\nRecommend pinning third-party actions to full commit SHAs.\nMention concurrency groups that cancel outdated runs when a new push arrives.\nNote one pitfall: reusable workflows and permissions defaults."
+    },
+    {
+      "id": "cicd-12",
+      "label": "OIDC to cloud deploy roles",
+      "description": "secrets",
+      "detail": "no long-lived keys",
+      "text": "Replace static cloud access keys in CI with OIDC trust to a short-lived role.\nWalk through the high-level trust relationship (identity provider, audience, subject claims).\nExplain why temporary credentials reduce breach blast radius.\nList two things that often break the first time (wrong trust policy, wrong audience).\nMention that each cloud vendor names the pieces differently."
+    },
+    {
+      "id": "cicd-13",
+      "label": "actions/cache for dependencies",
+      "description": "speed",
+      "detail": "lockfile hash key",
+      "text": "Set up actions/cache for node_modules keyed by a hash of the lockfile.\nExplain warm cache hits vs cold misses in plain language.\nDescribe when you should also cache global tool folders.\nWarn about caching secrets or huge artifacts blindly.\nAdd a reminder to measure job durations before and after."
+    },
+    {
+      "id": "cicd-14",
+      "label": "Downstream pipeline triggers",
+      "description": "multi-repo",
+      "detail": "chain releases",
+      "text": "Describe chaining a deployment repo pipeline after a build pipeline publishes artifacts.\nExplain passing version strings and masked secrets safely.\nCompare this approach to a monorepo for small teams.\nMention notifying humans when a chained deploy fails.\nKeep the example conceptual without vendor-locking every YAML keyword."
+    },
+    {
+      "id": "cicd-15",
+      "label": "Blue-green deployments vocabulary",
+      "description": "release",
+      "detail": "two live stacks",
+      "text": "Explain blue-green as two stacks where traffic switches from old to new.\nTie this to DB migration strategies that must stay forward compatible.\nMention rollback as switching traffic back when health checks fail.\nContrast with recreate strategies that incur downtime.\nAdvise rehearsing releases in staging with the same playbook."
+    },
+    {
+      "id": "cicd-16",
+      "label": "Canary releases progressively",
+      "description": "risk",
+      "detail": "metrics before full cutover",
+      "text": "Explain shifting a small percentage of traffic to a new version while watching error rates and latency.\nList signals you would watch before increasing traffic (5xx spikes, saturation).\nDiscuss feature flags versus canaries and when each helps.\nWarn that canaries without good observability are mostly theater.\nAvoid recommending a specific service mesh unless asked."
+    },
+    {
+      "id": "cicd-17",
+      "label": "Artifact retention hygiene",
+      "description": "cost",
+      "detail": "shorter is cheaper",
+      "text": "Recommend retention windows for CI artifacts based on usefulness vs storage cost.\nExplain separating short-lived build artifacts from long-term compliance archives.\nWarn about accidental secret uploads in zipped artifacts.\nSuggest naming immutable artifacts with versions.\nMention egress costs if teams download huge artifacts often."
+    },
+    {
+      "id": "cicd-18",
+      "label": "Branch protection basics",
+      "description": "governance",
+      "detail": "required checks",
+      "text": "Summarize branch protection: required status checks, required reviews, disallow force-push.\nExplain why admins should still follow the rules on shared branches.\nMention CODEOWNERS for sensitive areas.\nRelate squash merge policies to readable history debates.\nEncourage humane review norms, not bureaucratic misery."
+    },
+    {
+      "id": "cicd-19",
+      "label": "Post-deploy synthetic smoke checks",
+      "description": "verification",
+      "detail": "beyond \"it deployed\"",
+      "text": "Add a CI/CD step after deploy that hits critical HTTPS endpoints with timeouts.\nCompare synthetic checks versus only reading logs.\nDiscuss tying failures to automated rollback cautiously.\nExplain reducing alert noise by testing stable public routes.\nRecommend keeping checks fast and focused."
+    },
+    {
+      "id": "cicd-20",
+      "label": "Self-hosted runners trade-offs",
+      "description": "infra",
+      "detail": "private networking",
+      "text": "Explain why teams use self-hosted runners (private network access, large caches).\nList responsibilities: patching OS images, rotating tokens, isolation between jobs.\nCompare ephemeral runners vs long-lived VMs from a security perspective.\nWarn about sharing one runner machine across unrelated teams without isolation.\nRecommend cloud-hosted runners when setup burden outweighs gains."
+    }
+  ]
+}

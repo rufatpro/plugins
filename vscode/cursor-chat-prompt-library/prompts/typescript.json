@@ -1,0 +1,146 @@
+{
+  "category": "typescript",
+  "categoryLabel": "TypeScript",
+  "prompts": [
+    {
+      "id": "ts-01-first-file",
+      "label": "First TypeScript file",
+      "description": "basics",
+      "detail": "tsc compile and run",
+      "text": "I'm new to TypeScript. Create a minimal setup without a framework.\n\n- hello.ts with a typed greet(name: string) function\n- tsconfig.json with strict: true explained in one sentence each for target and module\n- Show npx tsc and node hello.js (or ts-node alternative)\n\nExplain the difference from plain JavaScript in 3 bullet points."
+    },
+    {
+      "id": "ts-02-interfaces",
+      "label": "Interfaces for a User model",
+      "description": "types",
+      "detail": "interface + function using it",
+      "text": "Teach TypeScript interfaces with a small example.\n\n- interface User { id: number; name: string; email: string; active?: boolean }\n- Function formatUser(user: User): string\n- One example object and console.log output\n\nShow what happens if I pass a wrong shape (conceptually) and how the compiler helps."
+    },
+    {
+      "id": "ts-03-union-types",
+      "label": "Union types and literals",
+      "description": "types",
+      "detail": "status: pending | done",
+      "text": "Explain union types and string literal types for a beginner.\n\n- type TaskStatus = 'pending' | 'in_progress' | 'done'\n- interface Task { id: number; title: string; status: TaskStatus }\n- Function setStatus(task: Task, status: TaskStatus): Task\n\nInclude one if/switch example that narrows the type."
+    },
+    {
+      "id": "ts-04-generics",
+      "label": "Generic function firstArray",
+      "description": "generics",
+      "detail": "function first<T>",
+      "text": "Introduce generics with a simple utility.\n\n- function first<T>(items: T[]): T | undefined\n- Use it with number[] and string[]\n- Add a short comment why we need <T>\n\nNo React yet. Keep the file under 30 lines."
+    },
+    {
+      "id": "ts-05-type-narrowing",
+      "label": "Type narrowing with typeof",
+      "description": "narrowing",
+      "detail": "string | number parameter",
+      "text": "Show type narrowing for beginners.\n\n- function printId(id: string | number)\n- Use typeof checks before printing\n- Mention one common mistake (assuming it's always string)\n\nProvide runnable code and expected output."
+    },
+    {
+      "id": "ts-06-enums",
+      "label": "const enum or union for roles",
+      "description": "enums",
+      "detail": "admin | user | guest",
+      "text": "Compare string union types vs const enum for user roles in TypeScript.\n\n- Recommend one approach for a small app and why\n- Example: canAccess(role, feature) function\n- Keep it beginner-friendly; mention that many teams prefer unions over enum\n\nProvide a single file example."
+    },
+    {
+      "id": "ts-07-async-promise",
+      "label": "async/await with typed Promise",
+      "description": "async",
+      "detail": "fetchUser(): Promise<User>",
+      "text": "TypeScript + async/await for a beginner.\n\n- interface User { id: number; name: string }\n- async function fetchUser(id: number): Promise<User> — simulate delay with setTimeout in a Promise\n- async function main() with try/catch\n\nUse Node or a single .ts file runnable with ts-node; say which you chose."
+    },
+    {
+      "id": "ts-08-vite-setup",
+      "label": "Vite + TypeScript project",
+      "description": "tooling",
+      "detail": "npm create vite",
+      "text": "Walk me through creating a Vite project with TypeScript template.\n\n- Exact npm create vite steps\n- Explain src/main.ts and index.html relationship\n- Change the page to show a typed counter variable\n- List scripts: dev, build, preview\n\nAssume I have Node LTS installed."
+    },
+    {
+      "id": "ts-09-eslint-prettier",
+      "label": "ESLint + Prettier basics",
+      "description": "tooling",
+      "detail": "format on save concept",
+      "text": "For a small TypeScript project, explain how to add ESLint and Prettier (high level, beginner).\n\n- What each tool does in one sentence\n- Example .eslintrc or flat config snippet (minimal)\n- Example .prettierrc with semi and singleQuote\n- Do not over-configure; focus on workflow: save file → format\n\nMention this is optional for learning but common at work."
+    },
+    {
+      "id": "ts-10-unknown-never",
+      "label": "unknown vs any vs never",
+      "description": "types",
+      "detail": "safe JSON parse",
+      "text": "Explain unknown, any, and never for a TypeScript beginner.\n\n- When to avoid any\n- function parseJson(input: string): unknown and a type guard to check shape\n- never in exhaustive switch default case example\n\nKeep examples short and practical."
+    },
+    {
+      "id": "ts-11",
+      "label": "satisfies for config literals",
+      "description": "types",
+      "detail": "width while checking",
+      "text": "Explain satisfies X vs as X with a tiny theme/color token object.\nShow how satisfies preserves literal types while still type-checking exhaustiveness.\nGive a mistaken as assertion example that satisfies catches.\nRelate this to const assertion interplay.\nMention VS Code autocomplete benefits for newcomers."
+    },
+    {
+      "id": "ts-12",
+      "label": "Template literal types for routes",
+      "description": "advanced types",
+      "detail": "string unions",
+      "text": "Teach template literal types that model REST-style route strings.\nStart with a union of path segments combined into full paths without manual duplication.\nShow how Extract narrows unions of strings.\nMention regex template limitations honestly for beginners.\nKeep the example playground-sized (~20 lines) with comments."
+    },
+    {
+      "id": "ts-13",
+      "label": "Branded types for nominal flavor",
+      "description": "typing",
+      "detail": "UserId vs string",
+      "text": "I keep mixing plain strings that represent IDs. Introduce a branding technique with intersection types.\nProvide UserId and Email types that cannot be assigned to each other accidentally.\nShow a factory function validateUserId(raw: string): UserId.\nExplain trade-offs vs schemas like Zod at a glance.\nNote that branding is erased at runtime—why that matters."
+    },
+    {
+      "id": "ts-14",
+      "label": "discriminated union state machines",
+      "description": "patterns",
+      "detail": "loading success error",
+      "text": "Model UI fetch state using discriminated unions with kind: 'idle' | 'loading' | 'success' | 'error'.\nDemonstrate narrowing in switch statements.\nContrast with optional fields that overlap confusingly.\nAdd a helper function transition rules in words.\nRelate briefly to Redux style state without going deep."
+    },
+    {
+      "id": "ts-15",
+      "label": "Index signatures versus Record utility",
+      "description": "objects",
+      "detail": "known keys caveat",
+      "text": "Compare { [key: string]: number } vs Record<UserRole, number> vs mapped types.\nExplain excess property checking surprises with index signatures.\nGive a dictionaries use-case where Record is nicer.\nShow keyof limitations when using string index signatures.\nConclude when to reach for Map at runtime."
+    },
+    {
+      "id": "ts-16",
+      "label": "ReturnType on async functions",
+      "description": "utilities",
+      "detail": "Awaited companion",
+      "text": "Show ReturnType<<typeof asyncFn>> yielding Promise<number> vs using Awaited<>.\nBuild a stub API client typing responses from helpers.\nExplain why typeof on values matters vs types namespace.\nTouch on overloaded function limitations.\nOffer a cheatsheet snippet for juniors."
+    },
+    {
+      "id": "ts-17",
+      "label": "Global augmentation for Window",
+      "description": "modules",
+      "detail": "declare global pattern",
+      "text": "I injected a ga('event') snippet and want TS to recognize window.dataLayer safely.\nShow a declare global pattern in a shim.d.ts file.\nWarn about polluting globals and coordinating with SSR.\nDemonstrate narrowing typeof window checks.\nMention DefinitelyTyped motivation without deep dive."
+    },
+    {
+      "id": "ts-18",
+      "label": "ReadonlyArray and readonly tuples",
+      "description": "immutability",
+      "detail": "function params",
+      "text": "Explain why function parameters often want readonly arrays.\nContrast readonly string[] with mutable string[] assignment direction.\nShow a tuple like readonly [number, string] for coordinates.\nRelate to as const on array literals.\nGive an example where mutating a parameter causes a bug tests miss."
+    },
+    {
+      "id": "ts-19",
+      "label": "unknown vs any practical policy",
+      "description": "safety",
+      "detail": "narrowing workflow",
+      "text": "Help me write a team rule of thumb: default to unknown at JSON boundaries.\nWalk through typeof and Array.isArray narrowing.\nShow a simple user-defined type guard function isUser.\nExplain why any disables checks and when it's still acceptable temporarily.\nInclude a before/after on a fetch JSON handler."
+    },
+    {
+      "id": "ts-20",
+      "label": "tsconfig moduleResolution bundler vs node16",
+      "description": "tooling",
+      "detail": "package exports",
+      "text": "At a beginner level, explain why new projects pick \"moduleResolution\": \"bundler\" under Vite.\nContrast with node16 for libraries publishing to npm.\nLink to the package.json \"exports\" field confusion.\nList two symptoms when resolution is wrong (cannot find module).\nGive a minimal tsconfig diff checklist."
+    }
+  ]
+}

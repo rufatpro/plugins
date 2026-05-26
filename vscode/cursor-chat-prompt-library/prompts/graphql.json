@@ -1,0 +1,146 @@
+{
+  "category": "graphql",
+  "categoryLabel": "GraphQL",
+  "prompts": [
+    {
+      "id": "gql-01",
+      "label": "GraphQL vs REST",
+      "description": "concepts",
+      "detail": "single endpoint",
+      "text": "Compare GraphQL and REST for beginners.\n\n- Over-fetching under-fetching\n- When GraphQL wins and when REST simpler\n\nNeutral."
+    },
+    {
+      "id": "gql-02",
+      "label": "Schema type Query",
+      "description": "schema",
+      "detail": "hello: String",
+      "text": "Write minimal schema Query { hello: String } and resolver.\n\n- Apollo Server or graphql-yoga setup outline\n\nNode example."
+    },
+    {
+      "id": "gql-03",
+      "label": "Query fields arguments",
+      "description": "query",
+      "detail": "user(id: ID!)",
+      "text": "Schema User type and query user(id) with resolver returning mock data.\n\n- GraphQL Playground test\n\nTypes non-null explained."
+    },
+    {
+      "id": "gql-04",
+      "label": "Mutation create post",
+      "description": "mutation",
+      "detail": "createPost",
+      "text": "Mutation createPost(input) returning Post.\n\n- Input type CreatePostInput\n\nContrast with POST REST."
+    },
+    {
+      "id": "gql-05",
+      "label": "Nested types relations",
+      "description": "schema",
+      "detail": "User posts",
+      "text": "User with posts field resolved via parent id.\n\n- N+1 problem mention and DataLoader idea\n\nConceptual."
+    },
+    {
+      "id": "gql-06",
+      "label": "Client Apollo useQuery",
+      "description": "client",
+      "detail": "React",
+      "text": "React Apollo Client useQuery example fetching hello.\n\n- Provider setup steps list\n\nTypeScript optional."
+    },
+    {
+      "id": "gql-07",
+      "label": "Variables in queries",
+      "description": "query",
+      "detail": "$id",
+      "text": "Query with variable $id and pass variables object in client.\n\n- Why variables beat string concat\n\nExample."
+    },
+    {
+      "id": "gql-08",
+      "label": "Fragments reuse fields",
+      "description": "client",
+      "detail": "fragment",
+      "text": "Define fragment UserFields on User and use in two queries.\n\n- Reduce duplication benefit\n\nSnippet."
+    },
+    {
+      "id": "gql-09",
+      "label": "Errors and partial data",
+      "description": "errors",
+      "detail": "errors array",
+      "text": "Explain errors array in GraphQL response with partial data example.\n\n- Client handling policy\n\nShort."
+    },
+    {
+      "id": "gql-10",
+      "label": "Federation intro",
+      "description": "advanced",
+      "detail": "subgraphs",
+      "text": "High level what Apollo Federation solves for microservices.\n\n- Not implementation — when to care later\n\n3 bullets."
+    },
+    {
+      "id": "gql-11",
+      "label": "Query depth and complexity limits",
+      "description": "GraphQL operations",
+      "detail": "protect the server",
+      "text": "Explain how deeply nested queries can overload resolvers.\nDescribe depth limits and complexity scoring conceptually.\nMention persisted operations as optional advanced mitigation.\nDiscuss introspection settings carefully without dogma.\nEncourage observability on slow fields."
+    },
+    {
+      "id": "gql-12",
+      "label": "DataLoader batching pattern",
+      "description": "resolver performance",
+      "detail": "fix N+1 reads",
+      "text": "Introduce batching per-request loads to collapse many resolver calls into fewer DB queries.\nExplain ordering nondeterminism pitfalls lightly.\nCompare to doing manual joins in some cases honestly.\nAdvise measuring hot paths.\nAvoid treating GraphQL like magic SQL."
+    },
+    {
+      "id": "gql-13",
+      "label": "Schema ownership monolith versus federated",
+      "description": "architecture vocabulary",
+      "detail": "later complexity",
+      "text": "Contrast one graph owned by one team versus federated subgraphs culturally.\nAdvise beginners mastering one service graph first realistically.\nMention versioning and deprecation practices carry over.\nWarn about operational overhead early.\nEncourage humane cross-team coordination."
+    },
+    {
+      "id": "gql-14",
+      "label": "Errors as data partial results",
+      "description": "API UX",
+      "detail": "nullable fields unions",
+      "text": "Explain returning partial successes with typed errors thoughtfully.\nMention unions versus nullable patterns at a beginner level.\nAdvise humane client-visible messages.\nEncourage documenting error shapes.\nRelate observability tying errors to traces lightly."
+    },
+    {
+      "id": "gql-15",
+      "label": "Persisted queries allowlists",
+      "description": "operations safety",
+      "detail": "reduce surprises",
+      "text": "Describe pinning known operations acceptable in prod especially mobile apps.\nMention build-time operation registration pipelines lightly.\nWarn about disabling authz server-side mistakenly.\nAdvise versioning operations.\nRelate CDN caching pitfalls historically."
+    },
+    {
+      "id": "gql-16",
+      "label": "Schema explorers for onboarding",
+      "description": "developer experience",
+      "detail": "see relationships",
+      "text": "Encourage using graph explorers or generated docs as learning scaffolding.\nMention introspection policy decisions vary by exposure.\nAdvise pairing exploration with glossary domain terms.\nPoint toward codegen tooling as next step moderately.\nCaution dumping huge SDL on newcomers."
+    },
+    {
+      "id": "gql-17",
+      "label": "Subscriptions versus polling realistically",
+      "description": "real-time patterns",
+      "detail": "websocket operations cost",
+      "text": "Differentiate websocket subscriptions overhead versus pragmatic polling starter.\nMention infra scaling subscriptions cautiously briefly.\nAdvise solid mutations and queries mastery first.\nMention SSE as middle ground casually.\nEncourage budgeting backend time honestly."
+    },
+    {
+      "id": "gql-18",
+      "label": "Custom scalars for clarity",
+      "description": "schema modeling",
+      "detail": "DateTime Url Email",
+      "text": "Advocate custom scalars to reduce ambiguous strings moderately.\nMention coercion rules needing documentation.\nRelate codegen mapping ergonomics mildly.\nAdvise timezone clarity for datetime types.\nKeep migration stories gentle."
+    },
+    {
+      "id": "gql-19",
+      "label": "Resolver context authorization",
+      "description": "security",
+      "detail": "viewer in context",
+      "text": "Explain injecting authenticated viewer identity into resolver context cleanly.\nMention directives like auth rules as optional advanced ergonomics.\nEmphasize field-level authorization still server-side enforced.\nAdvise integration tests forbidding forbidden fields.\nEncourage auditing suspicious query patterns."
+    },
+    {
+      "id": "gql-20",
+      "label": "Schema compatibility checks",
+      "description": "governance",
+      "detail": "detect breaking removals",
+      "text": "Describe CI checks failing when removing fields without deprecation process.\nMention tools comparing schemas lightly optionally.\nAdvise communicating sunset timelines politely.\nRelate federation contract testing pointer lightly.\nPromote empathy for API consumers."
+    }
+  ]
+}

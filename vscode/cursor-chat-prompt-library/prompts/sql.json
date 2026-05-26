@@ -1,0 +1,146 @@
+{
+  "category": "sql",
+  "categoryLabel": "SQL",
+  "prompts": [
+    {
+      "id": "sql-01-select-basics",
+      "label": "SELECT and WHERE basics",
+      "description": "queries",
+      "detail": "users table example",
+      "text": "I'm learning SQL. Create a teaching example with a users table.\n\n- CREATE TABLE users (id, name, email, created_at)\n- INSERT 5 sample rows\n- SELECT * and SELECT with WHERE age or name filter\n\nUse SQLite-compatible syntax and explain each clause."
+    },
+    {
+      "id": "sql-02-order-limit",
+      "label": "ORDER BY and LIMIT",
+      "description": "queries",
+      "detail": "top 3 newest users",
+      "text": "Extend a users table lesson with sorting and pagination.\n\n- ORDER BY created_at DESC\n- LIMIT 3 OFFSET 0\n- Example: page 2 with OFFSET 3 LIMIT 3\n\nShow expected result order in comments."
+    },
+    {
+      "id": "sql-03-joins",
+      "label": "INNER JOIN orders and users",
+      "description": "joins",
+      "detail": "two tables",
+      "text": "Teach INNER JOIN for beginners.\n\n- tables: users and orders (user_id foreign key)\n- Sample data and query listing order id, user name, amount\n- Diagram in ASCII or text: how JOIN matches rows\n\nAdd one example where a user has zero orders (and whether they appear)."
+    },
+    {
+      "id": "sql-04-left-join",
+      "label": "LEFT JOIN all users with orders",
+      "description": "joins",
+      "detail": "include users without orders",
+      "text": "Explain LEFT JOIN vs INNER JOIN with the same users/orders schema.\n\n- Query that lists every user and order amount or NULL\n- When to use LEFT JOIN in real apps (2 examples)\n\nKeep SQLite syntax."
+    },
+    {
+      "id": "sql-05-aggregate",
+      "label": "COUNT, SUM, GROUP BY",
+      "description": "aggregates",
+      "detail": "orders per user",
+      "text": "Teach aggregation functions for a beginner.\n\n- COUNT(*) orders per user_id with GROUP BY\n- HAVING to filter groups with count > 1\n- SUM(amount) per user\n\nProvide sample tables and full queries."
+    },
+    {
+      "id": "sql-06-insert-update",
+      "label": "INSERT and UPDATE safely",
+      "description": "DML",
+      "detail": "change email with WHERE",
+      "text": "Show INSERT and UPDATE with safety tips.\n\n- INSERT one row with explicit columns\n- UPDATE email WHERE id = 1\n- Warn about UPDATE without WHERE with a scary example comment\n\nMention transactions in one paragraph (BEGIN/COMMIT)."
+    },
+    {
+      "id": "sql-07-delete",
+      "label": "DELETE and soft delete pattern",
+      "description": "DML",
+      "detail": "deleted_at column",
+      "text": "Explain DELETE and the soft-delete pattern.\n\n- Hard DELETE with WHERE\n- Alternative: deleted_at TIMESTAMP NULL\n- SELECT that hides soft-deleted rows\n\nWhen do teams prefer soft delete? Short answer."
+    },
+    {
+      "id": "sql-08-primary-foreign",
+      "label": "Primary and foreign keys",
+      "description": "schema",
+      "detail": "posts and comments",
+      "text": "Design a tiny blog schema for learning keys.\n\n- posts (id PK, title, body)\n- comments (id PK, post_id FK, text)\n- CREATE TABLE statements with constraints\n- One invalid INSERT that fails FK — explain error\n\nSQLite syntax."
+    },
+    {
+      "id": "sql-09-indexes",
+      "label": "Indexes explained simply",
+      "description": "performance",
+      "detail": "index on email",
+      "text": "Explain database indexes for a beginner (no deep internals).\n\n- Analogy: book index vs reading every page\n- CREATE INDEX on users(email)\n- When indexes help and when too many hurt\n\nUse a small example query that benefits from an index."
+    },
+    {
+      "id": "sql-10-subquery",
+      "label": "Subquery in WHERE",
+      "description": "subqueries",
+      "detail": "users who placed orders",
+      "text": "Introduce subqueries with a practical example.\n\n- Find users who have at least one order using IN (SELECT user_id FROM orders)\n- Rewrite with EXISTS briefly\n- Which style is often clearer for beginners?\n\nInclude CREATE + INSERT sample data."
+    },
+    {
+      "id": "sql-11",
+      "label": "HAVING vs WHERE with aggregates",
+      "description": "aggregation",
+      "detail": "post-group filter",
+      "text": "I mix WHERE and HAVING incorrectly when filtering grouped results.\nUse a orders table example: total spend per customer, show only customers over $500.\nExplain execution order conceptually (FROM → WHERE → GROUP BY → HAVING).\nGive a wrong query and the corrected one side by side.\nAdd a one-sentence note about alias limitations in HAVING for beginners."
+    },
+    {
+      "id": "sql-12",
+      "label": "COALESCE and NULLIF patterns",
+      "description": "nulls",
+      "detail": "safer defaults",
+      "text": "Teach COALESCE to provide defaults and NULLIF to turn sentinel values into NULL.\nExample: display display_name or username or email.\nShow NULLIF for empty string vs real null cleanup before unique constraints.\nContrast with CASE verbosity.\nInclude a pitfall about COALESCE type widening in some engines (high level)."
+    },
+    {
+      "id": "sql-13",
+      "label": "Common Table Expressions readability",
+      "description": "CTEs",
+      "detail": "WITH clause",
+      "text": "Rewrite a gnarly nested subquery using WITH named CTEs for monthly active users.\nExplain how CTEs aid readability, not always performance.\nShow chaining two CTEs where the second depends on the first.\nMention recursive CTEs only as a teaser with a one-line example idea.\nKeep dialect SQL mostly ANSI-like."
+    },
+    {
+      "id": "sql-14",
+      "label": "Window functions ROW_NUMBER primer",
+      "description": "analytics",
+      "detail": "PARTITION BY",
+      "text": "Introduce ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY created_at DESC) to pick latest row per group.\nCompare with GROUP BY max patterns.\nExplain why DISTINCT ON (Postgres) is different bonus note.\nProvide a dedup problem statement beginners recognize.\nWarn about requiring ORDER BY for deterministic ranking."
+    },
+    {
+      "id": "sql-15",
+      "label": "CASE expressions in SELECT",
+      "description": "logic",
+      "detail": "mapped labels",
+      "text": "Use CASE to bucket ages or order statuses into human labels inside SQL.\nShow simple searched CASE vs expression CASE.\nExplain short-circuit evaluation expectations cautiously per engine.\nProvide an example joining to a reference table alternative.\nEnd with style tips for readable CASE formatting."
+    },
+    {
+      "id": "sql-16",
+      "label": "Indexes and WHERE column order",
+      "description": "performance",
+      "detail": "composite index intuition",
+      "text": "Explain composite index (a,b) vs (b,a) with a query that can use one but not the other.\nTeach covering indexes conceptually without deep internals.\nRelate to EXPLAIN as a black-box flashlight—what to look for first.\nList a common OR condition pitfall.\nEncourage measuring on realistic row counts."
+    },
+    {
+      "id": "sql-17",
+      "label": "Soft delete with partial unique index idea",
+      "description": "modeling",
+      "detail": "deleted_at pattern",
+      "text": "Model soft deletes with deleted_at timestamps.\nExplain why unique emails need special handling if multiple inactive rows exist.\nOutline partial unique indexes where supported as a solution sketch.\nContrast with separate archive table trade-off.\nKeep guidance conceptual for beginners migrating from hard DELETE."
+    },
+    {
+      "id": "sql-18",
+      "label": "Transactions ACID story with transfer",
+      "description": "integrity",
+      "detail": "BEGIN COMMIT",
+      "text": "Tell the classic debit/credit money transfer story needing transactions.\nShow BEGIN; two updates; COMMIT; and ROLLBACK on error pseudo-code.\nExplain isolation levels only as a vocabulary teaser.\nRelate to ORMs wrapping units of work.\nNote deadlock possibility at a high level."
+    },
+    {
+      "id": "sql-19",
+      "label": "Views for repeated complex joins",
+      "description": "modeling",
+      "detail": "read-only perspective",
+      "text": "Create a view customer_order_summary joining customers, orders, aggregates.\nDiscuss permissions and hiding column complexity for reporting users.\nNote materialized views as a performance tool name-drop.\nWarn that views are not a substitute for proper indexing.\nGive when to prefer a view vs a stored procedure light mention."
+    },
+    {
+      "id": "sql-20",
+      "label": "Anti-join for missing records",
+      "description": "patterns",
+      "detail": "NOT EXISTS style",
+      "text": "Find users who have never placed an order using LEFT JOIN ... WHERE order.id IS NULL.\nShow equivalent NOT EXISTS pattern and why it reads clearer to some teams.\nExplain NULL handling surprises in OUTER JOIN filters.\nProvide a second example: products never sold.\nFinish with a caution about duplicates inflating LEFT JOIN rows."
+    }
+  ]
+}
