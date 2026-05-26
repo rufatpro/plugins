@@ -1,13 +1,9 @@
 {
   "name": "cursor-chat-prompt-library",
   "displayName": "Cursor Chat Prompt Library",
-  "description": "620 prompt templates for Cursor AI chat — 31 categories × 20. QuickPick → insert into chat. Author: Rufat Nuriyev — https://rufat.top/",
-  "version": "0.4.1",
+  "description": "620 prompt templates for Cursor AI chat — 31 categories × 20 (Website, Python, Next.js, Docker, Testing, Vue, Laravel, AWS, Kubernetes, GraphQL, and more). QuickPick → insert into chat.",
+  "version": "0.4.2",
   "publisher": "rufat",
-  "author": {
-    "name": "Rufat Nuriyev",
-    "url": "https://rufat.top/"
-  },
   "license": "MIT",
   "readme": "readme.md",
   "changelog": "CHANGELOG.md",

@@ -2,8 +2,6 @@
 
 [Русский](readme_ru.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Repository](https://github.com/rufatpro/ide-plugins) · [Release guide](../../../readme_github_release_cursor-chat-prompt-library.md)
 
-**Author:** [Rufat Nuriyev](https://rufat.top/) · [rufat.top](https://rufat.top/)
-
 **QuickPick** templates for **Cursor AI chat** — pick a prompt and insert into chat (Composer & Agent).
 
 **31 categories × 20 prompts = 620 templates** for beginners and beyond:
@@ -44,7 +42,7 @@ Open via **Command Palette** (`Ctrl+Shift+P`) → `Cursor Chat Prompt Library`.
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-0.4.1.vsix
+cursor --install-extension build\cursor-chat-prompt-library-0.4.2.vsix
 ```
 
 Reload the window. Press **Ctrl+Alt+P** or run **Pick Prompt**.
@@ -58,4 +56,9 @@ Reload the window. Press **Ctrl+Alt+P** or run **Pick Prompt**.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+[MIT](https://github.com/rufatpro/ide-plugins/blob/main/license) — free to use, modify, and distribute, at your own risk.  
+[ide-plugins monorepo](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+
+## Author
+
+[Rufat](https://rufat.top/)

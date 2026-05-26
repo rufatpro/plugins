@@ -1,8 +1,12 @@
 # Changelog
 
+## 0.4.2
+
+- Author block aligned with other ide-plugins extensions (`## Author` / `## Автор`, link [Rufat](https://rufat.top/)).
+
 ## 0.4.1
 
-- Author metadata in `package.json` and readme ([rufat.top](https://rufat.top/)).
+- Author line in readme (superseded by 0.4.2 format).
 
 ## 0.4.0
 

@@ -2,8 +2,6 @@
 
 [English](readme.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Репозиторий](https://github.com/rufatpro/ide-plugins) · [Инструкция релиза](../../../readme_github_release_cursor-chat-prompt-library.md)
 
-**Автор:** [Руфат Нуриев](https://rufat.top/) · [rufat.top](https://rufat.top/)
-
 Библиотека шаблонов для **AI-чата Cursor**: QuickPick → вставка в чат.
 
 **31 категория × 20 промптов = 620 шаблонов:**
@@ -39,7 +37,7 @@
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-0.4.1.vsix
+cursor --install-extension build\cursor-chat-prompt-library-0.4.2.vsix
 ```
 
 Перезагрузите окно.
@@ -53,4 +51,9 @@ cursor --install-extension build\cursor-chat-prompt-library-0.4.1.vsix
 
 ## Лицензия
 
-MIT — [LICENSE](LICENSE).
+[MIT](https://github.com/rufatpro/ide-plugins/blob/main/license) — свободное использование, изменение и распространение на ваш риск.  
+[monorepo ide-plugins](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+
+## Автор
+
+[Руфат](https://rufat.top/)
