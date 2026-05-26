@@ -42,7 +42,7 @@ Open via **Command Palette** (`Ctrl+Shift+P`) → `Cursor Chat Prompt Library RU
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library-ru
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-ru-0.2.0.vsix
+cursor --install-extension build\cursor-chat-prompt-library-ru-0.2.1.vsix
 ```
 
 Reload the window. Press **Ctrl+Alt+P** or run **Pick Prompt**.

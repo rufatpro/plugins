@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+- Расширено описание расширения (`description`): ключевые слова AI, ИИ, Chat, Чат, Cursor, Курсор, Prompt, Промпт.
+
 ## 0.2.0
 
 - Все 620 промптов переведены на русский: `categoryLabel`, `label`, `description`, `detail`, `text`.

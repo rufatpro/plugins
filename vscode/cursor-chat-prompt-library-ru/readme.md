@@ -2,7 +2,7 @@
 
 [English](readme_en.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Репозиторий](https://github.com/rufatpro/ide-plugins)
 
-Библиотека **620 русскоязычных** шаблонов для **AI-чата Cursor**: QuickPick → вставка в чат.
+Библиотека **620 русскоязычных** шаблонов Промптов (Prompts) для AI-Chat в **Cursor**: Быстрый выбор → вставка в ИИ Чат Курсора.
 
 **31 категория × 20 промптов = 620 шаблонов:**
 
@@ -42,7 +42,7 @@
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library-ru
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-ru-0.2.0.vsix
+cursor --install-extension build\cursor-chat-prompt-library-ru-0.2.1.vsix
 ```
 
 Перезагрузите окно. Нажмите **Ctrl+Alt+P** или выполните **Выбрать промпт**.

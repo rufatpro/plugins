@@ -20,7 +20,7 @@
 | [Python Quick Intent](vscode/python-quick-intent/) | VS Code / Cursor | 0.4.1 | **Alt+Enter** в стиле PyCharm: импорт, Fix with AI, Quick Edit для Python в Cursor | [EN](vscode/python-quick-intent/readme.md) · [RU](vscode/python-quick-intent/readme_ru.md) |
 | [TypeScript Doc Links](vscode/ts-doc-links/) | VS Code / Cursor | 0.1.4 | Ctrl+Click в TS/JS **комментариях** / **JSDoc** (`@see`, `{@link ./file.ts}`, `File:`, `// See`, алиасы `@/`) | [EN](vscode/ts-doc-links/readme.md) · [RU](vscode/ts-doc-links/readme_ru.md) |
 | [Cursor Chat Prompt Library](vscode/cursor-chat-prompt-library/) | VS Code / Cursor | 0.4.3 | **QuickPick** → **AI-чат**; **620** шаблонов (**31** × 20) | [EN](vscode/cursor-chat-prompt-library/readme.md) · [RU](vscode/cursor-chat-prompt-library/readme_ru.md) |
-| [Cursor Chat Prompt Library RU](vscode/cursor-chat-prompt-library-ru/) | VS Code / Cursor | 0.2.0 | **620** русскоязычных шаблонов (**31** × 20); параллельно с EN-версией | [RU](vscode/cursor-chat-prompt-library-ru/readme.md) · [EN](vscode/cursor-chat-prompt-library-ru/readme_en.md) |
+| [Cursor Chat Prompt Library RU](vscode/cursor-chat-prompt-library-ru/) | VS Code / Cursor | 0.2.1 | **620** русскоязычных шаблонов (**31** × 20); параллельно с EN-версией | [RU](vscode/cursor-chat-prompt-library-ru/readme.md) · [EN](vscode/cursor-chat-prompt-library-ru/readme_en.md) |
 
 > Расширения для VS Code/Cursor живут в `vscode/<имя>/`.
 
