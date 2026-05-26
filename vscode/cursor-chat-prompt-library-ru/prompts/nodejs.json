@@ -1,0 +1,146 @@
+{
+  "category": "nodejs",
+  "categoryLabel": "Бэкенд на Node.js",
+  "prompts": [
+    {
+      "id": "node-01",
+      "label": "Порядок middleware в Express",
+      "description": "express",
+      "detail": "json logger",
+      "text": "Объясни порядок middleware Express для новичков.\n\n- express.json(), custom logger, routes, 404 handler\n- Почему порядок важен — на примере падающего кейса\n\nМинимальный server.js."
+    },
+    {
+      "id": "node-02",
+      "label": "REST CRUD в Express",
+      "description": "express",
+      "detail": "in-memory items",
+      "text": "Собери CRUD /api/items на Express с in-memory массивом.\n\n- GET list, GET id, POST, PUT, DELETE\n- Тесты через curl примеры\n\nБез базы данных пока."
+    },
+    {
+      "id": "node-03",
+      "label": "Валидация body через Zod",
+      "description": "validation",
+      "detail": "zod schema",
+      "text": "Валидируй POST body через Zod в Express.\n\n- Схема createItemSchema\n- Возвращай 400 с деталями ошибки при fail\n\nПредпочтительно TypeScript."
+    },
+    {
+      "id": "node-04",
+      "label": "Настройка Prisma + SQLite",
+      "description": "orm",
+      "detail": "schema.prisma",
+      "text": "Опиши настройку Prisma с SQLite для todo API.\n\n- schema model Todo, migrate dev\n- Набросок CRUD routes\n\nШаги и ключевые файлы, не полные 200 строк."
+    },
+    {
+      "id": "node-05",
+      "label": "JWT middleware для защиты route",
+      "description": "auth",
+      "detail": "bearer token",
+      "text": "Защити один Express route JWT middleware (учебный проект).\n\n- Login возвращает fake token, GET /me требует Authorization\n- Оговорки безопасности для production\n\nУпрощённый код."
+    },
+    {
+      "id": "node-06",
+      "label": "Загрузка файлов: введение в multer",
+      "description": "files",
+      "detail": "multipart",
+      "text": "Загрузка одного файла с multer концептуально.\n\n- POST /upload, сохранение в uploads/\n- Ограничение размера файла\n\nУпомяни security scanning в production."
+    },
+    {
+      "id": "node-07",
+      "label": "WebSocket: hello через Socket.io",
+      "description": "real-time",
+      "detail": "отправка события при подключении",
+      "text": "Минимальный echo-сервер и клиент Socket.io.\n\n- Сервер логирует connection, клиент отправляет hello\n- Когда использовать WebSockets vs REST\n\nДва небольших файла."
+    },
+    {
+      "id": "node-08",
+      "label": "Ограничение частоты express-rate-limit",
+      "description": "безопасность",
+      "detail": "100 запросов за 15 минут",
+      "text": "Добавь базовый rate limiting для публичного API.\n\n- Конфиг express-rate-limit\n- Объясни защиту от abuse\n\nТолько snippet."
+    },
+    {
+      "id": "node-09",
+      "label": "Структурированное логирование pino",
+      "description": "ops",
+      "detail": "json logs",
+      "text": "Замени console.log на pino logger в Express.\n\n- Логируй запросы с method и url\n- Почему JSON logs помогают в production\n\nКороткая интеграция."
+    },
+    {
+      "id": "node-10",
+      "label": "Структура Node-проекта",
+      "description": "structure",
+      "detail": "src routes",
+      "text": "Рекомендуй структуру папок для растущего Node API.\n\n- src/routes, controllers, services, config\n- Когда разделять файлы\n\nДерево в текстовом виде."
+    },
+    {
+      "id": "node-11",
+      "label": "node --watch лёгкий reload",
+      "description": "runtime",
+      "detail": "no nodemon dependency",
+      "text": "Объясни использование node --watch index.js начиная с Node 18+.\nСравни с дополнениями nodemon вроде ignore patterns.\nЧестно объясни restart vs hot module replacement.\nСлучайно упомяни caveats polling на Windows.\nПокажи пример scripts в package.json."
+    },
+    {
+      "id": "node-12",
+      "label": "Нативный fetch Undici glance",
+      "description": "http",
+      "detail": "global fetch Node 18+",
+      "text": "Объясни доступность fetch без node-fetch.\nКратко опиши ограничения duplex streaming.\nСвяжи timeouts с паттернами AbortSignal.timeout.\nОпционально упомяни Undici diagnostics.\nЛёгко предупреди о quirks localhost IPv6."
+    },
+    {
+      "id": "node-13",
+      "label": "worker_threads для CPU offload",
+      "description": "performance",
+      "detail": "pool pattern outline",
+      "text": "Набросок переноса тяжёлого parsing в worker_threads.\nСравни с child_process для новичков.\nПоделись mental model ограничений shared buffers.\nУпомяни pitfalls передачи non-cloneables.\nПосоветуй сначала профилировать."
+    },
+    {
+      "id": "node-14",
+      "label": "Graceful shutdown: обработчики SIGTERM",
+      "description": "эксплуатация",
+      "detail": "корректное закрытие сервера",
+      "text": "Покажи обработку SIGTERM с закрытием HTTP server и DB pools.\nПримерно объясни окно завершения pod в Kubernetes.\nРазличай сценарии потери данных при abrupt exit.\nУпомяни идею draining in-flight requests.\nКратко затронь ограничения сигналов на Windows."
+    },
+    {
+      "id": "node-15",
+      "label": "Усиление Express через helmet",
+      "description": "security",
+      "detail": "headers preset",
+      "text": "Представь helmet middleware с дефолтными security headers.\nПодчеркни нюансы HSTS за HTTPS terminator.\nОговорка о сложности CSP configuration.\nПокажи ordering с cors.\nПосоветуй проверять через внешние header scan tools опционально."
+    },
+    {
+      "id": "node-16",
+      "label": "compression middleware: компромиссы gzip",
+      "description": "perf",
+      "detail": "CPU vs bandwidth",
+      "text": "Обсуди включение gzip/brotli: замедление CPU, но экономия egress.\nУпомяни thresholds для tiny responses.\nОсновы compressible MIME types.\nСравни Brotli на CDN layer.\nСкажи новичкам бенчмаркать реалистичные payloads."
+    },
+    {
+      "id": "node-17",
+      "label": "Структурированные JSON logs pino",
+      "description": "observability",
+      "detail": "machine parse",
+      "text": "Сравни неструктурированный console.log vs pino child loggers с requestId.\nПокажи redacting чувствительных полей.\nСвяжи pretty transport только для dev.\nУпомяни log levels и sampling teaser.\nУкажи на корреляцию с OpenTelemetry downstream."
+    },
+    {
+      "id": "node-18",
+      "label": "exports map в package.json: современный entry",
+      "description": "modules",
+      "detail": "conditional imports",
+      "text": "Просто объясни предупреждения dual package hazard.\nПокажи exports import vs require maps.\nУпомяни interplay с TypeScript resolutions.\nПосоветуй документировать public surfaces.\nСвяжи с pitfalls deep-importing internals."
+    },
+    {
+      "id": "node-19",
+      "label": "dotenv-flow: несколько env-файлов",
+      "description": "config",
+      "detail": "NODE_ENV branching",
+      "text": "Опиши layering .env.local vs .env.production.\nПодчеркни: никогда не коммить секреты.\nСравни с Docker env injection в CI.\nПокажи минимальное использование loader.\nНе смешивай фреймворки сверх паттерна."
+    },
+    {
+      "id": "node-20",
+      "label": "Модуль cluster: аналогия сегодня",
+      "description": "scaling",
+      "detail": "orchestrators superseding",
+      "text": "Объясни исторический cluster.fork для использования CPU.\nСвяжи с современным horizontal scaling pods.\nОбсуди caveat sticky sessions.\nУпомяни, почему новички сначала изучают event loop, а не cluster.\nУкажи на adoption оркестраторов."
+    }
+  ]
+}

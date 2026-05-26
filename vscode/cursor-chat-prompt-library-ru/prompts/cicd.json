@@ -1,0 +1,146 @@
+{
+  "category": "cicd",
+  "categoryLabel": "CI/CD и пайплайны",
+  "prompts": [
+    {
+      "id": "cicd-01",
+      "label": "GitHub Actions: тесты Node",
+      "description": "платформа GitHub",
+      "detail": "шаг actions/checkout",
+      "text": "YAML workflow: on push запускай npm ci и npm test для Node-проекта.\n\n- ubuntu-latest, setup-node with version\n\nПолный workflow file."
+    },
+    {
+      "id": "cicd-02",
+      "label": "GitHub Actions: pytest для Python",
+      "description": "платформа GitHub",
+      "detail": "действие setup-python",
+      "text": "Workflow для Python с pip install -r requirements и pytest.\n\n- Cache pip — опциональное упоминание\n\nПолный yaml."
+    },
+    {
+      "id": "cicd-03",
+      "label": "Отдельный этап lint",
+      "description": "качество кода",
+      "detail": "линтеры eslint, ruff",
+      "text": "Раздели CI на lint и test jobs.\n\n- Fail fast на lint\n- needs: dependency между jobs — опционально\n\nПример для JS или Python."
+    },
+    {
+      "id": "cicd-04",
+      "label": "Сборка Docker-образа в CI",
+      "description": "образ Docker",
+      "detail": "действие docker/build-push-action",
+      "text": "High-level шаги сборки Docker image в GitHub Actions.\n\n- login to registry secrets DOCKER_TOKEN\n- tags and push только main branch\n\nOutline yaml sections."
+    },
+    {
+      "id": "cicd-05",
+      "label": "Автодеплой на Vercel",
+      "description": "деплой",
+      "detail": "действие Vercel",
+      "text": "Подключи GitHub repo к Vercel для Next.js — концептуальный CI/CD.\n\n- Preview deployments на PR\n- Production на main\n\nБез secrets в чате."
+    },
+    {
+      "id": "cicd-06",
+      "label": "Базовый pipeline GitLab CI",
+      "description": "платформа GitLab",
+      "detail": "файл .gitlab-ci.yml",
+      "text": "Минимальный .gitlab-ci.yml с test stage для Node или Python.\n\n- image node:20 или python:3.12\n- script commands\n\nСравни с GitHub Actions в 3 bullets."
+    },
+    {
+      "id": "cicd-07",
+      "label": "Секреты окружения в CI",
+      "description": "секреты",
+      "detail": "секрет GITHUB_SECRET",
+      "text": "Как хранить API keys в GitHub Actions secrets и использовать в workflow.\n\n- Никогда не печатай secrets в logs\n- Напоминание о rotation\n\nПример env: API_KEY: ${{ secrets.API_KEY }}"
+    },
+    {
+      "id": "cicd-08",
+      "label": "Matrix-сборка версий Node",
+      "description": "матрица сборки",
+      "detail": "версии 18 и 20",
+      "text": "strategy.matrix node-version [18, 20] — запускай tests на обеих.\n\n- Зачем нужен matrix\n\nYaml snippet."
+    },
+    {
+      "id": "cicd-09",
+      "label": "Ручное одобнение prod",
+      "description": "деплой",
+      "detail": "окружение environment",
+      "text": "GitHub environments с required reviewers перед prod deploy.\n\n- Когда команды используют manual gate\n\nОписание процесса."
+    },
+    {
+      "id": "cicd-10",
+      "label": "Чеклист отладки падений CI",
+      "description": "устранение неполадок",
+      "detail": "локально проходит",
+      "text": "Checklist, когда tests проходят locally, но падают в CI.\n\n- env vars, node version, timezone, file paths case sensitivity\n- Re-run с debug logging\n\n7 bullets."
+    },
+    {
+      "id": "cicd-11",
+      "label": "Переиспользуемые workflows GitHub",
+      "description": "принцип DRY",
+      "detail": "вызов workflow_call",
+      "text": "Вынеси общий Node build workflow, который другие workflows вызывают через workflow_call.\nОбъясни, как передавать inputs и inherit secrets без утечки в logs.\nРекомендуй pinning third-party actions на full commit SHAs.\nУпомяни concurrency groups, отменяющие outdated runs при новом push.\nОдин pitfall: reusable workflows и permissions defaults."
+    },
+    {
+      "id": "cicd-12",
+      "label": "OIDC для ролей деплоя в облако",
+      "description": "секреты",
+      "detail": "без долгоживущих ключей",
+      "text": "Замени static cloud access keys в CI на OIDC trust к short-lived role.\nПройди high-level trust relationship (identity provider, audience, subject claims).\nОбъясни, почему temporary credentials снижают breach blast radius.\nДва типичных сбоя при первом запуске (wrong trust policy, wrong audience).\nУ каждого cloud vendor свои названия компонентов."
+    },
+    {
+      "id": "cicd-13",
+      "label": "actions/cache для зависимостей",
+      "description": "скорость",
+      "detail": "ключ по hash lockfile",
+      "text": "Настрой actions/cache для node_modules с ключом по hash lockfile.\nОбъясни warm cache hits vs cold misses простым языком.\nОпиши, когда кэшировать global tool folders.\nПредупреди о blind caching secrets или huge artifacts.\nНапомни измерить job durations до и после."
+    },
+    {
+      "id": "cicd-14",
+      "label": "Триггеры downstream-пайплайнов",
+      "description": "несколько репозиториев",
+      "detail": "цепочка релизов",
+      "text": "Опиши chaining deployment repo pipeline после build pipeline, публикующего artifacts.\nОбъясни безопасную передачу version strings и masked secrets.\nСравни с monorepo для small teams.\nУпомяни уведомление людей при failed chained deploy.\nКонцептуальный пример без vendor-locking каждого YAML keyword."
+    },
+    {
+      "id": "cicd-15",
+      "label": "Терминология blue-green деплоев",
+      "description": "релиз",
+      "detail": "два живых стека",
+      "text": "Объясни blue-green как два stack, где traffic переключается со старого на новый.\nСвяжи с DB migration strategies, которые должны оставаться forward compatible.\nRollback — переключение traffic back при failed health checks.\nСравни с recreate strategies с downtime.\nПосоветуй репетировать releases в staging с тем же playbook."
+    },
+    {
+      "id": "cicd-16",
+      "label": "Постепенные canary-релизы",
+      "description": "риск",
+      "detail": "метрики до полного переключения",
+      "text": "Объясни сдвиг небольшого процента traffic на новую версию с мониторингом error rates и latency.\nСигналы перед увеличением traffic (5xx spikes, saturation).\nFeature flags vs canaries — когда что помогает.\nCanaries без хорошей observability — mostly theater.\nНе рекомендуй specific service mesh без запроса."
+    },
+    {
+      "id": "cicd-17",
+      "label": "Гигиена хранения артефактов",
+      "description": "стоимость",
+      "detail": "короче — дешевле",
+      "text": "Рекомендуй retention windows для CI artifacts по полезности vs storage cost.\nРаздели short-lived build artifacts и long-term compliance archives.\nПредупреди об accidental secret uploads в zipped artifacts.\nПредложи naming immutable artifacts с versions.\nУпомяни egress costs при частой загрузке huge artifacts."
+    },
+    {
+      "id": "cicd-18",
+      "label": "Основы защиты веток",
+      "description": "управление",
+      "detail": "обязательные проверки",
+      "text": "Кратко о branch protection: required status checks, required reviews, disallow force-push.\nПочему admins тоже должны следовать правилам на shared branches.\nCODEOWNERS для sensitive areas.\nSquash merge policies и readable history debates.\nHumane review norms, не bureaucratic misery."
+    },
+    {
+      "id": "cicd-19",
+      "label": "Smoke-проверки после деплоя",
+      "description": "верификация",
+      "detail": "не только «задеплоилось»",
+      "text": "Добавь CI/CD step после deploy: critical HTTPS endpoints с timeouts.\nSynthetic checks vs только reading logs.\nСвязь failures с automated rollback — осторожно.\nСнижение alert noise через testing stable public routes.\nChecks должны быть fast и focused."
+    },
+    {
+      "id": "cicd-20",
+      "label": "Компромиссы self-hosted runners",
+      "description": "инфраструктура",
+      "detail": "приватная сеть",
+      "text": "Почему команды используют self-hosted runners (private network access, large caches).\nОтветственности: patching OS images, rotating tokens, isolation между jobs.\nEphemeral runners vs long-lived VMs — security perspective.\nПредупреди о sharing одного runner machine между unrelated teams без isolation.\nCloud-hosted runners, когда setup burden перевешивает gains."
+    }
+  ]
+}

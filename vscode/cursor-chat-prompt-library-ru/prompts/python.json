@@ -1,0 +1,146 @@
+{
+  "category": "python",
+  "categoryLabel": "Python",
+  "prompts": [
+    {
+      "id": "py-01-hello-structure",
+      "label": "Структура проекта Hello World",
+      "description": "основы",
+      "detail": "main.py и как запускать",
+      "text": "Я новичок в Python. Настрой минимальную структуру проекта для обучения.\n\n- main.py, который печатает Hello, World\n- Объясни запуск через python main.py\n- Упомяни Python 3.11+ и virtual environment в 3–5 шагах\n- Добавь короткий блок if __name__ == \"__main__\": и объясни, зачем он\n\nПока без фреймворков."
+    },
+    {
+      "id": "py-02-argparse-cli",
+      "label": "CLI-скрипт с argparse",
+      "description": "stdlib",
+      "detail": "флаги greet --name",
+      "text": "Создай CLI-скрипт для начинающих на argparse.\n\n- Команда: greet с опциональным --name (по умолчанию World) и флагом --shout (вывод в верхнем регистре)\n- Файл: greet.py\n- Покажи примеры команд в терминале\n- Базовая обработка неизвестных флагов (argparse справится сам)\n\nОбъясни каждую часть argparse простыми словами."
+    },
+    {
+      "id": "py-03-csv-read-write",
+      "label": "Чтение и запись CSV",
+      "description": "модуль csv",
+      "detail": "пример contacts.csv",
+      "text": "Научи меня CSV в Python на небольшом примере.\n\n- Пример данных: name, email (3 строки)\n- Скрипт write_csv.py записывает contacts.csv\n- Скрипт read_csv.py читает и печатает строки\n- Используй модуль csv из стандартной библиотеки\n\nВключи, как запускать оба скрипта, и одну типичную ошибку."
+    },
+    {
+      "id": "py-04-flask-hello",
+      "label": "Flask: простое API Hello World",
+      "description": "фреймворк Flask",
+      "detail": "один маршрут GET /",
+      "text": "Начинаю с Flask. Создай минимальное полезное веб-приложение.\n\n- app.py с GET /, возвращающим Hello from Flask как plain text или HTML\n- requirements.txt с зафиксированной версией Flask\n- Шаги: создать venv, pip install, flask run\n- Второй маршрут GET /health с {\"status\": \"ok\"}\n\nФайлы минимальные; объясни, что делает каждая строка."
+    },
+    {
+      "id": "py-05-django-start",
+      "label": "Первые шаги в Django-проекте",
+      "description": "Django",
+      "detail": "startproject, одно приложение, один view",
+      "text": "Я новичок в Django. Проведи по созданию нового проекта.\n\n- Команды: django-admin startproject mysite и startapp pages\n- Один view на / с простым шаблоном Hello Django\n- Перечисли каждый созданный или изменённый файл и зачем\n- settings.py: зарегистрируй приложение\n- По возможности стиль Django 5.x\n\nПредположи, что Python и pip уже есть. Не пропускай объяснение migrations."
+    },
+    {
+      "id": "py-06-venv-requirements",
+      "label": "Virtual env и requirements.txt",
+      "description": "окружение",
+      "detail": "venv + workflow pip freeze",
+      "text": "Объясни virtual environments в Python как новичку.\n\n- Пошагово: создать venv, активировать на Windows и macOS/Linux\n- requirements.txt с requests и python-dotenv как пример\n- pip install -r requirements.txt\n- Небольшой скрипт, загружающий переменную из .env (python-dotenv)\n\nВключи фрагмент .gitignore для venv и .env."
+    },
+    {
+      "id": "py-07-calculator-tests",
+      "label": "Калькулятор + тесты pytest",
+      "description": "функции + pytest",
+      "detail": "add, subtract, multiply, divide",
+      "text": "Собери маленький модуль калькулятора для изучения тестов.\n\n- calculator.py: функции add, subtract, multiply, divide (деление на ноль — ValueError)\n- test_calculator.py на pytest, минимум 5 тестов\n- Команды: pip install pytest, pytest -v\n\nОбъясни паттерн arrange-act-assert на одном тесте."
+    },
+    {
+      "id": "py-08-list-comprehensions",
+      "label": "Практика list comprehensions",
+      "description": "синтаксис",
+      "detail": "фильтрация и преобразование списков",
+      "text": "Дай короткий урок по list comprehensions в Python.\n\n- Сначала версия с for-loop, затем как comprehension\n- Примеры: квадраты 1–10, только чётные, lowercase списка строк\n- Один пример dict comprehension\n- 3 упражнения с решениями в комментариях или в конце\n\nБез внешних библиотек."
+    },
+    {
+      "id": "py-09-requests-api",
+      "label": "HTTP GET с requests",
+      "description": "библиотека requests",
+      "detail": "пример публичного JSON API",
+      "text": "Покажи вызов публичного HTTP API через requests.\n\n- fetch_posts.py: GET https://jsonplaceholder.typicode.com/posts/1\n- Печать title и body\n- Обработка timeout и HTTP-ошибок через try/except\n- requirements.txt с requests\n\nКратко объясни коды 200 и 404."
+    },
+    {
+      "id": "py-10-try-except",
+      "label": "Обработка ошибок try/except",
+      "description": "исключения",
+      "detail": "Безопасный разбор ввода пользователя",
+      "text": "Научи try/except на небольшом интерактивном скрипте.\n\n- Запрос двух чисел в терминале\n- Парсинг через float(), деление\n- Перехват ValueError (неверный ввод) и ZeroDivisionError\n- else и finally простым, читаемым способом\n\nДай полный скрипт и когда использовать конкретный except vs bare except (и почему bare except избегать)."
+    },
+    {
+      "id": "py-11",
+      "label": "pathlib для путей к файлам",
+      "description": "stdlib",
+      "detail": "пример Path.read_text",
+      "text": "Устал от строковых путей — хочу pathlib в небольшом скрипте.\nПокажи создание Path, безопасное соединение сегментов, exists/is_file, чтение/запись UTF-8.\nСравни Path с os.path в одном абзаце для новичков.\nДобавь маленький CLI, считающий строки во всех .txt в папке (нерекурсивно — ок).\nУпомяни один типичный edge case на Windows, где Path помогает."
+    },
+    {
+      "id": "py-12",
+      "label": "logging вместо print",
+      "description": "наблюдаемость",
+      "detail": "уровни basicConfig",
+      "text": "Замени разрозненный print на модуль logging в скрипте ~50 строк.\nОбъясни уровни DEBUG/INFO/WARNING/ERROR и когда какой уместен.\nПокажи basicConfig с читаемым format string и логирование исключений с exc_info.\nОпиши переключение детализации через переменную окружения.\nПредупреди о типичной misconfiguration, когда библиотеки перехватывают logging."
+    },
+    {
+      "id": "py-13",
+      "label": "datetime и часовые пояса",
+      "description": "stdlib",
+      "detail": "timezone-aware UTC",
+      "text": "Научи datetime без классической ловушки naive/aware.\nПокажи UTC now, преобразование фиксированного момента в именованную зону через zoneinfo (Python 3.11+).\nФормат ISO-8601 для логов.\nПодчеркни риск хранения локального wall-clock в БД.\nДай пример ~5 строк с защитным разбором ввода пользователя."
+    },
+    {
+      "id": "py-14",
+      "label": "contextlib.closing и свой context",
+      "description": "stdlib",
+      "detail": "паттерны with",
+      "text": "Углуби понимание context managers beyond open().\nПокажи @contextmanager из contextlib для setup/teardown вокруг временного пути.\nОбъясни, когда try/finally всё ещё яснее context manager.\nВторой микро-пример с closing() для ресурса с .close().\nЗаверши правилом для новичков про исключения в __enter__/__exit__."
+    },
+    {
+      "id": "py-15",
+      "label": "dataclasses для простых записей",
+      "description": "typing",
+      "detail": "frozen и значения по умолчанию",
+      "text": "Смоделируй User и Order через @dataclass.\nСравни field(default_factory=list) с ошибкой mutable default.\nПокажи, когда frozen=True полезен для «лёгкой» неизменяемости.\nДобавь валидацию в __post_init__ для положительной price.\nОбъясни отличие от TypedDict или Pydantic на этапе обучения."
+    },
+    {
+      "id": "py-16",
+      "label": "tomllib — чтение метаданных проекта",
+      "description": "stdlib",
+      "detail": "заглянуть в pyproject",
+      "text": "Везде pyproject.toml — хочу читать его из Python 3.11+ через tomllib.\nНапиши функцию load_project_name(path), возвращающую имя из [project].\nОбрабатывай отсутствующие секции понятными ошибками для новичков.\nВ двух предложениях: типы TOML vs ментальная модель JSON.\nПокажи, как вывести version, если есть."
+    },
+    {
+      "id": "py-17",
+      "label": "urllib.request GET без requests",
+      "description": "stdlib",
+      "detail": "без сторонних зависимостей",
+      "text": "Иногда requests ещё нельзя установить. Проведи по urllib.request.urlopen.\nЗапроси небольшой публичный JSON endpoint, прочитай bytes, decode UTF-8, json.loads в dict.\nЗадай timeout, перехвати HTTPError/URLError с понятными сообщениями.\nЧестно сравни читаемость с requests в одном абзаце.\nКомментарий про вежливый User-Agent."
+    },
+    {
+      "id": "py-18",
+      "label": "itertools.groupby для отчёта",
+      "description": "stdlib",
+      "detail": "предварительная сортировка",
+      "text": "Объясни, почему itertools.groupby часто требует sorted input.\nСобери игрушечный отчёт: список dict-строк с category, группировка и подитоги.\nПредупреди об исчерпании итератора с groupby.\nАльтернатива через collections.defaultdict для сбившихся с толку новичков.\nВесь пример до ~25 строк."
+    },
+    {
+      "id": "py-19",
+      "label": "typing.Protocol — структурный duck typing",
+      "description": "typing",
+      "detail": "file-like интерфейс",
+      "text": "Представь typing.Protocol для «всего с read()».\nФункция parse_payload(source: Readable) принимает pathlib.Path.open() и io.StringIO.\nОсторожно объясни @runtime_checkable.\nСравни номинальное наследование и структурную типизацию.\nМинимальный mypy-friendly пример без сложных generics."
+    },
+    {
+      "id": "py-20",
+      "label": "zipfile — мини-упражнение на бэкапы",
+      "description": "stdlib",
+      "detail": "архив папки CSV",
+      "text": "Напиши скрипт для новичка: упаковать несколько *.csv в zip с датой в имени через zipfile.\nВключи Path.glob, arcname basename и флаг dry-run в консоль.\nНа высоком уровне — предупреждения о распаковке недоверенных zip.\nКак запускать одинаково на Windows и macOS.\nИдеи для планирования позже без реализации cron."
+    }
+  ]
+}

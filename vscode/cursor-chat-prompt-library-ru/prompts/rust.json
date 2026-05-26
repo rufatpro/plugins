@@ -1,0 +1,146 @@
+{
+  "category": "rust",
+  "categoryLabel": "Rust",
+  "prompts": [
+    {
+      "id": "rust-01",
+      "label": "Проект cargo new hello",
+      "description": "основы",
+      "detail": "команда cargo run",
+      "text": "Создай проект cargo new hello и объясни src/main.rs и Cargo.toml.\n\n- cargo run и cargo build\n- Ownership — одно предложение-тизер\n\nДружелюбно для новичков."
+    },
+    {
+      "id": "rust-02",
+      "label": "Переменные mut ownership",
+      "description": "ownership",
+      "detail": "borrow",
+      "text": "Объясни let, mut и borrow &str на небольших примерах.\n\n- Почему компилятор запрещает двойной mutable borrow\n\nКороткий урок, не целая книга."
+    },
+    {
+      "id": "rust-03",
+      "label": "Struct и методы impl",
+      "description": "типы",
+      "detail": "impl block",
+      "text": "Struct Rectangle с методом area.\n\n- derive Debug и println {:?}\n\nЗапускаемый код."
+    },
+    {
+      "id": "rust-04",
+      "label": "Обработка Result и Option",
+      "description": "ошибки",
+      "detail": "? operator",
+      "text": "Чтение файла с возвратом Result и использование match или ? в main.\n\n- Option vs Result — когда что\n\nПример."
+    },
+    {
+      "id": "rust-05",
+      "label": "Vec и итераторы",
+      "description": "коллекции",
+      "detail": "map filter",
+      "text": "Фильтрация чётных чисел через iter filter collect.\n\n- Сравнение с циклом for\n\nФрагменты кода."
+    },
+    {
+      "id": "rust-06",
+      "label": "Зависимость с Crates.io",
+      "description": "cargo",
+      "detail": "serde",
+      "text": "Добавь serde и serde_json для десериализации JSON-строки.\n\n- Cargo.toml [dependencies]\n\nКрошечный main."
+    },
+    {
+      "id": "rust-07",
+      "label": "Clippy и fmt",
+      "description": "инструменты",
+      "detail": "cargo clippy",
+      "text": "Объясни rustfmt и clippy для качества кода.\n\n- cargo fmt, cargo clippy\n\nКогда запускать в CI."
+    },
+    {
+      "id": "rust-08",
+      "label": "Actix или Axum hello",
+      "description": "веб",
+      "detail": "async route",
+      "text": "Выбери один Rust web framework и покажи GET /hello route hello world.\n\n- Упомяни async runtime tokio в одной строке\n\nМинимальный каркас приложения."
+    },
+    {
+      "id": "rust-09",
+      "label": "Тестирование: cargo test",
+      "description": "тестирование",
+      "detail": "атрибут #[test]",
+      "text": "Напиши #[test] fn для функции add.\n\n- Объясни вывод cargo test\n\nОдин модуль."
+    },
+    {
+      "id": "rust-10",
+      "label": "Когда выбирать Rust",
+      "description": "руководство",
+      "detail": "сценарии использования",
+      "text": "Объективный список, когда Rust стоит изучать vs оставаться на Go/Python.\n\n- Systems, WASM, performance critical\n- Честная заметка о более крутой кривой обучения\n\n5 пунктов."
+    },
+    {
+      "id": "rust-11",
+      "label": "Цепочки Option: map и and_then",
+      "description": "комбинаторы",
+      "detail": "избегай вложенных match",
+      "text": "Покажи переписывание вложенного match на Option через map и and_then.\nСравни компромиссы читаемости для новичков.\nУпомяни аналогичные комбинаторы Result.\nОбсуди, когда явный match всё же яснее.\nДай игрушечный пример парсинга."
+    },
+    {
+      "id": "rust-12",
+      "label": "Эргономика derive(Debug, Clone)",
+      "description": "traits",
+      "detail": "сгенерированные impl",
+      "text": "Объясни derive Debug для печати struct при разработке.\nОбъясни различие Clone и Copy.\nКратко упомяни альтернативы кастомного Debug.\nПредупреди, что derive увеличивает время компиляции на огромных struct.\nУкажи на serde Serialize как смежную тему позже."
+    },
+    {
+      "id": "rust-13",
+      "label": "Cargo features для опциональных crates",
+      "description": "workspace",
+      "detail": "feature flags",
+      "text": "Объясни объявление optional dependencies и включение через features.\nПокажи пути кода с cfg(feature = \"...\").\nПредупреди о сюрпризах feature unification.\nПосоветуй документировать значения features в метаданных Cargo.toml.\nУпомяни сокращение графа зависимостей для бинарников."
+    },
+    {
+      "id": "rust-14",
+      "label": "Сужение scope guard Mutex",
+      "description": "конкурентность",
+      "detail": "держи lock кратко",
+      "text": "Продемонстрируй сокращение критических секций через явные scope.\nОбсуди риск deadlock при случайной вложенности lock.\nКратко упомяни RwLock для read-heavy нагрузок.\nСвяжи с Tokio Mutex для async-контекстов как ответвление.\nПоощряй fearless concurrency, но не небрежный locking."
+    },
+    {
+      "id": "rust-15",
+      "label": "Компромиссы dyn Trait object",
+      "description": "полиморфизм",
+      "detail": "trait objects vs generics",
+      "text": "Сравни trait objects и мономорфизованные generics для plugin-подобных дизайнов.\nУпомяни Sized и object safety на уровне заголовков.\nОбсуди vtable overhead качественно, без фанатизма бенчмарков.\nПосоветуй измерять горячие пути.\nДай прагматичную интуицию «реестра обработчиков»."
+    },
+    {
+      "id": "rust-16",
+      "label": "thiserror vs anyhow на границах",
+      "description": "ошибки",
+      "detail": "library crates vs apps",
+      "text": "Объясни thiserror в библиотеках, экспортирующих структурированные ошибки.\nОбъясни anyhow в приложениях, где часто нужен контекст.\nУпомяни chaining sources для читаемой отладки.\nПосоветуй чисто маппить ошибки через границы.\nКратко упомяни интеграцию с tracing."
+    },
+    {
+      "id": "rust-17",
+      "label": "Lifetime elision в функциях",
+      "description": "borrow checker",
+      "detail": "когда нужны явные",
+      "text": "Объясни типичные правила elision для ссылок, связанных с входами.\nПокажи примеры, где Rust требует явные аннотации.\nПоощряй читать ошибки компилятора буквально и медленно.\nПосоветуй предпочитать owned data в маленьких программах, чтобы меньше спорить с компилятором.\nУпомяни static lifetime для строковых литералов как тренировку интуиции."
+    },
+    {
+      "id": "rust-18",
+      "label": "Ленивость iterator adapters",
+      "description": "stdlib",
+      "detail": "цепочки до collect",
+      "text": "Объясни, что итераторы ленивы, пока не потребишь их через collect/for_each.\nПокажи цепочку map/filter/take на синтетическом примере.\nЧестно сравни читаемость с ручными циклами.\nУпомяни fused adapters только как trivia.\nУкажи на Clippy, подсказывающий идиомы."
+    },
+    {
+      "id": "rust-19",
+      "label": "rustfmt и clippy в CI",
+      "description": "инструменты",
+      "detail": "автоматические guardrails",
+      "text": "Рекомендуй cargo fmt --check в CI вместе с clippy и выборочным deny warnings.\nОбъясни, что allow-директивы должны быть обоснованы в комментариях.\nОпционально упомяни фиксацию toolchain через rust-toolchain.toml.\nПосоветуй новичкам настроить format-on-save в редакторе.\nСвяжи с воспроизводимыми CI-образами."
+    },
+    {
+      "id": "rust-20",
+      "label": "Структура папки integration tests",
+      "description": "тестирование",
+      "detail": "tests/*.rs crates",
+      "text": "Объясни integration tests, импортирующие crate извне из папки tests/.\nУпомяни паттерны helpers module без циклов зависимостей.\nПосоветуй отдельно помечать медленные наборы.\nОпционально упомяни benchmarks с criterion как чтение.\nПоощряй детерминированные тесты."
+    }
+  ]
+}

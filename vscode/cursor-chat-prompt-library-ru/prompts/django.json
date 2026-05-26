@@ -1,0 +1,146 @@
+{
+  "category": "django",
+  "categoryLabel": "Django",
+  "prompts": [
+    {
+      "id": "django-01-startproject",
+      "label": "Создание Django-проекта",
+      "description": "настройка",
+      "detail": "django-admin startproject",
+      "text": "Я начинающий в Django. Проведи меня по созданию нового проекта с нуля.\n\n- venv, pip install django, django-admin startproject config .\n- Объясни settings.py, urls.py, manage.py\n- python manage.py runserver и открыть admin URL path\n\nИспользуй команды Django 5.x. Перечисли созданные файлы."
+    },
+    {
+      "id": "django-02-startapp",
+      "label": "Первое приложение и hello view",
+      "description": "views",
+      "detail": "приложение pages, path hello/",
+      "text": "Добавь Django-приложение с одним view.\n\n- python manage.py startapp pages\n- Зарегистрируй приложение в INSTALLED_APPS\n- View hello, возвращающий HttpResponse Hello Django\n- Подключи urlpatterns в project urls.py\n\nПокажи каждое изменение файлов."
+    },
+    {
+      "id": "django-03-templates",
+      "label": "Рендер HTML-шаблона",
+      "description": "templates",
+      "detail": "base.html и home.html",
+      "text": "Объясни Django templates для начинающего.\n\n- templates/home.html, наследующий base.html с block content\n- View использует render(request, 'home.html', context)\n- Передай переменную title в context\n- Настрой TEMPLATES DIRS в settings\n\nПриведи синтаксис шаблона для {{ title }} и {% block %}."
+    },
+    {
+      "id": "django-04-models",
+      "label": "Model и makemigrations",
+      "description": "ORM",
+      "detail": "модель Article: title, body",
+      "text": "Создай первую Django model.\n\n- Model Article: title (CharField max 200), body (TextField), created_at (auto)\n- Объясни команды makemigrations и migrate\n- Зарегистрируй в admin.py\n- Шаги создания superuser\n\nПокажи models.py и регистрацию в admin."
+    },
+    {
+      "id": "django-05-admin",
+      "label": "Кастомизация Django admin",
+      "description": "admin",
+      "detail": "list_display search_fields",
+      "text": "Улучши Django admin для модели Article.\n\n- list_display, list_filter, search_fields\n- readonly_fields для created_at\n- Краткое объяснение admin site для разработки\n\nПредположи, что модель Article уже существует."
+    },
+    {
+      "id": "django-06-forms",
+      "label": "ModelForm для создания article",
+      "description": "forms",
+      "detail": "CreateView или function view",
+      "text": "Добавь форму для создания Article (для начинающего).\n\n- ModelForm для Article (title, body)\n- View + template с {% csrf_token %} и form.as_p\n- Redirect на список после успеха\n- URL-маршрут /articles/new/\n\nОбъясни CSRF в одном предложении."
+    },
+    {
+      "id": "django-07-class-views",
+      "label": "ListView и DetailView",
+      "description": "CBV",
+      "detail": "страницы списка и детали article",
+      "text": "Рефакторинг на class-based views для Article.\n\n- ArticleListView, ArticleDetailView\n- Шаблоны article_list.html и article_detail.html\n- urls.py с pk в path\n\nСравни CBV vs function view в 3 пунктах для начинающих."
+    },
+    {
+      "id": "django-08-static-files",
+      "label": "Static CSS в Django",
+      "description": "static",
+      "detail": "styles.css в dev",
+      "text": "Добавь CSS в Django-проект для разработки.\n\n- static/css/styles.css, подключённый в base.html с {% load static %}\n- STATIC_URL и STATICFILES_DIRS в settings\n- collectstatic упомянуть только для production\n\nПростой пример: стилизация navbar."
+    },
+    {
+      "id": "django-09-drf-intro",
+      "label": "DRF: первый API endpoint",
+      "description": "REST API",
+      "detail": "маршрут GET /api/hello/",
+      "text": "Познакомь с Django REST framework через один endpoint.\n\n- pip install djangorestframework, добавить в INSTALLED_APPS\n- APIView или @api_view GET, возвращающий JSON { message: 'hello' }\n- Подключи url /api/hello/\n- Протестируй в браузере или curl\n\nПолный CRUD пока не нужен; объясни, для чего нужен DRF."
+    },
+    {
+      "id": "django-10-deploy-checklist",
+      "label": "Checklist перед deploy",
+      "description": "production",
+      "detail": "DEBUG, SECRET_KEY, ALLOWED_HOSTS",
+      "text": "Дай checklist для начинающего перед deploy Django (концептуально, любой хост).\n\n- Установить DEBUG=False, настроить ALLOWED_HOSTS\n- Environment variable для SECRET_KEY\n- База данных не sqlite для production (упомяни Postgres)\n- Static files whitenoise или CDN — одна строка\n\nПолные шаги deploy не нужны — только учебный checklist."
+    },
+    {
+      "id": "django-11",
+      "label": "reverse() и URL names в шаблонах",
+      "description": "routing",
+      "detail": "без hard-coded paths",
+      "text": "Я hard-code href paths. Покажи url tag с name= и kwargs.\nОбъясни, почему переименование маршрутов становится безопаснее.\nПродемонстрируй reverse() в tests или views для построения redirects.\nЛегко затронь паттерны app namespace.\nВключи мини-пример urls.py + path name."
+    },
+    {
+      "id": "django-12",
+      "label": "Middleware — поток request/response",
+      "description": "HTTP",
+      "detail": "порядок в settings",
+      "text": "Объясни Django middleware как слои луковицы с process_request и process_response.\nПриведи игрушечный middleware, добавляющий X-Process-Time без внешних библиотек.\nПодчеркни значение порядка в списке MIDDLEWARE.\nКратко отметь осторожность с async middleware для начинающих.\nПредложи security middlewares как домашнее чтение документации."
+    },
+    {
+      "id": "django-13",
+      "label": "select_related и prefetch_related",
+      "description": "ORM",
+      "detail": "N+1 queries",
+      "text": "Объясни проблему N+1 на примере blog author.\nПокажи select_related для forward ForeignKey и prefetch_related для reverse many-to-many.\nОбъясни интуицию количества запросов prefetch_related.\nУпомяни Prefetch object для продвинутого контроля.\nСвяжи с django-debug-toolbar как визуальной подсказкой — только упоминание."
+    },
+    {
+      "id": "django-14",
+      "label": "Регистрация custom template filter",
+      "description": "templates",
+      "detail": "@register.filter",
+      "text": "Создай filter currency_cents, безопасно форматирующий integers.\nПокажи app ready в apps.py или традиционную структуру пакета templatetags.\nОбъясни взаимодействие autoescaping для filters, возвращающих HTML.\nДобавь идею простого unit test с RequestFactory render.\nПредупреди о затоплении business logic в filters."
+    },
+    {
+      "id": "django-15",
+      "label": "Каркас management command",
+      "description": "удобство разработки",
+      "detail": "класс BaseCommand",
+      "text": "Создай Django management command export_users_csv с опцией dry-run.\nНабросай handle() с аргументами в стиле argparse.\nОбъясни стиль сообщений stdout.write.\nПокажи discovery в management/commands/*.py.\nЛегко упомяни transactional behavior при работе с БД."
+    },
+    {
+      "id": "django-16",
+      "label": "Messages framework — flash-сообщения",
+      "description": "UX",
+      "detail": "уведомление после redirect",
+      "text": "Подключи django.contrib.messages для success alerts после POST-redirect-get.\nПокажи требование MessageMiddleware и итерацию в template.\nРазличай уровни info/success/error.\nОбъясни cookie vs session backends на уровне заголовков.\nДай security note об escaping содержимого message."
+    },
+    {
+      "id": "django-17",
+      "label": "Обзор загрузки файлов",
+      "description": "forms",
+      "detail": "настройки MEDIA_ROOT",
+      "text": "Опиши моделирование FileField/ImageField и form enctype multipart.\nОпиши разделение забот MEDIA_ROOT/MEDIA_URL.\nУпомяни валидацию size/extension на уровне form.\nКоснись serving files в dev vs prod (whitenoise/S3 концептуально).\nПеречисли одну security pitfall при выполнении user uploads."
+    },
+    {
+      "id": "django-18",
+      "label": "LoginRequired mixin на CBVs",
+      "description": "auth",
+      "detail": "class-based views",
+      "text": "Покажи размещение LoginRequiredMixin с CBVs.\nСравни с @login_required для function views.\nОбъясни взаимодействие redirect LOGIN_URL.\nДобавь тизер UserPassesTestMixin для roles.\nСвяжи с middleware AuthenticationMiddleware."
+    },
+    {
+      "id": "django-19",
+      "label": "Тестирование с Django Client",
+      "description": "tests",
+      "detail": "assertContains",
+      "text": "Напиши tests, обращающиеся к view через self.client.post, с заметками о CSRF exempt testing.\nИспользуй assertRedirects и assertContains.\nОбъясни TransactionTestCase vs TestCase неформально.\nУпомяни factory-boy как опциональную ergonomics.\nПодчеркни важность скорости и фокуса DB tests."
+    },
+    {
+      "id": "django-20",
+      "label": "Разделение settings DEV и PROD",
+      "description": "deployment",
+      "detail": "DJANGO_SETTINGS_MODULE",
+      "text": "Организуй пакет settings: base.py, dev.py, prod.py.\nПродемонстрируй getenv с defaults осторожно (без секретов в git).\nОбъясни последствия флага DEBUG.\nУпомяни gotcha ALLOWED_HOSTS.\nКратко перечисли различия static files collectors."
+    }
+  ]
+}

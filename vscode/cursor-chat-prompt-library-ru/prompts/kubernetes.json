@@ -1,0 +1,146 @@
+{
+  "category": "kubernetes",
+  "categoryLabel": "Kubernetes",
+  "prompts": [
+    {
+      "id": "k8s-01",
+      "label": "Концепции Pods и Deployments",
+      "description": "концепции",
+      "detail": "kubectl get",
+      "text": "Объясни Pod vs Deployment vs Service для новичков через аналогии.\n\n- Идея desired state\n- kubectl get pods\n\nКластер для теории не нужен."
+    },
+    {
+      "id": "k8s-02",
+      "label": "Deployment nginx — yaml-манифест",
+      "description": "yaml",
+      "detail": "replicas 3",
+      "text": "Минимальный Deployment и Service yaml для nginx.\n\n- replicas 3, selector labels app=nginx\n- Service type NodePort 30080\n\nПорядок apply."
+    },
+    {
+      "id": "k8s-03",
+      "label": "ConfigMap и Secret",
+      "description": "конфигурация",
+      "detail": "envFrom",
+      "text": "Смонтируй ConfigMap как env vars в Pod spec.\n\n- Secret для пароля — заметка про base64\n- Никогда не коммить настоящие secrets\n\nФрагменты yaml."
+    },
+    {
+      "id": "k8s-04",
+      "label": "Ingress HTTP-маршрутизация",
+      "description": "ingress",
+      "detail": "host rules",
+      "text": "Объясни Ingress-маршрутизацию / на frontend и /api на backend service.\n\n- Заметка про необходимость ingress controller\n\nТекстовая диаграмма."
+    },
+    {
+      "id": "k8s-05",
+      "label": "Отладка kubectl logs",
+      "description": "отладка",
+      "detail": "logs describe",
+      "text": "Чеклист отладки CrashLoopBackOff.\n\n- kubectl logs, describe pod events\n- Причины ImagePullBackOff\n\n7 шагов."
+    },
+    {
+      "id": "k8s-06",
+      "label": "Обзор Helm chart",
+      "description": "helm",
+      "detail": "package manager",
+      "text": "Чем Helm charts отличаются от сырого yaml.\n\n- helm install bitnami — концептуальный пример\n\nКогда команды переходят на helm."
+    },
+    {
+      "id": "k8s-07",
+      "label": "Локальный кластер minikube",
+      "description": "локально",
+      "detail": "minikube start",
+      "text": "Шаги minikube или kind для локального обучения на ноутбуке.\n\n- Требования к ресурсам RAM\n\nСравни minikube vs kind — 3 пункта."
+    },
+    {
+      "id": "k8s-08",
+      "label": "Liveness и readiness probes",
+      "description": "health",
+      "detail": "httpGet /health",
+      "text": "Добавь livenessProbe и readinessProbe в deployment yaml.\n\n- Разница: restart vs исключение из service\n\nПримеры paths."
+    },
+    {
+      "id": "k8s-09",
+      "label": "Namespaces — dev и staging",
+      "description": "организация",
+      "detail": "kubectl -n",
+      "text": "Организуй окружения через namespaces.\n\n- kubectl create namespace dev\n- Только упомяni resource quotas\n\nBest practice."
+    },
+    {
+      "id": "k8s-10",
+      "label": "K8s vs Docker Compose — сравнение",
+      "description": "сравнение",
+      "detail": "когда что",
+      "text": "Когда новичкам стоит использовать Compose vs Kubernetes.\n\n- Dev на одной машине vs масштабируемый production\n\nЧестное предупреждение о сложности."
+    },
+    {
+      "id": "k8s-11",
+      "label": "Основы PodDisruptionBudget",
+      "description": "доступность",
+      "detail": "защита при disruptions",
+      "text": "Определи PodDisruptionBudget как ограничение добровольных disruptions.\nОбъясни, как он взаимодействует с ответственным draining узлов.\nУпомяni, что он не заменяет человеческое capacity planning.\nПосоветуй согласовывать PDB с ожиданиями отказоустойчивости приложения.\nКратко свяжи с терминологией kubectl drain."
+    },
+    {
+      "id": "k8s-12",
+      "label": "Requests, limits и QoS classes",
+      "description": "scheduling",
+      "detail": "почему случается OOM",
+      "text": "Объясни CPU requests/limits vs memory limits качественно.\nОпиши QoS classes простыми исходами для новичков.\nУпомяni, что kubelet убивает процессы при превышении memory limits.\nПосоветуй измерять перед копированием случайных чисел.\nПредупреди: без limits — noisy neighbors."
+    },
+    {
+      "id": "k8s-13",
+      "label": "Введение в Horizontal Pod Autoscaler",
+      "description": "масштабирование",
+      "detail": "CPU targets для старта",
+      "text": "Объясни масштабирование replicas по целевой средней CPU utilization.\nНеформально упомяni stabilization windows.\nОпиши custom metrics adapters как продвинутую опцию.\nПредупреди о thrashing, если probes и приложения ведут себя плохо.\nМысленно отличай Cluster Autoscaler."
+    },
+    {
+      "id": "k8s-14",
+      "label": "NetworkPolicy — поэтапное ужесточение",
+      "description": "безопасность",
+      "detail": "default deny постепенно",
+      "text": "Опиши переход к более жёстким network policies поэтапно по namespace.\nРеалистично упомяni различия CNI в enforcement.\nПосоветуй рано проверять DNS egress rules.\nПоощряй репетиции в staging-кластерах.\nНе обещай zero trust за одну ночь."
+    },
+    {
+      "id": "k8s-15",
+      "label": "RBAC — least privilege verbs-обзор",
+      "description": "auth",
+      "detail": "Roles и Bindings",
+      "text": "Сравни Role vs ClusterRole bindings.\nПоощряй явные verbs вместо wildcard star.\nУпомяni осторожность с impersonation для админов.\nПосоветуй периодически аудировать permissions.\nМысленно очерти границы namespace."
+    },
+    {
+      "id": "k8s-16",
+      "label": "Jobs и CronJobs — операционные советы",
+      "description": "batch workloads",
+      "detail": "retries backoff",
+      "text": "Объясни различие parallelism и completions для Jobs.\nКратко обсуди jitter пропущенных расписаний CronJob.\nУпомяni backoff limits при диагностике падающих jobs.\nПосоветуй делать jobs retry-safe и идемпотентными.\nУкажи на алерты при повторных падениях."
+    },
+    {
+      "id": "k8s-17",
+      "label": "Ментальная модель PVC provisioning",
+      "description": "storage",
+      "detail": "claims и volumes",
+      "text": "Объясни PersistentVolumeClaims, запрашивающие storage у StorageClasses.\nУпомяni reclaim policies Retain vs Delete словами.\nПосоветуй реалистичный sizing новичкам, изучающим DBs-on-k8s.\nПредупреди, что поддержка resize зависит от CSI.\nСвяжи со StatefulSets."
+    },
+    {
+      "id": "k8s-18",
+      "label": "kubectl port-forward с осторожностью",
+      "description": "отладка",
+      "detail": "временные туннели",
+      "text": "Объясни port-forward как удобство отладки, а не архитектуру.\nПредупреди об экспонировании чувствительных endpoints локально.\nУпомяni ephemeral containers как продвинутое дополнение.\nПосоветуй согласовывать доступ к prod.\nПредпочитай VPN/bastion для повторяемого доступа."
+    },
+    {
+      "id": "k8s-19",
+      "label": "kustomize overlays для окружений",
+      "description": "слои конфигурации",
+      "detail": "patches patches patches",
+      "text": "Опиши base плюс overlays, меняющие images и replicas.\nКратко сравни с философиями templating без flame wars.\nУпомяni генерацию secrets осмысленно, а не сырыми ключами.\nGitOps Flux/Argo как опциональное направление чтения.\nПоощряй детерминированные renders."
+    },
+    {
+      "id": "k8s-20",
+      "label": "Topology spread по зонам",
+      "description": "HA layout",
+      "detail": "избегай clumping в одной зоне",
+      "text": "Введи распределение pods по topology zones с осторожным балансом skew.\nНа уровне заголовков упомяni взаимодействие с affinity.\nПосоветуй согласовывать PDB со spread.\nChaos с отказами зон — опциональное чтение для зрелых команд.\nНапомни: failure domains — частично бизнес-решения."
+    }
+  ]
+}

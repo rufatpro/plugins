@@ -1,0 +1,146 @@
+{
+  "category": "vue",
+  "categoryLabel": "Vue",
+  "prompts": [
+    {
+      "id": "vue-01",
+      "label": "Создание проекта Vue 3 + Vite",
+      "description": "настройка",
+      "detail": "npm create vue",
+      "text": "Создай проект Vue 3 + Vite для новичка.\n\n- Простое объяснение опций официальной create command\n- Hello в App.vue\n- npm run dev\n\nПеречисли сгенерированные файлы."
+    },
+    {
+      "id": "vue-02",
+      "label": "ref и reactive",
+      "description": "реактивность",
+      "detail": "counter",
+      "text": "Объясни ref vs reactive на счётчике и поле формы.\n\n- Синтаксис script setup\n- Почему ref для примитивов\n\nОдин пример App.vue."
+    },
+    {
+      "id": "vue-03",
+      "label": "v-for и :key",
+      "description": "шаблон",
+      "detail": "todo list",
+      "text": "Отрендери todo list с v-for и :key.\n\n- Добавление todo из input\n- Объясни важность key\n\nComposition API."
+    },
+    {
+      "id": "vue-04",
+      "label": "computed и watch",
+      "description": "реактивность",
+      "detail": "filtered list",
+      "text": "Используй computed для filtered todos и watch для side effect.\n\n- filter text input\n- watch логирует изменение count\n\nОдин компонент."
+    },
+    {
+      "id": "vue-05",
+      "label": "Props и emit",
+      "description": "компоненты",
+      "detail": "ChildButton",
+      "text": "Родитель передаёт title prop, дочерний компонент emit click event.\n\n- defineProps и defineEmits в script setup\n\nДва компонента."
+    },
+    {
+      "id": "vue-06",
+      "label": "Vue Router: два маршрута",
+      "description": "router",
+      "detail": "Home About",
+      "text": "Добавь vue-router с представлениями Home и About.\n\n- router/index.js и router-view в App.vue\n- Навигация router-link\n\nПолная минимальная настройка."
+    },
+    {
+      "id": "vue-07",
+      "label": "Pinia store: счётчик",
+      "description": "state",
+      "detail": "defineStore",
+      "text": "Представь Pinia для общего состояния счётчика.\n\n- stores/counter.js и использование в двух компонентах\n- Сравни с prop drilling в 2 пунктах\n\nVue 3 + Pinia."
+    },
+    {
+      "id": "vue-08",
+      "label": "Fetch в onMounted",
+      "description": "async",
+      "detail": "load users",
+      "text": "Загрузи users из jsonplaceholder в onMounted.\n\n- loading и error refs\n- template v-if states\n\nComposition API."
+    },
+    {
+      "id": "vue-09",
+      "label": "Форма v-model",
+      "description": "формы",
+      "detail": "two-way binding",
+      "text": "Контактная форма с v-model на полях и submit handler.\n\n- prevent default, показ JSON в alert\n\nДоступные labels."
+    },
+    {
+      "id": "vue-10",
+      "label": "Деплой статической сборки Vue",
+      "description": "деплой",
+      "detail": "npm run build",
+      "text": "Собери static dist и варианты деплоя (Netlify, GitHub Pages).\n\n- npm run build выводит dist/\n- Заметка SPA fallback для history mode\n\nЧеклист."
+    },
+    {
+      "id": "vue-11",
+      "label": "defineProps с TypeScript generics",
+      "description": "Vue 3",
+      "detail": "typed props",
+      "text": "Покажи паттерн defineProps<{ title: string; count?: number }>() с осторожностью.\nОбъясни withDefaults helpers для defaults refs.\nСвяжи с опциональными runtime props validation plugins.\nЛёгко упомяni возможности редактора Volar.\nДай минимальный verbal excerpt Single File Component."
+    },
+    {
+      "id": "vue-12",
+      "label": "defineModel в дочерних компонентах Vue 3.4+",
+      "description": "sugar",
+      "detail": "two-way binding",
+      "text": "Объясни defineModel, заменяющий boilerplate modelValue.\nПродемонстрируй boolean models для checkbox.\nСравни v-model naming modifiers.\nПредупреди о pitfalls синхронизации больших объектов.\nКратко свяжи с emits typing."
+    },
+    {
+      "id": "vue-13",
+      "label": "Composable: вынос useMouse",
+      "description": "composition",
+      "detail": "shared logic",
+      "text": "Вынеси дублирующееся отслеживание мыши в composable useMouse.ts, возвращающий refs.\nОбъясни соглашение именования use*.\nПокажи идею тестирования composables с mounting hooks.\nУпомяni SSR window guards.\nКратко сравни с legacy mixin."
+    },
+    {
+      "id": "vue-14",
+      "label": "Teleport: модалки вне stacking",
+      "description": "DOM",
+      "detail": "body target",
+      "text": "Продемонстрируй Teleport с target body для корней модалок.\nТонко объясни различия event path.\nУпомяni SSR safety notes prop teleport disable.\nСвяжи с accessibility focus trapping pointer.\nПокажи guidance по z-index token."
+    },
+    {
+      "id": "vue-15",
+      "label": "provide/inject vs Pinia — сравнение",
+      "description": "state",
+      "detail": "dependency contrast",
+      "text": "Объясни injection для theme tokens без app-wide spaghetti.\nЛёгко покажи symbol keys против collisions.\nСравни Pinia для shared mutable stores.\nУпомяni trade-offs читаемости при layering providers у routes.\nПосоветуй, когда что подходит."
+    },
+    {
+      "id": "vue-16",
+      "label": "defineAsyncComponent — code splitting маршрутов",
+      "description": "сборка",
+      "detail": "lazy routes",
+      "text": "Покажи обёртку тяжёлого chart component через defineAsyncComponent со spinner loading.\nСвяжи с похожестью router lazy import.\nОбъясни обработку error component.\nОпционально упомяni prefetch strategies.\nПредупреди о SSR hydration mismatch при misuse."
+    },
+    {
+      "id": "vue-17",
+      "label": ":deep — проникновение scoped style",
+      "description": "SFC",
+      "detail": "third-party internals",
+      "text": "Объясни :deep selectors для редкого переопределения internals библиотек.\nПросто опиши механику scoped attribute.\nПредупреди о brittle coupling.\nПредложи альтернативные wrapper patterns.\nУпомяni interplay с sass nesting."
+    },
+    {
+      "id": "vue-18",
+      "label": "Suspense boundaries — async setup-обзор",
+      "description": "async",
+      "detail": "experimental literacy",
+      "text": "Набросок suspense вокруг async branches на уровне чтения.\nОбъясни loading fallback slots как аналог концепции других фреймворков.\nУмеренные SSR caveats.\nПосоветуй junior pace adoption.\nУкажи на привычку читать changelog."
+    },
+    {
+      "id": "vue-19",
+      "label": "Transition classes — enter и leave",
+      "description": "анимация",
+      "detail": "CSS hooks",
+      "text": "Объясни паттерны Transition enter-active-class для диалогов.\nПокажи концепцию sequencing mode out-in.\nСвяжи с prefers-reduced-motion toggles.\nУпомяni trade-off предпочтения JS hooks.\nДай micro snippet string names."
+    },
+    {
+      "id": "vue-20",
+      "label": "Vitest + Vue Test Utils — smoke-тест",
+      "description": "тестирование",
+      "detail": "mount stubs",
+      "text": "Смонтируй counter component и проверь инкремент по клику.\nПокажи stubbing дочернего RouterLink.\nОбъясни flushPromises для awaiting watcher ticks опционально.\nУпомяni выбор happy-dom vs jsdom.\nПоощряй factories для ergonomics props."
+    }
+  ]
+}

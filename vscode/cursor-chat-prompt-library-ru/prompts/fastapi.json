@@ -1,0 +1,146 @@
+{
+  "category": "fastapi",
+  "categoryLabel": "FastAPI",
+  "prompts": [
+    {
+      "id": "fastapi-01",
+      "label": "Первое FastAPI-приложение",
+      "description": "настройка",
+      "detail": "GET /",
+      "text": "Создай минимальное FastAPI-приложение для начинающего.\n\n- main.py с GET /, возвращающим {\"message\": \"hello\"}\n- Команда запуска uvicorn\n- requirements.txt с fastapi и uvicorn\n\nОбъясни URL автоматической OpenAPI docs."
+    },
+    {
+      "id": "fastapi-02",
+      "label": "Path и query parameters",
+      "description": "маршрутизация",
+      "detail": "/items/{id}",
+      "text": "Объясни path и query params в FastAPI.\n\n- GET /items/{item_id} с item_id: int\n- Optional query q: str | None\n- Пример URLs для проверки в браузере\n\nВключи type hints и преимущества validation."
+    },
+    {
+      "id": "fastapi-03",
+      "label": "POST с Pydantic model",
+      "description": "тело запроса",
+      "detail": "схема ItemCreate",
+      "text": "Добавь POST /items с Pydantic model.\n\n- Models ItemCreate и ItemResponse\n- In-memory list store для демо\n- Return 201 и created item\n\nОбъясни Pydantic vs dict в 2 предложениях."
+    },
+    {
+      "id": "fastapi-04",
+      "label": "Введение в dependency injection",
+      "description": "зависимости",
+      "detail": "заглушка get_db",
+      "text": "Познакомь с Depends() через fake database dependency.\n\n- def get_db() generator, yielding connection stub\n- Route использует db=Depends(get_db)\n- Почему DI помогает testing — 3 пункта\n\nДержи код коротким."
+    },
+    {
+      "id": "fastapi-05",
+      "label": "HTTPException 404 — обработка ошибок",
+      "description": "ошибки",
+      "detail": "raise HTTPException",
+      "text": "Покажи правильные 404 errors в FastAPI.\n\n- GET /users/{id} с fake list\n- raise HTTPException(status_code=404, detail=\"User not found\")\n- Как это выглядит в OpenAPI docs\n\nОдин file example."
+    },
+    {
+      "id": "fastapi-06",
+      "label": "Router и модули APIRouter",
+      "description": "структура",
+      "detail": "routers/users.py",
+      "text": "Раздели FastAPI на routers для небольшого API.\n\n- routers/users.py и routers/items.py\n- Include_router в main.py с prefix /api\n\nОбъясни паттерн роста проекта."
+    },
+    {
+      "id": "fastapi-07",
+      "label": "CORS для frontend dev",
+      "description": "middleware",
+      "detail": "CORSMiddleware",
+      "text": "Включи CORS для локального React/Vite на порту 5173.\n\n- Настройки CORSMiddleware\n- Почему браузеры блокируют cross-origin\n\nПокажи только snippet main.py."
+    },
+    {
+      "id": "fastapi-08",
+      "label": "Async endpoint — асинхронный маршрут",
+      "description": "async",
+      "detail": "async def read",
+      "text": "Кратко объясни async def routes в FastAPI.\n\n- Один async route, имитирующий await asyncio.sleep\n- Когда использовать async vs def для начинающих\n\nRunnable example."
+    },
+    {
+      "id": "fastapi-09",
+      "label": "Обзор JWT auth",
+      "description": "auth",
+      "detail": "концептуально",
+      "text": "План JWT auth для FastAPI на высоком уровне (без полного production code).\n\n- Login выдаёт token, protected route требует Authorization header\n- Outline libraries: python-jose, passlib\n- Security warnings: HTTPS, secret key в env\n\nBullet roadmap для обучения."
+    },
+    {
+      "id": "fastapi-10",
+      "label": "Подключение SQLAlchemy позже",
+      "description": "база данных",
+      "detail": "roadmap",
+      "text": "Объясни шаги добавления SQLAlchemy + FastAPI после tutorial API.\n\n- Models, Session, lifespan event\n- Упоминание migrations с Alembic\n- Полный ORM сейчас не реализуй — только checklist\n\nДля того, кто завершил in-memory CRUD."
+    },
+    {
+      "id": "fastapi-11",
+      "label": "lifespan: startup и shutdown",
+      "description": "жизненный цикл приложения",
+      "detail": "async context manager",
+      "text": "Замени устаревший on_event на lifespan context manager.\nПокажи yielding control после DB engine init и закрытие pools при shutdown.\nОбъясни, почему это лучше разрозненных globals для начинающих.\nКоснись поведения test client lifespan.\nДержи пример ~15 строк."
+    },
+    {
+      "id": "fastapi-12",
+      "label": "BackgroundTasks — паттерн email",
+      "description": "async",
+      "detail": "ответ, затем работа",
+      "text": "Продемонстрируй enqueueing BackgroundTasks после возврата response vs blocking.\nЧестно обсуди idempotency и ограничения retry.\nУпомяni upgrade path Celery/RQ словами.\nПокажи logging hygiene внутри tasks.\nПредупреди о pitfalls доступа к request state после завершения."
+    },
+    {
+      "id": "fastapi-13",
+      "label": "UploadFile streams безопасно",
+      "description": "файлы",
+      "detail": "spooling на disk",
+      "text": "Проведи через осторожное await upload.read() vs streaming chunks.\nПокажи сохранение под sanitized filename pattern.\nПеречисли size limits validation на уровне settings.\nУпомяni идею antivirus scanning hook.\nЛегко свяжи с costs multipart parsing."
+    },
+    {
+      "id": "fastapi-14",
+      "label": "Depends chains для permissions",
+      "description": "DI",
+      "detail": "слои зависимостей",
+      "text": "Составь Depends(get_db), переходящий в Depends(require_role(\"admin\")).\nОбъясни caching результатов Depends per-request.\nПокажи layering HTTPException.\nОбсуди testing overrides с app.dependency_overrides.\nСвяжи с видимостью OpenAPI docs."
+    },
+    {
+      "id": "fastapi-15",
+      "label": "Response model исключает unset fields",
+      "description": "схемы",
+      "detail": "контроль JSON shape",
+      "text": "Объясни response_model_exclude_unset, управляющий optional pydantic defaults.\nРазличай serialization vs validation steps.\nПокажи caveat возврата ORM rows с computed fields.\nУпомяni aliases для outward JSON keys.\nНаправь начинающих к warnings о lazy loading ORM."
+    },
+    {
+      "id": "fastapi-16",
+      "label": "WebSocket echo минимальный",
+      "description": "realtime",
+      "detail": "accept iterate",
+      "text": "Дай крошечный /ws endpoint echo с receive_text loop.\nОбъясни disconnect handling try/except.\nСравни с feature set Socket.IO без глубокого погружения.\nУпомяni scaling websockets за load balancers на высоком уровне.\nВключи краткую security note об auth subprotocols."
+    },
+    {
+      "id": "fastapi-17",
+      "label": "Settings через pydantic-settings",
+      "description": "конфиг",
+      "detail": "управление через env",
+      "text": "Покажи BaseSettings model, читающий DATABASE_URL и DEBUG bool coercions.\nОбъясни case sensitivity и env_file для local dev.\nПредупреди о коммите .env.\nОбсуди optional nested settings pattern.\nСравни с многословностью plain os.getenv."
+    },
+    {
+      "id": "fastapi-18",
+      "label": "Exception handlers — кастомный JSON",
+      "description": "ошибки",
+      "detail": "единый формат ответа",
+      "text": "Зарегистрируй handler для RequestValidationError, возвращающий shape { error: { type, details } }.\nПокажи точки интеграции logging.\nРазличай validation vs HTTP errors.\nУпомяni tracing ids как опцию.\nДай идею разделения client-friendly vs internal detail."
+    },
+    {
+      "id": "fastapi-19",
+      "label": "TestClient — pytest-фикстура",
+      "description": "тестирование",
+      "detail": "override DB",
+      "text": "Создай app fixture, yielding TestClient с dependency overrides через sqlite.\nПродемонстрируй идею transactional rollback pattern.\nПокажи assert response.json() schema примерно.\nЛегко объясни async client note для newer httpx stacks.\nДобавь marker для разделения integration vs unit."
+    },
+    {
+      "id": "fastapi-20",
+      "label": "OpenAPI tags и summary polish",
+      "description": "документация",
+      "detail": "группировка routes",
+      "text": "Декорируй routers tags и summarize operations для Swagger UI.\nОбъясни влияние include_router prefixes на paths.\nПокажи response description examples.\nУпомяni exporting OpenAPI JSON для clients.\nЗаверши паттерном скрытия internal routes из docs."
+    }
+  ]
+}

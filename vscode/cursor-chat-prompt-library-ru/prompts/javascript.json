@@ -1,0 +1,146 @@
+{
+  "category": "javascript",
+  "categoryLabel": "JavaScript",
+  "prompts": [
+    {
+      "id": "js-01-node-hello",
+      "label": "Node.js: пример Hello World",
+      "description": "сервер Node.js",
+      "detail": "файл index.js и npm init",
+      "text": "Я новичок в Node.js. Создай минимальный проект.\n\n- package.json с name и type module (ESM) ИЛИ CommonJS — выбери один и объясни\n- index.js, логирующий Hello from Node\n- Команды: npm init, node index.js\n\nКратко упомяни версию Node LTS."
+    },
+    {
+      "id": "js-02-dom-counter",
+      "label": "Счётчик кликов в DOM",
+      "description": "браузер",
+      "detail": "Кнопка увеличивает число",
+      "text": "Собери упражнение для новичка в DOM: счётчик кликов.\n\n- index.html с кнопкой и span, показывающим count с 0\n- script.js: клик увеличивает count, вторая кнопка сбрасывает в 0\n- Подключи script с defer\n- Без фреймворков\n\nОбъясни querySelector, addEventListener и textContent."
+    },
+    {
+      "id": "js-03-fetch-json",
+      "label": "fetch() для загрузки JSON",
+      "description": "browser API",
+      "detail": "Показ данных API на странице",
+      "text": "Создай страницу, загружающую JSON через fetch.\n\n- Fetch https://jsonplaceholder.typicode.com/users/1\n- Покажи name и email в HTML после загрузки\n- Сообщение о загрузке и об ошибке при сбое fetch\n- Используй async/await\n\nДай index.html и script.js."
+    },
+    {
+      "id": "js-04-express-hello",
+      "label": "Express: сервер Hello World",
+      "description": "фреймворк Express",
+      "detail": "маршрут GET / и package.json",
+      "text": "Создай минимальный Express-сервер для новичка.\n\n- server.js: GET / возвращает Hello from Express\n- package.json с express и start script\n- Шаги: npm install, npm start, проверка в браузере\n- GET /api/time с текущим ISO-временем в JSON\n\nCommonJS или ESM последовательно — укажи, что выбрал."
+    },
+    {
+      "id": "js-05-react-component",
+      "label": "Каркас React-компонента",
+      "description": "React",
+      "detail": "Vite + один компонент",
+      "text": "Начинаю с React. Собери минимальное приложение через Vite (npm create vite@latest).\n\n- Один компонент App с заголовком и кнопкой-счётчиком (useState)\n- Объясни структуру папок после create\n- Команды установки и dev server\n\nПо возможности по одному файлу за раз; 2–3 предложения про JSX и props."
+    },
+    {
+      "id": "js-06-form-validation",
+      "label": "Валидация формы (vanilla)",
+      "description": "браузер",
+      "detail": "Правила email и password",
+      "text": "Собери форму регистрации с клиентской валидацией (без backend).\n\n- Поля: username (мин. 3 символа), email, password (мин. 8), confirm password\n- При submit: preventDefault, inline-сообщения об ошибках\n- Очищай ошибки при исправлении ввода\n- Только vanilla JS\n\nДай HTML, CSS и JS."
+    },
+    {
+      "id": "js-07-todo-vanilla",
+      "label": "Todo-список (vanilla JS)",
+      "description": "практика DOM",
+      "detail": "Добавить, завершить, удалить задачи",
+      "text": "Создай простой todo для изучения JavaScript.\n\n- Input + Add создаёт элемент списка\n- У каждого: checkbox (complete), delete\n- Завершённые — strikethrough\n- Храни todos в массиве в памяти (localStorage — бонус)\n\nПолный HTML/CSS/JS с короткими комментариями."
+    },
+    {
+      "id": "js-08-es-modules",
+      "label": "ES-модули: import и export",
+      "description": "модули JavaScript",
+      "detail": "файлы math.js и main.js",
+      "text": "Научи ES modules на крошечном примере.\n\n- math.js экспортирует add и multiply\n- main.js импортирует и логирует результаты\n- index.html подключает main.js как type=\"module\"\n- В одном абзаце: named vs default export\n\nТочное дерево файлов и запуск через static server (npx serve или Live Server)."
+    },
+    {
+      "id": "js-09-async-await",
+      "label": "Демо async/await с задержкой",
+      "description": "async",
+      "detail": "Имитация задержки API",
+      "text": "Объясни async/await демо для новичка (Node или браузер).\n\n- fetchUser() ждёт 1 секунду и возвращает { id: 1, name: 'Ada' }\n- async main печатает Loading..., затем user, с try/catch\n- Кратко сравни с цепочками .then()\n\nДай запускаемый код и ожидаемый вывод в консоль."
+    },
+    {
+      "id": "js-10-package-scripts",
+      "label": "npm scripts в package.json",
+      "description": "npm",
+      "detail": "заглушки start, dev, lint",
+      "text": "Объясни scripts в package.json для новичка в JS.\n\n- Пример package.json: start, dev (nodemon или vite), test (placeholder echo)\n- Что делает npm run start vs npx\n- devDependencies vs dependencies с примером каждого\n- .gitignore для node_modules\n\nРеалистичное, но минимальное имя проекта."
+    },
+    {
+      "id": "js-11",
+      "label": "Исправить замыкания в циклах",
+      "description": "функции",
+      "detail": "классический баг let vs var",
+      "text": "В цикле запускаю async-колбэки — у всех элементов неверный index/value.\nОбъясни историческую ловушку var в замыканиях и современный фикс через let или IIFE.\nДай чистый for...of + await для последовательных вызовов.\nКогда уместен Promise.all с map.\nЗаверши чеклистом из 3 пунктов для похожих багов в event listeners."
+    },
+    {
+      "id": "js-12",
+      "label": "Сортировка массивов без сюрпризов",
+      "description": "массивы",
+      "detail": "копия через slice перед sort",
+      "text": "Научи подводным камням sort в JavaScript (уровень подготовки к собеседованию для новичков).\nПокажи, что sort() мутирует на месте, и копирование через slice или spread.\nComparator для чисел и localeCompare для имён.\nСтабильная vs нестабильная сортировка на высоком уровне.\nПредупреди о сравнении объектов без comparator."
+    },
+    {
+      "id": "js-13",
+      "label": "AbortController для отменяемого fetch",
+      "description": "async",
+      "detail": "timeout + отмена пользователем",
+      "text": "Нужен fetch, который можно отменить при уходе со страницы или по Cancel.\nПроведи по AbortController + signal для fetch.\nПаттерн timeout через AbortSignal.timeout, если доступен, с fallback.\nКак отдельно ловить AbortError и сетевые ошибки.\nПример в одном небольшом модуле с комментариями."
+    },
+    {
+      "id": "js-14",
+      "label": "URL и URLSearchParams",
+      "description": "web platform",
+      "detail": "работа с query string",
+      "text": "Сравни ручную сборку query string с URL и URLSearchParams.\nМаленький helper: читать query текущей страницы в браузере и безопасно кодировать новую ссылку.\nПочему decodeURIComponent опасен при неправильном использовании.\nКратко: разрешение base URL через new URL(relative, base).\nОдин пример Node: process.argv vs контекст import.meta.url."
+    },
+    {
+      "id": "js-15",
+      "label": "Intl для дат и чисел",
+      "description": "i18n-lite",
+      "detail": "NumberFormat DateTimeFormat",
+      "text": "Покажи новичкам Intl.NumberFormat и Intl.DateTimeFormat для оформления.\nПримеры: валюта в EUR, compact notation для больших чисел на дашборде, короткий день недели в locale.\nПодводные камни timezone: что API может и не может вывести.\nСравни с анти-паттерном ручной конкатенации строк.\nНа высоком уровне — feature detection для старых браузеров."
+    },
+    {
+      "id": "js-16",
+      "label": "Подклассы Custom Error",
+      "description": "ошибки",
+      "detail": "name stack trace",
+      "text": "Иногда бросаю plain strings — хочу улучшить.\nПокажи class ValidationError extends Error с полем code и правильной цепочкой prototype.\nЗачем instanceof в catch.\nЗахват cause в современных движках при обёртке ошибок.\nПаттерн маппинга ошибок на HTTP-статусы без фреймворков."
+    },
+    {
+      "id": "js-17",
+      "label": "WeakMap для идеи приватной мемоизации",
+      "description": "структуры данных",
+      "detail": "угол garbage collection",
+      "text": "На уровне новичка: Map vs WeakMap и почему ключи — объекты.\nНабросок memoizeByObject(fn) на WeakMap для кэша по объектам без утечек памяти.\nСравни с глобальным Map со строковыми ключами.\nКогда паттерн избыточен.\nБез тяжёлого анализа — интуиция и демо ~15 строк."
+    },
+    {
+      "id": "js-18",
+      "label": "structuredClone для глубоких копий",
+      "description": "объекты",
+      "detail": "ограничения clone",
+      "text": "Научи structuredClone как современную альтернативу JSON.parse(JSON.stringify(obj)).\nЧто клонируется хорошо и что ломается (functions, symbols, DOM nodes).\nСравни shallow copy через spread для вложенных объектов.\nSame-Transferable — только кратко.\nДва микро-примера: вложенный plain object и сохранение Date."
+    },
+    {
+      "id": "js-19",
+      "label": "Ментальная модель event loop",
+      "description": "runtime",
+      "detail": "microtasks vs macrotasks",
+      "text": "Помоги предсказать порядок в консоли для setTimeout, Promise.then и sync-кода.\nОбъясни call stack, task queue и microtask queue простым языком.\nКороткая головоломка с разбором решения.\nПочему await меняет воспринимаемый порядок выполнения.\nСоветы по отладке: breakpoints vs расстановка console.log."
+    },
+    {
+      "id": "js-20",
+      "label": "Import maps в браузере",
+      "description": "ESM",
+      "detail": "обучение bare specifier",
+      "text": "Слышал про import maps для npm-пакетов прямо в браузере без bundler.\nИдея, trade-offs и минимальный index.html со script type importmap.\nКогда новичкам всё ещё лучше Vite.\nCORS для module scripts.\nОдин security footgun с удалёнными URL модулей."
+    }
+  ]
+}

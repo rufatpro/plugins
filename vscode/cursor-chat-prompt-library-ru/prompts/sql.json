@@ -1,0 +1,146 @@
+{
+  "category": "sql",
+  "categoryLabel": "SQL",
+  "prompts": [
+    {
+      "id": "sql-01-select-basics",
+      "label": "Основы SELECT и WHERE",
+      "description": "запросы",
+      "detail": "пример таблицы users",
+      "text": "Я изучаю SQL. Создай обучающий пример с таблицей users.\n\n- CREATE TABLE users (id, name, email, created_at)\n- INSERT 5 sample rows\n- SELECT * и SELECT с фильтром WHERE по age или name\n\nИспользуй синтаксис, совместимый с SQLite, и объясни каждое предложение."
+    },
+    {
+      "id": "sql-02-order-limit",
+      "label": "ORDER BY и LIMIT",
+      "description": "запросы",
+      "detail": "топ-3 новых пользователя",
+      "text": "Расширь урок по таблице users сортировкой и пагинацией.\n\n- ORDER BY created_at DESC\n- LIMIT 3 OFFSET 0\n- Пример: страница 2 с OFFSET 3 LIMIT 3\n\nПокажи ожидаемый порядок результатов в комментариях."
+    },
+    {
+      "id": "sql-03-joins",
+      "label": "INNER JOIN orders и users",
+      "description": "joins",
+      "detail": "две таблицы",
+      "text": "Объясни INNER JOIN для начинающих.\n\n- таблицы: users и orders (user_id foreign key)\n- Пример данных и запрос, выводящий order id, user name, amount\n- Диаграмма в ASCII или тексте: как JOIN сопоставляет строки\n\nДобавь пример, где у пользователя нет заказов (и появится ли он в результате)."
+    },
+    {
+      "id": "sql-04-left-join",
+      "label": "LEFT JOIN всех users с orders",
+      "description": "joins",
+      "detail": "включая users без orders",
+      "text": "Объясни LEFT JOIN vs INNER JOIN на той же схеме users/orders.\n\n- Запрос, выводящий каждого user и order amount или NULL\n- Когда использовать LEFT JOIN в реальных приложениях (2 примера)\n\nСохраняй синтаксис SQLite."
+    },
+    {
+      "id": "sql-05-aggregate",
+      "label": "COUNT, SUM и GROUP BY",
+      "description": "агрегатные функции",
+      "detail": "заказы по пользователям",
+      "text": "Объясни агрегатные функции для начинающего.\n\n- COUNT(*) orders per user_id с GROUP BY\n- HAVING для фильтрации групп с count > 1\n- SUM(amount) per user\n\nПриведи примеры таблиц и полные запросы."
+    },
+    {
+      "id": "sql-06-insert-update",
+      "label": "Безопасный INSERT и UPDATE",
+      "description": "DML",
+      "detail": "изменение email с WHERE",
+      "text": "Покажи INSERT и UPDATE с советами по безопасности.\n\n- INSERT одной строки с явным указанием столбцов\n- UPDATE email WHERE id = 1\n- Предупреди об UPDATE без WHERE с наглядным примером в комментарии\n\nУпомяни транзакции в одном абзаце (BEGIN/COMMIT)."
+    },
+    {
+      "id": "sql-07-delete",
+      "label": "DELETE и паттерн soft delete",
+      "description": "DML",
+      "detail": "столбец deleted_at",
+      "text": "Объясни DELETE и паттерн soft-delete.\n\n- Hard DELETE с WHERE\n- Альтернатива: deleted_at TIMESTAMP NULL\n- SELECT, скрывающий soft-deleted строки\n\nКогда команды предпочитают soft delete? Краткий ответ."
+    },
+    {
+      "id": "sql-08-primary-foreign",
+      "label": "Primary и foreign keys",
+      "description": "схема",
+      "detail": "posts и comments",
+      "text": "Спроектируй небольшую схему блога для изучения ключей.\n\n- posts (id PK, title, body)\n- comments (id PK, post_id FK, text)\n- CREATE TABLE с ограничениями\n- Один невалидный INSERT, нарушающий FK — объясни ошибку\n\nСинтаксис SQLite."
+    },
+    {
+      "id": "sql-09-indexes",
+      "label": "Индексы простым языком",
+      "description": "производительность",
+      "detail": "индекс на email",
+      "text": "Объясни индексы базы данных для начинающего (без глубоких внутренностей).\n\n- Аналогия: указатель в книге vs чтение каждой страницы\n- CREATE INDEX on users(email)\n- Когда индексы помогают и когда слишком много вредят\n\nИспользуй небольшой пример запроса, который выигрывает от индекса."
+    },
+    {
+      "id": "sql-10-subquery",
+      "label": "Подзапрос в WHERE",
+      "description": "подзапросы",
+      "detail": "users, оформившие заказы",
+      "text": "Познакомь с подзапросами на практическом примере.\n\n- Найди users, у которых есть хотя бы один order, используя IN (SELECT user_id FROM orders)\n- Кратко перепиши с EXISTS\n- Какой стиль часто понятнее для начинающих?\n\nВключи CREATE + INSERT с примерными данными."
+    },
+    {
+      "id": "sql-11",
+      "label": "HAVING vs WHERE с агрегатами",
+      "description": "агрегация",
+      "detail": "фильтр после GROUP BY",
+      "text": "Я путаю WHERE и HAVING при фильтрации сгруппированных результатов.\nИспользуй пример таблицы orders: общая сумма трат на customer, покажи только customers с суммой больше $500.\nОбъясни порядок выполнения концептуально (FROM → WHERE → GROUP BY → HAVING).\nПриведи неправильный запрос и исправленный рядом.\nДобавь одно предложение об ограничениях alias в HAVING для начинающих."
+    },
+    {
+      "id": "sql-12",
+      "label": "Паттерны COALESCE и NULLIF",
+      "description": "null",
+      "detail": "безопасные значения по умолчанию",
+      "text": "Объясни COALESCE для значений по умолчанию и NULLIF для превращения sentinel-значений в NULL.\nПример: показать display_name или username или email.\nПокажи NULLIF для пустой строки vs очистки настоящего null перед unique constraints.\nСравни с многословностью CASE.\nВключи подводный камень о расширении типов COALESCE в некоторых СУБД (на высоком уровне)."
+    },
+    {
+      "id": "sql-13",
+      "label": "Читаемость Common Table Expressions",
+      "description": "CTE",
+      "detail": "предложение WITH",
+      "text": "Перепиши запутанный вложенный подзапрос с помощью именованных CTE в WITH для monthly active users.\nОбъясни, как CTE улучшают читаемость, но не всегда производительность.\nПокажи цепочку из двух CTE, где второй зависит от первого.\nУпомяни рекурсивные CTE только как тизер с однострочной идеей примера.\nДержи SQL диалект в основном ANSI-подобным."
+    },
+    {
+      "id": "sql-14",
+      "label": "Введение в оконные функции ROW_NUMBER",
+      "description": "аналитика",
+      "detail": "PARTITION BY",
+      "text": "Познакомь с ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY created_at DESC) для выбора последней строки в группе.\nСравни с паттернами GROUP BY max.\nОбъясни, чем DISTINCT ON (Postgres) отличается — бонусная заметка.\nПриведи формулировку задачи dedup, понятную начинающим.\nПредупреди о необходимости ORDER BY для детерминированного ранжирования."
+    },
+    {
+      "id": "sql-15",
+      "label": "CASE-выражения в SELECT",
+      "description": "логика",
+      "detail": "сопоставленные метки",
+      "text": "Используй CASE для группировки ages или order statuses в человекочитаемые метки внутри SQL.\nПокажи простой searched CASE vs expression CASE.\nОсторожно объясни ожидания short-circuit evaluation в зависимости от СУБД.\nПриведи пример альтернативы с join к справочной таблице.\nЗаверши советами по стилю для читаемого форматирования CASE."
+    },
+    {
+      "id": "sql-16",
+      "label": "Индексы и порядок столбцов в WHERE",
+      "description": "производительность",
+      "detail": "интуиция составного индекса",
+      "text": "Объясни составной индекс (a,b) vs (b,a) на запросе, который может использовать один, но не другой.\nОбъясни covering indexes концептуально, без глубоких внутренностей.\nСвяжи с EXPLAIN как «фонариком в чёрном ящике» — на что смотреть в первую очередь.\nПеречисли типичную ловушку с условием OR.\nПоощряй измерения на реалистичных объёмах данных."
+    },
+    {
+      "id": "sql-17",
+      "label": "Soft delete с идеей partial unique index",
+      "description": "моделирование",
+      "detail": "паттерн deleted_at",
+      "text": "Смоделируй soft deletes с timestamps deleted_at.\nОбъясни, почему unique emails требуют особой обработки, если существует несколько неактивных строк.\nОпиши partial unique indexes там, где поддерживается, как эскиз решения.\nСравни с компромиссом отдельной archive table.\nДержи рекомендации концептуальными для начинающих, переходящих от hard DELETE."
+    },
+    {
+      "id": "sql-18",
+      "label": "История ACID транзакций на примере перевода",
+      "description": "целостность",
+      "detail": "BEGIN COMMIT",
+      "text": "Расскажи классическую историю дебет/кредит денежного перевода, требующего транзакций.\nПокажи BEGIN; два update; COMMIT; и ROLLBACK при ошибке в псевдокоде.\nОбъясни уровни изоляции только как тизер словаря.\nСвяжи с ORM, оборачивающими units of work.\nОтметь возможность deadlock на высоком уровне."
+    },
+    {
+      "id": "sql-19",
+      "label": "Views для повторяющихся сложных joins",
+      "description": "моделирование",
+      "detail": "read-only представление",
+      "text": "Создай view customer_order_summary, объединяющий customers, orders, aggregates.\nОбсуди права доступа и сокрытие сложности столбцов для reporting users.\nУпомяни materialized views как инструмент производительности.\nПредупреди, что views не заменяют правильную индексацию.\nКратко укажи, когда предпочесть view vs stored procedure."
+    },
+    {
+      "id": "sql-20",
+      "label": "Anti-join для отсутствующих записей",
+      "description": "паттерны",
+      "detail": "стиль NOT EXISTS",
+      "text": "Найди users, которые никогда не оформляли order, используя LEFT JOIN ... WHERE order.id IS NULL.\nПокажи эквивалентный паттерн NOT EXISTS и почему он понятнее некоторым командам.\nОбъясни сюрпризы обработки NULL в фильтрах OUTER JOIN.\nПриведи второй пример: products, которые никогда не продавались.\nЗаверши предупреждением о дубликатах, раздувающих строки LEFT JOIN."
+    }
+  ]
+}

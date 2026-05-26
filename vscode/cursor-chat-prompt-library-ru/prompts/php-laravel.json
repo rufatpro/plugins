@@ -1,0 +1,146 @@
+{
+  "category": "php-laravel",
+  "categoryLabel": "PHP / Laravel",
+  "prompts": [
+    {
+      "id": "laravel-01",
+      "label": "Новый проект Laravel",
+      "description": "настройка",
+      "detail": "composer create-project",
+      "text": "Установи Laravel для новичка на Windows.\n\n- composer create-project, копия .env, php artisan key:generate\n- php artisan serve\n- Объясни первый route в routes/web.php\n\nПо возможности в стиле Laravel 11."
+    },
+    {
+      "id": "laravel-02",
+      "label": "Blade-шаблон hello",
+      "description": "views",
+      "detail": "resources/views",
+      "text": "Создай Blade view и верни из route.\n\n- Кастомизация welcome с layout @section @yield\n\nПокажи routes и два blade-файла."
+    },
+    {
+      "id": "laravel-03",
+      "label": "Migration и Eloquent model",
+      "description": "база данных",
+      "detail": "posts table",
+      "text": "Создай модель Post с migration title и body.\n\n- php artisan make:model -m\n- migrate, tinker — создай один post\n\nПросто объясни Eloquent ORM."
+    },
+    {
+      "id": "laravel-04",
+      "label": "Resource controller — метод index",
+      "description": "mvc",
+      "detail": "PostController",
+      "text": "Resource controller для posts: только index и show.\n\n- Route::resource с ограниченными actions\n- Возвращай Blade views с compact posts\n\nПеречисли использованные artisan commands."
+    },
+    {
+      "id": "laravel-05",
+      "label": "Валидация формы через Request",
+      "description": "формы",
+      "detail": "store post",
+      "text": "Сохранение post с правилами валидации: title required max 255.\n\n- Form Request или validate в controller\n- Покажи ошибки в Blade @error\n\nУпомяni CSRF @csrf."
+    },
+    {
+      "id": "laravel-06",
+      "label": "Обзор Auth Breeze",
+      "description": "auth",
+      "detail": "starter kit",
+      "text": "Объясни Laravel Breeze для login/register на высоком уровне.\n\n- composer require, npm build, migrations\n- Какие routes появляются\n\nНе полный install log — карта обучения."
+    },
+    {
+      "id": "laravel-07",
+      "label": "API routes: введение в Sanctum",
+      "description": "api",
+      "detail": "json tokens",
+      "text": "Набросок API + Sanctum token auth для SPA.\n\n- routes/api.php GET /user с auth:sanctum\n- Разница web vs api middleware\n\nКонцептуальные шаги."
+    },
+    {
+      "id": "laravel-08",
+      "label": "Seeder с fake data",
+      "description": "база данных",
+      "detail": "DatabaseSeeder",
+      "text": "Создай factory и seeder для 20 fake posts.\n\n- php artisan db:seed\n- Используй Faker через factory\n\nЗачем seeders помогают в разработке."
+    },
+    {
+      "id": "laravel-09",
+      "label": "Концепция Queue jobs",
+      "description": "очереди",
+      "detail": "ShouldQueue",
+      "text": "Объясни queues и jobs без полной настройки Redis.\n\n- Когда dispatch медленной отправки mail\n- Упомяni database driver\n\nДиаграмма опционально."
+    },
+    {
+      "id": "laravel-10",
+      "label": "Деплой на shared hosting",
+      "description": "деплой",
+      "detail": "public folder",
+      "text": "Основы деплоя Laravel: public docroot, storage link, optimize.\n\n- php artisan config:cache на сервере\n- Никогда не expose .env\n\nЧеклист в пунктах."
+    },
+    {
+      "id": "laravel-11",
+      "label": "Implicit route model binding — привязка",
+      "description": "маршрутизация",
+      "detail": "type-hint injection",
+      "text": "Объясни implicit route model binding для {post:slug} или id.\nПокажи кастомизацию route key signatures.\nОбработай ModelNotFoundException с graceful 404.\nСравни с explicit binding registrations.\nЛёгко упомяni localized route keys."
+    },
+    {
+      "id": "laravel-12",
+      "label": "FormRequest authorize плюс validate",
+      "description": "HTTP",
+      "detail": "thin controllers",
+      "text": "Создай PostStoreRequest с валидацией title и body и authorize() boolean.\nПокажи кастомизацию messages.\nОбъясни dependency injection внутри requests.\nСвяжи с размещением Policy checks.\nNarrative примера skinny controller."
+    },
+    {
+      "id": "laravel-13",
+      "label": "Eloquent Attribute — accessors и mutators",
+      "description": "ORM",
+      "detail": "modern casts",
+      "text": "Продемонстрируй паттерн Attribute::make accessor mutator.\nСравни с многословностью старого getFooAttribute.\nТонко покажи JSON column casting.\nУпомяni immutable date casting.\nPitfalls отладки: dd случайно в production."
+    },
+    {
+      "id": "laravel-14",
+      "label": "Database transactions — closure-паттерн",
+      "description": "целостность",
+      "detail": "automatic rollback",
+      "text": "Оберни transfers в DB::transaction.\nОбъясни rollback при exceptions.\nОпциональный teaser deadlock retries.\nСвяжи с проверкой final balances в Pest или PHPUnit.\nTeaser pessimistic locking."
+    },
+    {
+      "id": "laravel-15",
+      "label": "Events и listeners в очереди",
+      "description": "async",
+      "detail": "ShouldQueue listener",
+      "text": "Fire OrderShipped event с listener, реализующим ShouldQueue.\nОбсуди мониторинг failed jobs.\nСравни с ease debugging синхронных listeners.\nОпционально упомяni subscriber class grouping.\nЛёгкая связь с domain boundaries."
+    },
+    {
+      "id": "laravel-16",
+      "label": "Policy abilities в Blade",
+      "description": "auth",
+      "detail": "@can directives",
+      "text": "Зарегистрируй PostPolicy update с проверкой ownership.\nИспользуй @can в Blade views вместе с @cannot.\nПокажи Gate authorize в controllers.\nОбъясни разницу слоёв auth middleware.\nЛёгко упомяni variance streamlined Laravel skeleton."
+    },
+    {
+      "id": "laravel-17",
+      "label": "Vite plugin с artisan serve duo",
+      "description": "frontend",
+      "detail": "hot refresh",
+      "text": "Объясни mental model pairing npm run dev с php artisan serve.\nПокажи Blade directives @vite для built assets.\nКратко упомяni исторические pitfalls APP_URL host trust.\nЛаконично свяжи с миграцией от Mix.\nПеречисли sequencing production vite build."
+    },
+    {
+      "id": "laravel-18",
+      "label": "RateLimiter — конфигурация middleware",
+      "description": "безопасность",
+      "detail": "named limiters",
+      "text": "Определи RateLimiter::for для keyed APIs с Redis driver concept.\nПодключи throttle middleware routes.\nРазличай burst vs sustained.\nОсновы Retry-After header exposure.\nОпционально кастомизация response JSON."
+    },
+    {
+      "id": "laravel-19",
+      "label": "optimize clear — playbook кэшей",
+      "description": "ops",
+      "detail": "config route view",
+      "text": "Перечисли config route view optimize clears при загадочных caches.\nОбъясни пользу production config caching и caveats забытых env.\nПосоветуй deploy scripts с codified clears.\nЗаметка queue restart после deploy.\nОпционально supervisors."
+    },
+    {
+      "id": "laravel-20",
+      "label": "API Resource transformers: маскировка полей",
+      "description": "JSON",
+      "detail": "presentation layer",
+      "text": "Создай PostResource, маскирующий internal columns и формирующий outward JSON responses.\nПокажи conditional wrapping при appended relationships.\nКратко свяжи с Pagination Resource collections.\nОпционально merging additional meta.\nЛёгкое сравнение с general transformer libraries."
+    }
+  ]
+}

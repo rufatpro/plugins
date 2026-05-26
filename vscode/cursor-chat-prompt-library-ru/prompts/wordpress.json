@@ -1,0 +1,146 @@
+{
+  "category": "wordpress",
+  "categoryLabel": "WordPress",
+  "prompts": [
+    {
+      "id": "wp-01",
+      "label": "Локальная установка WordPress",
+      "description": "настройка",
+      "detail": "Local WP",
+      "text": "Установи WordPress локально через Local WP или Docker для разработки.\n\n- Admin login, смена permalink structure\n\nШаги для Windows."
+    },
+    {
+      "id": "wp-02",
+      "label": "Posts vs Pages — записи и страницы",
+      "description": "контент",
+      "detail": "editor",
+      "text": "Объясни разницу posts (блог) vs статические pages.\n\n- Создай пример About page и Hello post\n\nОсновы block editor."
+    },
+    {
+      "id": "wp-03",
+      "label": "Child theme — кастомизация",
+      "description": "themes",
+      "detail": "child theme",
+      "text": "Зачем нужен child theme и как создать style.css с Template header.\n\n- Безопасное переопределение одного template\n\nНа высоком уровне."
+    },
+    {
+      "id": "wp-04",
+      "label": "Установка плагина Akismet",
+      "description": "plugins",
+      "detail": "spam",
+      "text": "Установи и настрой comment spam plugin концептуально.\n\n- Предупреждение: ставь только доверенные plugins\n\nЗаметка о безопасности."
+    },
+    {
+      "id": "wp-05",
+      "label": "Custom post type — свой тип записи",
+      "description": "разработка",
+      "detail": "functions.php",
+      "text": "Зарегистрируй custom post type 'book' в theme functions.php snippet.\n\n- show_in_rest true для block editor\n\nКод в functions.php."
+    },
+    {
+      "id": "wp-06",
+      "label": "Схема WooCommerce store",
+      "description": "woocommerce",
+      "detail": "products",
+      "text": "Опиши шаги запуска небольшого WooCommerce shop.\n\n- Products, payments plugin, shipping zones\n\nНе юридическая/налоговая консультация."
+    },
+    {
+      "id": "wp-07",
+      "label": "Backup и обновление",
+      "description": "обслуживание",
+      "detail": "updraft",
+      "text": "Backup перед обновлением plugins и core.\n\n- Рекомендация staging site\n\nЧеклист."
+    },
+    {
+      "id": "wp-08",
+      "label": "Основы security hardening",
+      "description": "безопасность",
+      "detail": "wp-admin",
+      "text": "WordPress security для новичков: сильный admin password, limit login attempts, скрытие wp-admin от bots концептуально.\n\n- Важность updates\n\n5 пунктов."
+    },
+    {
+      "id": "wp-09",
+      "label": "Миграция local на hosting",
+      "description": "деплой",
+      "detail": "export",
+      "text": "Миграция local WordPress на shared hosting через export или Duplicator plugin — обзор.\n\n- Проблема search-replace URLs\n\nШаги."
+    },
+    {
+      "id": "wp-10",
+      "label": "Headless WordPress REST — обзор",
+      "description": "api",
+      "detail": "wp-json",
+      "text": "Получи posts из /wp-json/wp/v2/posts через Next.js fetch.\n\n- Когда headless имеет смысл\n\nПример fetch URL."
+    },
+    {
+      "id": "wp-11",
+      "label": "Hooks: actions vs filters — различие",
+      "description": "WordPress internals",
+      "detail": "priorities",
+      "text": "Различай actions (побочные эффекты) vs filters (преобразование значений).\nОбъясни hook priority integers и сюрпризы порядка.\nПокажи крошечный functions.php example, добавляющий body class.\nУпомяni симметрию remove_action/remove_filter.\nПоощряй child themes для реальных изменений сайта."
+    },
+    {
+      "id": "wp-12",
+      "label": "Правильный enqueue scripts и styles",
+      "description": "front-end hygiene",
+      "detail": "dependencies list",
+      "text": "Объясни wp_enqueue_script/register с dependency arrays.\nОбъясни компромиссы in_footer vs header placement.\nУпомяni versioning файлов с filemtime-like cache busting.\nСпокойно обсуди отладку dequeue conflicts.\ndefer/async nuances — углублённое чтение."
+    },
+    {
+      "id": "wp-13",
+      "label": "Nonces для admin forms CSRF",
+      "description": "security basics",
+      "detail": "verify on server",
+      "text": "Продемонстрируй wp_nonce_field в паре с nonce verification handlers.\nПодчеркни, что capabilities checks идут вместе с nonces.\nКратко свяжи с AJAX admin flows.\nУпомяni sanitizing и validating всех inputs в любом случае.\nКратко обозначь различия REST nonce без путаницы."
+    },
+    {
+      "id": "wp-14",
+      "label": "WP_Query для listing pages",
+      "description": "loop control",
+      "detail": "meta_query intuition",
+      "text": "Собери WP_Query, listing posts с фильтром по taxonomy или meta ответственно.\nОбъясни pagination с сохранением query vars.\nКратко предупреди про suppress_filters.\nУпомяni избегание дорогого meta_query на огромных сайтах.\nПосоветуй читаемо структурировать args arrays."
+    },
+    {
+      "id": "wp-15",
+      "label": "Transients для краткоживущих кэшей",
+      "description": "производительность",
+      "detail": "invalidate on change",
+      "text": "Покажи хранение вычисленных фрагментов через set_transient.\nОбсуди сброс кэшей на on_save_post hooks.\nУпомяni persistent object caches как опциональную инфраструктуру.\nПредупреди о stale UX при слишком длинном TTL.\nПосоветуй измерять перед кэшированием всего подряд."
+    },
+    {
+      "id": "wp-16",
+      "label": "Capabilities и custom roles минимально",
+      "description": "authorization",
+      "detail": "least privilege",
+      "text": "Объясни mapping capabilities к roles для custom post types.\nПредупреди против раздачи administrator без нужды.\nКратко упомяni multisite differences.\nСвяжи с операционной нагрузкой over-permissioning.\nПоощряй тестирование под non-admin accounts."
+    },
+    {
+      "id": "wp-17",
+      "label": "theme.json — лёгкие design tokens",
+      "description": "block themes",
+      "detail": "preset palette typography",
+      "text": "Объясни настройку global presets vs разбросанный CSS.\nЧестно упомяni постепенное adoption из classic themes.\nBlock locking — опциональный тизер.\nПосоветуй аккуратно версионировать изменения theme.\nПоощряй читаемость вместо cleverness."
+    },
+    {
+      "id": "wp-18",
+      "label": "Миф table prefix — калибровка ожиданий",
+      "description": "hardening expectations",
+      "detail": "важны реальные защиты",
+      "text": "Объясни, что переименование DB prefix даёт лишь minor obscurity.\nПодчеркни: strong credentials, salts, updates, backups важнее.\nКратко упомяni prepared statements через WP APIs.\nПредупреди против случайных правок production DB.\nУкажи на reputable security guides."
+    },
+    {
+      "id": "wp-19",
+      "label": "wp-cli search-replace при миграции",
+      "description": "operations",
+      "detail": "dry-run first",
+      "text": "Проведи search-replace с --dry-run для смены домена.\nУпомяni ловушки serialized data — новичкам лучше trusted tools/options.\nПосоветуй вручную проверить options tables после.\nПодчеркни mantra backups prior.\nПоощряй репетиции на staging clones."
+    },
+    {
+      "id": "wp-20",
+      "label": "Application Passwords для интеграций",
+      "description": "API automation",
+      "detail": "scoped tokens",
+      "text": "Введи application passwords для machine clients.\nОбъясни отзыв tokens при rotation.\nУпомяni rate limits, зависящие от hosting.\nПосоветуй лёгкое логирование integration actions.\nOAuth providers — опциональное продвинутое чтение."
+    }
+  ]
+}

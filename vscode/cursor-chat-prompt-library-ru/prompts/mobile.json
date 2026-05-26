@@ -1,0 +1,146 @@
+{
+  "category": "mobile",
+  "categoryLabel": "Мобильная разработка (Flutter и RN)",
+  "prompts": [
+    {
+      "id": "mobile-01",
+      "label": "Первое приложение Flutter",
+      "description": "фреймворк Flutter",
+      "detail": "команда flutter create",
+      "text": "Создай Flutter counter app с объяснением lib/main.dart.\n\n- flutter create, hot reload\n- StatefulWidget increment button\n\nОбзор установки SDK."
+    },
+    {
+      "id": "mobile-02",
+      "label": "Вёрстка Flutter: Column и Row",
+      "description": "фреймворк Flutter",
+      "detail": "виджеты",
+      "text": "Собери profile card с Column, Row, Image.network placeholder.\n\n- Padding и Expanded explained\n\nOne screen code."
+    },
+    {
+      "id": "mobile-03",
+      "label": "Навигация Flutter: push",
+      "description": "фреймворк Flutter",
+      "detail": "метод Navigator.push",
+      "text": "Два route Home и Details с push/pop.\n\n- MaterialApp routes map или Navigator 2 — только кратко\n\nSimple imperative navigation."
+    },
+    {
+      "id": "mobile-04",
+      "label": "Старт React Native Expo",
+      "description": "фреймворк React Native",
+      "detail": "команда npx create-expo-app",
+      "text": "Запусти Expo app с TypeScript template.\n\n- npx create-expo-app, npm start, scan QR\n- Edit App.tsx text\n\nWindows + Android emulator note."
+    },
+    {
+      "id": "mobile-05",
+      "label": "RN: View, Text и StyleSheet",
+      "description": "фреймворк React Native",
+      "detail": "компоненты",
+      "text": "Screen с View, Text, Pressable styled via StyleSheet.\n\n- Flexbox similar to web\n\nExpo snippet."
+    },
+    {
+      "id": "mobile-06",
+      "label": "RN: FlatList с данными",
+      "description": "фреймворк React Native",
+      "detail": "список",
+      "text": "FlatList of items с keyExtractor и renderItem.\n\n- Pull sample JSON из const array\n\nPerformance tip one line."
+    },
+    {
+      "id": "mobile-07",
+      "label": "Flutter: fetch через http",
+      "description": "фреймворк Flutter",
+      "detail": "виджет async FutureBuilder",
+      "text": "Load post из JSON placeholder с http и FutureBuilder.\n\n- loading и error UI states\n\nAdd dependency pubspec."
+    },
+    {
+      "id": "mobile-08",
+      "label": "RN: fetch в useEffect",
+      "description": "фреймворк React Native",
+      "detail": "вызов fetch API",
+      "text": "Fetch users в useEffect с loading state в Expo app.\n\n- Same API as web fetch\n\nFunctional component."
+    },
+    {
+      "id": "mobile-09",
+      "label": "Иконка и splash в Expo",
+      "description": "платформа Expo",
+      "detail": "файл app.json",
+      "text": "Configure app name icon и splash в app.json для Expo.\n\n- asset paths\n- Build preview optional\n\nSteps."
+    },
+    {
+      "id": "mobile-10",
+      "label": "Flutter vs RN: выбор",
+      "description": "сравнение",
+      "detail": "решение",
+      "text": "Сравни Flutter vs React Native для новичка с web background.\n\n- Learning curve, job market, native modules\n- Neutral 5 bullet comparison\n\nNo flame war."
+    },
+    {
+      "id": "mobile-11",
+      "label": "InheritedWidget во Flutter",
+      "description": "основы Flutter",
+      "detail": "поиск через context",
+      "text": "InheritedWidget как primitive pattern за многими Flutter «magic» APIs.\nСвязь с Theme.of(context).\nRebuild boundaries на beginner level.\nProvider как ergonomics поверх inherited patterns.\nНовичкам не нужно memorize всё перед building UI."
+    },
+    {
+      "id": "mobile-12",
+      "label": "Основы Gesture Handler в RN",
+      "description": "фреймворк React Native",
+      "detail": "плавные взаимодействия",
+      "text": "Почему some gestures benefit from native-driven handling.\n«JS thread busy» freezes и UX symptoms, которые чувствуют users.\nНачни с simpler Pressable basics перед gestures.\nexpo-router navigation — lightly if relevant.\nProfiling, когда interactions feel sluggish."
+    },
+    {
+      "id": "mobile-13",
+      "label": "Deep links и universal links",
+      "description": "навигация",
+      "detail": "открытие нужного экрана",
+      "text": "URL schemes vs HTTPS universal links (universal links требуют больше setup).\nDeferred deep linking — только vocabulary.\nSimulator vs device mismatches.\nPrivacy respecting campaign parameters.\nDocument supported routes для testers."
+    },
+    {
+      "id": "mobile-14",
+      "label": "Эскизы offline-first",
+      "description": "данные",
+      "detail": "синхронизация — сложная часть",
+      "text": "Хранение данных locally offline и sync later.\nConflict resolution options — headline level.\nOffline-first тяжелее, чем caching.\nНачни с online-only MVP для обучения.\nSQLite или embedded stores — possibilities без picking a winner."
+    },
+    {
+      "id": "mobile-15",
+      "label": "UX разрешения push-уведомлений",
+      "description": "разрешения",
+      "detail": "спрашивать после ценности",
+      "text": "Prompt notification permission только после показа, зачем это нужно.\nDeclines и degraded features с graceful UI fallback.\nRespecting OS settings redirects.\nInstrumentation — advanced improvement.\nPractical tone, not spammy."
+    },
+    {
+      "id": "mobile-16",
+      "label": "Обновление при foreground/background",
+      "description": "жизненный цикл",
+      "detail": "обновление AppState",
+      "text": "Реакция при resume из background для refresh stale data.\nDebouncing refreshes при быстром tab switching.\nBattery/network friendliness кратко.\nBiometric lock overlays — edge-case pointer.\nConceptual state machine «active/inactive/background»."
+    },
+    {
+      "id": "mobile-17",
+      "label": "Safe area и вырезы",
+      "description": "вёрстка",
+      "detail": "учёт вырезов устройства",
+      "text": "Respecting safe-area insets для notches и rounded corners.\nFlutter SafeArea/MediaQuery.padding vs RN SafeAreaView patterns.\nMagic numbers tuned к one phone model — предупреждение.\nKeyboards covering inputs — sibling problem.\nTesting на small и large phones."
+    },
+    {
+      "id": "mobile-18",
+      "label": "Осторожность с OTA-обновлениями",
+      "description": "доставка",
+      "detail": "связка JS и native",
+      "text": "OTA-style JS updates vs full store releases.\nStore policy realities — headline level.\nRollback strategies и staged rollouts словами.\nNative module mismatches ломают OTA bundles.\nVersioning discipline между native и JS layers."
+    },
+    {
+      "id": "mobile-19",
+      "label": "Профилирование jank по-быстрому",
+      "description": "производительность",
+      "detail": "измерять до переписывания",
+      "text": "Различай animation jank vs slow network spinner waits.\nXcode Instruments / Android Studio Profiler и Flutter DevTools/React DevTools analogs.\nProfiling release builds periodically.\nMicro-optimization during prototyping — предупреждение.\nOne concrete profiling scenario для practice."
+    },
+    {
+      "id": "mobile-20",
+      "label": "Локализация листинга в сторе",
+      "description": "полировка релиза",
+      "detail": "скриншоты и текст",
+      "text": "Tailoring screenshots и store text для locales, которые реально поддерживаешь.\nPlatform-required dimensions.\nHonest descriptions и changelog habits.\nPhased rollout percentages как risk reducer.\nLight: not full ASO marketing."
+    }
+  ]
+}

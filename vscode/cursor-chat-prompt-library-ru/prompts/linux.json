@@ -1,0 +1,146 @@
+{
+  "category": "linux",
+  "categoryLabel": "Linux и Bash",
+  "prompts": [
+    {
+      "id": "linux-01",
+      "label": "Основные shell-команды",
+      "description": "основы",
+      "detail": "команды ls, cd, pwd",
+      "text": "Научи 15 основным Linux-командам для разработчиков, новичков в терминале.\n\n- ls, cd, pwd, mkdir, rm, cp, mv, cat, less, grep, chmod, man\n- По одному примеру каждой\n\nПредполагай Ubuntu или WSL."
+    },
+    {
+      "id": "linux-02",
+      "label": "Bash-скрипт: переменные",
+      "description": "скрипты bash",
+      "detail": "файл hello.sh",
+      "text": "Напиши hello.sh с переменными и echo.\n\n- shebang, chmod +x\n- позиционные параметры $1\n\nБезопасное quoting: double vs single."
+    },
+    {
+      "id": "linux-03",
+      "label": "if и циклы в Bash",
+      "description": "скрипты bash",
+      "detail": "цикл for file in",
+      "text": "Скрипт, который перебирает *.txt файлы и считает строки.\n\n- if [ -f ], for loop, wc -l\n\nДобавь комментарии для новичков."
+    },
+    {
+      "id": "linux-04",
+      "label": "grep и find",
+      "description": "поиск",
+      "detail": "команда find . -name",
+      "text": "Найди все .py файлы в проекте и ищи TODO через grep -r.\n\n- Объясни pipes |\n\nПрактические примеры."
+    },
+    {
+      "id": "linux-05",
+      "label": "Основы chmod и chown",
+      "description": "права",
+      "detail": "режим 755",
+      "text": "Объясни rwx permissions и chmod 755 для скрипта.\n\n- Чтение ls -l: drwxr-xr-x\n- Никогда chmod 777 в production — предупреждение\n\nКороткий урок."
+    },
+    {
+      "id": "linux-06",
+      "label": "curl: тест API",
+      "description": "сеть",
+      "detail": "запрос curl -X POST",
+      "text": "Примеры curl GET и POST JSON на localhost API.\n\n- Headers Content-Type application/json\n- -d body file\n\nДля тестирования FastAPI или Express."
+    },
+    {
+      "id": "linux-07",
+      "label": "SSH: подключение к серверу",
+      "description": "протокол ssh",
+      "detail": "аутентификация по ключу",
+      "text": "Руководство для новичков: ssh user@host и ssh-keygen.\n\n- Концепция копирования public key на сервер\n- Config file ~/.ssh/config Host alias\n\nГигиена безопасности."
+    },
+    {
+      "id": "linux-08",
+      "label": "Обзор сервиса systemd",
+      "description": "сервисы",
+      "detail": "unit-файл",
+      "text": "Что такое systemd и простой service unit для Node app (концептуально).\n\n- systemctl start stop status\n- Не полное production hardening\n\nТолько outline."
+    },
+    {
+      "id": "linux-09",
+      "label": "tail и journalctl: логи",
+      "description": "логи",
+      "detail": "отладка сервиса",
+      "text": "Читай логи через journalctl -u myapp -f и tail -f file.log.\n\n- При отладке failed deploy\n\nШпаргалка из 5 команд."
+    },
+    {
+      "id": "linux-10",
+      "label": "WSL2 на Windows для разработки",
+      "description": "среда wsl",
+      "detail": "дистрибутив Ubuntu",
+      "text": "Настрой WSL2 для веб-разработки на Windows.\n\n- Установи Ubuntu, git, node, docker опционально\n- Доступ к файлам из Windows path /mnt/c/\n\nТипичные pitfalls."
+    },
+    {
+      "id": "linux-11",
+      "label": "journalctl: следование за unit",
+      "description": "логи",
+      "detail": "ограниченный поиск",
+      "text": "Покажи journalctl -u nginx -f с сужением since timestamps.\nОбъясни priority shorthands entry levels.\nОпционально — syslog bridges.\nКратко — различия rotation philosophies.\nСвяжи с mental workflow systemctl status."
+    },
+    {
+      "id": "linux-12",
+      "label": "ss: современный список сокетов",
+      "description": "сеть",
+      "detail": "диагностика слушателей",
+      "text": "Представь ss -tlnp для listing TCP listeners — кратко, лучше устаревшей netstat story.\nИнтерпретируй PID program column с осторожностью — ambiguous packaging.\nЛёгко упомяни firewall interplay ufw nftables.\nПосоветуй различать binding localhost versus all interfaces.\nПредупреди об интерпретации Docker forwarded ports."
+    },
+    {
+      "id": "linux-13",
+      "label": "tar: архивы и исключения",
+      "description": "файлы",
+      "detail": "без node_modules",
+      "text": "Научи gzipped archives с selective exclude огромных директорий.\nОбъясни trailing slash semantics — осторожно, impactful.\nПроверяй archive listing table dry runs.\nОпционально — xz versus gzip compression trade словами.\nОтработай restores на fresh directory."
+    },
+    {
+      "id": "linux-14",
+      "label": "rsync: дельты по SSH",
+      "description": "синхронизация",
+      "detail": "инкрементальные бэкапы",
+      "text": "Покажи rsync mirrored trees через remote SSH incrementally — ярко предупреди о trailing slashes nuance.\nОпционально — throttle bandwidth limiting.\nСравни с brute scp duplication для ясности.\nОсторожно с verifying host keys trust establishment.\nСвяжи с backup verification spot checks."
+    },
+    {
+      "id": "linux-15",
+      "label": "nice и ionice для фоновых задач",
+      "description": "планирование",
+      "detail": "отзывчивость интерактива",
+      "text": "Объясни снижение priority для compress transcode, чтобы не мешать desktop sessions.\nКратко — ionice idle class для disk heavy jobs.\nОпционально — тизер systemd CPUQuota.\nПосоветуй benchmark перед tuning obsession.\nУпомяни sudo renice pitfalls permissions."
+    },
+    {
+      "id": "linux-16",
+      "label": "strace: зависания syscall",
+      "description": "отладка",
+      "detail": "шумно, но показательно",
+      "text": "Outline stracing hung process, показывающий blocked reads — опциональное narrative exercise.\nПредупреди об overwhelming output verbosity.\nОпционально — perf top как alternative, ethically production caution.\nРекомендуй learning toy sleep binaries как safe playground."
+    },
+    {
+      "id": "linux-17",
+      "label": "lsof: удалённые файлы и место",
+      "description": "отладка",
+      "detail": "загадка освобождения диска",
+      "text": "Научи восстанавливать disk после deletion, когда fds ещё held open — классический сценарий.\nПокажи port grabbing lsof -i complementarily.\nОпционально — ulimit descriptors exhaustion symptoms.\nОпционально — copytruncate logrotate caveat.\nПредпочитай investigation перед reboot impulses."
+    },
+    {
+      "id": "linux-18",
+      "label": "cron vs таймеры systemd",
+      "description": "планирование",
+      "detail": "компромисс видимости",
+      "text": "Сравни cron familiarity и systemd timers journal integration verbosity advantages — честно и сбалансированно.\nПодчеркни timezone pitfalls crontabs — historically painful.\nОпционально — accuracy random sleeps thundering herds.\nТвёрдо, но мягко: не вставляй secrets inline ни в один подход."
+    },
+    {
+      "id": "linux-19",
+      "label": "POSIX ACL: совместная работа",
+      "description": "права",
+      "detail": "не только chmod",
+      "text": "Представь setfacl для granting single collaborator read write без widening world permissions.\nПокажи getfacl inspection hygiene.\nОпционально — hazard: backup tools stripping ACL silently.\nКратко — umask interplay.\nОпционально — NFS quirks caution footnote."
+    },
+    {
+      "id": "linux-20",
+      "label": "Сеть контейнеров: veth",
+      "description": "контейнеры",
+      "detail": "мостовая схема",
+      "text": "Объясни упрощённый bridged networking с host–container bridges на cartoon level.\nУкажи, почему сначала важно освоить ip addr и ip route.\nУпомяни mtu «black hole» symptoms только как troubleshooting vocabulary.\nПодчеркни ethical и редкое использование packet capture в production.\nОтложи persistent network config на distro docs (например Netplan)."
+    }
+  ]
+}

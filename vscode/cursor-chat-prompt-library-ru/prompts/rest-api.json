@@ -1,0 +1,146 @@
+{
+  "category": "rest-api",
+  "categoryLabel": "REST API и OpenAPI",
+  "prompts": [
+    {
+      "id": "api-01",
+      "label": "Проектирование REST-ресурсов",
+      "description": "проектирование",
+      "detail": "существительные, не глаголы",
+      "text": "Объясни REST resource naming для новичков.\n\n- Хорошо: GET /users, POST /users, плохо: /getUsers\n- HTTP methods и CRUD table\n\n5 примеров."
+    },
+    {
+      "id": "api-02",
+      "label": "Шпаргалка кодов статуса",
+      "description": "протокол HTTP",
+      "detail": "коды 200, 201, 400, 404",
+      "text": "Научи common HTTP status codes и когда использовать каждый.\n\n- 200, 201, 204, 400, 401, 403, 404, 500\n- Одно предложение на код\n\nБез заучивания всего RFC."
+    },
+    {
+      "id": "api-03",
+      "label": "Каркас OpenAPI YAML",
+      "description": "спецификация OpenAPI",
+      "detail": "пути paths /items",
+      "text": "Напиши minimal openapi 3 yaml для items CRUD paths.\n\n- info, servers, paths, components schemas Item\n\nValid structure, которую новички могут расширить."
+    },
+    {
+      "id": "api-04",
+      "label": "Пагинация в query-параметрах",
+      "description": "проектирование",
+      "detail": "параметры page, limit",
+      "text": "Спроектируй pagination с ?page=1&limit=20 и response meta total.\n\n- Пример JSON response shape\n\nBest practices."
+    },
+    {
+      "id": "api-05",
+      "label": "Формат JSON ошибок",
+      "description": "ошибки",
+      "detail": "идея RFC 7807",
+      "text": "Предложи consistent error body: code, message, details array.\n\n- Пример 400 validation errors field map\n\nFramework agnostic."
+    },
+    {
+      "id": "api-06",
+      "label": "Версионирование /api/v1",
+      "description": "версионирование",
+      "detail": "ломающие изменения",
+      "text": "Когда повышать API version и стратегии URL vs header.\n\n- Список backward compatible changes\n\nКраткое руководство."
+    },
+    {
+      "id": "api-07",
+      "label": "Идемпотентный POST",
+      "description": "проектирование",
+      "detail": "заголовок Idempotency-Key",
+      "text": "Объясни idempotent POST для payments с Idempotency-Key header.\n\n- Почему важны retries\n\nКонцептуально, без real payment API."
+    },
+    {
+      "id": "api-08",
+      "label": "Клиент из OpenAPI",
+      "description": "инструменты",
+      "detail": "утилита openapi-generator",
+      "text": "Шаги генерации TypeScript fetch client из openapi.yaml.\n\n- Упомяни openapi-generator или orval\n\nHigh level CLI example."
+    },
+    {
+      "id": "api-09",
+      "label": "Mock-сервер Prism",
+      "description": "инструменты",
+      "detail": "mock API для фронта",
+      "text": "Используй mock API из OpenAPI для frontend dev до готовности backend.\n\n- Stoplight Prism или similar one-liner concept\n\nWorkflow benefit."
+    },
+    {
+      "id": "api-10",
+      "label": "Документация auth в OpenAPI",
+      "description": "безопасность",
+      "detail": "схема bearerAuth",
+      "text": "Добавь components.securitySchemes bearer JWT в OpenAPI и примени globally.\n\n- Пример security requirement на paths\n\nYaml snippet."
+    },
+    {
+      "id": "api-11",
+      "label": "HEAD и OPTIONS в реальных API",
+      "description": "HTTP-глаголы",
+      "detail": "не только GET и POST",
+      "text": "Объясни HEAD для проверки existence и headers без загрузки body.\nОбъясни OPTIONS как часть discovering allowed methods (и как это связано с browser CORS preflights).\nПример endpoint, где HEAD genuinely useful.\nПредупреди против cramming unrelated operations в POST только чтобы избежать verbs.\nКак документировать эти endpoints в OpenAPI."
+    },
+    {
+      "id": "api-12",
+      "label": "Согласование контента через Accept",
+      "description": "форматы",
+      "detail": "ответы 406",
+      "text": "Научи honoring Accept header и возврату 406, когда нельзя удовлетворить запрос.\nПростая negotiation между JSON и legacy XML format.\nОтдели от gzip Content-Encoding negotiation.\nДокументируй supported representations clearly.\nТестируй negotiation через curl -H Accept:..."
+    },
+    {
+      "id": "api-13",
+      "label": "Условные GET с ETag",
+      "description": "кэширование",
+      "detail": "ответ 304 Not Modified",
+      "text": "Пройди issuing ETag на GET responses и validating с If-None-Match.\nПочему 304 экономит bandwidth и CPU.\nКратко — optimistic concurrency с If-Match на writes.\nWeak vs strong ETags — только vocabulary.\nTroubleshooting tip, когда clients всегда кажутся «out of date»."
+    },
+    {
+      "id": "api-14",
+      "label": "Контракт ответа при rate limit",
+      "description": "защита от злоупотреблений",
+      "detail": "культура Retry-After",
+      "text": "Опиши communicating rate limits (limits, remaining, reset) в response headers.\nПочему clients должны использовать exponential backoff with jitter.\nРазличай limiting by IP vs by authenticated user vs by API key.\nПредупреди о punitive limits, ломающих UX.\nLimits на gateway vs application layer."
+    },
+    {
+      "id": "api-15",
+      "label": "Bulk-эндпоинты и частичные сбои",
+      "description": "проектирование",
+      "detail": "массивы в одном вызове",
+      "text": "Спроектируй POST /imports, принимающий list, но возвращающий per-item success и error details.\nAll-or-nothing transactions vs tolerant partial accepts.\nДокументируй max batch size.\nIdempotency keys для repeated bulk submits.\nDuplicates и как callers должны reconcile."
+    },
+    {
+      "id": "api-16",
+      "label": "Лёгкие hypermedia-подсказки",
+      "description": "обнаруживаемость",
+      "detail": "без фанатизма HATEOAS",
+      "text": "Прагматичные «next» links в JSON для common flows (pagination, onboarding steps).\nСравни с heavyweight hypermedia formats, которые можно отложить.\nClient complexity vs discoverability gains.\nVersioning link relations при evolving semantics.\nКогда новичкам стоит skip HATEOAS entirely."
+    },
+    {
+      "id": "api-17",
+      "label": "Ошибки в формате Problem Details",
+      "description": "ошибки",
+      "detail": "машиночитаемые",
+      "text": "Покажи errors по RFC7807: type, title, detail, instance.\nРасширь violations array для validation problems.\nПочему consistent error shapes упрощают client code.\nLocalization — advanced concern.\nCorrelation IDs отдельно от user-facing titles."
+    },
+    {
+      "id": "api-18",
+      "label": "Заголовки Deprecation и Sunset",
+      "description": "жизненный цикл",
+      "detail": "сообщение об удалении",
+      "text": "Используй Deprecation и Sunset headers вместе с documentation и changelog notes.\nOld и new versions параллельно — кратко.\nObserve traffic на deprecated routes перед удалением.\nKind communication с API consumers.\nVersioning strategies — только headline level."
+    },
+    {
+      "id": "api-19",
+      "label": "Стратегии маршрутизации multi-tenant",
+      "description": "проектирование",
+      "detail": "где живёт tenant",
+      "text": "Сравни subdomain-based tenancy vs header vs path prefix.\nПредупреди о leaking tenant identifiers в logs insecurely.\nTenancy checks и authenticated identity claims.\nIntegration tests, доказывающие tenant isolation basics.\n«Custom headers» names должны быть deliberate, не accidental secrets."
+    },
+    {
+      "id": "api-20",
+      "label": "Подписи и повторы webhooks",
+      "description": "интеграции",
+      "detail": "защита от подделки payload",
+      "text": "Объясни verifying HMAC signatures с raw request body.\nПочему buffering body конфликтует с naive JSON middleware.\nIdempotent webhook handlers vs duplicate deliveries.\nBackoff на sender side и storms на receiver side.\nРазделяй test webhook endpoints и production."
+    }
+  ]
+}

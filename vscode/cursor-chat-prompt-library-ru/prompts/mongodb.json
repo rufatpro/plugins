@@ -1,0 +1,146 @@
+{
+  "category": "mongodb",
+  "categoryLabel": "База данных MongoDB",
+  "prompts": [
+    {
+      "id": "mongo-01",
+      "label": "Концепции MongoDB vs SQL",
+      "description": "основы",
+      "detail": "коллекции и документы",
+      "text": "Сравни SQL tables с MongoDB collections и documents для новичков.\n\n- Когда подходит document model\n- JSON-like _id field\n\nУстановка в тексте не требуется."
+    },
+    {
+      "id": "mongo-02",
+      "label": "mongosh: insert и find",
+      "description": "оболочка shell",
+      "detail": "команда db.users.insertOne",
+      "text": "mongosh commands: создать db, insert 3 users, find all, find one by filter.\n\n- Basic query operators $gt\n\nCopy-paste examples."
+    },
+    {
+      "id": "mongo-03",
+      "label": "Node: подключение mongoose",
+      "description": "драйвер mongoose",
+      "detail": "схема Schema User",
+      "text": "Подключи Node app к MongoDB через mongoose.\n\n- Schema name email, model User, create and find\n- Connection string из env MONGODB_URI\n\nMinimal server snippet."
+    },
+    {
+      "id": "mongo-04",
+      "label": "Операторы update и delete",
+      "description": "запросы",
+      "detail": "операция updateMany",
+      "text": "Примеры updateOne $set и deleteMany с filter.\n\n- Объясни matched vs modified count\n\nmongosh или mongoose."
+    },
+    {
+      "id": "mongo-05",
+      "label": "Вложение vs ссылка",
+      "description": "моделирование",
+      "detail": "заказы в user",
+      "text": "Научи embedding subdocuments vs separate collection references.\n\n- Пример order items embedded в order doc\n- Когда reference user_id вместо embed\n\n2 scenarios."
+    },
+    {
+      "id": "mongo-06",
+      "label": "Индексы в MongoDB",
+      "description": "производительность",
+      "detail": "команда createIndex",
+      "text": "Создай index на email unique.\n\n- db.users.createIndex({ email: 1 }, { unique: true })\n- Query explain кратко\n\nПочему duplicates fail."
+    },
+    {
+      "id": "mongo-07",
+      "label": "Введение в aggregation pipeline",
+      "description": "агрегация",
+      "detail": "стадии $group, $sum",
+      "text": "Aggregation: counting orders per user с $group и $sum.\n\n- Sample docs и pipeline stages listed\n\nBeginner readable."
+    },
+    {
+      "id": "mongo-08",
+      "label": "MongoDB Atlas: бесплатный tier",
+      "description": "облако",
+      "detail": "строка подключения",
+      "text": "Шаги создания free Atlas cluster и подключения из local app.\n\n- IP allowlist 0.0.0.0/0 warning — только для обучения\n- URI в .env\n\nChecklist."
+    },
+    {
+      "id": "mongo-09",
+      "label": "Транзакции: когда нужны",
+      "description": "продвинутое",
+      "detail": "несколько документов",
+      "text": "Когда новичкам нужны multi-document transactions (кратко).\n\n- Transfer balance example story\n- Prefer single document design first\n\nКонцептуально."
+    },
+    {
+      "id": "mongo-10",
+      "label": "Валидация через JSON Schema",
+      "description": "валидация",
+      "detail": "валидатор $jsonSchema",
+      "text": "Collection validator с required fields name и email.\n\n- mongosh collMod или createCollection validator\n\nОдин пример."
+    },
+    {
+      "id": "mongo-11",
+      "label": "Введение в change streams",
+      "description": "в реальном времени",
+      "detail": "реакция на insert и update",
+      "text": "Объясни MongoDB change streams концептуально vs polling repeatedly.\nPrerequisites: replica sets и почему Atlas часто помогает новичкам.\nResume tokens — vocabulary «continue after disconnect».\nCost и complexity vs polling для toy projects.\nMental model: «tailable cursor with benefits» без huge code."
+    },
+    {
+      "id": "mongo-12",
+      "label": "Порядок полей составного индекса",
+      "description": "индексы",
+      "detail": "равенство, сортировка, диапазон",
+      "text": "Как compound index field order влияет на queries, эффективно использующие index.\nПример: equality на status plus sort by createdAt.\nMultikey indexes на arrays — осторожно.\nЗапускай explain на slow queries.\nIndex design итеративен, не guesswork."
+    },
+    {
+      "id": "mongo-13",
+      "label": "Валидация схемы коллекции",
+      "description": "управление",
+      "detail": "правила JSON Schema",
+      "text": "Как attach schema validator к collection для раннего отклонения bad documents.\nTrade-offs со schema flexibility.\nDocument versioning patterns — отдельная тема.\nСравни с Mongoose validation на app layer.\nКак читать validation errors при failed inserts."
+    },
+    {
+      "id": "mongo-14",
+      "label": "Паттерн bucket для time-series",
+      "description": "моделирование",
+      "detail": "группировка показаний",
+      "text": "Bucketing many small readings в bigger documents (например hourly buckets).\nСравни с one document per reading по write volume и query patterns.\nTTL indexes как companion idea для expiring old data.\nUnbounded array growth внутри buckets.\nКогда SQL warehouse всё ещё проще."
+    },
+    {
+      "id": "mongo-15",
+      "label": "Multikey-индексы для тегов",
+      "description": "запросы",
+      "detail": "интуиция $elemMatch",
+      "text": "Multikey indexes при indexing array fields like tags.\nQuery, находящий documents с multiple tags.\nIndex cardinality и memory growth.\nText indexes — только pointer, не full lesson.\nMeasure query plans, когда tag sets grow huge."
+    },
+    {
+      "id": "mongo-16",
+      "label": "Запросы $lookup в стиле join",
+      "description": "агрегация",
+      "detail": "мост к мышлению SQL",
+      "text": "$lookup как join двух collections в aggregation pipeline.\nReadability и performance vs two queries в application code.\n$unwind, когда arrays усложняют joins.\nJoins expensive без indexes.\nПростой пример «orders + customers»."
+    },
+    {
+      "id": "mongo-17",
+      "label": "Ниша capped collections",
+      "description": "операции",
+      "detail": "кольца фиксированного размера",
+      "text": "Capped collections как fixed-size FIFO-like log.\nTTL indexes заменили many capped use cases.\nTailable cursors — advanced reading.\nНе используй capped collections как general storage.\nKafka или proper logs, если scale demands it."
+    },
+    {
+      "id": "mongo-18",
+      "label": "Read preference и устаревание",
+      "description": "репликация",
+      "detail": "риск чтения с secondary",
+      "text": "Reading from secondaries для scaling reads.\nEventual consistency простым языком с user-visible example.\nWrite concern «majority» как companion concept.\n«Read your own writes» surprises.\nDefault to primary, пока не нужны secondary reads."
+    },
+    {
+      "id": "mongo-19",
+      "label": "GridFS для больших файлов",
+      "description": "хранение",
+      "detail": "бинарники по частям",
+      "text": "GridFS splitting large files в chunks и metadata collections.\nСравни с S3-style object storage.\nКогда GridFS имеет смысл для all-Mongo stack.\nBackup и restore implications.\nStreams для reading large files efficiently."
+    },
+    {
+      "id": "mongo-20",
+      "label": "Упражнения mongodump и mongorestore",
+      "description": "операции",
+      "detail": "практика бэкапов",
+      "text": "Dump database и restore в другую среду.\nRestores нужно репетировать, не оставлять theoretical.\nCompression и partial dumps для large clusters.\nCredentials на command line — предупреждение.\nReal disaster recovery checklist."
+    }
+  ]
+}

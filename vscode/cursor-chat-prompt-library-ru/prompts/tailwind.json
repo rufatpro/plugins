@@ -1,0 +1,146 @@
+{
+  "category": "tailwind",
+  "categoryLabel": "Tailwind CSS",
+  "prompts": [
+    {
+      "id": "tw-01",
+      "label": "Установка Tailwind в Vite",
+      "description": "настройка",
+      "detail": "tailwind.config",
+      "text": "Добавь Tailwind CSS в проект Vite + React пошагово.\n\n- Установи пакеты по официальному руководству\n- Пути content в tailwind.config\n- Импорт в index.css\n\nПеречисли команды терминала."
+    },
+    {
+      "id": "tw-02",
+      "label": "Utility-классы для layout",
+      "description": "layout",
+      "detail": "flex gap-4",
+      "text": "Собери ряд карточек только на utility-классах Tailwind.\n\n- flex, gap, p-4, rounded-lg, shadow\n- Три карточки с responsive wrap\n\nФрагмент HTML/JSX."
+    },
+    {
+      "id": "tw-03",
+      "label": "Responsive md: и lg:",
+      "description": "адаптивность",
+      "detail": "grid cols",
+      "text": "Объясни responsive-префиксы на примере grid-галереи.\n\n- grid-cols-1 md:grid-cols-2 lg:grid-cols-3\n- Объясни mobile-first\n\nМинимальный пример страницы."
+    },
+    {
+      "id": "tw-04",
+      "label": "Стратегия dark mode через class",
+      "description": "dark",
+      "detail": "dark:bg-gray-900",
+      "text": "Включи class-based dark mode в tailwind.config.\n\n- darkMode: 'class'\n- Переключение на html элементе через JS\n- Пример цветов текста и фона\n\nКороткий скрипт для toggle."
+    },
+    {
+      "id": "tw-05",
+      "label": "Кнопки и hover focus",
+      "description": "компоненты",
+      "detail": "btn primary",
+      "text": "Спроектируй primary и secondary кнопки с Tailwind.\n\n- hover:, focus-visible:ring, disabled:opacity-50\n- Заметка о доступном контрасте\n\nПереиспользуемая строка классов или @apply в component layer — объясни оба подхода."
+    },
+    {
+      "id": "tw-06",
+      "label": "Компонентный класс @apply",
+      "description": "организация",
+      "detail": "components.css",
+      "text": "Когда использовать @apply для класса .btn vs inline utilities.\n\n- Небольшой пример в @layer components\n- Мнение style guide для команды\n\nОдин фрагмент css-файла."
+    },
+    {
+      "id": "tw-07",
+      "label": "Стилизация форм",
+      "description": "формы",
+      "detail": "input border focus",
+      "text": "Стилизуй форму входа с Tailwind.\n\n- labels, inputs, текст ошибки red-600\n- Отступы и w-full max-w-sm\n\nJSX или HTML форма."
+    },
+    {
+      "id": "tw-08",
+      "label": "Tailwind + Next.js — настройка",
+      "description": "next",
+      "detail": "postcss",
+      "text": "Подтверди шаги настройки Tailwind для Next.js (App Router).\n\n- postcss.config, директивы globals.css\n- Избегай неверных content paths\n\nТолько чеклист."
+    },
+    {
+      "id": "tw-09",
+      "label": "Typography plugin — класс prose",
+      "description": "плагин",
+      "detail": "@tailwindcss/typography",
+      "text": "Используй typography plugin для страницы статьи блога.\n\n- Установи @tailwindcss/typography\n- article с классом prose\n\nКороткий пример markdown, отрендеренного как HTML-блок."
+    },
+    {
+      "id": "tw-10",
+      "label": "Миграция с plain CSS",
+      "description": "миграция",
+      "detail": "incremental",
+      "text": "У меня сайт с custom CSS. Спланируй постепенную миграцию на Tailwind.\n\n- Начни с layout utilities, временно оставь старый CSS-файл\n- 5-шаговая стратегия для новичков\n\nНе нужно переписывать весь сайт в одном PR."
+    },
+    {
+      "id": "tw-11",
+      "label": "Container queries с @container",
+      "description": "адаптивность",
+      "detail": "component breakpoints",
+      "text": "Объясни настройку плагина @tailwindcss/container-queries.\nПокажи паттерн @container stacking для карточек.\nРазличай viewport vs container breakpoints.\nЛёгко упомяni соображения производительности.\nДай совет по миграции с чисто md: breakpoints."
+    },
+    {
+      "id": "tw-12",
+      "label": "Дисциплина arbitrary values",
+      "description": "utilities",
+      "detail": "square bracket syntax",
+      "text": "Объясни w-[32rem] и bg-[#123456] с умеренностью.\nОбъясни, когда повторяющиеся arbitrary values выносить в theme.extend.\nПредупреди о drift design-токенов.\nПокажи экранирование скобок при необходимости.\nСвяжи с читаемостью в code review."
+    },
+    {
+      "id": "tw-13",
+      "label": "line-clamp — обрезка текста",
+      "description": "типографика",
+      "detail": "ellipsis multiline",
+      "text": "Продемонстрируй utility line-clamp-3 для описаний.\nОбъясни совместимость vs legacy plugin.\nПокажи необходимость pairing overflow-hidden.\nУпомяni доступность при обрезке чувствительной информации.\nДобавь идею hover expand паттерна."
+    },
+    {
+      "id": "tw-14",
+      "label": "Слои pointer-events",
+      "description": "UI",
+      "detail": "overlays clickable through",
+      "text": "Опиши pointer-events-none на overlay, который не должен неправильно перехватывать клики.\nПокажи исправление layering backdrop модального окна.\nНапомни про stacking context z-index.\nПредупреди о misuse, ломающем accessibility кликов.\nПриведи практический сценарий hero overlay."
+    },
+    {
+      "id": "tw-15",
+      "label": "ring vs outline — focus rings для a11y",
+      "description": "a11y",
+      "detail": "focus-visible stack",
+      "text": "Сравни ring utilities с outline и префиксами focus-visible.\nПокажи единообразную эстетику keyboard focus.\nПредупреди об удалении outline без замены.\nЛёгко затронь Windows high contrast mode.\nДай примеры строк для кнопок."
+    },
+    {
+      "id": "tw-16",
+      "label": "theme() в arbitrary properties",
+      "description": "конфиг",
+      "detail": "CSS bridge",
+      "text": "Объясни arbitrary properties с нотацией theme(colors.brand.DEFAULT).\nКогда inline style замена всё ещё нужна.\nЛёгко свяжи с CSS variables в современных направлениях Tailwind.\nПоощряй консолидацию токенов.\nПокажи один лаконичный пример."
+    },
+    {
+      "id": "tw-17",
+      "label": "Сортировка prettier-plugin-tailwindcss",
+      "description": "DX",
+      "detail": "class order churn",
+      "text": "Опиши пользу автоматической сортировки классов в PR review.\nПокажи заготовку npm script интеграции.\nУпомяni конфликты с ESLint JSX rules.\nПосоветуй стратегию постепенного внедрения.\nСвяжи с композицией tailwind-merge."
+    },
+    {
+      "id": "tw-18",
+      "label": "safelist purge — редкие классы",
+      "description": "сборка",
+      "detail": "dynamic strings",
+      "text": "Объясни safelist regex для динамически собираемых имён классов из CMS.\nПредупреди о раздутом CSS footprint.\nПредложи альтернативу детерминированного mapping.\nСвяжи с ограничениями JIT scanning.\nПриведи пример skeleton animation классов."
+    },
+    {
+      "id": "tw-19",
+      "label": "Углубление mental model @layer cascade",
+      "description": "архитектура",
+      "detail": "base components utilities",
+      "text": "Повтори, как layers переупорядочивают Tailwind относительно вставки custom CSS.\nПродемонстрируй миграцию third-party resets в @layer base.\nОбъясни specificity skirmishes при неправильном layering.\nПосоветуй постепенно выносить component classes.\nСвяжи с именами Cascade Layers spec."
+    },
+    {
+      "id": "tw-20",
+      "label": "tailwind-merge: дедупликация конфликтующих классов",
+      "description": "библиотеки",
+      "detail": "conditional classNames",
+      "text": "Представь tailwind-merge для разрешения конфликтов p-4 vs p-2 в составных компонентах.\nПокажи pairing с clsx.\nОбъясни паттерн boolean prop driven style merges.\nЛёгко упомяni SSR compatibility.\nДай крошечный набросок React snippet."
+    }
+  ]
+}

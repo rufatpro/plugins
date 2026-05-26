@@ -1,0 +1,108 @@
+{
+  "name": "cursor-chat-prompt-library-ru",
+  "displayName": "Cursor Chat Prompt Library RU",
+  "description": "620 русскоязычных шаблонов промптов для AI-чата Cursor — 31 категория × 20. QuickPick → вставка в чат.",
+  "version": "0.2.0",
+  "publisher": "rufat",
+  "license": "MIT",
+  "readme": "readme.md",
+  "changelog": "CHANGELOG.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rufatpro/ide-plugins.git"
+  },
+  "homepage": "https://github.com/rufatpro/ide-plugins",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "cursor",
+    "chat",
+    "AI",
+    "composer",
+    "agent",
+    "prompt",
+    "prompt library",
+    "templates",
+    "python",
+    "javascript",
+    "html",
+    "typescript",
+    "react",
+    "sql",
+    "git",
+    "django",
+    "nextjs",
+    "fastapi",
+    "docker",
+    "testing",
+    "tailwind",
+    "vue",
+    "laravel",
+    "dotnet",
+    "spring",
+    "kubernetes",
+    "graphql",
+    "mongodb",
+    "flutter",
+    "wordpress",
+    "pandas",
+    "security",
+    "devops",
+    "beginner"
+  ],
+  "activationEvents": [
+    "onCommand:cursorChatPromptLibraryRu.pick",
+    "onCommand:cursorChatPromptLibraryRu.insert",
+    "onCommand:cursorChatPromptLibraryRu.insertWebsite",
+    "onCommand:cursorChatPromptLibraryRu.insertPython",
+    "onCommand:cursorChatPromptLibraryRu.insertJavaScript"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cursorChatPromptLibraryRu.pick",
+        "title": "Выбрать промпт (категория -> шаблон)",
+        "category": "Cursor Chat Prompt Library RU"
+      },
+      {
+        "command": "cursorChatPromptLibraryRu.insert",
+        "title": "Вставить промпт в чат (все категории)",
+        "category": "Cursor Chat Prompt Library RU"
+      },
+      {
+        "command": "cursorChatPromptLibraryRu.insertWebsite",
+        "title": "Вставить промпт Website",
+        "category": "Cursor Chat Prompt Library RU"
+      },
+      {
+        "command": "cursorChatPromptLibraryRu.insertPython",
+        "title": "Вставить промпт Python",
+        "category": "Cursor Chat Prompt Library RU"
+      },
+      {
+        "command": "cursorChatPromptLibraryRu.insertJavaScript",
+        "title": "Вставить промпт JavaScript",
+        "category": "Cursor Chat Prompt Library RU"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "cursorChatPromptLibraryRu.pick",
+        "key": "ctrl+alt+p",
+        "mac": "cmd+alt+p"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package",
+    "lint": "echo \"No lint configured\""
+  },
+  "vsce": {
+    "baseContentUrl": "https://github.com/rufatpro/ide-plugins/tree/main/vscode/cursor-chat-prompt-library-ru"
+  }
+}

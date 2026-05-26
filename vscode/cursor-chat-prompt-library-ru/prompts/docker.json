@@ -1,0 +1,146 @@
+{
+  "category": "docker",
+  "categoryLabel": "Docker",
+  "prompts": [
+    {
+      "id": "docker-01",
+      "label": "Dockerfile для Node app",
+      "description": "образ",
+      "detail": "node:20-alpine",
+      "text": "Напиши Dockerfile для начинающего для простого Node Express app.\n\n- FROM node:20-alpine, WORKDIR, COPY package*, npm ci, COPY ., CMD\n- .dockerignore для node_modules\n- Команды docker build и docker run\n\nОбъясни каждую инструкцию."
+    },
+    {
+      "id": "docker-02",
+      "label": "Dockerfile для Python app",
+      "description": "образ",
+      "detail": "python:3.12-slim",
+      "text": "Dockerfile для FastAPI или Flask app с uvicorn.\n\n- Slim Python image, requirements.txt, expose port\n- Команда запуска uvicorn\n- Пример build и run\n\nМинимизируй layers для обучения."
+    },
+    {
+      "id": "docker-03",
+      "label": "docker-compose два сервиса",
+      "description": "compose",
+      "detail": "web + db",
+      "text": "Создай docker-compose.yml с сервисами web и postgres.\n\n- web builds from Dockerfile, depends_on db\n- db использует postgres image с env POSTGRES_PASSWORD\n- Volumes для данных db\n\nОбъясни docker compose up -d."
+    },
+    {
+      "id": "docker-04",
+      "label": "Environment variables в Compose",
+      "description": "compose",
+      "detail": "env_file",
+      "text": "Покажи .env с docker-compose для web app.\n\n- env_file: .env\n- Не коммить секреты\n- Variable substitution в compose\n\nПример безопасного шаблона .env.example."
+    },
+    {
+      "id": "docker-05",
+      "label": "Volumes для persistent data",
+      "description": "хранилище",
+      "detail": "именованный volume",
+      "text": "Объясни Docker volumes vs bind mounts для начинающих.\n\n- Named volume для database\n- Когда bind mount полезен для development\n\nКороткий compose snippet."
+    },
+    {
+      "id": "docker-06",
+      "label": "Основы Docker networks",
+      "description": "сеть",
+      "detail": "DNS-имя сервиса",
+      "text": "Как контейнеры общаются в Compose?\n\n- Default network, service name как hostname\n- Пример: web подключается к postgres://db:5432\n\nДиаграмма в ASCII опционально."
+    },
+    {
+      "id": "docker-07",
+      "label": "Multi-stage build — меньший image",
+      "description": "оптимизация",
+      "detail": "builder stage",
+      "text": "Познакомь с multi-stage Dockerfile для Node TypeScript build.\n\n- Stage 1 npm run build, stage 2 copy dist only\n- Почему размер image важен\n\nУпрощённый Dockerfile."
+    },
+    {
+      "id": "docker-08",
+      "label": "Отладка: контейнер не стартует",
+      "description": "диагностика",
+      "detail": "logs exec",
+      "text": "Checklist, когда docker run падает для начинающих.\n\n- docker logs, docker ps -a\n- Неверный port mapping -p 3000:3000\n- File permissions и опечатки ENTRYPOINT\n\n5–7 bullet fixes."
+    },
+    {
+      "id": "docker-09",
+      "label": "Основы .dockerignore",
+      "description": "конфиг",
+      "detail": "паттерны ignore",
+      "text": "Создай .dockerignore для Node и Python projects.\n\n- node_modules, .git, .env, __pycache__, dist\n- Почему меньший context ускоряет build\n\nПолное содержимое файла."
+    },
+    {
+      "id": "docker-10",
+      "label": "Dev vs prod контейнеры",
+      "description": "workflow",
+      "detail": "compose override",
+      "text": "Объясни dev vs production Docker workflow.\n\n- Dev: bind mount source, hot reload\n- Prod: slim image, без dev dependencies\n- Упомяни идею compose.override.yml\n\nКонцептуально, 2 сценария."
+    },
+    {
+      "id": "docker-11",
+      "label": "HEALTHCHECK в Dockerfile",
+      "description": "ops",
+      "detail": "политики restart",
+      "text": "Добавь HEALTHCHECK curl/wget, hitting /health с intervals.\nОбъясни разницу между «процесс запущен» и «app ready».\nСвяжи с restart policies orchestrator концептуально.\nПредупреди о flapping health checks из-за cold start.\nПокажи минимальный example comment для Node или Python."
+    },
+    {
+      "id": "docker-12",
+      "label": "Compose profiles — dev-only сервисы",
+      "description": "compose",
+      "detail": "profile: dev",
+      "text": "Объясни docker compose --profile dev up, включая admin UIs.\nДержи default profile lean для CI.\nОбъясни переключение dependency services.\nПокажи паттерн env file per profile словами.\nУпомяни избегание случайного prod profile usage."
+    },
+    {
+      "id": "docker-13",
+      "label": "docker exec — интерактивная отладка",
+      "description": "отладка",
+      "detail": "shell внутри",
+      "text": "Проведи через docker ps, docker exec -it sh в running container.\nОбъясни, почему отсутствие tools в distroless images frustrates newcomers.\nПокажи copying files out vs mounting volumes.\nПредупреди против изменения running prod containers.\nПредложи workflow reproduce locally."
+    },
+    {
+      "id": "docker-14",
+      "label": "Лимиты ресурсов CPU и memory в Compose",
+      "description": "стабильность",
+      "detail": "без silent thrash",
+      "text": "Продемонстрируй эффекты directives cpus и mem_limit на высоком уровне.\nОбъясни OOM kill signals простым языком.\nСвяжи с тизером k8s requests/limits.\nПосоветуй измерять baselines.\nКратко предупреди о различиях WSL/mac vm bridging."
+    },
+    {
+      "id": "docker-15",
+      "label": "Bind mount: несовпадение uid/gid",
+      "description": "volumes",
+      "detail": "ошибки прав доступа",
+      "text": "Объясни боль Linux uid mapping при mounting host code.\nОбсуди пользу running as non-root внутри image.\nПокажи быструю диагностику ls -la на mount.\nУпомяни named volumes для databases.\nСравни с тем, как Mac/Windows virtualization смягчает некоторые проблемы."
+    },
+    {
+      "id": "docker-16",
+      "label": "Multi-stage recap для caches",
+      "description": "сборка",
+      "detail": "порядок layers",
+      "text": "Повторно объясни разделение deps install от src copy order для caching.\nПокажи ARG build-time pinning.\nУпомяni преимущества BuildKit syntax.\nСравни CI layer cache vs registry cache словами.\nПеречисли признак, когда image rebuild всегда invalidates."
+    },
+    {
+      "id": "docker-17",
+      "label": "docker save и docker load — перенос образов",
+      "description": "airgap",
+      "detail": "tar-архивы",
+      "text": "Объясни архивирование images для offline servers.\nСравни с workflow docker push registry.\nУпомяni verifying digests словами.\nПокажи идею compress pipeline.\nПредупреди начинающих о stale tags."
+    },
+    {
+      "id": "docker-18",
+      "label": "compose watch — синхронизация для dev",
+      "description": "DX",
+      "detail": "hot reload",
+      "text": "Опиши compose watch, syncing source в containers для interpreters.\nСвяжи trade-offs vs bind mounts performance.\nУпомяni nuances ignoring node_modules.\nДержи пример концептуальным для начинающих.\nУкажи на README team standards."
+    },
+    {
+      "id": "docker-19",
+      "label": "Network aliases — обнаружение сервисов",
+      "description": "сеть",
+      "detail": "DNS между services",
+      "text": "Объясни default bridge DNS naming service names в compose.\nПокажи mental model подключения api к db host db:5432.\nПредупреди о hardcoding localhost внутри containers.\nКоснись isolation custom networks.\nСвяжи с аналогией k8s services."
+    },
+    {
+      "id": "docker-20",
+      "label": "Чеклист уменьшения образа",
+      "description": "безопасность",
+      "detail": "поверхность атаки",
+      "text": "Перечисли шаги: choose smaller base, remove build deps, pin versions, run as non-root.\nОбъясни distroless — когда нужны shells, а когда нет.\nУпомяni scanning с Trivy на высоком уровне.\nОбсуди anti-pattern secrets в build args.\nПоощряй reproducible builds."
+    }
+  ]
+}

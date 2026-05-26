@@ -1,0 +1,146 @@
+{
+  "category": "git",
+  "categoryLabel": "Git",
+  "prompts": [
+    {
+      "id": "git-01-first-repo",
+      "label": "Первый Git-репозиторий",
+      "description": "основы",
+      "detail": "init, add, commit",
+      "text": "Я новичок в Git. Проведи меня через создание первого локального репозитория.\n\n- git init, создать README.md, git add, git commit\n- git status до и после каждого шага с объяснением\n- Что такое папка .git — в одном предложении\n\nПредполагай терминал Windows; упомяни проверку git --version."
+    },
+    {
+      "id": "git-02-clone",
+      "label": "Клонирование GitHub-репозитория",
+      "description": "remote",
+      "detail": "git clone и cd",
+      "text": "Объясни git clone для начинающего.\n\n- Клонирование по шаблону URL generic hello-repo (placeholder)\n- Какие файлы появляются локально\n- Как открыть проект в Cursor/VS Code\n- Разница clone vs download ZIP\n\nНе используй реальный приватный репозиторий; используй стиль публичного примера."
+    },
+    {
+      "id": "git-03-branch",
+      "label": "Создание и переключение ветки",
+      "description": "ветки",
+      "detail": "feature/add-footer",
+      "text": "Объясни Git-ветки для начинающих.\n\n- git branch, git switch (или checkout) на feature/add-footer\n- Небольшой commit на ветке\n- git log --oneline --graph с описанием 2–3 commits\n\nОбъясни, зачем ветки нужны в команде."
+    },
+    {
+      "id": "git-04-merge",
+      "label": "Merge ветки в main",
+      "description": "ветки",
+      "detail": "fast-forward vs merge commit",
+      "text": "Покажи слияние feature-ветки в main.\n\n- Шаги: switch на main, git merge feature/...\n- Объясни fast-forward vs merge commit простым языком\n- Что если обе ветки изменили одну строку? (введи понятие conflict)\n\nИспользуй игрушечный пример файла app.txt."
+    },
+    {
+      "id": "git-05-conflict",
+      "label": "Разрешение merge conflict",
+      "description": "конфликты",
+      "detail": "маркеры <<<< ==== >>>>",
+      "text": "Смоделируй merge conflict и как его исправить.\n\n- Покажи conflict markers в файле\n- Шаги: открыть файл, отредактировать до финального текста, git add, git commit\n- Как отменить merge с git merge --abort\n\nСпокойный тон для начинающих, которые паникуют при конфликтах."
+    },
+    {
+      "id": "git-06-push-pull",
+      "label": "push и pull с origin",
+      "description": "remote",
+      "detail": "git push -u origin main",
+      "text": "Объясни git push и git pull для начинающих на GitHub.\n\n- Настройка upstream: git push -u origin main\n- Кто-то другой сделал push: git pull перед вашим push\n- Что такое origin?\n\nУпомяни аутентификацию (HTTPS token или SSH) на высоком уровне без секретов."
+    },
+    {
+      "id": "git-07-stash",
+      "label": "git stash — сохранить работу",
+      "description": "stash",
+      "detail": "безопасное переключение ветки",
+      "text": "Когда начинающему стоит использовать git stash?\n\n- Сценарий: незаконченные изменения, но нужно переключить ветку\n- git stash push -m message, git switch, позже git stash pop\n- Кратко предупреди о конфликтах stash pop\n\nКороткие шаги упражнения."
+    },
+    {
+      "id": "git-08-gitignore",
+      "label": "Основы .gitignore",
+      "description": "конфиг",
+      "detail": "node_modules, .env, dist",
+      "text": "Создай полезный .gitignore для учебной папки JavaScript + Python.\n\n- node_modules/, __pycache__/, .env, dist/, .venv/\n- Объясни, почему секреты нельзя коммитить\n- Что если я уже случайно закоммитил .env? (git rm --cached на высоком уровне)\n\nПриведи полное содержимое файла .gitignore."
+    },
+    {
+      "id": "git-09-log-diff",
+      "label": "git log и git diff",
+      "description": "история",
+      "detail": "посмотреть изменения",
+      "text": "Научи читать историю с git log и git diff.\n\n- git log --oneline -5\n- git diff перед commit\n- git diff main..feature/branch name\n\nОбъясни, что означают строки + и - в выводе diff."
+    },
+    {
+      "id": "git-10-pr-flow",
+      "label": "Рабочий процесс Pull Request",
+      "description": "совместная работа",
+      "detail": "ветка → PR → ревью → merge",
+      "text": "Объясни workflow GitHub Pull Request для junior-разработчика.\n\n- Шаги от feature-ветки до merged main\n- Что писать в описании PR (пример checklist)\n- Этикет code review в 4 пунктах\n\nGitHub CLI не нужен; подойдёт web UI."
+    },
+    {
+      "id": "git-11",
+      "label": "git bisect — найти плохой commit",
+      "description": "отладка",
+      "detail": "бинарный поиск по истории",
+      "text": "Моя ветка main сломалась на прошлой неделе. Проведи меня через git bisect start, good, bad, запуск тестовой команды, bisect reset.\nОбъясни интуицию бинарного поиска для начинающих.\nПокажи bisect со script exit code.\nОсторожно упомяни bisect skip для flaky tests.\nДай совет по безопасности о путанице с detached HEAD."
+    },
+    {
+      "id": "git-12",
+      "label": "git worktree — параллельные checkout",
+      "description": "workflow",
+      "detail": "две папки, один repo",
+      "text": "Объясни git worktree add ../hotfix hotfix-branch для параллельных папок.\nОбъясни, когда это лучше stash для быстрых review.\nПокажи listing и pruning worktrees.\nПредупреди о конфликтах незакоммиченных изменений между worktrees.\nСвяжи с CI clone depth только косвенно."
+    },
+    {
+      "id": "git-13",
+      "label": "Cherry-pick с разрешением конфликтов",
+      "description": "история",
+      "detail": "перенос одного commit",
+      "text": "Объясни use case cherry-pick: backport bugfix commit на release-ветку.\nПроведи через conflict markers, add, cherry-pick --continue.\nСравни мысленно с merge и rebase.\nКратко отметь empty commits и --mainline для merges как словарь.\nПосоветуй записывать оригинальный SHA в описании PR."
+    },
+    {
+      "id": "git-14",
+      "label": "Безопасная отмена: revert vs reset",
+      "description": "совместная работа",
+      "detail": "этикет публичных веток",
+      "text": "Поясни, когда git revert предпочтительнее reset --hard на shared branches.\nПокажи revert -m для merge commits на концептуальном уровне.\nОбъясни reflog как локальную страховку с ограничениями.\nДай decision flowchart словами для начинающих, паникующих после плохого push.\nПодчеркни необходимость общения с командой после repair истории."
+    },
+    {
+      "id": "git-15",
+      "label": "Интерактивное добавление patch hunks",
+      "description": "staging",
+      "detail": "git add -p",
+      "text": "Научи staging части файла с git add -p / --patch.\nИнтуитивно проведи через выборы y/n/s/e.\nСвяжи с созданием atomic commits, читаемых в review.\nПокажи советы по split hunk на высоком уровне.\nУпомяни GUI-альтернативы без рекомендации конкретного инструмента."
+    },
+    {
+      "id": "git-16",
+      "label": "Annotated tags для релизов",
+      "description": "версионирование",
+      "detail": "tag -a message",
+      "text": "Сравни lightweight vs annotated tags для semver releases.\nПокажи git tag -a v1.2.0 -m \"...\" и pushing tags.\nОбъясни, чем tags мысленно отличаются от branches.\nОтметь signed tags как опциональное продвинутое чтение.\nОпиши releasing from a tag в CI в одном предложении."
+    },
+    {
+      "id": "git-17",
+      "label": "Обзор hooks без поломки workflow",
+      "description": "автоматизация",
+      "detail": "концепция pre-commit",
+      "text": "Опиши, что pre-commit hook может проверять (format, lint, secrets scan).\nОбъясни дополнение local vs CI enforcement.\nПредупреди о медленных hooks, раздражающих команды.\nПокажи псевдо-структуру hook script без vendor lock-in.\nОбсуди bypass policies и когда они допустимы."
+    },
+    {
+      "id": "git-18",
+      "label": "Submodules — предупреждение о mental model",
+      "description": "зависимости",
+      "detail": "закреплённый commit",
+      "text": "Познакомь с submodules как отдельными repos, закреплёнными на commit.\nПеречисли три pain points для начинающих (забыли init, detached state, PR noise).\nПредложи альтернативы вроде monorepo или package managers где уместно.\nДай минимальный workflow clone --recurse-submodules.\nДержи глубину концептуальной; без flame war."
+    },
+    {
+      "id": "git-19",
+      "label": "Blame и log — история изменений",
+      "description": "расследование",
+      "detail": "кто изменил строку",
+      "text": "Научи git blame -L для сужения строк и идее опции ignoring whitespace.\nСочетай с git log -S для поиска, когда строка исчезла.\nОбъясни, как вести investigations без blame в культуре команды.\nПокажи привычку ссылаться на issue trackers в commit messages.\nЗаверши заметкой об ограничениях для moved code."
+    },
+    {
+      "id": "git-20",
+      "label": "Pull с rebase vs merge по умолчанию",
+      "description": "синхронизация",
+      "detail": "предпочтение линейной истории",
+      "text": "Сравни git pull --rebase vs merge для обновления feature-веток.\nОбъясни diverged history диаграммами словами.\nОпиши взаимодействие autostash с rebase pulls.\nДай рекомендации по team policy для начинающих, присоединяющихся к repo.\nУпомяни безопасный совет по настройке pull.rebase."
+    }
+  ]
+}

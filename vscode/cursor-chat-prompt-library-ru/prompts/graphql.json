@@ -1,0 +1,146 @@
+{
+  "category": "graphql",
+  "categoryLabel": "GraphQL",
+  "prompts": [
+    {
+      "id": "gql-01",
+      "label": "GraphQL и REST: сравнение",
+      "description": "концепции",
+      "detail": "единая точка входа",
+      "text": "Сравни GraphQL и REST для новичков.\n\n- Over-fetching и under-fetching\n- Когда GraphQL выигрывает, а когда REST проще\n\nНейтрально."
+    },
+    {
+      "id": "gql-02",
+      "label": "Схема: тип Query",
+      "description": "schema",
+      "detail": "hello: String",
+      "text": "Напиши минимальную схему Query { hello: String } и resolver.\n\n- Набросок настройки Apollo Server или graphql-yoga\n\nПример на Node."
+    },
+    {
+      "id": "gql-03",
+      "label": "Поля и аргументы запроса",
+      "description": "query",
+      "detail": "user(id: ID!)",
+      "text": "Схема с типом User и запросом user(id) с resolver, возвращающим mock-данные.\n\n- Тест в GraphQL Playground\n\nОбъясни non-null типы."
+    },
+    {
+      "id": "gql-04",
+      "label": "Мутация createPost",
+      "description": "мутация",
+      "detail": "создание поста",
+      "text": "Mutation createPost(input), возвращающая Post.\n\n- Input type CreatePostInput\n\nСравни с POST в REST."
+    },
+    {
+      "id": "gql-05",
+      "label": "Вложенные типы и связи",
+      "description": "schema",
+      "detail": "User posts",
+      "text": "User с полем posts, резолвящимся через parent id.\n\n- Упомяни проблему N+1 и идею DataLoader\n\nКонцептуально."
+    },
+    {
+      "id": "gql-06",
+      "label": "Клиент Apollo useQuery",
+      "description": "client",
+      "detail": "React",
+      "text": "Пример React Apollo Client useQuery для получения hello.\n\n- Список шагов настройки Provider\n\nTypeScript по желанию."
+    },
+    {
+      "id": "gql-07",
+      "label": "Переменные в запросах",
+      "description": "query",
+      "detail": "$id",
+      "text": "Запрос с переменной $id и передача объекта variables в клиенте.\n\n- Почему переменные лучше конкатенации строк\n\nПример."
+    },
+    {
+      "id": "gql-08",
+      "label": "Фрагменты для переиспользования полей",
+      "description": "client",
+      "detail": "fragment",
+      "text": "Определи fragment UserFields on User и используй в двух запросах.\n\n- Польза от сокращения дублирования\n\nSnippet."
+    },
+    {
+      "id": "gql-09",
+      "label": "Ошибки и частичные данные",
+      "description": "errors",
+      "detail": "массив errors",
+      "text": "Объясни массив errors в ответе GraphQL на примере с partial data.\n\n- Политика обработки на клиенте\n\nКратко."
+    },
+    {
+      "id": "gql-10",
+      "label": "Введение в Federation",
+      "description": "advanced",
+      "detail": "subgraphs",
+      "text": "На высоком уровне: что решает Apollo Federation для микросервисов.\n\n- Не реализация — когда это станет актуально позже\n\n3 пункта."
+    },
+    {
+      "id": "gql-11",
+      "label": "Лимиты глубины и сложности запросов",
+      "description": "GraphQL operations",
+      "detail": "защита сервера",
+      "text": "Объясни, как глубоко вложенные запросы могут перегрузить resolvers.\nОпиши depth limits и complexity scoring на концептуальном уровне.\nУпомяни persisted operations как опциональную продвинутую меру.\nАккуратно обсуди настройки introspection без догматизма.\nПоощряй observability для медленных полей."
+    },
+    {
+      "id": "gql-12",
+      "label": "Паттерн batching с DataLoader",
+      "description": "производительность resolver",
+      "detail": "исправление N+1 чтений",
+      "text": "Представь batching per-request loads, чтобы свернуть множество вызовов resolver в меньше запросов к БД.\nКратко объясни подводные камни nondeterminism порядка.\nЧестно сравни с ручными joins в некоторых случаях.\nСоветуй измерять hot paths.\nНе относись к GraphQL как к магическому SQL."
+    },
+    {
+      "id": "gql-13",
+      "label": "Владение схемой: монолит vs federated",
+      "description": "архитектурная терминология",
+      "detail": "сложность позже",
+      "text": "Сравни один graph, которым владеет одна команда, с federated subgraphs культурно.\nРеалистично посоветуй новичкам сначала освоить graph одного сервиса.\nУпомяни, что практики versioning и deprecation переносятся.\nПредупреди об операционных накладных расходах заранее.\nПоощряй человечную координацию между командами."
+    },
+    {
+      "id": "gql-14",
+      "label": "Ошибки как данные: partial results",
+      "description": "UX API",
+      "detail": "nullable поля и unions",
+      "text": "Объясни возврат частичных успехов с типизированными ошибками продуманно.\nУпомяни unions vs nullable patterns на уровне новичка.\nСоветуй понятные сообщения для клиента.\nПоощряй документирование структур ошибок.\nКратко свяжи observability с привязкой ошибок к traces."
+    },
+    {
+      "id": "gql-15",
+      "label": "Persisted queries и allowlists",
+      "description": "безопасность операций",
+      "detail": "меньше сюрпризов",
+      "text": "Опиши закрепление известных операций, допустимых в prod, особенно для mobile apps.\nКратко упомяни build-time pipelines регистрации операций.\nПредупреди об ошибочном отключении authz на сервере.\nСоветуй versioning операций.\nСвяжи с историческими подводными камнями CDN caching."
+    },
+    {
+      "id": "gql-16",
+      "label": "Schema explorers для онбординга",
+      "description": "developer experience",
+      "detail": "видеть связи",
+      "text": "Поощряй graph explorers или сгенерированную документацию как обучающий каркас.\nУпомяни, что политики introspection зависят от уровня exposure.\nСоветуй сочетать исследование с glossary доменных терминов.\nУмеренно укажи на codegen tooling как следующий шаг.\nПредостереги от вываливания огромного SDL на новичков."
+    },
+    {
+      "id": "gql-17",
+      "label": "Subscriptions vs polling реалистично",
+      "description": "real-time паттерны",
+      "detail": "стоимость websocket operations",
+      "text": "Различай накладные расходы websocket subscriptions и прагматичный polling для старта.\nКратко осторожно упомяни масштабирование subscriptions в инфраструктуре.\nСоветуй сначала уверенно освоить mutations и queries.\nКратко упомяни SSE как компромисс.\nЧестно поощряй закладывать время на backend."
+    },
+    {
+      "id": "gql-18",
+      "label": "Custom scalars для ясности",
+      "description": "моделирование schema",
+      "detail": "DateTime Url Email",
+      "text": "Умеренно рекомендуй custom scalars, чтобы уменьшить неоднозначные строки.\nУпомяни, что правила coercion нужно документировать.\nСлабо свяжи с эргономикой mapping в codegen.\nСоветуй ясность timezone для datetime types.\nМягко расскажи истории миграции."
+    },
+    {
+      "id": "gql-19",
+      "label": "Авторизация через context resolver",
+      "description": "security",
+      "detail": "viewer в context",
+      "text": "Объясни чистое внедрение аутентифицированной viewer identity в resolver context.\nУпомяни directives вроде auth rules как опциональную продвинутую эргономику.\nПодчеркни: field-level authorization всё равно enforced на сервере.\nСоветуй integration tests, запрещающие forbidden fields.\nПоощряй аудит подозрительных query patterns."
+    },
+    {
+      "id": "gql-20",
+      "label": "Проверки совместимости schema",
+      "description": "governance",
+      "detail": "обнаружение breaking removals",
+      "text": "Опиши CI checks, падающие при удалении полей без процесса deprecation.\nОпционально кратко упомяни инструменты сравнения schemas.\nСоветуй вежливо сообщать сроки sunset.\nКратко укажи на federation contract testing.\nПродвигай эмпатию к потребителям API."
+    }
+  ]
+}

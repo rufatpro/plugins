@@ -1,0 +1,146 @@
+{
+  "category": "react",
+  "categoryLabel": "React",
+  "prompts": [
+    {
+      "id": "react-01-vite-setup",
+      "label": "Создать React-приложение с Vite",
+      "description": "setup",
+      "detail": "npm create vite@latest",
+      "text": "Я новичок в React. Проведи по созданию проекта Vite + React + TypeScript.\n\n- Точные команды в терминале\n- Объясни src/App.tsx, main.tsx, index.html\n- Замени дефолтный контент на заголовок Hello React\n- Как запустить dev server и открыть в браузере\n\nТипичные ошибки (port in use) и фиксы — по одной строке каждая."
+    },
+    {
+      "id": "react-02-props",
+      "label": "Компонент с props",
+      "description": "props",
+      "detail": "Приветствие: имя и возраст",
+      "text": "Научи React props на простом примере (по возможности TypeScript).\n\n- Компонент Greeting: props { name: string; age?: number }\n- App рендерит 2–3 экземпляра Greeting\n- Объясни, что props только для чтения\n\nОдин файл на компонент или один App.tsx — на твой выбор, но объясни структуру."
+    },
+    {
+      "id": "react-03-usestate",
+      "label": "Счётчик с useState",
+      "description": "hooks",
+      "detail": "увеличение и уменьшение",
+      "text": "Собери компонент-счётчик на useState.\n\n- Показ count, кнопки +1, -1, Reset\n- Объясни синтаксис useState и re-render простым языком\n- Опционально: минимум 0\n\nПолный App.tsx (или Counter.tsx + App)."
+    },
+    {
+      "id": "react-04-list-keys",
+      "label": "Список с keys",
+      "description": "списки",
+      "detail": "массив todo items",
+      "text": "Покажи правильный рендер списка в React.\n\n- Массив { id, text }\n- map() в <li> с key={id}\n- Почему index как key плох при перестановке\n\nДобавление элемента через useState и text input."
+    },
+    {
+      "id": "react-05-forms",
+      "label": "Controlled input в форме",
+      "description": "формы",
+      "detail": "поле name + submit",
+      "text": "Создай controlled form в React для новичка.\n\n- Input для name, кнопка submit\n- При submit: preventDefault, alert или сообщение ниже (без backend)\n- Значение в useState\n\nControlled vs uncontrolled — в 2 предложениях."
+    },
+    {
+      "id": "react-06-useeffect-fetch",
+      "label": "useEffect + fetch данных",
+      "description": "hooks",
+      "detail": "загрузка users при mount",
+      "text": "Загрузка данных в React через useEffect (уровень новичка).\n\n- При mount: fetch https://jsonplaceholder.typicode.com/users/1\n- Состояния loading, error, data\n- Тип user через TypeScript interface\n\nКратко предупреди об ошибках с dependency array."
+    },
+    {
+      "id": "react-07-conditional",
+      "label": "Условный рендеринг",
+      "description": "UI",
+      "detail": "сообщение login vs logout",
+      "text": "Научи условному рендерингу в React.\n\n- Boolean isLoggedIn в state, кнопка переключения\n- Разный JSX при true/false\n- И паттерн &&, и ternary — по разу\n\nUI минимальный, без router."
+    },
+    {
+      "id": "react-08-custom-hook",
+      "label": "Кастомный хук useCounter",
+      "description": "hooks",
+      "detail": "вынести логику счётчика",
+      "text": "Введи кастомный хук useCounter(initial).\n\n- Возвращает { count, increment, decrement, reset }\n- Используй в App.tsx\n- Правила hooks — 3 пункта\n\nПредпочтительно TypeScript."
+    },
+    {
+      "id": "react-09-react-router",
+      "label": "Две страницы с React Router",
+      "description": "routing",
+      "detail": "Home и About",
+      "text": "Добавь React Router в маленькое Vite React-приложение (новичок).\n\n- Установи react-router-dom\n- Маршруты: / home, /about about\n- Link-навигация в header\n- Объясни BrowserRouter и Routes\n\nКоманда установки и какие файлы создать."
+    },
+    {
+      "id": "react-10-context",
+      "label": "Context темы (светлая/тёмная)",
+      "description": "контекст React",
+      "detail": "переключение без prop drilling",
+      "text": "Покажи React Context API на простом переключателе темы.\n\n- ThemeContext: 'light' | 'dark'\n- Provider сверху, кнопка в дочернем для toggle\n- CSS class или inline style на обёртке\n\nКогда Context избыточен vs props."
+    },
+    {
+      "id": "react-11",
+      "label": "Прагматичные правила React.memo",
+      "description": "производительность",
+      "detail": "стабильность ссылок на props",
+      "text": "Объясни memo для новичка через равенство ссылок на props.\nКогда оборачивать чисто презентационный list item помогает vs мешает читаемости.\nСвязь с нестабильными callback из-за inline-функций.\nПодсветка обновлений в React DevTools как отладка.\nЭвристика: memo после измерения, не по умолчанию."
+    },
+    {
+      "id": "react-12",
+      "label": "useReducer для form wizard",
+      "description": "state",
+      "detail": "переходы между шагами",
+      "text": "Замени несколько useState на useReducer для 3-шагового checkout wizard.\nДействия NEXT, BACK, SET_SHIPPING, RESET.\nКак держать связанное состояние вместе.\nСравни когнитивную нагрузку с useState для учеников.\nМаленький reducer с exhaustive switch и default guard."
+    },
+    {
+      "id": "react-13",
+      "label": "useRef для управления фокусом",
+      "description": "a11y",
+      "detail": "фокус при открытии modal",
+      "text": "Собери dialog: при открытии фокус на первый input, при закрытии — обратно на trigger.\nuseRef<HTMLInputElement>(null) и заметки по таймингу useEffect.\nTab trap — только как указатель для дальнейшего чтения.\nМинимум зависимостей.\nЗаглушка обработки Escape."
+    },
+    {
+      "id": "react-14",
+      "label": "Error Boundary (class-компонент)",
+      "description": "устойчивость приложения",
+      "detail": "запасной UI при ошибке",
+      "text": "Знаю только function components. Научи минимальному class-based ErrorBoundary.\ncomponentDidCatch для логирования и getDerivedStateFromError.\nЧто boundaries не ловят (event handlers, async).\nПростой fallback UI с кнопкой retry.\nReact 19 — только лёгкое упоминание."
+    },
+    {
+      "id": "react-15",
+      "label": "useLayoutEffect для измеренного DOM",
+      "description": "effects",
+      "detail": "до paint",
+      "text": "Сравни useEffect и useLayoutEffect на позиционировании tooltip.\nПочему useLayoutEffect уменьшает визуальное мерцание.\nКратко: SSR и suppressHydrationWarning.\nПравило: новичкам по умолчанию useEffect.\nЗаметка о производительности только в dev."
+    },
+    {
+      "id": "react-16",
+      "label": "createPortal для модалок",
+      "description": "DOM",
+      "detail": "обход overflow родителя",
+      "text": "Покажи ReactDOM.createPortal с рендером modal в document.body.\nЗачем это для z-index и обрезанных родителей.\nВсплытие событий: React tree vs DOM tree — на высоком уровне.\nПростой стиль focus outline.\nДомашка: aria-modal."
+    },
+    {
+      "id": "react-17",
+      "label": "Keys без id: подводные камни",
+      "description": "списки",
+      "detail": "стабильная идентичность",
+      "text": "Углуби понимание key, когда у элементов нет database id.\nПочему index-as-key рискован при reorder/вставке.\nОсторожная генерация composite keys.\nСвязь с deduplication в reconciliation без глубоких internals.\nУпражнение: история бага в sortable list."
+    },
+    {
+      "id": "react-18",
+      "label": "forwardRef на кнопке design-system",
+      "description": "компоненты",
+      "detail": "displayName",
+      "text": "Научи forwardRef, чтобы родитель мог сфокусировать <Button>.\nTypeScript generic props на доступном уровне.\ndisplayName для devtools.\nСравни с callback ref.\nОграничения ref forwarding на host vs обёртках."
+    },
+    {
+      "id": "react-19",
+      "label": "useId для form, дружественного к SSR",
+      "description": "hooks",
+      "detail": "label htmlFor",
+      "text": "Замени Math.random() в формах на useId для связи label и input.\nРиски hydration mismatch, которые useId снимает.\nПара с aria-describedby для helper text.\nНесколько id через суффикс.\nПример в одном маленьком компоненте."
+    },
+    {
+      "id": "react-20",
+      "label": "Deferred value для подсказок поиска",
+      "description": "concurrency",
+      "detail": "введение useDeferredValue",
+      "text": "Введи useDeferredValue: отзывчивый input при тяжёлом обновлении отфильтрованного списка.\nСравни с debounce в userland.\nTrade-offs воспринимаемой задержки простым языком.\nИгрушечный фильтр списка без внешних библиотек.\nПрофилирование в React DevTools для проверки."
+    }
+  ]
+}

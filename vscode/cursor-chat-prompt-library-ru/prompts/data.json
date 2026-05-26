@@ -1,0 +1,146 @@
+{
+  "category": "data",
+  "categoryLabel": "Data / Pandas",
+  "prompts": [
+    {
+      "id": "data-01",
+      "label": "Чтение CSV в Pandas",
+      "description": "pandas",
+      "detail": "read_csv",
+      "text": "Загрузи CSV в DataFrame и покажи head, info, describe.\n\n- pip install pandas\n- Введение в missing values: dropna fillna\n\nJupyter опционально."
+    },
+    {
+      "id": "data-02",
+      "label": "Выбор колонок и фильтрация строк",
+      "description": "pandas",
+      "detail": "boolean indexing",
+      "text": "Отфильтруй строки где age > 30 и выбери колонки name email.\n\n- Синтаксис df[df.age>30][['name','email']]\n\nОбъясни boolean mask."
+    },
+    {
+      "id": "data-03",
+      "label": "groupby и агрегация",
+      "description": "pandas",
+      "detail": "groupby mean",
+      "text": "Сгруппируй sales по region и просуммируй amount.\n\n- reset_index\n\nСоздание sample DataFrame в скрипте."
+    },
+    {
+      "id": "data-04",
+      "label": "Merge двух DataFrames",
+      "description": "pandas",
+      "detail": "merge join",
+      "text": "merge users и orders по user_id.\n\n- Объясни how=inner vs left\n\nПример с небольшими таблицами."
+    },
+    {
+      "id": "data-05",
+      "label": "Простой график Matplotlib",
+      "description": "viz",
+      "detail": "line chart",
+      "text": "Построй line chart из pandas Series с dates и values.\n\n- plt.savefig\n\nОдин скрипт."
+    },
+    {
+      "id": "data-06",
+      "label": "Рабочий процесс Jupyter notebook",
+      "description": "Jupyter",
+      "detail": "ячейки markdown и code",
+      "text": "Объясни Jupyter cells markdown и code для data exploration.\n\n- Когда notebook vs plain script\n\nКоманда install jupyter."
+    },
+    {
+      "id": "data-07",
+      "label": "Основы NumPy arrays",
+      "description": "numpy",
+      "detail": "ndarray",
+      "text": "Введение: создание NumPy array и vectorized math vs Python list.\n\n- shape, dtype\n\nМост к pandas."
+    },
+    {
+      "id": "data-08",
+      "label": "Экспорт в Excel CSV",
+      "description": "export",
+      "detail": "to_csv",
+      "text": "Очищенный DataFrame to_csv и to_excel.\n\n- index=False\n\nПосле простого cleaning pipeline."
+    },
+    {
+      "id": "data-09",
+      "label": "Чеклист data cleaning",
+      "description": "workflow",
+      "detail": "EDA",
+      "text": "EDA checklist: dtypes, nulls, duplicates, outliers, value counts.\n\n- pandas functions для каждого шага\n\nBullet workflow."
+    },
+    {
+      "id": "data-10",
+      "label": "Этика data privacy",
+      "description": "ethics",
+      "detail": "PII",
+      "text": "Напоминание про PII, consent и anonymization при анализе user data.\n\n- GDPR — одна строка\n\nНе юридическая консультация — привычки."
+    },
+    {
+      "id": "data-11",
+      "label": "Parquet vs CSV для analytics",
+      "description": "file formats",
+      "detail": "columnar benefits",
+      "text": "Объясни преимущества columnar storage Parquet для повторных analytics reads.\nСравни с простотой CSV для крошечных human-edited файлов.\nКратко упомяni schema, встроенную в файлы.\nПосоветуй основы pandas read_parquet.\nArrow ecosystem — опциональное чтение."
+    },
+    {
+      "id": "data-12",
+      "label": "Rolling windows в pandas",
+      "description": "time series",
+      "detail": "min_periods behavior",
+      "text": "Продемонстрируй rolling means с min_periods и начальными NaNs.\nОбъясни differencing resample vs rolling мысленно.\nПредупреди про timezone-aware indexes.\nПосоветуй sanity checks через plotting.\nНе уходи в тяжёлую статистическую теорию."
+    },
+    {
+      "id": "data-13",
+      "label": "Чеклист train-test leakage",
+      "description": "ML hygiene",
+      "detail": "pipelines encapsulate fitting",
+      "text": "Примеры leakage: fit preprocessing на полном dataset, неправильный shuffle time series, duplicate rows между splits.\nПоощряй концептуальную инкапсуляцию sklearn Pipeline-like.\nПосоветуй temporal splits, когда важно время.\nПредупреди об оптимизме метрик.\nДружелюбный тон для новичков."
+    },
+    {
+      "id": "data-14",
+      "label": "SMOTE и class imbalance — осторожно",
+      "description": "ML techniques",
+      "detail": "сначала простые baselines",
+      "text": "Объясни SMOTE концептуально как synthetic oversampling.\nПредупреди об ошибках порядка pipeline, вызывающих leakage.\nСначала предложи baselines вроде class_weight.\nЧестно упомяni метрики beyond accuracy.\nНе обещай silver bullets."
+    },
+    {
+      "id": "data-15",
+      "label": "Обзор dbt incremental models",
+      "description": "analytics engineering",
+      "detail": "merge strategies",
+      "text": "Опиши incremental models, обновляющие только новые rows в warehouses, концептуально.\nОбъясни full refresh escape hatches, когда застрял.\nКратко упомяni uniqueness tests для ключей.\nОтличай от notebook exploration workflows.\nПоощряй ясную документацию assumptions."
+    },
+    {
+      "id": "data-16",
+      "label": "Проверки в стиле Great Expectations",
+      "description": "data quality",
+      "detail": "batch validation",
+      "text": "Опиши expectation suites, валидирующие batches перед публикацией datasets, концептуально.\nКратко обсуди scheduling checks в CI.\nНачни с простых not-null и range checks.\nСвяжи с upstream validation в apps.\nПредупреди против слишком раннего heavyweight adoption."
+    },
+    {
+      "id": "data-17",
+      "label": "Концепции feature store lite",
+      "description": "MLOps vocabulary",
+      "detail": "online vs offline",
+      "text": "Различай offline training feature tables vs online low-latency serving needs.\nЧестно упомяni consistency challenges без vendor pitch.\nПосоветуй новичкам сначала укрепить batch pipelines.\nПоощряй cross-team contracts на definitions.\nName-drop tools — только как опциональное exploration."
+    },
+    {
+      "id": "data-18",
+      "label": "Airflow catchup и ловушки start_date",
+      "description": "orchestration",
+      "detail": "сюрпризы scheduler",
+      "text": "Объясни, как start_date и catchup могут случайно поставить в очередь огромные backfills.\nПосоветуй внимательно читать scheduler timezone settings.\nПоощряй idempotent tasks.\nКратко упомяni secrets backends.\nДержи пример концептуальным, без полного DAG dump."
+    },
+    {
+      "id": "data-19",
+      "label": "Survivorship bias в метриках",
+      "description": "interpretation",
+      "detail": "спроси, кого не хватает",
+      "text": "Расскажи простую историю, где фильтрация survivors искажает conversion rates.\nПоощряй прозрачно документировать cohort definitions.\nSimpson's paradox — опциональный vocabulary.\nПосоветуй plotting перед modeling рутинно.\nДружелюбный любопытный тон."
+    },
+    {
+      "id": "data-20",
+      "label": "Data contracts между командами",
+      "description": "governance",
+      "detail": "schema plus SLAs",
+      "text": "Опиши producers, публикующие schemas с expectations совместимости.\nПредложи automated checks on publish концептуально.\nКратко упомяni Avro/Protobuf без обязательства.\nПредупреди, что committees могут блокировать прогресс, если переборщить.\nПодчеркни empathy между командами."
+    }
+  ]
+}

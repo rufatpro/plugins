@@ -1,0 +1,146 @@
+{
+  "category": "aws",
+  "categoryLabel": "AWS / Cloud",
+  "prompts": [
+    {
+      "id": "aws-01",
+      "label": "AWS: старт на free tier",
+      "description": "основы",
+      "detail": "уведомление о биллинге",
+      "text": "Безопасный старт на AWS free tier для студентов.\n\n- Включи billing alarm, MFA на root, избегай ежедневного использования root\n- IAM user vs root\n\nПункты с приоритетом безопасности."
+    },
+    {
+      "id": "aws-02",
+      "label": "Статический сайт на S3",
+      "description": "хранилище",
+      "detail": "политика bucket",
+      "text": "Схема хостинга статического HTML на S3 website hosting.\n\n- Осторожность с public read bucket policy\n- Опционально упомяни CloudFront\n\nШаги на высоком уровне."
+    },
+    {
+      "id": "aws-03",
+      "label": "Деплой приложения на EC2 через SSH",
+      "description": "вычисления",
+      "detail": "группа безопасности",
+      "text": "Запуск t2.micro Ubuntu, SSH, установка Node app с systemd.\n\n- Security group порты 22 и 3000\n- Заметка про Elastic IP\n\nЧеклист."
+    },
+    {
+      "id": "aws-04",
+      "label": "IAM role для Lambda",
+      "description": "iam",
+      "detail": "минимальные привилегии",
+      "text": "Объясни IAM roles vs keys для Lambda, обращающейся к S3.\n\n- Принцип least privilege — скелет example policy\n\nБез реальных ARNs."
+    },
+    {
+      "id": "aws-05",
+      "label": "Hello-функция Lambda",
+      "description": "lambda",
+      "detail": "обработчик события",
+      "text": "Создай hello Lambda в консоли или концептуально через SAM, возвращающую JSON.\n\n- Кнопка Test event\n- Упомяни cold start\n\nPython или Node runtime."
+    },
+    {
+      "id": "aws-06",
+      "label": "RDS vs DynamoDB — выбор",
+      "description": "база данных",
+      "detail": "управляемая",
+      "text": "Когда выбирать RDS SQL vs DynamoDB vs Postgres на EC2.\n\n- Таблица решений для новичков\n\n3 строки."
+    },
+    {
+      "id": "aws-07",
+      "label": "Основы CloudWatch logs",
+      "description": "мониторинг",
+      "detail": "группы логов",
+      "text": "Просмотр логов Lambda или EC2 в CloudWatch.\n\n- Концепция alarms на errors\n\nКраткое руководство."
+    },
+    {
+      "id": "aws-08",
+      "label": "Введение в Terraform AWS",
+      "description": "iac",
+      "detail": "провайдер aws",
+      "text": "Схема первого Terraform aws provider s3 bucket resource.\n\n- terraform init plan apply\n- Предупреждение про state file\n\nНе полноценный production module."
+    },
+    {
+      "id": "aws-09",
+      "label": "Azure/GCP — сравнение на одной странице",
+      "description": "облако",
+      "detail": "мультиоблако",
+      "text": "Сопоставь AWS-сервисы с названиями Azure и GCP (S3->Blob/Storage, EC2->VM).\n\n- Совет: сначала изучить один cloud\n\nТаблица в тексте."
+    },
+    {
+      "id": "aws-10",
+      "label": "Удаление ресурсов и стоимость",
+      "description": "биллинг",
+      "detail": "очистка",
+      "text": "Чеклист разборки лабораторных стендов, чтобы избежать неожиданных счетов.\n\n- Останови EC2, удали buckets, убери elastic IPs\n\nПривычка студента."
+    },
+    {
+      "id": "aws-11",
+      "label": "VPC public и private tiers",
+      "description": "сеть",
+      "detail": "где живут ресурсы",
+      "text": "Объясни public subnets для load balancers vs private subnets для application tasks.\nУпомяни NAT gateway cost как частый сюрприз.\nПосоветуй планировать CIDR ranges, чтобы избежать коллизий в peered networks.\nПоощряй раннюю гигиену tagging owners.\nУкажи на flow logs как опциональную глубокую видимость."
+    },
+    {
+      "id": "aws-12",
+      "label": "IAM conditions для ужесточения policies",
+      "description": "безопасность",
+      "detail": "пример SecureTransport",
+      "text": "Покажи condition S3 bucket policy, требующую aws:SecureTransport.\nОсторожно объясни силу explicit deny.\nУпомяni policy simulator как учебный инструмент.\nПредупреди, что wildcards расширяют blast radius.\nСвяжи с organization SCPs как опциональный контекст."
+    },
+    {
+      "id": "aws-13",
+      "label": "Политики жизненного цикла S3",
+      "description": "стоимость",
+      "detail": "tier для старых объектов",
+      "text": "Опиши переходы в infrequent access или более холодные tiers для старых объектов.\nПросто объясни компромиссы retrieval cost.\nУпомяни очистку failed multipart uploads.\nКратко посоветуй notifications при необычных паттернах доступа.\nСвяжи с идеями event-driven fanout."
+    },
+    {
+      "id": "aws-14",
+      "label": "Подписанные URL CloudFront",
+      "description": "CDN",
+      "detail": "защита origins",
+      "text": "Объясни раздачу private content через CloudFront с signed URLs или cookies.\nУпомяни origin access control на современном уровне терминов.\nПредупреди об операционных cost cache invalidation.\nОбсуди выгоды compression.\nПосоветуй тестировать поведение signed URL expiry."
+    },
+    {
+      "id": "aws-15",
+      "label": "Поведение SQS visibility timeout",
+      "description": "очереди",
+      "detail": "retries и DLQs",
+      "text": "Объясни, почему consumers продлевают или срывают visibility, если обработка длится дольше.\nОпиши dead-letter queues после повторных падений.\nПодчеркни идемпотентную обработку.\nСравни standard vs FIFO, когда важен ordering.\nУпомяni SNS fan-out как смежное чтение."
+    },
+    {
+      "id": "aws-16",
+      "label": "Размеры задач ECS Fargate",
+      "description": "контейнеры",
+      "detail": "пары CPU и memory",
+      "text": "Объясни, как комбинации CPU/memory Fargate task влияют на шаги billing.\nУпомяni awsvpc networking как mental model по умолчанию.\nКратко обсуди secrets injection через task definitions.\nSidecars для observability — только как указатель.\nПоощряй понимание rolling deployments."
+    },
+    {
+      "id": "aws-17",
+      "label": "RDS Multi-AZ vs реплики",
+      "description": "базы данных",
+      "detail": "failover vs масштабирование чтения",
+      "text": "Сравни Multi-AZ синхронный failover с асинхронными read replicas.\nОбъясни replica lag как иногда заметный пользователям.\nКратко упомяni backups и maintenance windows.\nПосоветуй connection pooling на уровне приложения.\nAurora — опциональное продвинутое чтение."
+    },
+    {
+      "id": "aws-18",
+      "label": "Прокси API Gateway + Lambda",
+      "description": "serverless",
+      "detail": "HTTP mapping",
+      "text": "Опиши proxy integration, передающую request context в Lambda.\nУпомяni cold starts как кривую обучения.\nОбсуди throttling и quotas на высоком уровне.\nПосоветуй чисто структурировать routes.\nAuthorizers — продвинутое продолжение."
+    },
+    {
+      "id": "aws-19",
+      "label": "Cost anomalies и budgets",
+      "description": "FinOps-lite",
+      "detail": "ловить spikes рано",
+      "text": "Рекомендуй budget alerts плюс anomaly detection для неожиданных расходов.\nОбсуди полноту tagging для атрибуции.\nВежливо упомяni разделение sandbox accounts.\nПосоветуй в postmortem винить процессы, а не людей.\nКратко укажи на Saving Plans vs Reserved."
+    },
+    {
+      "id": "aws-20",
+      "label": "STS AssumeRole между accounts",
+      "description": "федерация идентичности",
+      "detail": "краткоживущие credentials",
+      "text": "Объясни доверие другому account через role assumption.\nКратко обсуди external IDs против confused deputy.\nПовтори: избегай long-lived access keys везде, где можно.\nУпомяni SCP guardrails, ограничивающие role usage.\nСвяжи со SSO permission sets."
+    }
+  ]
+}

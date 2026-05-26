@@ -1,0 +1,146 @@
+{
+  "category": "nextjs",
+  "categoryLabel": "Next.js",
+  "prompts": [
+    {
+      "id": "nextjs-01",
+      "label": "Новое Next.js-приложение (App Router)",
+      "description": "настройка",
+      "detail": "create-next-app",
+      "text": "Создай Next.js 14+ проект для начинающего с App Router.\n\n- Шаги npx create-next-app (TypeScript, ESLint, Tailwind опционально)\n- Объясни app/page.tsx и app/layout.tsx\n- Измени home page на Hello Next\n- npm run dev и открой localhost URL\n\nПеречисли созданные папки простым языком."
+    },
+    {
+      "id": "nextjs-02",
+      "label": "Страница и навигация Link",
+      "description": "маршрутизация",
+      "detail": "app/about/page.tsx",
+      "text": "Добавь вторую страницу в Next.js App Router проект.\n\n- app/about/page.tsx с title и paragraph\n- Link с home через next/link\n- Объясни file-based routing\n\nПриведи полное содержимое файлов."
+    },
+    {
+      "id": "nextjs-03",
+      "label": "Динамический маршрут [id]",
+      "description": "маршрутизация",
+      "detail": "blog/[slug]",
+      "text": "Объясни dynamic routes в Next.js App Router.\n\n- app/blog/[slug]/page.tsx\n- Пример slugs hello и world с разным содержимым\n- Объясни тип props params в TypeScript\n\nДержи пример минимальным."
+    },
+    {
+      "id": "nextjs-04",
+      "label": "Server Component vs Client — сравнение",
+      "description": "компоненты",
+      "detail": "'use client' button",
+      "text": "Объясни Server vs Client Components для начинающего.\n\n- Home как Server Component со static text\n- Counter как Client Component с useState\n- Когда добавлять 'use client'\n\nПриведи оба файла и сравнение в 4 пунктах."
+    },
+    {
+      "id": "nextjs-05",
+      "label": "Fetch данных в Server Component",
+      "description": "данные",
+      "detail": "async page fetch",
+      "text": "Получи JSON в Server Component (без useEffect).\n\n- async function Page(), fetching jsonplaceholder post\n- Покажи, что loading на сервере не нужен; кратко упомяни error handling\n- TypeScript interface для Post\n\nТолько App Router."
+    },
+    {
+      "id": "nextjs-06",
+      "label": "API Route handler — GET-маршрут",
+      "description": "api",
+      "detail": "app/api/hello/route.ts",
+      "text": "Создай Route Handler GET /api/hello, возвращающий JSON.\n\n- app/api/hello/route.ts\n- Протестируй в браузере или curl\n- Сравни со pages в 2 предложениях\n\nTypeScript."
+    },
+    {
+      "id": "nextjs-07",
+      "label": "Переменные окружения",
+      "description": "конфиг",
+      "detail": ".env.local",
+      "text": "Объясни env vars в Next.js для начинающих.\n\n- .env.local с NEXT_PUBLIC_APP_NAME\n- Использование в server vs client components (правила)\n- Никогда не коммить секреты\n\nПокажи .env.example без реальных ключей."
+    },
+    {
+      "id": "nextjs-08",
+      "label": "Metadata и title страницы",
+      "description": "seo",
+      "detail": "export const metadata",
+      "text": "Установи title и description страницы через Metadata API.\n\n- Static metadata на home page\n- Объясни, почему это важно для SEO\n\nТолько синтаксис App Router."
+    },
+    {
+      "id": "nextjs-09",
+      "label": "Checklist deploy на Vercel",
+      "description": "деплой",
+      "detail": "production build",
+      "text": "Дай checklist для начинающего по deploy Next.js на Vercel.\n\n- git push, import project, env vars на dashboard\n- Сначала npm run build локально\n- Типичные build errors (types, env) в пунктах\n\nБез шагов, привязанных к конкретному аккаунту."
+    },
+    {
+      "id": "nextjs-10",
+      "label": "Общий navbar в layout",
+      "description": "layout",
+      "detail": "app/layout.tsx",
+      "text": "Добавь общий navbar в root layout.\n\n- layout.tsx с html/body, nav links Home и About\n- children slot для pages\n- Минимальный CSS или Tailwind, если уже включён\n\nПокажи полный layout.tsx."
+    },
+    {
+      "id": "nextjs-11",
+      "label": "loading.tsx — streaming skeleton маршрута",
+      "description": "App Router",
+      "detail": "мгновенная обратная связь",
+      "text": "Объясни UX loading.tsx для suspense boundaries в App Router.\nПокажи, как это связано с prefetching navigations мысленно.\nСравни глобальные skeletons vs granular route segments.\nПредупреди о нежелательном layout jitter с высокими skeletons.\nДай только минималистичную структуру example component."
+    },
+    {
+      "id": "nextjs-12",
+      "label": "error.tsx — гигиена route boundary",
+      "description": "ошибки",
+      "detail": "паттерн reset button",
+      "text": "Объясни local error.tsx boundaries vs global.\nПродемонстрируй сброс error state с аналогией nested routes.\nПеречисли, какие errors попадают в boundaries vs только логируются.\nСвяжи с reporting services концептуально.\nУпомяni различие dev overlay vs prod user message."
+    },
+    {
+      "id": "nextjs-13",
+      "label": "not-found.tsx и helper notFound",
+      "description": "маршрутизация",
+      "detail": "семантика 404",
+      "text": "Различай вызов notFound() в server components vs static fallback pages.\nОбъясни ожидание HTTP status для bots vs SPA history.\nПокажи крошечный пример dynamic segment с отсутствующей записью.\nЛегко свяжи с влиянием на metadata.\nДобавь рекомендации по SEO-friendly copy для начинающих."
+    },
+    {
+      "id": "nextjs-14",
+      "label": "generateStaticParams для static blogs",
+      "description": "SSG",
+      "detail": "paths на этапе build",
+      "text": "Опиши generateStaticParams, возвращающий список slug на этапе build.\nСравни с ISR revalidate timelines концептуально.\nОбъясни, что происходит при посещении unknown slug в runtime без настройки dynamicParams.\nУпомяni drafting/unpublished workflows как заботу CMS.\nДержи code sketch коротким."
+    },
+    {
+      "id": "nextjs-15",
+      "label": "revalidateTag после mutations",
+      "description": "кэш",
+      "detail": "инвалидация по тегам",
+      "text": "Объясни fetch cache tagging и server usage revalidateTag после form action.\nРазличай revalidatePath vs granularity тегов.\nПредупреди о eventual consistency формулировками для juniors.\nСвяжи с headless CMS webhooks словами.\nПокажи только pseudo flow без vendor lock."
+    },
+    {
+      "id": "nextjs-16",
+      "label": "Server Actions — ментальный набросок",
+      "description": "формы",
+      "detail": "progressive enhancement",
+      "text": "Объясни назначение Server Actions без полного курса API design.\nПокажи mental model: form posts to server function с меньшим client glue.\nПеречисли ограничения вокруг browser API usage.\nОбсуди, что security validations всё ещё обязательны.\nСравни с REST route handlers для public APIs."
+    },
+    {
+      "id": "nextjs-17",
+      "label": "next/image — конфиг remotePatterns",
+      "description": "медиа",
+      "detail": "security allowlist",
+      "text": "Объясни ограничение remote image domains в next.config images.remotePatterns.\nОбъясни, почему wildcard CDNs всё равно требуют осознанных правил.\nУпомяni взаимодействие widths/sizes для responsiveness.\nПокажи одну ошибку: путаница static import vs URL string props.\nДобавь заметку о placeholder blur data patterns на высоком уровне."
+    },
+    {
+      "id": "nextjs-18",
+      "label": "middleware matcher — защита auth",
+      "description": "edge",
+      "detail": "тонкие проверки",
+      "text": "Набросай middleware с config matcher, охраняющим /dashboard routes.\nПодчеркни быстрые проверки и редкое делегирование DB work.\nОбъясни решения redirect vs rewrite простым языком.\nКратко упомяni runtime limitations middleware.\nПредупреди начинающих о дублировании auth logic с server checks."
+    },
+    {
+      "id": "nextjs-19",
+      "label": "Parallel routes — концепция dashboards",
+      "description": "layouts",
+      "detail": "mental model slots",
+      "text": "Познакомь с parallel routes через slots @analytics и @team мысленно.\nОбъясни пользу независимых loading/error boundaries.\nОтметь стоимость сложности для маленьких apps.\nУкажи, когда начинающему не стоит внедрять.\nЛегко свяжи с modals как parallel intercepting routes без полного tutorial."
+    },
+    {
+      "id": "nextjs-20",
+      "label": "Переменные окружения: client vs server",
+      "description": "конфиг",
+      "detail": "префикс NEXT_PUBLIC",
+      "text": "Поясни, какие env vars попадают в браузер через NEXT_PUBLIC_.\nПокажи rotation и env matrix для preview deployments словами.\nОбъясни, почему secrets никогда не должны быть в client bundles.\nКратко опиши runtime env с edge constraints.\nДай checklist для отладки undefined env на этапе build vs request time."
+    }
+  ]
+}

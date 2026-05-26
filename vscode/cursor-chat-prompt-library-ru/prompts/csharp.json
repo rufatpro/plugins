@@ -1,0 +1,146 @@
+{
+  "category": "csharp",
+  "categoryLabel": "C# / .NET",
+  "prompts": [
+    {
+      "id": "csharp-01",
+      "label": "Консольное Hello .NET",
+      "description": "консоль",
+      "detail": "dotnet new",
+      "text": "Создай первое консольное C# приложение через dotnet CLI.\n\n- dotnet new console, top-level statements в Program.cs\n- dotnet run\n\nКратко объясни SDK vs Runtime."
+    },
+    {
+      "id": "csharp-02",
+      "label": "ASP.NET Core Web API — старт",
+      "description": "api",
+      "detail": "Minimal API",
+      "text": "Minimal API с GET /hello, возвращающим JSON.\n\n- dotnet new web, MapGet\n- https URL в launchSettings\n\nСтиль .NET 8."
+    },
+    {
+      "id": "csharp-03",
+      "label": "Введение в Entity Framework Core",
+      "description": "ef",
+      "detail": "DbContext",
+      "text": "Набросок EF Core с SQLite для сущности Todo.\n\n- Models, DbContext, команды migration\n- Набросок CRUD endpoints\n\nLearning path, не полное приложение."
+    },
+    {
+      "id": "csharp-04",
+      "label": "Встроенный Dependency injection",
+      "description": "di",
+      "detail": "builder.Services",
+      "text": "Объясни DI в ASP.NET Core с ITodoService и реализацией.\n\n- Регистрация AddScoped в Program.cs\n- Inject в endpoint или controller\n\nПочему interfaces помогают тестам."
+    },
+    {
+      "id": "csharp-05",
+      "label": "MVC Razor page — представление",
+      "description": "mvc",
+      "detail": "Views Home Index",
+      "text": "Создай MVC проект с представлением Home Index.\n\n- dotnet new mvc: отличие от web api\n- Views/Home/Index.cshtml простой html\n\nКогда выбрать MVC vs Razor Pages vs API — 3 пункта."
+    },
+    {
+      "id": "csharp-06",
+      "label": "async/await и HTTP в C#",
+      "description": "async",
+      "detail": "HttpClient",
+      "text": "Получи JSON через HttpClient async в console или minimal API.\n\n- GetStringAsync try/catch\n- Почему async важен для серверов\n\nКороткий sample."
+    },
+    {
+      "id": "csharp-07",
+      "label": "Первый тест xUnit",
+      "description": "тестирование",
+      "detail": "dotnet test",
+      "text": "Добавь xUnit test project для класса Calculator.\n\n- dotnet new xunit, reference main project\n- Один Fact test Add\n\nЗапусти dotnet test."
+    },
+    {
+      "id": "csharp-08",
+      "label": "Конфигурация appsettings.json",
+      "description": "конфиг",
+      "detail": "IOptions",
+      "text": "Читай настройки из appsettings.json в minimal API.\n\n- Bind section AppSettings\n- Никогда не коммить секреты — User Secrets для dev\n\nПример JSON."
+    },
+    {
+      "id": "csharp-09",
+      "label": "Обзор Blazor WebAssembly",
+      "description": "blazor",
+      "detail": "client SPA",
+      "text": "Что такое Blazor WASM vs Server простыми словами?\n\n- Когда новичкам лучше выбрать React\n- Упомяni dotnet new blazorwasm\n\nНе полный tutorial — decision guide."
+    },
+    {
+      "id": "csharp-10",
+      "label": "Publish в папку",
+      "description": "деплой",
+      "detail": "dotnet publish",
+      "text": "Шаги dotnet publish -c Release и выходная папка.\n\n- Self-contained vs framework-dependent — по одной строке каждый\n\nЧеклист деплоя для IIS или Linux."
+    },
+    {
+      "id": "csharp-11",
+      "label": "Record types для DTO",
+      "description": "dotnet",
+      "detail": "основы immutability",
+      "text": "Объясни records для data transfer objects vs нюансы reference equality классов.\nПродемонстрируй with expression copies с immutable изменениями.\nОбъясни interplay init-only.\nУпомяni ergonomics positional record ToString.\nЛёгкая заметка о performance structural equality."
+    },
+    {
+      "id": "csharp-12",
+      "label": "Primary constructors — захват зависимостей",
+      "description": "синтаксис",
+      "detail": "DI fields",
+      "text": "Покажи primary constructor, захватывающий ILogger в implicit fields.\nОбъясни debates читаемости vs classic constructors.\nПредупреди: validation placement остаётся явной ответственностью.\nУпомяni testing substitution doubles.\nMental model web-focused примера."
+    },
+    {
+      "id": "csharp-13",
+      "label": "IAsyncEnumerable — потоковая передача",
+      "description": "async",
+      "detail": "yield async enumerable",
+      "text": "Набросок IAsyncEnumerable chunked lines, streamed из ASP endpoint.\nЛёгко объясни backpressure memory cautions.\nСвяжи CancellationToken propagation.\nСравни с альтернативой SSE.\nИзбегай глубокого framework stack."
+    },
+    {
+      "id": "csharp-14",
+      "label": "Введение в Span ReadOnlySpan",
+      "description": "производительность",
+      "detail": "slicing stack",
+      "text": "Представь Span slicing без аллокации substrings arrays.\nОбъясни constrained scenarios safety stackalloc.\nЧестно: когда новички откладывают micro optimizations.\nОпционально Memory для async bridging.\nCaution benchmarking noise."
+    },
+    {
+      "id": "csharp-15",
+      "label": "IHttpClientFactory — именованные клиенты",
+      "description": "HTTP",
+      "detail": "socket pooling",
+      "text": "Объясни inject HttpClient factory против socket exhaustion от new-ing clients.\nПокажи named typed client registrations.\nОпциональный teaser resilience Polly layering.\nПосоветуй timeouts configuration.\nDebunk IDisposable myths HttpClient."
+    },
+    {
+      "id": "csharp-16",
+      "label": "EF Core AsNoTracking и проекции",
+      "description": "данные",
+      "detail": "readonly queries",
+      "text": "Продемонстрируй read-only listings с AsNoTracking.\nПокажи Select projecting DTOs для снижения payloads.\nОпциональный teaser Include split queries для heavyweight graphs.\nПредупреди о lazy load surprises.\nОпциональный teaser compiled queries."
+    },
+    {
+      "id": "csharp-17",
+      "label": "Порядок ASP.NET middleware pipeline",
+      "description": "HTTP",
+      "detail": "размещение exception handler",
+      "text": "Объясни sequencing UseRouting Authentication Authorization MapEndpoints.\nMental model custom middleware class constructor injection.\nОпционально branching MapWhen.\nПодчеркни раннее размещение exception handler.\nТолько verbal onion analogy."
+    },
+    {
+      "id": "csharp-18",
+      "label": "BackgroundService и PeriodicTimer",
+      "description": "workers",
+      "detail": "hosted lifecycle",
+      "text": "Набросок BackgroundService с PeriodicTimer loops и cooperative cancellation.\nСравни с heavier schedulers Hangfire Quartz опционально.\nCaution scoped service resolution через scope factory pattern и swallowing exceptions.\nПосоветуй structured logging внутри loops."
+    },
+    {
+      "id": "csharp-19",
+      "label": "xUnit Theory и InlineData",
+      "description": "тестирование",
+      "detail": "data driven",
+      "text": "Продемонстрируй Theory InlineData matrix multiplication cases.\nСравни с альтернативой ClassData.\nАргументируй: naming clarity важна для readability.\nОпциональное caution snapshot testing.\nОпционально упомяni readability FluentAssertions."
+    },
+    {
+      "id": "csharp-20",
+      "label": "Options pattern и IOptionsMonitor",
+      "description": "конфиг",
+      "detail": "reloadable settings",
+      "text": "Bind section appsettings в record class FeatureOptions.\nКратко объясни IOptions vs IOptionsSnapshot vs IOptionsMonitor.\nПокажи startup validation опционально DataAnnotations.\nСвяжи с user-secrets development.\nПредупреди о tempered hot reload expectations."
+    }
+  ]
+}

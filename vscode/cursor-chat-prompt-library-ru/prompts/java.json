@@ -1,0 +1,146 @@
+{
+  "category": "java",
+  "categoryLabel": "Java и Spring",
+  "prompts": [
+    {
+      "id": "java-01",
+      "label": "Hello Java Maven-проект",
+      "description": "основы",
+      "detail": "шаблон mvn archetype",
+      "text": "Создай Maven-проект, выводящий Hello на Java 17+.\n\n- pom.xml — секция dependencies пустая\n- mvn compile exec или main class\n\nОбъясни разницу JDK и JRE."
+    },
+    {
+      "id": "java-02",
+      "label": "Генератор Spring Boot Initializr",
+      "description": "фреймворк Spring",
+      "detail": "сайт start.spring.io",
+      "text": "Сгенерируй веб-проект Spring Boot с start.spring.io.\n\n- Dependencies: Spring Web\n- Application.java и @RestController /hello\n- mvn spring-boot:run\n\nПеречисли файлы."
+    },
+    {
+      "id": "java-03",
+      "label": "REST-контроллер CRUD",
+      "description": "стиль REST",
+      "detail": "аннотация @RestController",
+      "text": "Простой in-memory REST CRUD для Item в Spring Boot.\n\n- GET POST без базы данных\n- ResponseEntity и коды статусов\n\nJava records или class для Item."
+    },
+    {
+      "id": "java-04",
+      "label": "Сущность Spring Data JPA",
+      "description": "слой JPA",
+      "detail": "сущность @Entity User",
+      "text": "Добавь сущность User и JpaRepository.\n\n- application.properties — H2 console для обучения\n- endpoint findAll\n\nПредупреждение о миграции с ddl-auto=update."
+    },
+    {
+      "id": "java-05",
+      "label": "Профили application.yml",
+      "description": "конфигурация",
+      "detail": "профили dev, prod",
+      "text": "Объясни Spring profiles dev и prod в application.yml.\n\n- Разные URL datasource как placeholder\n- Активация через spring.profiles.active\n\nБез реальных паролей."
+    },
+    {
+      "id": "java-06",
+      "label": "Валидация @Valid",
+      "description": "валидация",
+      "detail": "стандарт Bean Validation",
+      "text": "POST user с @Valid и jakarta validation annotations.\n\n- @NotBlank email и т.д.\n- Возврат 400 при ошибках\n\nПример Controller + DTO."
+    },
+    {
+      "id": "java-07",
+      "label": "Глобальный ExceptionHandler",
+      "description": "ошибки",
+      "detail": "аннотация @ControllerAdvice",
+      "text": "Глобальный обработчик исключений, возвращающий JSON с телом ошибки.\n\n- Custom NotFoundException -> 404\n\nОдин фрагмент advice class."
+    },
+    {
+      "id": "java-08",
+      "label": "Тест JUnit 5 Spring Boot",
+      "description": "тестирование",
+      "detail": "аннотация @SpringBootTest",
+      "text": "Slice test или @WebMvcTest для hello endpoint.\n\n- MockMvc perform get expect 200\n\nЗапуск Maven surefire."
+    },
+    {
+      "id": "java-09",
+      "label": "Gradle vs Maven: выбор",
+      "description": "сборка",
+      "detail": "файл build.gradle",
+      "text": "Сравни Maven и Gradle для новичков, выбирающих Spring.\n\n- Когда важны дефолты IntelliJ\n- Простой Gradle kotlin dsl hello при переходе\n\nНейтральная рекомендация."
+    },
+    {
+      "id": "java-10",
+      "label": "Сборка и запуск JAR",
+      "description": "деплой",
+      "detail": "запуск java -jar",
+      "text": "Собери executable JAR и запусти java -jar app.jar.\n\n- spring-boot-maven-plugin repackage\n- переменная окружения PORT\n\nЗаметка о секретах в production."
+    },
+    {
+      "id": "java-11",
+      "label": "Sealed classes: иерархия",
+      "description": "современный Java",
+      "detail": "исчерпывающие switch",
+      "text": "Объясни sealed class permits Circle Square, ограничивающий расширение.\nСвяжи с switch pattern matching — preview stability, читай внимательно.\nСравни с final classes.\nПокажи выигрыши в domain modeling.\nКратко упомяни планирование serialization."
+    },
+    {
+      "id": "java-12",
+      "label": "Records: компактные DTO",
+      "description": "моделирование",
+      "detail": "неизменяемые носители",
+      "text": "Используй records для API response payloads.\nПокажи compact constructor validation inserts.\nОбъясни синтез equals hashCode.\nСвяжи с Jackson annotations.\nРасскажи о миграции с verbose POJOs."
+    },
+    {
+      "id": "java-13",
+      "label": "Virtual threads: обзор",
+      "description": "конкурентность",
+      "detail": "дёшевые блокирующие задачи",
+      "text": "Опиши, как virtual threads улучшают throughput blocking IO — словами, без лекции по тюнингу.\nСравни с platform thread pool sizing headaches — анекдотично.\nПредупреди о pinning pitfalls — концептуально, бегло.\nПосоветуй джунам параллельно осваивать классический ExecutorService.\nОпционально — тизер structured concurrency."
+    },
+    {
+      "id": "java-14",
+      "label": "HttpClient: таймауты builder",
+      "description": "стандартная библиотека",
+      "detail": "клиент Java 11",
+      "text": "Настрой connect request timeouts через HttpClient fluent builder.\nПокажи эскиз JSON POST с BodyPublishers.\nОбъясни выбор handler для mapping responses.\nНапомни о thread-safe reuse HttpClient.\nОпционально — указатель на миграцию Spring clients."
+    },
+    {
+      "id": "java-15",
+      "label": "Optional: антипаттерны",
+      "description": "дизайн API",
+      "detail": "эргономика null",
+      "text": "Научи возвращать Optional, но никогда не использовать как поле — misuse.\nПредупреди о get без проверок — сильный anti-pattern.\nПокажи разницу orElse vs orElseGet lazy.\nСвяжи с Streams pipeline combos.\nПосоветуй не увлекаться Optional wrapping frenzy."
+    },
+    {
+      "id": "java-16",
+      "label": "JUnit 5: параметризованные тесты",
+      "description": "тестирование",
+      "detail": "источники CSV, Enum",
+      "text": "Покажи ParameterizedTest с CSV Enum sources.\nОбъясни nested lifecycle classes — опционально.\nУпомяни caveat parallel execution — опционально.\nПосоветуй ясные asserting messages.\nЛёгкая рекомендация AssertJ — опционально."
+    },
+    {
+      "id": "java-17",
+      "label": "JPMS module-info для новичков",
+      "description": "инструменты",
+      "detail": "публикация библиотек",
+      "text": "Дай доступное руководство: игнорируй JPMS, пока library publishing не потребует иного.\nОбъясни requires transitive keywords мягко.\nТизер jlink packaging без глубины.\nУпомяни classpath versus module-path errors с сочувствием.\nУспокой: app developers часто пропускают."
+    },
+    {
+      "id": "java-18",
+      "label": "Checked и unchecked исключения",
+      "description": "ошибки",
+      "detail": "вкусы проектирования API",
+      "text": "Сравни исторические checked exceptions в библиотеках и frameworks, предпочитающих unchecked — словами.\nПодчеркни документирование throws в любом случае.\nПокажи wrapping chaining patterns честно.\nСвяжи с REST controller pragmatic defaults.\nСпокойный тон — nuanced debate."
+    },
+    {
+      "id": "java-19",
+      "label": "Jackson: JSON для records",
+      "description": "сериализация",
+      "detail": "форматы имён",
+      "text": "Покажи JsonProperty naming с глобальной настройкой snake case — иллюстративно.\nОбъясни records interplay и immutable constructing.\nОпционально — параллели с Kotlin data.\nОбсуди предпочтение date ISO formats.\nПредупреди о toggles unknown property failure — словами."
+    },
+    {
+      "id": "java-20",
+      "label": "try-with-resources и AutoCloseable",
+      "description": "ввод-вывод",
+      "detail": "подавленные исключения",
+      "text": "Научи try with resources для streams и JDBC connections — упрощает closes.\nОбъясни suppressed exception chaining при чтении stack traces — словами.\nОпционально — trivia про Cleaner, редко нужно.\nПосоветуй универсально использовать closable.\nСравни с manual finally boilerplate."
+    }
+  ]
+}

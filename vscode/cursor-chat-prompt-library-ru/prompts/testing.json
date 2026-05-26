@@ -1,0 +1,146 @@
+{
+  "category": "testing",
+  "categoryLabel": "Тестирование",
+  "prompts": [
+    {
+      "id": "test-01",
+      "label": "Первый тест pytest",
+      "description": "pytest",
+      "detail": "test_add.py",
+      "text": "Я новичок в тестировании. Напиши pytest для функции add(a,b).\n\n- test_add.py с 3 кейсами, включая граничный случай с нулём\n- Запусти pytest -v\n- Объясни assert и паттерн arrange-act-assert\n\nТолько Python."
+    },
+    {
+      "id": "test-02",
+      "label": "Фикстуры pytest",
+      "description": "pytest",
+      "detail": "@pytest.fixture",
+      "text": "Объясни фикстуры pytest на примере фикстуры словаря базы данных.\n\n- Фикстура предоставляет пустую БД пользователей\n- Два теста: вставка и чтение пользователей\n\nКраткие комментарии об идее setup/teardown."
+    },
+    {
+      "id": "test-03",
+      "label": "Мок requests в pytest",
+      "description": "pytest",
+      "detail": "monkeypatch",
+      "text": "Протестируй функцию, которая делает HTTP-запросы, без реальной сети.\n\n- Используй pytest monkeypatch или unittest.mock\n- Подмени ответ для requests.get\n\nОдин модуль под тест + файл тестов."
+    },
+    {
+      "id": "test-04",
+      "label": "Первый тест Jest",
+      "description": "jest",
+      "detail": "sum.test.js",
+      "text": "Настрой Jest для небольшого проекта Node или Vite.\n\n- Установи jest, пример sum.js и sum.test.js\n- Скрипт npm test\n- Expect 2+2 toBe 4\n\nПокажи scripts в package.json."
+    },
+    {
+      "id": "test-05",
+      "label": "Клик в React Testing Library",
+      "description": "react",
+      "detail": "render screen",
+      "text": "Протестируй клик по кнопке React с Testing Library.\n\n- Компонент Counter, тест проверяет инкремент по клику\n- Запросы getByRole\n- Команда npm test\n\nTypeScript по желанию."
+    },
+    {
+      "id": "test-06",
+      "label": "Smoke-тест E2E в Playwright",
+      "description": "e2e",
+      "detail": "open homepage",
+      "text": "Добавь один Playwright-тест, который открывает домашнюю страницу localhost.\n\n- Подсказка npx playwright install\n- Тест проверяет видимость title или заголовка\n\nДля dev-сервера Vite или Next."
+    },
+    {
+      "id": "test-07",
+      "label": "Основы покрытия кода",
+      "description": "coverage",
+      "detail": "pytest --cov",
+      "text": "Объясни покрытие кода для новичков.\n\n- Запусти pytest --cov=src или jest --coverage\n- Что 100% НЕ означает\n- Разумная цель для учебного проекта\n\nБез одержимости метриками."
+    },
+    {
+      "id": "test-08",
+      "label": "Небольшая kata на TDD",
+      "description": "tdd",
+      "detail": "fizzbuzz",
+      "text": "Проведи через TDD задачу FizzBuzz небольшими шагами.\n\n- Сначала падающий тест, затем минимальный код\n- Покажи 3 цикла red-green в комментариях\n\nВыбери Python или JavaScript и придерживайся одного."
+    },
+    {
+      "id": "test-09",
+      "label": "Snapshot-тесты: когда использовать",
+      "description": "jest",
+      "detail": "snapshots",
+      "text": "Объясни плюсы и минусы snapshot-тестов Jest.\n\n- Один пример snapshot небольшого JSON-экспорта\n- Когда snapshots усложняют поддержку\n\nПредупреждение для новичков в 3 пунктах."
+    },
+    {
+      "id": "test-10",
+      "label": "CI: запуск тестов при push",
+      "description": "ci",
+      "detail": "GitHub Actions",
+      "text": "Workflow GitHub Actions для запуска pytest или npm test при push.\n\n- Триггер на push в main\n- Setup Python или Node, установка зависимостей, запуск тестов\n\nТолько содержимое YAML-файла."
+    },
+    {
+      "id": "test-11",
+      "label": "pytest parametrize с ids",
+      "description": "pytest",
+      "detail": "readable failures",
+      "text": "Покажи @pytest.mark.parametrize с явными ids для матричных кейсов.\nОбъясни, как это улучшает читаемость вывода при падении.\nЛёгко сочетай с indirect fixtures.\nСравни с антипаттерном цикла внутри теста.\nПриведи пример для кейсов валидации email."
+    },
+    {
+      "id": "test-12",
+      "label": "Области фикстур: session vs function",
+      "description": "pytest",
+      "detail": "shared container",
+      "text": "Объясни, когда session-scoped engine имеет смысл для интеграционных тестов.\nПредупреди об утечке состояния между тестами.\nПокажи autouse fixtures с осторожностью.\nОбъясни паттерны teardown через yield.\nУпомяни конфликты с параллельным запуском (-n)."
+    },
+    {
+      "id": "test-13",
+      "label": "Контрактные тесты consumer-driven",
+      "description": "quality",
+      "detail": "Pact intro",
+      "text": "Объясни контрактные тесты, гарантирующие что provider соответствует ожиданиям consumer.\nСравни с хрупкостью интегрированных E2E.\nОпиши workflow брокера на упрощённом уровне.\nКогда новичкам стоит пропустить, пока нет нескольких сервисов.\nПеречисли термины: pact, provider states."
+    },
+    {
+      "id": "test-14",
+      "label": "Мутационное тестирование: зачем",
+      "description": "quality",
+      "detail": "Stryker name-drop",
+      "text": "Опиши мутационное тестирование как намеренное «ломание» кода, чтобы проверить, ловят ли тесты ошибки.\nОбъясни компромисс стоимости и медлительности.\nПредложи начинать только с критичных модулей.\nСвяжи с самоуверенностью от процента coverage.\nДай инструмент-агностичную мотивацию."
+    },
+    {
+      "id": "test-15",
+      "label": "Property-based тесты: набросок Hypothesis",
+      "description": "generative",
+      "detail": "finds edge cases",
+      "text": "Представь @given strategies, генерирующие множество входных данных.\nПокажи интуицию shrinking при падающих примерах.\nОбъясни отличие от таблиц примеров.\nПредупреди о flakiness при неверных свойствах.\nДай идею крошечного свойства идемпотентности sort."
+    },
+    {
+      "id": "test-16",
+      "label": "Рабочий процесс: просмотр trace Playwright",
+      "description": "сквозные тесты",
+      "detail": "отладка падений",
+      "text": "Объясни настройки включения trace при падении.\nПроведи по открытию trace zip для timeline.\nРазличай отладку headed vs headless.\nУпомяни вкладку network в traces.\nПосоветуй не коммитить traces в git."
+    },
+    {
+      "id": "test-17",
+      "label": "Визуальная регрессия: предостережения",
+      "description": "ui",
+      "detail": "snapshots images",
+      "text": "Объясни flakiness screenshot diff из-за шрифтов и анимаций.\nПредложи стабилизировать анимации в test mode.\nОбсуди философию настройки threshold.\nКогда component tests лучше full page.\nУпомяни предупреждение о злоупотреблении accessibility snapshot."
+    },
+    {
+      "id": "test-18",
+      "label": "Карта терминов test doubles",
+      "description": "mocks",
+      "detail": "stub fake mock spy",
+      "text": "Определи stub, fake, mock, spy простым языком.\nЛёгкая связь с классической терминологией Fowler.\nПокажи, когда over-mocking снижает уверенность.\nПоощряй black-box тесты сервисов.\nПриведи пример выбора fake in-memory repo."
+    },
+    {
+      "id": "test-19",
+      "label": "Чеклист triage flaky-тестов",
+      "description": "process",
+      "detail": "quarantine policy",
+      "text": "Список triage: timing, shared state, async races, random seed, network.\nОбсуди стратегию quarantine tagging.\nПодчеркни исправление root cause вместо retries.\nСвяжи с метриками flaky rate.\nДай шаблон коммуникации для команд."
+    },
+    {
+      "id": "test-20",
+      "label": "Coverage только как guardrail",
+      "description": "metrics",
+      "detail": "meaningful asserts",
+      "text": "Предупреди против слепой погони за 100% coverage.\nПокажи идею diff coverage в PR.\nПоощряй проверку поведения, а не выполненных строк.\nСвяжи с синергией mutation testing.\nЗаверши прагматичным примером командной политики."
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "category": "typescript",
+  "categoryLabel": "TypeScript",
+  "prompts": [
+    {
+      "id": "ts-01-first-file",
+      "label": "Первый файл TypeScript",
+      "description": "основы",
+      "detail": "компиляция tsc и запуск",
+      "text": "Я новичок в TypeScript. Настрой минимальное окружение без фреймворка.\n\n- hello.ts с типизированной функцией greet(name: string)\n- tsconfig.json со strict: true — по одному предложению про target и module\n- Покажи npx tsc и node hello.js (или альтернатива ts-node)\n\nОбъясни отличие от plain JavaScript в 3 пунктах."
+    },
+    {
+      "id": "ts-02-interfaces",
+      "label": "Interfaces для модели User",
+      "description": "типы",
+      "detail": "interface + функция с ним",
+      "text": "Научи interfaces в TypeScript на небольшом примере.\n\n- interface User { id: number; name: string; email: string; active?: boolean }\n- Функция formatUser(user: User): string\n- Один объект-пример и вывод в console.log\n\nПокажи концептуально, что будет при неверной форме, и как помогает компилятор."
+    },
+    {
+      "id": "ts-03-union-types",
+      "label": "Union types и литералы",
+      "description": "типы",
+      "detail": "status: pending | done",
+      "text": "Объясни union types и string literal types для новичка.\n\n- type TaskStatus = 'pending' | 'in_progress' | 'done'\n- interface Task { id: number; title: string; status: TaskStatus }\n- Функция setStatus(task: Task, status: TaskStatus): Task\n\nОдин пример if/switch с сужением типа."
+    },
+    {
+      "id": "ts-04-generics",
+      "label": "Первая generic-функция firstArray",
+      "description": "generics",
+      "detail": "function first<T>",
+      "text": "Введи generics через простую утилиту.\n\n- function first<T>(items: T[]): T | undefined\n- Используй с number[] и string[]\n- Короткий комментарий, зачем нужен <T>\n\nБез React. Файл до 30 строк."
+    },
+    {
+      "id": "ts-05-type-narrowing",
+      "label": "Сужение типов через typeof",
+      "description": "narrowing",
+      "detail": "параметр string | number",
+      "text": "Покажи type narrowing для новичков.\n\n- function printId(id: string | number)\n- Проверки typeof перед выводом\n- Одна типичная ошибка (считать, что всегда string)\n\nЗапускаемый код и ожидаемый вывод."
+    },
+    {
+      "id": "ts-06-enums",
+      "label": "const enum или union для ролей",
+      "description": "enums",
+      "detail": "admin | user | guest",
+      "text": "Сравни string union types и const enum для ролей в TypeScript.\n\n- Рекомендуй один подход для маленького приложения и почему\n- Пример: функция canAccess(role, feature)\n- Для новичков: многие команды предпочитают unions вместо enum\n\nОдин файл-пример."
+    },
+    {
+      "id": "ts-07-async-promise",
+      "label": "async/await с типизированным Promise",
+      "description": "async",
+      "detail": "fetchUser(): Promise<User>",
+      "text": "TypeScript + async/await для новичка.\n\n- interface User { id: number; name: string }\n- async function fetchUser(id: number): Promise<User> — имитация задержки через setTimeout в Promise\n- async function main() с try/catch\n\nNode или один .ts с ts-node — укажи выбор."
+    },
+    {
+      "id": "ts-08-vite-setup",
+      "label": "Проект Vite + TypeScript",
+      "description": "tooling",
+      "detail": "npm create vite",
+      "text": "Проведи по созданию проекта Vite с шаблоном TypeScript.\n\n- Точные шаги npm create vite\n- Связь src/main.ts и index.html\n- Замени страницу на типизированный счётчик\n- Скрипты: dev, build, preview\n\nПредположи, что Node LTS установлен."
+    },
+    {
+      "id": "ts-09-eslint-prettier",
+      "label": "Основы ESLint + Prettier",
+      "description": "tooling",
+      "detail": "концепция format on save",
+      "text": "Для маленького TypeScript-проекта объясни добавление ESLint и Prettier (высокий уровень, для новичка).\n\n- Что делает каждый инструмент — по одному предложению\n- Минимальный фрагмент .eslintrc или flat config\n- Пример .prettierrc с semi и singleQuote\n- Без перегруза конфигом; workflow: сохранить файл → форматирование\n\nУпомяни, что для обучения опционально, на работе — часто."
+    },
+    {
+      "id": "ts-10-unknown-never",
+      "label": "Типы unknown, any и never",
+      "description": "типы",
+      "detail": "безопасный разбор JSON",
+      "text": "Объясни unknown, any и never для новичка в TypeScript.\n\n- Когда избегать any\n- function parseJson(input: string): unknown и type guard для проверки формы\n- never в exhaustive switch default\n\nКороткие практичные примеры."
+    },
+    {
+      "id": "ts-11",
+      "label": "satisfies для литералов конфигурации",
+      "description": "типы",
+      "detail": "ширина при проверке",
+      "text": "Объясни satisfies X vs as X на объекте токенов темы/цветов.\nКак satisfies сохраняет literal types и проверяет исчерпываемость.\nОшибочный пример as assertion, который ловит satisfies.\nСвязь с const assertion.\nПлюсы автодополнения VS Code для новичков."
+    },
+    {
+      "id": "ts-12",
+      "label": "Template literal types для маршрутов",
+      "description": "продвинутые типы",
+      "detail": "string unions",
+      "text": "Научи template literal types для REST-подобных строк маршрутов.\nUnion сегментов пути, комбинированный в полные пути без ручного дублирования.\nКак Extract сужает unions строк.\nЧестно про ограничения regex template для новичков.\nПример ~20 строк с комментариями."
+    },
+    {
+      "id": "ts-13",
+      "label": "Branded types для номинального стиля",
+      "description": "типизация",
+      "detail": "UserId vs string",
+      "text": "Путаю обычные строки-ID. Введи branding через intersection types.\nТипы UserId и Email, которые нельзя перепутать при присваивании.\nФабрика validateUserId(raw: string): UserId.\nTrade-offs vs схемы вроде Zod — взгляд с высоты.\nBranding стирается в runtime — почему это важно."
+    },
+    {
+      "id": "ts-14",
+      "label": "Discriminated union для state machine",
+      "description": "паттерны",
+      "detail": "loading success error",
+      "text": "Смоделируй состояние fetch UI через discriminated unions с kind: 'idle' | 'loading' | 'success' | 'error'.\nСужение в switch.\nСравни с пересекающимися optional fields.\nHelper с правилами transition словами.\nКраткая связь со стилем Redux без углубления."
+    },
+    {
+      "id": "ts-15",
+      "label": "Индексные сигнатуры и Record",
+      "description": "объекты",
+      "detail": "подводный камень известных ключей",
+      "text": "Сравни { [key: string]: number }, Record<UserRole, number> и mapped types.\nСюрпризы excess property checking с index signatures.\nСловари, где Record удобнее.\nОграничения keyof со string index signatures.\nКогда на runtime лучше Map."
+    },
+    {
+      "id": "ts-16",
+      "label": "ReturnType для async-функций",
+      "description": "утилиты",
+      "detail": "компаньон Awaited",
+      "text": "Покажи ReturnType<typeof asyncFn> → Promise<number> vs Awaited<>.\nЗаглушка API client с типизацией ответов от helpers.\nПочему typeof для значений, а не types namespace.\nОграничения перегруженных функций.\nШпаргалка для juniors."
+    },
+    {
+      "id": "ts-17",
+      "label": "Global augmentation для Window",
+      "description": "модули",
+      "detail": "паттерн declare global",
+      "text": "Вставил ga('event') и хочу, чтобы TS видел window.dataLayer безопасно.\nПаттерн declare global в shim.d.ts.\nПредупреди о загрязнении globals и SSR.\nСужение через проверки typeof window.\nМотивация DefinitelyTyped без глубокого погружения."
+    },
+    {
+      "id": "ts-18",
+      "label": "ReadonlyArray и readonly tuples",
+      "description": "неизменяемость",
+      "detail": "параметры функций",
+      "text": "Почему параметрам часто нужны readonly arrays.\nreadonly string[] vs изменяемый string[] при присваивании.\nTuple readonly [number, string] для координат.\nСвязь с as const на литералах массивов.\nПример бага при мутации параметра, который тесты не ловят."
+    },
+    {
+      "id": "ts-19",
+      "label": "Практическая политика unknown vs any",
+      "description": "безопасность",
+      "detail": "workflow сужения",
+      "text": "Помоги сформулировать правило команды: по умолчанию unknown на границах JSON.\nСужение через typeof и Array.isArray.\nПростой type guard isUser.\nПочему any отключает проверки и когда его временно терпят.\nДо/после на обработчике fetch JSON."
+    },
+    {
+      "id": "ts-20",
+      "label": "tsconfig: moduleResolution bundler и node16",
+      "description": "инструменты",
+      "detail": "поле exports в package.json",
+      "text": "На уровне новичка: почему новые проекты выбирают \"moduleResolution\": \"bundler\" под Vite.\nСравни с node16 для библиотек в npm.\nСвязь с путаницей поля \"exports\" в package.json.\nДва симптома неверного resolution (cannot find module).\nМинимальный чеклист diff tsconfig."
+    }
+  ]
+}
