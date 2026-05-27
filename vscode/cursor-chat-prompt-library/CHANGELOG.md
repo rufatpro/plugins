@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.4
+
+- Maintenance release: version bump and release metadata update.
+
 ## 0.7.3
 
 - README: **Ctrl+Alt+Shift+P** as the primary way to open prompts; **F1** / Command Palette documented as an alternative.
