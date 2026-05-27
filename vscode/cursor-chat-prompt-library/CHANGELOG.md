@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.7.7
+
+- Release: primary **Ctrl+Alt+T** (`Cmd+Alt+T` on macOS), alternative **Ctrl+Alt+Shift+P**.
+
+## 0.7.6
+
+- **Primary hotkey:** **Ctrl+Alt+T** (`Cmd+Alt+T` on macOS) — single simultaneous press (**T** = Template).
+- Replaces chord **Ctrl+K Alt+P** from 0.7.5.
+- **Alternative hotkey:** **Ctrl+Alt+Shift+P** — unchanged.
+
+## 0.7.5
+
+- **Primary hotkey:** **Ctrl+K Alt+P** (`Cmd+K Alt+P` on macOS) — chord, fewer keymap conflicts.
+- **Alternative hotkey:** **Ctrl+Alt+Shift+P** (`Cmd+Alt+Shift+P`) — unchanged.
+- README and Marketplace description: primary vs alternative hotkeys documented.
+
 ## 0.7.4
 
 - Maintenance release: version bump and release metadata update.

@@ -1,8 +1,8 @@
 {
   "name": "cursor-chat-prompt-library",
   "displayName": "Cursor Chat Prompt Library",
-  "description": "710 prompt templates for Cursor AI chat — 34 categories (Python × 50, others × 20). C, C++, PHP, Laravel, Go, Rust, Docker, and more. QuickPick → insert into chat.",
-  "version": "0.7.4",
+  "description": "710 prompt templates for Cursor AI chat. Primary: Ctrl+Alt+T (Cmd+Alt+T on macOS); also Ctrl+Alt+Shift+P. 34 categories (Python × 50, others × 20). QuickPick → insert into chat.",
+  "version": "0.7.7",
   "publisher": "rufat",
   "license": "MIT",
   "readme": "readme.md",
@@ -121,6 +121,18 @@
         "command": "cursorChatPromptLibrary.pick",
         "key": "ctrl+alt+shift+p",
         "mac": "cmd+alt+shift+p",
+        "when": "!editorTextFocus && !terminalFocus && !inQuickOpen"
+      },
+      {
+        "command": "cursorChatPromptLibrary.pick",
+        "key": "ctrl+alt+t",
+        "mac": "cmd+alt+t",
+        "when": "editorTextFocus && !terminalFocus && !inQuickOpen"
+      },
+      {
+        "command": "cursorChatPromptLibrary.pick",
+        "key": "ctrl+alt+t",
+        "mac": "cmd+alt+t",
         "when": "!editorTextFocus && !terminalFocus && !inQuickOpen"
       }
     ]

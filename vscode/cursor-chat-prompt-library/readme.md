@@ -19,7 +19,16 @@
 
 | Key | Action |
 |-----|--------|
-| **Ctrl+Alt+Shift+P** (Windows/Linux) | **Step 1:** category (34 types) → **Step 2:** prompt → insert into chat |
+| **Ctrl+Alt+T** (Windows/Linux) | **Step 1:** category (34 types) → **Step 2:** prompt → insert into chat |
+| **Cmd+Alt+T** (macOS) | Same |
+
+Press **Ctrl**, **Alt**, and **T** together (**T** = **T**emplate).
+
+## Hotkey (alternative)
+
+| Key | Action |
+|-----|--------|
+| **Ctrl+Alt+Shift+P** (Windows/Linux) | Same two-step QuickPick |
 | **Cmd+Alt+Shift+P** (macOS) | Same |
 
 ## Commands
@@ -45,10 +54,10 @@
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-0.7.3.vsix
+cursor --install-extension build\cursor-chat-prompt-library-0.7.7.vsix
 ```
 
-Reload the window. Primary: **Ctrl+Alt+Shift+P** (see **Via Command Palette** for **F1**).
+Reload the window. Primary: **Ctrl+Alt+T**; alternative: **Ctrl+Alt+Shift+P** (see **Via Command Palette** for **F1**).
 
 ## Maintaining prompts
 

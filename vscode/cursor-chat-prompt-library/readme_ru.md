@@ -19,7 +19,16 @@
 
 | Клавиша | Действие |
 |---------|----------|
-| **Ctrl+Alt+Shift+P** | **Шаг 1:** категория (31 тип) → **шаг 2:** промпт → вставка в чат |
+| **Ctrl+Alt+T** | **Шаг 1:** категория (34 типа) → **шаг 2:** промпт → вставка в чат |
+| **Cmd+Alt+T** (macOS) | То же |
+
+Одновременно **Ctrl**, **Alt** и **T** (**T** = **T**emplate, шаблон).
+
+## Горячая клавиша (альтернатива)
+
+| Клавиша | Действие |
+|---------|----------|
+| **Ctrl+Alt+Shift+P** | Тот же двухшаговый QuickPick |
 | **Cmd+Alt+Shift+P** (macOS) | То же |
 
 ## Команды
@@ -40,10 +49,10 @@
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-0.7.3.vsix
+cursor --install-extension build\cursor-chat-prompt-library-0.7.7.vsix
 ```
 
-Перезагрузите окно. Основной способ — **Ctrl+Alt+Shift+P** (см. раздел «Через палитру команд» для **F1**).
+Перезагрузите окно. Основной способ — **Ctrl+Alt+T**; альтернатива — **Ctrl+Alt+Shift+P** (см. раздел «Через палитру команд» для **F1**).
 
 ## Поддержка каталога
 
