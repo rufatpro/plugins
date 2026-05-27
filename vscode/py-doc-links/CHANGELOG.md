@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.9
+
+- Maintenance release: version bump and release metadata update.
+
 ## 0.2.8
 
 - Cursor referral link in readme **Author** / **Автор** section.
