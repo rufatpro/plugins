@@ -1,0 +1,146 @@
+{
+  "category": "c",
+  "categoryLabel": "C",
+  "prompts": [
+    {
+      "id": "c-01",
+      "label": "Hello World compile and run",
+      "description": "basics",
+      "detail": "gcc main.c -o hello",
+      "text": "I'm learning C (C11/C17). Create hello.c printing Hello, World.\n\n- Compile with gcc hello.c -o hello and run\n- Explain #include <stdio.h> and int main(void)\n- Warnings: gcc -Wall -Wextra -pedantic\n\nNo C++ features."
+    },
+    {
+      "id": "c-02",
+      "label": "Types printf and scanf safely",
+      "description": "basics",
+      "detail": "format specifiers",
+      "text": "Teach int, double, char, and printf format specifiers (%d, %f, %c).\n\n- Read an integer with scanf and check return value\n- Warn about buffer overflows with %s without width\n- Use fixed buffer char name[32] with %31s\n\nSmall runnable program."
+    },
+    {
+      "id": "c-03",
+      "label": "Pointers and addresses",
+      "description": "memory",
+      "detail": "& and * operators",
+      "text": "Explain pointers for beginners with a swap function using pointers.\n\n- Diagram in comments: variable, address, pointer\n- NULL pointer check habit\n- One common bug: returning pointer to local stack variable — why it's wrong\n\nTwo short examples."
+    },
+    {
+      "id": "c-04",
+      "label": "Arrays and C strings",
+      "description": "basics",
+      "detail": "strlen strcpy risks",
+      "text": "Work with char buffers and string.h.\n\n- Initialize array, iterate with index and with pointer arithmetic (brief)\n- strlen, strncpy instead of strcpy — explain why\n- Null terminator '\\0' importance\n\nInclude one safer string copy example."
+    },
+    {
+      "id": "c-05",
+      "label": "Headers and multiple .c files",
+      "description": "structure",
+      "detail": "math.h module",
+      "text": "Split a tiny project into math.h, math.c, and main.c.\n\n- Include guards #ifndef MATH_H\n- Declarations in .h, definitions in .c\n- Compile: gcc -c math.c && gcc main.c math.o -o app\n\nExplain translation units in one paragraph."
+    },
+    {
+      "id": "c-06",
+      "label": "malloc calloc free",
+      "description": "heap",
+      "detail": "dynamic array",
+      "text": "Build a dynamic array of integers that grows.\n\n- malloc, realloc, free — always free what you malloc\n- Check for NULL after allocation\n- Contrast stack array vs heap array when to use each\n\nMinimal working code with error handling."
+    },
+    {
+      "id": "c-07",
+      "label": "struct and typedef",
+      "description": "types",
+      "detail": "Point struct",
+      "text": "Model a 2D Point with struct and functions distance(Point a, Point b).\n\n- typedef struct { ... } Point;\n- Pass struct by value vs pointer — when pointer saves copies\n- Initialize with designated initializers C99 style\n\nNo OOP keywords."
+    },
+    {
+      "id": "c-08",
+      "label": "File I/O fopen fread fwrite",
+      "description": "IO",
+      "detail": "text file lines",
+      "text": "Read a text file line by line in C.\n\n- fopen with mode \"r\", fclose in all paths\n- fgets loop, handle EOF\n- Check fopen != NULL and perror on failure\n\nCount lines in sample.txt example."
+    },
+    {
+      "id": "c-09",
+      "label": "Command line argc argv",
+      "description": "cli",
+      "detail": "flags -h",
+      "text": "Parse command-line arguments without getopt first, then mention getopt.\n\n- Program copy.c: copy source dest paths from argv\n- Print usage if argc < 3\n- Simple -h help flag\n\nShow example shell commands."
+    },
+    {
+      "id": "c-10",
+      "label": "Makefile for small project",
+      "description": "build",
+      "detail": "CC CFLAGS",
+      "text": "Write a Makefile for main.c + utils.c project.\n\n- Variables CC, CFLAGS (-Wall -g), TARGET, OBJS\n- Pattern rules .c.o and link step\n- make, make clean phony target\n\nExplain why Make still matters for embedded/Linux C."
+    },
+    {
+      "id": "c-11",
+      "label": "enum and preprocessor macros",
+      "description": "preprocessor",
+      "detail": "#define MAX_SIZE",
+      "text": "Use enum for Status codes and #define for constants.\n\n- Prefer enum over magic numbers\n- Macro pitfalls: parenthesize arguments, no semicolon after macro\n- const int vs #define tradeoff in modern C\n\nShort status-to-string helper using switch."
+    },
+    {
+      "id": "c-12",
+      "label": "const static extern linkage",
+      "description": "storage",
+      "detail": "file scope static",
+      "text": "Explain static functions hiding linkage in a .c file.\n\n- const parameters and const pointers (const char * vs char * const)\n- extern declaration across files\n- Why global mutable state is discouraged\n\nTiny two-file demo."
+    },
+    {
+      "id": "c-13",
+      "label": "Function pointers callback",
+      "description": "advanced basics",
+      "detail": "qsort comparator",
+      "text": "Introduce function pointers with a sort comparator or foreach callback.\n\n- Typedef for int (*CompareFn)(const void*, const void*)\n- Pass callback to apply_to_array function\n- Link to qsort as real-world example\n\nKeep readable for first-time learners."
+    },
+    {
+      "id": "c-14",
+      "label": "errno and perror",
+      "description": "errors",
+      "detail": "syscalls failure",
+      "text": "Handle errors from library calls using errno.\n\n- #include <errno.h>, perror(\"fopen\")\n- Check return values systematically\n- Do not mix errno across threads without mention (teaser)\n\nExample failing to open missing file."
+    },
+    {
+      "id": "c-15",
+      "label": "Binary fread fwrite structs",
+      "description": "IO",
+      "detail": "packed caveats",
+      "text": "Write and read a struct to a binary file.\n\n- fwrite(&record, sizeof(record), 1, fp)\n- Warn about struct padding and portability — not for cross-platform without care\n- Prefer portable serialization for real projects\n\nEducational example with one Record struct."
+    },
+    {
+      "id": "c-16",
+      "label": "GDB debug basics",
+      "description": "tooling",
+      "detail": "breakpoints step",
+      "text": "Teach debugging C with gdb on a program with an off-by-one bug.\n\n- Compile with -g\n- gdb ./app, break main, run, next, print variable\n- backtrace when segfault happens\n\nList 5 essential gdb commands for beginners."
+    },
+    {
+      "id": "c-17",
+      "label": "Valgrind leak check intro",
+      "description": "tooling",
+      "detail": "definitely lost",
+      "text": "Show a deliberate memory leak and fix it using Valgrind mindset.\n\n- valgrind --leak-check=full ./app\n- Read \"definitely lost\" output\n- Fix missing free in error path\n\nMention AddressSanitizer as modern alternative one line."
+    },
+    {
+      "id": "c-18",
+      "label": "stdint.h fixed-width types",
+      "description": "portability",
+      "detail": "uint8_t uint32_t",
+      "text": "Explain stdint.h types for portable integers.\n\n- uint8_t, int32_t, SIZE_MAX from stdint.h / stddef.h\n- When char might be signed or unsigned\n- Use in a simple byte buffer checksum function\n\nEmbedded-friendly tone."
+    },
+    {
+      "id": "c-19",
+      "label": "Bitwise operators flags",
+      "description": "low-level",
+      "detail": "mask set clear",
+      "text": "Implement feature flags with bitwise OR, AND, NOT.\n\n- #define FLAG_A (1u << 0)\n- Functions has_flag, set_flag, clear_flag\n- Print flags in hex for debugging\n\nRelate to embedded register bits briefly."
+    },
+    {
+      "id": "c-20",
+      "label": "When to choose C",
+      "description": "guide",
+      "detail": "embedded OS kernels",
+      "text": "Honest guide: when learning C is worth it vs C++/Rust/Python.\n\n- Embedded, OS kernels, existing C codebases, FFI boundary\n- Manual memory management costs\n- 5 bullet learning path after basics\n\nNo code — decision guide."
+    }
+  ]
+}

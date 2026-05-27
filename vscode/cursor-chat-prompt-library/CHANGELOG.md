@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.7.0
+
+- New **C** and **C++** categories (20 prompts each).
+- Total bundled templates: **710** (34 categories; Python × 50, others × 20).
+
 ## 0.6.0
 
 - **Python** category expanded from 20 to **50** prompts (`py-21` … `py-50`).

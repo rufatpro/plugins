@@ -1,0 +1,146 @@
+{
+  "category": "cpp",
+  "categoryLabel": "C++",
+  "prompts": [
+    {
+      "id": "cpp-01",
+      "label": "Hello World и iostream",
+      "description": "основы",
+      "detail": "g++ -std=c++17",
+      "text": "Первая программа C++17 для новичка.\n\n- main.cpp, #include <iostream>, std::cout\n- g++ -std=c++17 -Wall -Wextra -pedantic main.cpp -o app\n- Пространства имён std::; почему using namespace std; не в заголовках\n\nСравни с printf из C."
+    },
+    {
+      "id": "cpp-02",
+      "label": "Ссылки и const",
+      "description": "основы",
+      "detail": "ссылка vs указатель",
+      "text": "Ссылки C++ vs указатели на swap и print.\n\n- void swap(int& a, int& b)\n- const std::string& для read-only\n- Ссылки обязаны быть привязаны; указатель может быть null\n\nКороткие примеры."
+    },
+    {
+      "id": "cpp-03",
+      "label": "std::vector и std::string",
+      "description": "STL",
+      "detail": "push_back range-for",
+      "text": "STL вместо ручных массивов.\n\n- std::vector<int>, push_back\n- std::string, size()\n- range-for с auto\n- Привычка не использовать C-строки в новом коде\n\nЧтение int из cin в vector до EOF."
+    },
+    {
+      "id": "cpp-04",
+      "label": "Класс: конструктор и деструктор",
+      "description": "ООП",
+      "detail": "введение RAII",
+      "text": "class BankAccount: deposit, withdraw, balance >= 0.\n\n- Конструктор, деструктор (даже = default — зачем)\n- private поля, public интерфейс\n- RAII\n\nБез raw new/delete."
+    },
+    {
+      "id": "cpp-05",
+      "label": "unique_ptr и make_unique",
+      "description": "память",
+      "detail": "без raw new",
+      "text": "Память в современном C++: std::unique_ptr.\n\n- std::make_unique<Foo>(args)\n- Защита от утечек при исключениях\n- Передача std::move\n- Правило: smart pointers вместо new/delete\n\nФабрика, возвращающая unique_ptr."
+    },
+    {
+      "id": "cpp-06",
+      "label": "shared_ptr при совместном владении",
+      "description": "память",
+      "detail": "циклы weak_ptr",
+      "text": "std::shared_ptr и несколько владельцев.\n\n- make_shared\n- weak_ptr против циклов — тизер\n- Стоимость vs unique_ptr\n\nПример узла графа."
+    },
+    {
+      "id": "cpp-07",
+      "label": "Шаблоны функций",
+      "description": "шаблоны",
+      "detail": "шаблон min",
+      "text": "Шаблон min(T a, T b) для int и double.\n\n- Вывод типов\n- Почему шаблоны часто в заголовках\n- concepts C++20 — одна строка\n\nЯвная инстанциация кратко."
+    },
+    {
+      "id": "cpp-08",
+      "label": "Наследование и virtual",
+      "description": "ООП",
+      "detail": "Shape Circle",
+      "text": "Абстрактный Shape с virtual area() = 0.\n\n- override, virtual деструктор = default\n- vector<unique_ptr<Shape>>\n- Композиция vs наследование — абзац\n\nCircle и Rectangle."
+    },
+    {
+      "id": "cpp-09",
+      "label": "Исключения try catch",
+      "description": "ошибки",
+      "detail": "std::runtime_error",
+      "text": "Исключения для исключительных ситуаций.\n\n- throw std::runtime_error\n- catch (const std::exception&)\n- noexcept — введение\n- Не для обычного control flow\n\nПарсинг int с валидацией."
+    },
+    {
+      "id": "cpp-10",
+      "label": "Семантика перемещения",
+      "description": "modern",
+      "detail": "std::move",
+      "text": "lvalue, rvalue, std::move для новичка.\n\n- Move-конструктор простого Buffer с int*\n- Rule of five — перечислить\n- Почему vector эффективен после move\n\nБез perfect forwarding."
+    },
+    {
+      "id": "cpp-11",
+      "label": "std::optional и variant",
+      "description": "C++17",
+      "detail": "maybe value",
+      "text": "std::optional вместо sentinel.\n\n- parse_int → optional<int>\n- variant<string, int>\n- visit — набросок\n\nКогда vs исключения."
+    },
+    {
+      "id": "cpp-12",
+      "label": "enum class",
+      "description": "типы",
+      "detail": "Color::Red",
+      "text": "enum class вместо plain enum.\n\n- enum class Status { Ok, Error };\n- underlying type : uint8_t\n- switch\n\nСравни с загрязнением имён в C enum."
+    },
+    {
+      "id": "cpp-13",
+      "label": "Лямбды и algorithm",
+      "description": "STL",
+      "detail": "sort find_if",
+      "text": "<algorithm> + лямбды.\n\n- sort с компаратором-лямбдой\n- find_if\n- Захват [=], [&] и dangling\n\nФильтр чётных чисел."
+    },
+    {
+      "id": "cpp-14",
+      "label": "CMake hello",
+      "description": "сборка",
+      "detail": "CMakeLists.txt",
+      "text": "Минимальный CMake C++17.\n\n- cmake_minimum_required, project, add_executable\n- CMAKE_CXX_STANDARD 17\n- cmake -B build && cmake --build build\n\nОпционально библиотека + main."
+    },
+    {
+      "id": "cpp-15",
+      "label": "Перегрузка операторов",
+      "description": "ООП",
+      "detail": "Vec2d +",
+      "text": "Vec2d: operator+ и operator<<.\n\n- friend для << при необходимости\n- Не перегружать всё подряд\n- explicit для одноаргументных\n\nДемо в main."
+    },
+    {
+      "id": "cpp-16",
+      "label": "std::filesystem",
+      "description": "C++17",
+      "detail": "обход каталога",
+      "text": "Список файлов через std::filesystem.\n\n- directory_iterator, расширение\n- exists, is_regular_file\n- error_code vs исключения\n\nПути на Windows."
+    },
+    {
+      "id": "cpp-17",
+      "label": "Заголовки и modules тизер",
+      "description": "структура",
+      "detail": "#pragma once",
+      "text": ".hpp/.cpp, #pragma once, include what you use.\n\n- Forward declarations\n- inline в заголовках\n- C++20 modules — 2 предложения\n\nРазделение объявление/определение."
+    },
+    {
+      "id": "cpp-18",
+      "label": "GoogleTest или Catch2",
+      "description": "тестирование",
+      "detail": "TEST macro",
+      "text": "Один test framework в CMake.\n\n- Тест factorial или add\n- ctest\n- arrange-act-assert\n\nCatch2 single-header или GTest — один путь."
+    },
+    {
+      "id": "cpp-19",
+      "label": "const correctness",
+      "description": "стиль",
+      "detail": "const methods",
+      "text": "const-методы и const-объекты.\n\n- int getSize() const;\n- const iterator\n- mutable — одна строка\n\nИсправь const в сломанном классе."
+    },
+    {
+      "id": "cpp-20",
+      "label": "Когда выбирать C++",
+      "description": "гид",
+      "detail": "игры, движки",
+      "text": "Когда C++ уместен vs Rust, C, C#, Python.\n\n- Игры, браузеры, trading, legacy C++\n- Время компиляции и сложность\n- Порядок обучения после базы\n\nСписок, без кода."
+    }
+  ]
+}

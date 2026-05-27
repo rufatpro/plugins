@@ -1,0 +1,146 @@
+{
+  "category": "cpp",
+  "categoryLabel": "C++",
+  "prompts": [
+    {
+      "id": "cpp-01",
+      "label": "Hello World iostream",
+      "description": "basics",
+      "detail": "g++ -std=c++17",
+      "text": "First C++17 program for a beginner.\n\n- main.cpp with #include <iostream> and std::cout\n- Compile: g++ -std=c++17 -Wall -Wextra -pedantic main.cpp -o app\n- Explain namespaces std:: and why using namespace std; is discouraged in headers\n\nContrast one line with C printf."
+    },
+    {
+      "id": "cpp-02",
+      "label": "References and const",
+      "description": "basics",
+      "detail": "ref vs pointer",
+      "text": "Teach C++ references vs pointers on a swap and print function.\n\n- void swap(int& a, int& b)\n- const std::string& for read-only string param\n- When references must be bound vs pointers can be null\n\nSmall examples only."
+    },
+    {
+      "id": "cpp-03",
+      "label": "std::vector and std::string",
+      "description": "STL",
+      "detail": "push_back range-for",
+      "text": "Use STL instead of manual arrays for learning.\n\n- std::vector<int> growth with push_back\n- std::string concatenation and size()\n- Range-based for loop with auto\n- Avoid C-style char* strings in new code habit\n\nRead integers from std::cin into vector until EOF."
+    },
+    {
+      "id": "cpp-04",
+      "label": "Class constructor destructor",
+      "description": "OOP",
+      "detail": "RAII intro",
+      "text": "Create class BankAccount with deposit, withdraw, and invariant balance >= 0.\n\n- Constructor, destructor (even if = default explain why)\n- private members, public interface\n- RAII: resource acquired in constructor released in destructor\n\nNo raw new/delete in this exercise."
+    },
+    {
+      "id": "cpp-05",
+      "label": "unique_ptr and make_unique",
+      "description": "memory",
+      "detail": "no raw new",
+      "text": "Modern C++ memory: std::unique_ptr.\n\n- auto p = std::make_unique<Foo>(args);\n- Why unique_ptr prevents leaks on exceptions\n- Move ownership with std::move\n- Rule: prefer smart pointers over new/delete\n\nTiny factory function returning unique_ptr."
+    },
+    {
+      "id": "cpp-06",
+      "label": "shared_ptr when sharing",
+      "description": "memory",
+      "detail": "reference cycles teaser",
+      "text": "Explain std::shared_ptr and when multiple owners exist.\n\n- make_shared usage\n- Mention weak_ptr breaking cycles — one sentence teaser\n- Performance cost vs unique_ptr honest note\n\nGraph node example with shared ownership."
+    },
+    {
+      "id": "cpp-07",
+      "label": "Function templates",
+      "description": "templates",
+      "detail": "min template",
+      "text": "Write a template function min(T a, T b) and use with int and double.\n\n- Template deduction basics\n- Why templates live in headers often\n- Mention concepts C++20 as later improvement one line\n\nInclude explicit instantiation note briefly."
+    },
+    {
+      "id": "cpp-08",
+      "label": "Inheritance and virtual",
+      "description": "OOP",
+      "detail": "Shape Circle",
+      "text": "Polymorphism with abstract base class Shape and virtual area() = 0.\n\n- override, virtual destructor = default\n- std::vector<std::unique_ptr<Shape>>\n- When composition over inheritance is better — one paragraph\n\nCircle and Rectangle implementations."
+    },
+    {
+      "id": "cpp-09",
+      "label": "Exceptions try catch",
+      "description": "errors",
+      "detail": "std::runtime_error",
+      "text": "Use exceptions for exceptional paths in C++.\n\n- throw std::runtime_error with message\n- try/catch by const std::exception&\n- noexcept when function promises not to throw — intro only\n- Do not use exceptions for normal control flow\n\nParse int with validation example."
+    },
+    {
+      "id": "cpp-10",
+      "label": "Move semantics intro",
+      "description": "modern",
+      "detail": "std::move",
+      "text": "Explain lvalues, rvalues, and std::move at beginner depth.\n\n- Move constructor on a simple Buffer class holding int*\n- Rule of five names listed (not full impl all)\n- Why std::vector push_back is efficient after move\n\nAvoid perfect forwarding deep dive."
+    },
+    {
+      "id": "cpp-11",
+      "label": "std::optional and variant",
+      "description": "C++17",
+      "detail": "maybe value",
+      "text": "Replace magic sentinel values with std::optional.\n\n- parse_int returning optional<int>\n- std::variant<string, int> for simple union-like state\n- std::visit pattern sketch\n\nWhen to prefer over exceptions."
+    },
+    {
+      "id": "cpp-12",
+      "label": "enum class scoped enums",
+      "description": "types",
+      "detail": "Color::Red",
+      "text": "Use enum class instead of plain enum.\n\n- enum class Status { Ok, Error };\n- underlying type specification : uint8_t\n- switch with static_cast if needed\n\nCompare to C enum pollution problem."
+    },
+    {
+      "id": "cpp-13",
+      "label": "Lambdas and algorithms",
+      "description": "STL",
+      "detail": "sort find_if",
+      "text": "Combine <algorithm> with lambdas.\n\n- std::sort with lambda comparator\n- std::find_if on vector\n- Capture [=], [&], and cautions on dangling references\n\nFilter even numbers example."
+    },
+    {
+      "id": "cpp-14",
+      "label": "CMake hello project",
+      "description": "build",
+      "detail": "CMakeLists.txt",
+      "text": "Minimal CMake project for C++17.\n\n- cmake_minimum_required, project, add_executable\n- set(CMAKE_CXX_STANDARD 17)\n- Build steps: cmake -B build && cmake --build build\n\nOne library target + main linking it optional."
+    },
+    {
+      "id": "cpp-15",
+      "label": "Operator overloading",
+      "description": "OOP",
+      "detail": "Vec2d +",
+      "text": "2D vector class with operator+ and operator<< for ostream.\n\n- Friend function for << if appropriate\n- Keep operators meaningful — don't overdo\n- Explicit constructor for single-arg to avoid surprises\n\nSmall demo in main."
+    },
+    {
+      "id": "cpp-16",
+      "label": "std::filesystem paths",
+      "description": "C++17",
+      "detail": "copy_file",
+      "text": "List files in directory with std::filesystem.\n\n- fs::directory_iterator, path extension check\n- exists, is_regular_file\n- Error code vs exceptions for filesystem ops\n\nCross-platform path note for Windows."
+    },
+    {
+      "id": "cpp-17",
+      "label": "Header guards modules teaser",
+      "description": "structure",
+      "detail": "#pragma once",
+      "text": "Organize .hpp/.cpp with #pragma once, include what you use.\n\n- Forward declarations to speed compile\n- inline functions in headers\n- C++20 modules as future direction — 2 sentences only\n\nSplit class declaration/definition across files."
+    },
+    {
+      "id": "cpp-18",
+      "label": "GoogleTest or Catch2 unit test",
+      "description": "testing",
+      "detail": "TEST macro",
+      "text": "Add one test framework to a small CMake project.\n\n- Test factorial or add function\n- Run ctest after build\n- Arrange-act-assert style\n\nPick Catch2 single-header or GTest — one path only."
+    },
+    {
+      "id": "cpp-19",
+      "label": "const correctness deep dive",
+      "description": "style",
+      "detail": "const methods",
+      "text": "Explain const member functions and const objects.\n\n- int getSize() const;\n- const iterator vs iterator on containers\n- mutable keyword one-line use case\n\nFix const-correctness on a broken class sketch."
+    },
+    {
+      "id": "cpp-20",
+      "label": "When to choose C++",
+      "description": "guide",
+      "detail": "games engines perf",
+      "text": "Guide: when C++ is the right tool vs Rust, C, C#, Python.\n\n- Game engines, browsers, trading, existing C++ codebases\n- Compile times and complexity honest cons\n- Suggested learning order after C++ basics\n\nBullet list, no code."
+    }
+  ]
+}

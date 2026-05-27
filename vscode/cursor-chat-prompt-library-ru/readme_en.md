@@ -2,16 +2,16 @@
 
 [Русский](readme.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Repository](https://github.com/rufatpro/ide-plugins)
 
-**670 Russian** prompt templates for **Cursor AI chat** — QuickPick → insert into chat.
+**710 Russian** prompt templates for **Cursor AI chat** — QuickPick → insert into chat.
 
-**32 categories** (**Python × 50**, others × 20) **= 670 templates:**
+**34 categories** (**Python × 50**, others × 20) **= 710 templates:**
 
 | Tier | Categories |
 |------|------------|
 | Core | Website, Python, JavaScript, TypeScript, React, SQL, Git, Django |
 | High demand | Next.js, FastAPI, Docker, Testing, Tailwind CSS |
 | Strong demand | Node.js, Vue, PHP, Laravel, C#/.NET, Java/Spring, Linux/Bash, CI/CD, REST/OpenAPI, MongoDB, Mobile |
-| Growing / niche | Go, Rust, Kubernetes, AWS/Cloud, WordPress, Data/Pandas, Security, GraphQL |
+| Growing / niche | C, C++, Go, Rust, Kubernetes, AWS/Cloud, WordPress, Data/Pandas, Security, GraphQL |
 
 > Part of the [ide-plugins](https://github.com/rufatpro/ide-plugins) monorepo.
 
@@ -19,7 +19,7 @@
 
 | Key | Action |
 |-----|--------|
-| **Ctrl+Alt+P** (Windows/Linux) | **Step 1:** category (32 types) → **Step 2:** prompt → insert into chat |
+| **Ctrl+Alt+P** (Windows/Linux) | **Step 1:** category (34 types) → **Step 2:** prompt → insert into chat |
 | **Cmd+Alt+P** (macOS) | Same |
 
 ## Commands
@@ -27,7 +27,7 @@
 | Command | Action |
 |---------|--------|
 | **Pick Prompt (Category, then Template)** | Same as hotkey (two steps) |
-| **Insert Prompt into Chat (All Categories)** | Single list, all 670 prompts |
+| **Insert Prompt into Chat (All Categories)** | Single list, all 710 prompts |
 | **Insert Website / Python / JavaScript Prompt** | One category only (legacy shortcuts) |
 
 Open via **Command Palette** (`Ctrl+Shift+P`) → `Cursor Chat Prompt Library RU`.
@@ -42,7 +42,7 @@ Open via **Command Palette** (`Ctrl+Shift+P`) → `Cursor Chat Prompt Library RU
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library-ru
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-ru-0.4.0.vsix
+cursor --install-extension build\cursor-chat-prompt-library-ru-0.5.0.vsix
 ```
 
 Reload the window. Press **Ctrl+Alt+P** or run **Pick Prompt**.

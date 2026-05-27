@@ -33,6 +33,8 @@ const CATEGORY_FILE_ORDER = [
   "rest-api.json",
   "mongodb.json",
   "mobile.json",
+  "c.json",
+  "cpp.json",
   "go.json",
   "rust.json",
   "kubernetes.json",

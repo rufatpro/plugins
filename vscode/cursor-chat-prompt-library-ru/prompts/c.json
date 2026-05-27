@@ -1,0 +1,146 @@
+{
+  "category": "c",
+  "categoryLabel": "C",
+  "prompts": [
+    {
+      "id": "c-01",
+      "label": "Hello World: компиляция и запуск",
+      "description": "основы",
+      "detail": "gcc main.c -o hello",
+      "text": "Изучаю C (C11/C17). Создай hello.c с выводом Hello, World.\n\n- Сборка: gcc hello.c -o hello и запуск\n- Объясни #include <stdio.h> и int main(void)\n- Предупреждения: gcc -Wall -Wextra -pedantic\n\nБез возможностей C++."
+    },
+    {
+      "id": "c-02",
+      "label": "Типы, printf и безопасный scanf",
+      "description": "основы",
+      "detail": "спецификаторы формата",
+      "text": "Научи int, double, char и спецификаторам printf (%d, %f, %c).\n\n- Чтение int через scanf с проверкой возвращаемого значения\n- Предупреди про переполнение буфера с %s без ширины\n- char name[32] и %31s\n\nНебольшая запускаемая программа."
+    },
+    {
+      "id": "c-03",
+      "label": "Указатели и адреса",
+      "description": "память",
+      "detail": "операторы & и *",
+      "text": "Объясни указатели на примере swap через указатели.\n\n- Схема в комментариях: переменная, адрес, указатель\n- Привычка проверять NULL\n- Ошибка: возврат указателя на локальную переменную стека — почему нельзя\n\nДва коротких примера."
+    },
+    {
+      "id": "c-04",
+      "label": "Массивы и C-строки",
+      "description": "основы",
+      "detail": "strlen, риски strcpy",
+      "text": "Работа с char-буферами и string.h.\n\n- Инициализация массива, обход по индексу и кратко pointer arithmetic\n- strlen, strncpy вместо strcpy — почему\n- Важность завершающего '\\0'\n\nПример безопасного копирования строки."
+    },
+    {
+      "id": "c-05",
+      "label": "Заголовки и несколько .c файлов",
+      "description": "структура",
+      "detail": "модуль math.h",
+      "text": "Разбей проект на math.h, math.c и main.c.\n\n- Include guards #ifndef MATH_H\n- Объявления в .h, определения в .c\n- gcc -c math.c && gcc main.c math.o -o app\n\nЕдиницы трансляции — один абзац."
+    },
+    {
+      "id": "c-06",
+      "label": "malloc calloc free",
+      "description": "куча",
+      "detail": "динамический массив",
+      "text": "Динамический массив int с ростом.\n\n- malloc, realloc, free — освобождай всё, что выделил\n- Проверка NULL после выделения\n- Стековый vs кучевой массив — когда что\n\nМинимальный код с обработкой ошибок."
+    },
+    {
+      "id": "c-07",
+      "label": "struct и typedef",
+      "description": "типы",
+      "detail": "struct Point",
+      "text": "2D Point: struct и функция distance(Point a, Point b).\n\n- typedef struct { ... } Point;\n- Передача struct по значению vs по указателю\n- Инициализаторы C99\n\nБез ключевых слов ООП."
+    },
+    {
+      "id": "c-08",
+      "label": "Файлы: fopen fread fwrite",
+      "description": "IO",
+      "detail": "строки текста",
+      "text": "Чтение текстового файла построчно.\n\n- fopen \"r\", fclose на всех путях\n- Цикл fgets, EOF\n- Проверка fopen != NULL, perror при ошибке\n\nПодсчёт строк в sample.txt."
+    },
+    {
+      "id": "c-09",
+      "label": "argc argv командная строка",
+      "description": "cli",
+      "detail": "флаг -h",
+      "text": "Разбор аргументов без getopt, затем упомяни getopt.\n\n- copy.c: пути source dest из argv\n- usage при argc < 3\n- Флаг -h\n\nПримеры команд в shell."
+    },
+    {
+      "id": "c-10",
+      "label": "Makefile для маленького проекта",
+      "description": "сборка",
+      "detail": "CC CFLAGS",
+      "text": "Makefile для main.c + utils.c.\n\n- CC, CFLAGS (-Wall -g), TARGET, OBJS\n- Правила .c.o и линковка\n- make, phony clean\n\nЗачем Make в embedded/Linux C."
+    },
+    {
+      "id": "c-11",
+      "label": "enum и макросы препроцессора",
+      "description": "препроцессор",
+      "detail": "#define MAX_SIZE",
+      "text": "enum для кодов Status и #define для констант.\n\n- enum лучше magic numbers\n- Подводные камни макросов: скобки, без ; после макроса\n- const int vs #define в современном C\n\nstatus-to-string через switch."
+    },
+    {
+      "id": "c-12",
+      "label": "const static extern",
+      "description": "класс хранения",
+      "detail": "static в .c",
+      "text": "static-функции с внутренней линковкой в .c.\n\n- const параметры и const указатели\n- extern между файлами\n- Почему глобальное изменяемое состояние нежелательно\n\nДемо на двух файлах."
+    },
+    {
+      "id": "c-13",
+      "label": "Указатели на функции",
+      "description": "базовый advanced",
+      "detail": "компаратор qsort",
+      "text": "Указатели на функции: callback или компаратор.\n\n- typedef int (*CompareFn)(const void*, const void*)\n- apply_to_array с callback\n- Связь с qsort\n\nДля новичков, но читаемо."
+    },
+    {
+      "id": "c-14",
+      "label": "errno и perror",
+      "description": "ошибки",
+      "detail": "сбой syscalls",
+      "text": "Обработка ошибок через errno.\n\n- #include <errno.h>, perror(\"fopen\")\n- Систематическая проверка возвратов\n- errno и потоки — тизер\n\nПример: несуществующий файл."
+    },
+    {
+      "id": "c-15",
+      "label": "Бинарный fread fwrite struct",
+      "description": "IO",
+      "detail": "padding осторожно",
+      "text": "Запись и чтение struct в бинарный файл.\n\n- fwrite(&record, sizeof(record), 1, fp)\n- Предупреждение про padding и переносимость\n- Для продакшена — явная сериализация\n\nУчебный Record."
+    },
+    {
+      "id": "c-16",
+      "label": "Отладка в GDB",
+      "description": "инструменты",
+      "detail": "break step",
+      "text": "Отладка C в gdb на программе с off-by-one.\n\n- -g, break main, run, next, print\n- backtrace при segfault\n\n5 команд gdb для новичков."
+    },
+    {
+      "id": "c-17",
+      "label": "Valgrind: утечки памяти",
+      "description": "инструменты",
+      "detail": "definitely lost",
+      "text": "Намеренная утечка и исправление (подход Valgrind).\n\n- valgrind --leak-check=full ./app\n- «definitely lost»\n- free на error path\n\nAddressSanitizer — одной строкой."
+    },
+    {
+      "id": "c-18",
+      "label": "stdint.h фиксированная ширина",
+      "description": "переносимость",
+      "detail": "uint8_t uint32_t",
+      "text": "Типы stdint.h для переносимых целых.\n\n- uint8_t, int32_t, SIZE_MAX\n- signed/unsigned char\n- Контрольная сумма byte buffer\n\nТон embedded."
+    },
+    {
+      "id": "c-19",
+      "label": "Побитовые флаги",
+      "description": "низкий уровень",
+      "detail": "mask set clear",
+      "text": "Feature flags: OR, AND, NOT.\n\n- #define FLAG_A (1u << 0)\n- has_flag, set_flag, clear_flag\n- Вывод в hex для отладки\n\nСвязь с регистрами embedded."
+    },
+    {
+      "id": "c-20",
+      "label": "Когда выбирать C",
+      "description": "гид",
+      "detail": "embedded, ядра ОС",
+      "text": "Честный гид: когда учить C vs C++/Rust/Python.\n\n- Embedded, ядра ОС, legacy C, граница FFI\n- Цена ручной памяти\n- 5 пунктов пути обучения\n\nБез кода."
+    }
+  ]
+}
