@@ -1,4 +1,5 @@
 .vscode/**
+.vscode-test/**
 .specstory/**
 .cursorindexingignore
 **/.DS_Store
@@ -6,3 +7,11 @@
 **/node_modules/**
 **/.git/**
 **/*.vsix
+.gitignore
+**/*.map
+build/**
+dist/**
+log.1main.log
+log.1err.log
+*.bat
+scripts/**

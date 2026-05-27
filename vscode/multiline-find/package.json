@@ -2,7 +2,7 @@
   "name": "multiline-find",
   "displayName": "Multiline Find",
   "description": "PyCharm-like Ctrl+F: search multiline selections across the whole file in VS Code and Cursor.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "publisher": "rufat",
   "license": "MIT",
   "readme": "readme.md",
@@ -18,6 +18,7 @@
   "categories": [
     "Other"
   ],
+  "icon": "images/icon.png",
   "keywords": [
     "find",
     "search",
