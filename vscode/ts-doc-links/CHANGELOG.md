@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.5 — 2026-05-27
+
+- Maintenance release: version bump and release metadata update.
+
 ## 0.1.4 — 2026-05-26
 
 - Cursor referral link in readme **Author** / **Автор** section.
