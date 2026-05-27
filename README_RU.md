@@ -5,8 +5,6 @@
 Монорепозиторий плагинов и расширений для IDE — **JetBrains**, **VS Code** и другие.  
 Каждый плагин живёт в своём каталоге со своим `readme.md`.
 
-**Исследование:** [Возможные плагины для Cursor](../possible_plugins/possible_plugins.md) — пробелы рынка и 10 идей (RU).
-
 **Cursor IDE:** [Регистрация по реферальной ссылке](https://cursor.com/referral?code=GCE2SLLVIM87) — при подписке поддерживаете автора.
 
 ## Каталог плагинов
@@ -41,7 +39,6 @@ ide-plugins/            ← корень git (плагины)
       readme.md
       package.json
       src/
-../possible_plugins/    # исследование (идеи плагинов для Cursor)
 ```
 
 ## Лицензия

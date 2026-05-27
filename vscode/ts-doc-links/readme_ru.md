@@ -9,7 +9,6 @@
 Делает кликабельными `@see ./emailValidator.ts`, `File: utils.ts`, `// See utils.ts:3` через Ctrl+Click (или F12).
 
 > Разработано с помощью AI (Cursor / LLM). Часть монорепозитория [ide-plugins](https://github.com/rufatpro/ide-plugins).  
-> Тестовый проект: [possible_plugins/07](../../../possible_plugins/07/).
 
 ## Поддерживаемые паттерны
 

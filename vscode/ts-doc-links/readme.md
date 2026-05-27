@@ -9,7 +9,6 @@ Package id: `ts-doc-links`.
 It makes references like `@see ./emailValidator.ts`, `File: utils.ts`, and `// See utils.ts:3` navigable with Ctrl+Click (or F12).
 
 > Developed with AI assistance (Cursor / LLM). Part of the [ide-plugins](https://github.com/rufatpro/ide-plugins) monorepo.  
-> Test project: [possible_plugins/07](../../../possible_plugins/07/).
 
 ## Supported patterns
 

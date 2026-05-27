@@ -5,8 +5,6 @@
 Monorepo of IDE plugins and extensions — **JetBrains**, **VS Code**, and more.  
 Each plugin lives in its own directory with a `readme.md`.
 
-**Research:** [Possible plugins for Cursor](../possible_plugins/possible_plugins.md) — community gaps and 10 plugin ideas (RU).
-
 **Cursor IDE:** [Sign up with referral link](https://cursor.com/referral?code=GCE2SLLVIM87) — supports the author when you subscribe.
 
 ## Plugin catalog
@@ -41,7 +39,6 @@ ide-plugins/            ← git root (plugins)
       readme.md
       package.json
       src/
-../possible_plugins/    # research (plugin ideas for Cursor)
 ```
 
 ## License
