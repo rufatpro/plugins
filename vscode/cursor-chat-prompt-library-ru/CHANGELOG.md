@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.5
+
+- Maintenance release: version bump and release metadata update.
+
 ## 0.5.3
 
 - README: **Ctrl+Alt+Shift+P** — основной способ; **F1** / палитра команд — альтернатива.
