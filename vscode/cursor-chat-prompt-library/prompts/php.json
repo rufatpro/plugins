@@ -1,0 +1,146 @@
+{
+  "category": "php",
+  "categoryLabel": "PHP",
+  "prompts": [
+    {
+      "id": "php-01",
+      "label": "Hello World and php -S",
+      "description": "basics",
+      "detail": "built-in server",
+      "text": "I'm new to PHP 8.2+. Create the smallest useful starter.\n\n- index.php printing Hello, World\n- Run with php -S localhost:8000 in the project folder\n- Explain <?php tags and that files outside public docroot should not be web-accessible\n\nNo frameworks yet."
+    },
+    {
+      "id": "php-02",
+      "label": "Composer init and PSR-4 autoload",
+      "description": "composer",
+      "detail": "vendor/autoload.php",
+      "text": "Set up a tiny PHP project with Composer for a beginner.\n\n- composer init, composer.json with PSR-4 autoload for src/\n- One class App\\Greeter in src/Greeter.php and index.php requiring vendor/autoload.php\n- Commands: composer install, php index.php\n- Explain vendor/ and why it belongs in .gitignore\n\nKeep it minimal."
+    },
+    {
+      "id": "php-03",
+      "label": "Types strict_types and scalars",
+      "description": "syntax",
+      "detail": "declare(strict_types=1)",
+      "text": "Teach PHP scalar types and strict mode.\n\n- declare(strict_types=1); at top of a file\n- Functions with int, string, bool parameters and return types\n- Show one type error example and how PHP coerces without strict mode\n- Mention union types string|int in one line\n\nShort runnable scripts only."
+    },
+    {
+      "id": "php-04",
+      "label": "Arrays foreach and array functions",
+      "description": "basics",
+      "detail": "associative lists",
+      "text": "Explain PHP arrays (ordered map mental model) for beginners.\n\n- Indexed and associative arrays, foreach\n- array_map, array_filter, array_column on a list of user rows (name, email)\n- Spread operator ... in function calls briefly\n- One common mistake: += vs array_merge for lists\n\nNo framework."
+    },
+    {
+      "id": "php-05",
+      "label": "Functions defaults and named args",
+      "description": "functions",
+      "detail": "nullable parameters",
+      "text": "Create a small formatting helper module.\n\n- greet(string $name, string $prefix = 'Hello'): string\n- Nullable ?string and null coalescing ??\n- Named arguments PHP 8 example\n- When to use variadic ...$tags\n\nInclude 3 call examples with expected output."
+    },
+    {
+      "id": "php-06",
+      "label": "OOP class constructor visibility",
+      "description": "OOP",
+      "detail": "public protected private",
+      "text": "Introduce OOP in plain PHP.\n\n- class User with private properties, constructor promotion, public getter\n- Method toArray() for debugging\n- One paragraph: class vs object\n- readonly properties PHP 8.2 mention on one field\n\nSingle file or src/ layout; no framework."
+    },
+    {
+      "id": "php-07",
+      "label": "PDO SQLite CRUD",
+      "description": "database",
+      "detail": "prepared statements",
+      "text": "Build a notes table with PDO and SQLite (no ORM).\n\n- schema: id, title, body, created_at\n- Functions: createNote, listNotes, deleteNote using prepared statements\n- PDO::ATTR_ERRMODE => EXCEPTION\n- Never concatenate user input into SQL — explain why\n\nProvide schema.sql and notes.php CLI or simple HTML form optional."
+    },
+    {
+      "id": "php-08",
+      "label": "Sessions and flash messages",
+      "description": "web",
+      "detail": "session_start",
+      "text": "Teach PHP sessions for a tiny login demo (educational, not production auth).\n\n- session_start(), $_SESSION['user'] after fake login form POST\n- Logout unset and session_destroy\n- One-time flash message pattern for success/errors\n- session.cookie_httponly and secure flags — mention in checklist\n\nTwo pages: login.php and dashboard.php."
+    },
+    {
+      "id": "php-09",
+      "label": "File upload validation",
+      "description": "web",
+      "detail": "move_uploaded_file",
+      "text": "Handle image upload safely in plain PHP.\n\n- Form enctype multipart/form-data\n- Check $_FILES error, size limit, finfo MIME type (not trusting extension only)\n- move_uploaded_file to uploads/ outside web root or with .htaccess deny\n- Randomize filename to avoid overwrites\n\nList security mistakes beginners make."
+    },
+    {
+      "id": "php-10",
+      "label": "Exceptions and custom types",
+      "description": "errors",
+      "detail": "try catch finally",
+      "text": "Replace die() with exceptions in a small script.\n\n- Custom ValidationException with message\n- try/catch/finally reading a config file\n- Throwable vs Exception one sentence\n- When to let exceptions bubble to a front controller\n\nRunnable example under 50 lines."
+    },
+    {
+      "id": "php-11",
+      "label": "Namespaces and use statements",
+      "description": "structure",
+      "detail": "App\\Services",
+      "text": "Explain namespaces and PSR-4 folder mapping.\n\n- App\\Models\\Post and App\\Services\\PostRepository\n- use statements, aliases, leading backslash for global classes\n- Why class names must match file paths in PSR-4\n- Common autoload error: class not found debugging steps\n\nTiny tree diagram in comments."
+    },
+    {
+      "id": "php-12",
+      "label": "XSS-safe HTML output",
+      "description": "security",
+      "detail": "htmlspecialchars ENT_QUOTES",
+      "text": "Show escaping user content before echo in HTML.\n\n- htmlspecialchars($s, ENT_QUOTES, 'UTF-8') everywhere user data appears\n- Example comment form displaying submitted name safely\n- Contrast: when you need a HTML purifier library instead\n- Content-Security-Policy mention as defense in depth\n\nNo framework; plain PHP templates."
+    },
+    {
+      "id": "php-13",
+      "label": "password_hash and password_verify",
+      "description": "security",
+      "detail": "PASSWORD_DEFAULT",
+      "text": "Teach secure password storage in PHP.\n\n- password_hash on register, password_verify on login\n- Never store plaintext or reversible encryption for passwords\n- password_needs_rehash when algorithm upgrades\n- Minimal register/login flow with PDO (SQLite ok)\n\nWarn against md5/sha1 for passwords."
+    },
+    {
+      "id": "php-14",
+      "label": "filter_input and validation",
+      "description": "web",
+      "detail": "GET POST sanitization",
+      "text": "Validate HTTP input without a framework.\n\n- filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)\n- Cast age with FILTER_VALIDATE_INT and options min_max\n- Central validateRequest() returning errors array for a form\n- Difference between validation and escaping at output\n\nShow error display pattern in HTML."
+    },
+    {
+      "id": "php-15",
+      "label": "cURL GET JSON API",
+      "description": "HTTP",
+      "detail": "json_decode",
+      "text": "Fetch a public JSON API with cURL in PHP.\n\n- curl_init, CURLOPT_RETURNTRANSFER, timeout, User-Agent\n- json_decode with JSON_THROW_ON_ERROR\n- Handle HTTP status !== 200\n- Compare with file_get_contents limitations for HTTPS\n\nExample: jsonplaceholder.typicode.com/posts/1."
+    },
+    {
+      "id": "php-16",
+      "label": "PHPUnit first test",
+      "description": "testing",
+      "detail": "composer require phpunit",
+      "text": "Add PHPUnit to a small PHP project.\n\n- composer require --dev phpunit/phpunit\n- tests/CalculatorTest.php for add() and divide by zero exception\n- phpunit.xml minimal config\n- Run vendor/bin/phpunit\n\nExplain arrange-act-assert in one test."
+    },
+    {
+      "id": "php-17",
+      "label": "Simple front controller router",
+      "description": "architecture",
+      "detail": "index.php dispatch",
+      "text": "Build a tiny router without Laravel/Symfony.\n\n- public/index.php parses REQUEST_URI and METHOD\n- Map GET / and GET /about to callables or controller methods\n- 404 plain response for unknown routes\n- Explain why docroot should be public/ only\n\nUnder 60 lines; no .htaccess required if using php -S with router script note."
+    },
+    {
+      "id": "php-18",
+      "label": "Read and write JSON files",
+      "description": "IO",
+      "detail": "storage/users.json",
+      "text": "Persist data in a JSON file for learning (not production scale).\n\n- loadUsers() and saveUsers() with file locking flock\n- json_encode JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE\n- Handle corrupt JSON gracefully\n- When to move to SQLite instead\n\nCLI or minimal API returning application/json header."
+    },
+    {
+      "id": "php-19",
+      "label": "Enums and match expression",
+      "description": "PHP 8",
+      "detail": "Status enum",
+      "text": "Use backed enum and match in plain PHP 8.1+.\n\n- enum Status: string { case Active = 'active'; ... }\n- Function label(Status $s): string with match\n- Compare to class constants pattern\n- Serialization to database as string value\n\nShort example without framework."
+    },
+    {
+      "id": "php-20",
+      "label": "Shared hosting deploy checklist",
+      "description": "deploy",
+      "detail": "public docroot",
+      "text": "Deployment checklist for plain PHP on shared hosting.\n\n- Point domain to public/ only; keep src and .env above web root\n- php.ini: display_errors off in production, log errors\n- composer install --no-dev on server\n- File permissions on uploads and cache dirs\n- Never commit .env; use .env.example\n\nBullet list; mention when to choose VPS + Docker instead."
+    }
+  ]
+}

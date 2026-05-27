@@ -24,6 +24,7 @@ const CATEGORY_FILE_ORDER = [
   "tailwind.json",
   "nodejs.json",
   "vue.json",
+  "php.json",
   "php-laravel.json",
   "csharp.json",
   "java.json",

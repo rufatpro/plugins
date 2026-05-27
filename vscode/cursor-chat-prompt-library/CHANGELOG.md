@@ -1,9 +1,10 @@
 # Changelog
 
-## 0.5.0
+## 0.6.0
 
 - **Python** category expanded from 20 to **50** prompts (`py-21` … `py-50`).
-- Total bundled templates: **650** (31 categories; Python × 50, others × 20).
+- New **PHP** category (20 plain PHP prompts); **Laravel** category renamed from «PHP / Laravel».
+- Total bundled templates: **670** (32 categories; Python × 50, others × 20).
 
 ## 0.4.3
 

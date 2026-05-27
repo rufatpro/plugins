@@ -1,8 +1,8 @@
 {
   "name": "cursor-chat-prompt-library-ru",
   "displayName": "Cursor Chat Prompt Library RU",
-  "description": "650 русскоязычных шаблонов Prompt (промпт) для AI-чата и ИИ в Cursor (Курсор). 31 категория (Python × 50, остальные × 20). QuickPick → вставка в Chat (чат) Composer/Agent одним действием.",
-  "version": "0.3.0",
+  "description": "670 русскоязычных шаблонов Prompt (промпт) для AI-чата и ИИ в Cursor (Курсор). 32 категории (Python × 50, остальные × 20). PHP, Laravel и др. QuickPick → вставка в Chat (чат) Composer/Agent.",
+  "version": "0.4.0",
   "publisher": "rufat",
   "license": "MIT",
   "readme": "readme.md",
@@ -41,6 +41,7 @@
     "testing",
     "tailwind",
     "vue",
+    "php",
     "laravel",
     "dotnet",
     "spring",

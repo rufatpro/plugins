@@ -1,0 +1,146 @@
+{
+  "category": "php",
+  "categoryLabel": "PHP",
+  "prompts": [
+    {
+      "id": "php-01",
+      "label": "Hello World и php -S",
+      "description": "основы",
+      "detail": "встроенный сервер",
+      "text": "Я новичок в PHP 8.2+. Создай минимальный старт.\n\n- index.php с Hello, World\n- Запуск: php -S localhost:8000 в папке проекта\n- Объясни теги <?php и почему файлы вне public не должны быть доступны из веба\n\nПока без фреймворков."
+    },
+    {
+      "id": "php-02",
+      "label": "Composer init и PSR-4 autoload",
+      "description": "composer",
+      "detail": "vendor/autoload.php",
+      "text": "Настрой крошечный PHP-проект с Composer для начинающего.\n\n- composer init, PSR-4 autoload для src/\n- Класс App\\Greeter в src/Greeter.php и index.php с vendor/autoload.php\n- Команды: composer install, php index.php\n- Зачем vendor/ и почему он в .gitignore\n\nМинимально."
+    },
+    {
+      "id": "php-03",
+      "label": "Типы и strict_types",
+      "description": "синтаксис",
+      "detail": "declare(strict_types=1)",
+      "text": "Научи скалярным типам и strict mode в PHP.\n\n- declare(strict_types=1); в начале файла\n- Функции с int, string, bool и типами возврата\n- Пример ошибки типа и приведение без strict mode\n- Union types string|int — одной строкой\n\nКороткие запускаемые скрипты."
+    },
+    {
+      "id": "php-04",
+      "label": "Массивы foreach и array_*",
+      "description": "основы",
+      "detail": "ассоциативные списки",
+      "text": "Объясни массивы PHP (упорядоченная map-модель) для новичков.\n\n- Индексные и ассоциативные массивы, foreach\n- array_map, array_filter, array_column на списке пользователей (name, email)\n- Spread ... в вызовах функций кратко\n- Типичная ошибка: += vs array_merge\n\nБез фреймворка."
+    },
+    {
+      "id": "php-05",
+      "label": "Функции: значения по умолчанию и named args",
+      "description": "функции",
+      "detail": "nullable параметры",
+      "text": "Создай маленький модуль форматирования.\n\n- greet(string $name, string $prefix = 'Hello'): string\n- ?string и оператор ??\n- Named arguments в PHP 8\n- Когда variadic ...$tags\n\n3 примера вызова с ожидаемым выводом."
+    },
+    {
+      "id": "php-06",
+      "label": "ООП: конструктор и видимость",
+      "description": "ООП",
+      "detail": "public protected private",
+      "text": "Введение в ООП на чистом PHP.\n\n- class User с private полями, constructor promotion, public getter\n- Метод toArray() для отладки\n- Абзац: класс vs объект\n- readonly properties PHP 8.2 на одном поле\n\nОдин файл или src/; без фреймворка."
+    },
+    {
+      "id": "php-07",
+      "label": "PDO SQLite CRUD",
+      "description": "база данных",
+      "detail": "подготовленные запросы",
+      "text": "Таблица заметок на PDO и SQLite (без ORM).\n\n- schema: id, title, body, created_at\n- createNote, listNotes, deleteNote с prepared statements\n- PDO::ATTR_ERRMODE => EXCEPTION\n- Почему нельзя склеивать SQL с пользовательским вводом\n\nschema.sql и notes.php (CLI или простая форма)."
+    },
+    {
+      "id": "php-08",
+      "label": "Сессии и flash-сообщения",
+      "description": "веб",
+      "detail": "session_start",
+      "text": "Научи PHP sessions на учебном login-демо (не production auth).\n\n- session_start(), $_SESSION['user'] после POST формы\n- Logout: unset и session_destroy\n- Одноразовые flash для success/error\n- session.cookie_httponly и secure — в чеклисте\n\nСтраницы login.php и dashboard.php."
+    },
+    {
+      "id": "php-09",
+      "label": "Загрузка файлов с валидацией",
+      "description": "веб",
+      "detail": "move_uploaded_file",
+      "text": "Безопасная загрузка изображения на чистом PHP.\n\n- Form enctype multipart/form-data\n- Проверка $_FILES error, лимит размера, finfo MIME (не только расширение)\n- move_uploaded_file в uploads/ вне веб-корня или с deny\n- Случайное имя файла\n\nТипичные ошибки новичков в безопасности."
+    },
+    {
+      "id": "php-10",
+      "label": "Исключения и свои типы",
+      "description": "ошибки",
+      "detail": "try catch finally",
+      "text": "Замени die() на исключения в небольшом скрипте.\n\n- Свой ValidationException\n- try/catch/finally при чтении config\n- Throwable vs Exception — одно предложение\n- Когда пробрасывать исключение во front controller\n\nПример до 50 строк."
+    },
+    {
+      "id": "php-11",
+      "label": "Пространства имён и use",
+      "description": "структура",
+      "detail": "App\\Services",
+      "text": "Объясни namespaces и соответствие PSR-4 папкам.\n\n- App\\Models\\Post и App\\Services\\PostRepository\n- use, алиасы, ведущий \\ для глобальных классов\n- Имена классов и пути файлов в PSR-4\n- Отладка class not found — шаги\n\nМини-схема дерева в комментариях."
+    },
+    {
+      "id": "php-12",
+      "label": "Безопасный HTML-вывод (XSS)",
+      "description": "безопасность",
+      "detail": "htmlspecialchars ENT_QUOTES",
+      "text": "Экранирование пользовательского контента перед echo в HTML.\n\n- htmlspecialchars($s, ENT_QUOTES, 'UTF-8') везде, где данные пользователя\n- Форма комментария с безопасным выводом имени\n- Когда нужна библиотека HTML purifier\n- Content-Security-Policy как дополнительная защита\n\nБез фреймворка."
+    },
+    {
+      "id": "php-13",
+      "label": "password_hash и password_verify",
+      "description": "безопасность",
+      "detail": "PASSWORD_DEFAULT",
+      "text": "Безопасное хранение паролей в PHP.\n\n- password_hash при регистрации, password_verify при входе\n- Не хранить plaintext и не «шифровать» пароли обратимо\n- password_needs_rehash при смене алгоритма\n- Минимальный register/login с PDO (SQLite ок)\n\nПредупреди про md5/sha1 для паролей."
+    },
+    {
+      "id": "php-14",
+      "label": "filter_input и валидация",
+      "description": "веб",
+      "detail": "санитизация GET POST",
+      "text": "Валидация HTTP-ввода без фреймворка.\n\n- filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)\n- Возраст: FILTER_VALIDATE_INT с min_max\n- validateRequest() возвращает массив ошибок\n- Валидация vs экранирование при выводе\n\nПаттерн показа ошибок в HTML."
+    },
+    {
+      "id": "php-15",
+      "label": "cURL GET JSON API",
+      "description": "HTTP",
+      "detail": "json_decode",
+      "text": "Запрос публичного JSON API через cURL в PHP.\n\n- curl_init, CURLOPT_RETURNTRANSFER, timeout, User-Agent\n- json_decode с JSON_THROW_ON_ERROR\n- Обработка HTTP status !== 200\n- file_get_contents vs cURL для HTTPS — кратко\n\nПример: jsonplaceholder.typicode.com/posts/1."
+    },
+    {
+      "id": "php-16",
+      "label": "Первый тест PHPUnit",
+      "description": "тестирование",
+      "detail": "composer require phpunit",
+      "text": "Добавь PHPUnit в маленький PHP-проект.\n\n- composer require --dev phpunit/phpunit\n- tests/CalculatorTest.php для add() и деления на ноль\n- Минимальный phpunit.xml\n- vendor/bin/phpunit\n\nArrange-act-assert на одном тесте."
+    },
+    {
+      "id": "php-17",
+      "label": "Простой front controller router",
+      "description": "архитектура",
+      "detail": "dispatch в index.php",
+      "text": "Крошечный роутер без Laravel/Symfony.\n\n- public/index.php разбирает REQUEST_URI и METHOD\n- GET / и GET /about → callables или методы контроллера\n- 404 для неизвестных маршрутов\n- Почему docroot только public/\n\nДо 60 строк; php -S и router script — заметка."
+    },
+    {
+      "id": "php-18",
+      "label": "Чтение и запись JSON-файлов",
+      "description": "IO",
+      "detail": "storage/users.json",
+      "text": "Хранение данных в JSON-файле для обучения (не для продакшена на масштабе).\n\n- loadUsers() и saveUsers() с flock\n- json_encode JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE\n- Обработка битого JSON\n- Когда переходить на SQLite\n\nCLI или минимальный API с application/json."
+    },
+    {
+      "id": "php-19",
+      "label": "Enum и match",
+      "description": "PHP 8",
+      "detail": "enum Status",
+      "text": "Backed enum и match на чистом PHP 8.1+.\n\n- enum Status: string { case Active = 'active'; ... }\n- label(Status $s): string через match\n- Сравнение с константами класса\n- Сохранение в БД как string\n\nКороткий пример без фреймворка."
+    },
+    {
+      "id": "php-20",
+      "label": "Чеклист деплоя на shared hosting",
+      "description": "деплой",
+      "detail": "public docroot",
+      "text": "Чеклист деплоя plain PHP на shared hosting.\n\n- Домен указывает только на public/; src и .env выше веб-корня\n- php.ini: display_errors off в prod, логировать ошибки\n- composer install --no-dev на сервере\n- Права на uploads и cache\n- Не коммитить .env; .env.example\n\nКогда выбирать VPS + Docker."
+    }
+  ]
+}

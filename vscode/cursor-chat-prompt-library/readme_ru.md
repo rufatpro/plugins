@@ -4,13 +4,13 @@
 
 Библиотека шаблонов для **AI-чата Cursor**: QuickPick → вставка в чат.
 
-**650 шаблонов** — 31 категория (**Python × 50**, остальные × 20):
+**670 шаблонов** — 32 категории (**Python × 50**, остальные × 20):
 
 | Уровень | Категории |
 |---------|-----------|
 | Базовые | Сайт, Python, JavaScript, TypeScript, React, SQL, Git, Django |
 | Высокий спрос | Next.js, FastAPI, Docker, Testing, Tailwind CSS |
-| Сильный спрос | Node.js, Vue, PHP/Laravel, C#/.NET, Java/Spring, Linux/Bash, CI/CD, REST/OpenAPI, MongoDB, Mobile |
+| Сильный спрос | Node.js, Vue, PHP, Laravel, C#/.NET, Java/Spring, Linux/Bash, CI/CD, REST/OpenAPI, MongoDB, Mobile |
 | Нишевые / растущие | Go, Rust, Kubernetes, AWS, WordPress, Data/Pandas, Security, GraphQL |
 
 > Часть monorepo [ide-plugins](https://github.com/rufatpro/ide-plugins).
@@ -27,7 +27,7 @@
 | Команда | Действие |
 |---------|----------|
 | **Pick Prompt (Category, then Template)** | Как горячая клавиша |
-| **Insert Prompt into Chat (All Categories)** | Один список из 650 промптов |
+| **Insert Prompt into Chat (All Categories)** | Один список из 670 промптов |
 | **Insert Website / Python / JavaScript** | Быстрый вход в одну категорию |
 
 Палитра: `Ctrl+Shift+P` → `Cursor Chat Prompt Library`.
@@ -37,7 +37,7 @@
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-0.5.0.vsix
+cursor --install-extension build\cursor-chat-prompt-library-0.6.0.vsix
 ```
 
 Перезагрузите окно.

@@ -2,15 +2,15 @@
 
 [English](readme_en.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Репозиторий](https://github.com/rufatpro/ide-plugins)
 
-Библиотека **650 русскоязычных** шаблонов Промптов (Prompts) для AI-Chat в **Cursor**: Быстрый выбор → вставка в ИИ Чат Курсора.
+Библиотека **670 русскоязычных** шаблонов Промптов (Prompts) для AI-Chat в **Cursor**: Быстрый выбор → вставка в ИИ Чат Курсора.
 
-**31 категория** (**Python × 50**, остальные × 20) **= 650 шаблонов:**
+**32 категории** (**Python × 50**, остальные × 20) **= 670 шаблонов:**
 
 | Уровень | Категории |
 |---------|-----------|
 | Базовые | Сайт, Python, JavaScript, TypeScript, React, SQL, Git, Django |
 | Высокий спрос | Next.js, FastAPI, Docker, Testing, Tailwind CSS |
-| Сильный спрос | Node.js, Vue, PHP/Laravel, C#/.NET, Java/Spring, Linux/Bash, CI/CD, REST/OpenAPI, MongoDB, Mobile |
+| Сильный спрос | Node.js, Vue, PHP, Laravel, C#/.NET, Java/Spring, Linux/Bash, CI/CD, REST/OpenAPI, MongoDB, Mobile |
 | Нишевые / растущие | Go, Rust, Kubernetes, AWS, WordPress, Data/Pandas, Security, GraphQL |
 
 > Часть monorepo [ide-plugins](https://github.com/rufatpro/ide-plugins).
@@ -19,7 +19,7 @@
 
 | Клавиша | Действие |
 |---------|----------|
-| **Ctrl+Alt+P** | **Шаг 1:** категория (31 тип) → **шаг 2:** промпт → вставка в чат |
+| **Ctrl+Alt+P** | **Шаг 1:** категория (32 типа) → **шаг 2:** промпт → вставка в чат |
 | **Cmd+Alt+P** (macOS) | То же |
 
 ## Команды
@@ -27,7 +27,7 @@
 | Команда | Действие |
 |---------|----------|
 | **Выбрать промпт (категория → шаблон)** | Как горячая клавиша |
-| **Вставить промпт в чат (все категории)** | Один список из 650 промптов |
+| **Вставить промпт в чат (все категории)** | Один список из 670 промптов |
 | **Вставить промпт Website / Python / JavaScript** | Быстрый вход в одну категорию |
 
 Палитра: `Ctrl+Shift+P` → `Cursor Chat Prompt Library RU`.
@@ -42,7 +42,7 @@
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library-ru
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-ru-0.3.0.vsix
+cursor --install-extension build\cursor-chat-prompt-library-ru-0.4.0.vsix
 ```
 
 Перезагрузите окно. Нажмите **Ctrl+Alt+P** или выполните **Выбрать промпт**.

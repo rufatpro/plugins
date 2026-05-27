@@ -1,6 +1,6 @@
 {
   "category": "php-laravel",
-  "categoryLabel": "PHP / Laravel",
+  "categoryLabel": "Laravel",
   "prompts": [
     {
       "id": "laravel-01",
