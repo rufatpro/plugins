@@ -15,12 +15,12 @@
 
 > Part of the [ide-plugins](https://github.com/rufatpro/ide-plugins) monorepo.
 
-## Hotkey
+## Hotkey (primary)
 
 | Key | Action |
 |-----|--------|
-| **Ctrl+Alt+P** (Windows/Linux) | **Step 1:** category (34 types) → **Step 2:** prompt → insert into chat |
-| **Cmd+Alt+P** (macOS) | Same |
+| **Ctrl+Alt+Shift+P** (Windows/Linux) | **Step 1:** category (34 types) → **Step 2:** prompt → insert into chat |
+| **Cmd+Alt+Shift+P** (macOS) | Same |
 
 ## Commands
 
@@ -30,7 +30,10 @@
 | **Insert Prompt into Chat (All Categories)** | Single list, all 710 prompts |
 | **Insert Website / Python / JavaScript Prompt** | One category only (legacy shortcuts) |
 
-Open via **Command Palette** (`Ctrl+Shift+P`) → `Cursor Chat Prompt Library`.
+### Via Command Palette
+
+> **F1** or `Ctrl+Shift+P` → **Pick Prompt** (or filter `Cursor Chat Prompt Library`).  
+> Use when you do not remember the hotkey or it conflicts with another extension.
 
 ## Requirements
 
@@ -42,10 +45,10 @@ Open via **Command Palette** (`Ctrl+Shift+P`) → `Cursor Chat Prompt Library`.
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-0.7.0.vsix
+cursor --install-extension build\cursor-chat-prompt-library-0.7.3.vsix
 ```
 
-Reload the window. Press **Ctrl+Alt+P** or run **Pick Prompt**.
+Reload the window. Primary: **Ctrl+Alt+Shift+P** (see **Via Command Palette** for **F1**).
 
 ## Maintaining prompts
 

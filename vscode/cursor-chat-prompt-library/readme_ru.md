@@ -15,12 +15,12 @@
 
 > Часть monorepo [ide-plugins](https://github.com/rufatpro/ide-plugins).
 
-## Горячая клавиша
+## Горячая клавиша (основной способ)
 
 | Клавиша | Действие |
 |---------|----------|
-| **Ctrl+Alt+P** | **Шаг 1:** категория (31 тип) → **шаг 2:** промпт → вставка в чат |
-| **Cmd+Alt+P** (macOS) | То же |
+| **Ctrl+Alt+Shift+P** | **Шаг 1:** категория (31 тип) → **шаг 2:** промпт → вставка в чат |
+| **Cmd+Alt+Shift+P** (macOS) | То же |
 
 ## Команды
 
@@ -30,17 +30,20 @@
 | **Insert Prompt into Chat (All Categories)** | Один список из 710 промптов |
 | **Insert Website / Python / JavaScript** | Быстрый вход в одну категорию |
 
-Палитра: `Ctrl+Shift+P` → `Cursor Chat Prompt Library`.
+### Через палитру команд
+
+> **F1** или `Ctrl+Shift+P` → **Pick Prompt** (или `Cursor Chat Prompt Library`).  
+> Удобно, если горячую клавишу не помните или она занята другим расширением.
 
 ## Установка
 
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-0.7.0.vsix
+cursor --install-extension build\cursor-chat-prompt-library-0.7.3.vsix
 ```
 
-Перезагрузите окно.
+Перезагрузите окно. Основной способ — **Ctrl+Alt+Shift+P** (см. раздел «Через палитру команд» для **F1**).
 
 ## Поддержка каталога
 

@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.5.3
+
+- README: **Ctrl+Alt+Shift+P** — основной способ; **F1** / палитра команд — альтернатива.
+
+## 0.5.2
+
+- Горячая клавиша: **Ctrl+Alt+Shift+P** (`Cmd+Alt+Shift+P` на macOS) — без конфликта с IntelliJ *Introduce Parameter* (Ctrl+Alt+P).
+- При установке расширение снимает конфликтующие привязки `editor.action.codeAction` на этой клавише.
+
+## 0.5.1
+
+- **Ctrl+Alt+P**: приоритет над IntelliJ *Introduce Parameter* в редакторе (`when` с большей специфичностью).
+
 ## 0.5.0
 
 - Новые категории **C** и **C++** (по 20 промптов), переводы на русский.

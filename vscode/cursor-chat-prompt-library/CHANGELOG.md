@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.7.3
+
+- README: **Ctrl+Alt+Shift+P** as the primary way to open prompts; **F1** / Command Palette documented as an alternative.
+
+## 0.7.2
+
+- Hotkey changed to **Ctrl+Alt+Shift+P** (`Cmd+Alt+Shift+P` on macOS) to avoid keymap conflicts (e.g. IntelliJ *Introduce Parameter* on Ctrl+Alt+P).
+- Extension unbinds conflicting `editor.action.codeAction` rules on the new key at install time.
+
+## 0.7.1
+
+- **Ctrl+Alt+P**: takes precedence over IntelliJ *Introduce Parameter* in the editor (more specific `when` clause).
+
 ## 0.7.0
 
 - New **C** and **C++** categories (20 prompts each).

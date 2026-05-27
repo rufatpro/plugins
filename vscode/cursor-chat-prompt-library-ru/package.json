@@ -2,7 +2,7 @@
   "name": "cursor-chat-prompt-library-ru",
   "displayName": "Cursor Chat Prompt Library RU",
   "description": "710 русскоязычных шаблонов Prompt для AI-чата в Cursor. 34 категории (Python × 50, остальные × 20). C, C++, PHP, Laravel, Go, Rust и др. QuickPick → вставка в Chat.",
-  "version": "0.5.0",
+  "version": "0.5.3",
   "publisher": "rufat",
   "license": "MIT",
   "readme": "readme.md",
@@ -98,9 +98,29 @@
     ],
     "keybindings": [
       {
+        "key": "ctrl+alt+shift+p",
+        "mac": "cmd+alt+shift+p",
+        "command": "-editor.action.codeAction",
+        "when": "editorTextFocus",
+        "args": { "kind": "refactor.introduce.parameter" }
+      },
+      {
+        "key": "ctrl+alt+shift+p",
+        "mac": "cmd+alt+shift+p",
+        "command": "-editor.action.codeAction",
+        "when": "editorTextFocus"
+      },
+      {
         "command": "cursorChatPromptLibraryRu.pick",
-        "key": "ctrl+alt+p",
-        "mac": "cmd+alt+p"
+        "key": "ctrl+alt+shift+p",
+        "mac": "cmd+alt+shift+p",
+        "when": "editorTextFocus && !terminalFocus && !inQuickOpen"
+      },
+      {
+        "command": "cursorChatPromptLibraryRu.pick",
+        "key": "ctrl+alt+shift+p",
+        "mac": "cmd+alt+shift+p",
+        "when": "!editorTextFocus && !terminalFocus && !inQuickOpen"
       }
     ]
   },

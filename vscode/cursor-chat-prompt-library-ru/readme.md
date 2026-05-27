@@ -1,6 +1,6 @@
 # Cursor Chat Prompt Library RU
 
-[English](readme_en.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Репозиторий](https://github.com/rufatpro/ide-plugins)
+[English](readme_en.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Репозиторий](https://github.com/rufatpro/ide-plugins) · [Инструкция релиза](../../../readme_github_release_cursor-chat-prompt-library-ru.md)
 
 Библиотека **710 русскоязычных** шаблонов Промптов (Prompts) для AI-Chat в **Cursor**: Быстрый выбор → вставка в ИИ Чат Курсора.
 
@@ -15,12 +15,12 @@
 
 > Часть monorepo [ide-plugins](https://github.com/rufatpro/ide-plugins).
 
-## Горячая клавиша
+## Горячая клавиша (основной способ)
 
 | Клавиша | Действие |
 |---------|----------|
-| **Ctrl+Alt+P** | **Шаг 1:** категория (34 типа) → **шаг 2:** промпт → вставка в чат |
-| **Cmd+Alt+P** (macOS) | То же |
+| **Ctrl+Alt+Shift+P** | **Шаг 1:** категория (34 типа) → **шаг 2:** промпт → вставка в чат |
+| **Cmd+Alt+Shift+P** (macOS) | То же |
 
 ## Команды
 
@@ -30,7 +30,10 @@
 | **Вставить промпт в чат (все категории)** | Один список из 710 промптов |
 | **Вставить промпт Website / Python / JavaScript** | Быстрый вход в одну категорию |
 
-Палитра: `Ctrl+Shift+P` → `Cursor Chat Prompt Library RU`.
+### Через палитру команд
+
+> **F1** или `Ctrl+Shift+P` → **Выбрать промпт** (или фильтр `Cursor Chat Prompt Library RU`).  
+> Удобно, если горячую клавишу не помните или она занята другим расширением.
 
 ## Требования
 
@@ -42,10 +45,10 @@
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library-ru
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-ru-0.5.0.vsix
+cursor --install-extension build\cursor-chat-prompt-library-ru-0.5.3.vsix
 ```
 
-Перезагрузите окно. Нажмите **Ctrl+Alt+P** или выполните **Выбрать промпт**.
+Перезагрузите окно. Основной способ — **Ctrl+Alt+Shift+P** (см. раздел «Через палитру команд» для **F1**).
 
 ## Поддержка каталога
 
