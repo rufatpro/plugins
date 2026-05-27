@@ -141,6 +141,216 @@
       "description": "stdlib",
       "detail": "archive CSV folder",
       "text": "Write a beginner script that bundles a handful of *.csv files into a dated zip archive using zipfile.\nInclude Path.glob, arcname basename handling, and a dry-run flag printed to the console.\nDescribe security warnings about unpacking untrusted zips at a high level.\nExplain how I'd run this on Windows and macOS similarly.\nFinish with ideas for scheduling later without implementing cron."
+    },
+    {
+      "id": "py-21",
+      "label": "Decorators and functools.wraps",
+      "description": "functions",
+      "detail": "timing decorator example",
+      "text": "Teach Python decorators from zero with a practical example.\n\n- Start with a function that prints how long another function takes\n- Rewrite it as @timer decorator using functools.wraps so __name__ stays correct\n- Show stacking two decorators and the call order\n- One paragraph on when decorators beat plain function calls\n\nKeep code under 40 lines and runnable."
+    },
+    {
+      "id": "py-22",
+      "label": "Generators and yield",
+      "description": "iterators",
+      "detail": "lazy line reader",
+      "text": "Explain generators vs returning a full list in memory.\n\n- Function read_lines_lazy(path) yielding stripped lines one at a time\n- Compare memory use with list version in one sentence\n- Show a generator expression filtering lines containing a keyword\n- Mention when yield from helps with nested generators\n\nInclude a tiny main block that prints first 3 matches only."
+    },
+    {
+      "id": "py-23",
+      "label": "asyncio hello and gather",
+      "description": "async",
+      "detail": "asyncio.run fetch simulation",
+      "text": "I'm new to asyncio in Python 3.11+.\n\n- Minimal script: async def main(), asyncio.run(main())\n- Two fake tasks with await asyncio.sleep and asyncio.gather\n- Explain event loop in 3 bullets for beginners\n- When asyncio helps vs when threads or sync code is simpler\n\nNo external libraries; keep under 35 lines."
+    },
+    {
+      "id": "py-24",
+      "label": "sqlite3 CRUD mini app",
+      "description": "database",
+      "detail": "notes.db tasks table",
+      "text": "Build a tiny notes app using only sqlite3 from the standard library.\n\n- Create notes.db with a tasks table (id, title, done)\n- Functions: add_task, list_tasks, mark_done\n- Use context manager for connection and parameterized queries (? placeholders)\n- Show CLI examples or a minimal input loop\n\nWarn about SQL injection if someone tries string formatting for SQL."
+    },
+    {
+      "id": "py-25",
+      "label": "subprocess run external commands",
+      "description": "stdlib",
+      "detail": "capture output safely",
+      "text": "Show safe patterns for running external programs with subprocess.\n\n- subprocess.run with list args (not shell=True) for git --version or similar\n- Capture stdout/stderr as text, check returncode\n- Timeout handling and CalledProcessError\n- One paragraph why shell=True is risky for user input\n\nWorks on Windows and Unix; note path differences briefly."
+    },
+    {
+      "id": "py-26",
+      "label": "enum.Enum for constants",
+      "description": "stdlib",
+      "detail": "Status Active Inactive",
+      "text": "Replace magic strings with enum.Enum in a small user-status example.\n\n- class Status(str, Enum) with ACTIVE, INACTIVE, PENDING\n- Function that accepts Status and rejects invalid strings with clear error\n- Show .value and comparing enums\n- Mention auto() vs explicit values for beginners\n\nUnder 30 lines of code."
+    },
+    {
+      "id": "py-27",
+      "label": "functools.lru_cache memoization",
+      "description": "stdlib",
+      "detail": "Fibonacci or expensive lookup",
+      "text": "Demonstrate functools.lru_cache on a slow pure function (e.g. naive Fibonacci or repeated JSON key lookup).\n\n- Before/after timing with time.perf_counter\n- Explain maxsize and when cache is wrong (mutable args, side effects)\n- Show cache_info() and cache_clear()\n- One line on functools.cache as unlimited variant\n\nRunnable script only."
+    },
+    {
+      "id": "py-28",
+      "label": "re module regex basics",
+      "description": "stdlib",
+      "detail": "validate email-ish pattern",
+      "text": "Teach the re module for beginners without overwhelming regex theory.\n\n- re.search and re.findall on sample log lines\n- Compile a pattern once with re.compile\n- Simple validator function for a loose email pattern (not production-perfect)\n- Explain raw strings r\"...\" and why greedy vs non-greedy matters in one example\n\nInclude 2–3 test strings and expected match results."
+    },
+    {
+      "id": "py-29",
+      "label": "json load dump custom types",
+      "description": "stdlib",
+      "detail": "datetime in JSON",
+      "text": "Work with json module beyond basic dict/list.\n\n- Serialize a dataclass or dict with datetime using default= handler\n- Pretty-print with indent=2\n- Load from a file with Path and json.loads safety note (size limits)\n- Contrast json vs orjson in one sentence for later\n\nProvide sample data.json and script read_write_json.py."
+    },
+    {
+      "id": "py-30",
+      "label": "secrets for tokens and passwords",
+      "description": "security",
+      "detail": "token_urlsafe",
+      "text": "Explain why random.random() is wrong for security tokens.\n\n- secrets.token_urlsafe and secrets.choice for short codes\n- Compare with uuid.uuid4 for session ids (when each fits)\n- Never log secrets; environment variable pattern\n- One paragraph on password hashing: use bcrypt/argon2 library, not DIY\n\nSmall script generating a reset token and API key placeholder."
+    },
+    {
+      "id": "py-31",
+      "label": "hashlib file checksums",
+      "description": "stdlib",
+      "detail": "SHA-256 chunked read",
+      "text": "Write sha256_file(path) reading in chunks so large files work.\n\n- Use hashlib.sha256().update(block)\n- CLI: python checksum.py file1 file2\n- Optional compare two files for equality\n- Mention blake2b as faster alternative in one line\n\nInclude how to verify a download if publisher gives a checksum string."
+    },
+    {
+      "id": "py-32",
+      "label": "tempfile scratch directories",
+      "description": "stdlib",
+      "detail": "TemporaryDirectory context",
+      "text": "Show tempfile.TemporaryDirectory and NamedTemporaryFile with context managers.\n\n- Script that writes intermediate CSV parts then merges them\n- Explain delete=True behavior and Windows file-lock caveat briefly\n- Why not hardcode /tmp paths\n- Cleanup guaranteed even on exception\n\nKeep example under 25 lines."
+    },
+    {
+      "id": "py-33",
+      "label": "shutil copy and disk usage",
+      "description": "stdlib",
+      "detail": "copytree ignore patterns",
+      "text": "Teach shutil for file operations beginners need.\n\n- shutil.copy2 vs copy for metadata\n- shutil.copytree with ignore= function skipping __pycache__\n- shutil.disk_usage reporting free space in GB\n- When to prefer pathlib operations instead\n\nSmall backup-folder demo with dry-run print only."
+    },
+    {
+      "id": "py-34",
+      "label": "unittest.mock patch dependencies",
+      "description": "testing",
+      "detail": "mock requests.get",
+      "text": "Introduce unittest.mock for isolating code that calls external APIs.\n\n- Function fetch_title(url) using urllib or requests\n- Test with @patch and MagicMock returning fake response\n- assert_called_once_with and side_effect for errors\n- Compare with pytest monkeypatch in 2 sentences\n\nUse unittest or pytest style; pick one and stay consistent."
+    },
+    {
+      "id": "py-35",
+      "label": "property getter setter validation",
+      "description": "OOP",
+      "detail": "positive price field",
+      "text": "Explain @property for controlled attribute access.\n\n- class Product with private _price and property price that rejects negative values\n- Optional setter with validation message\n- When @property beats explicit get_price() methods\n- Link to dataclasses field(validator=...) as modern alternative briefly\n\nInclude one test or assert example."
+    },
+    {
+      "id": "py-36",
+      "label": "args kwargs unpacking",
+      "description": "functions",
+      "detail": "wrapper forwarding",
+      "text": "Clarify *args and **kwargs for beginners.\n\n- Function log_call(func, *args, **kwargs) that prints name and arguments then calls func\n- Example with positional and keyword args\n- Explain unpacking in calls: func(*items, **options)\n- Common mistake: mutable default dict in signature\n\nShort examples only, no classes yet."
+    },
+    {
+      "id": "py-37",
+      "label": "abc abstract base classes",
+      "description": "OOP",
+      "detail": "Notifier interface",
+      "text": "Introduce abc.ABC and @abstractmethod with a Notifier interface.\n\n- Abstract class with send(message)\n- EmailNotifier and ConsoleNotifier implementations\n- What happens if you instantiate ABC directly\n- When ABC helps vs simple duck typing Protocol\n\nRunnable demo in one file under 45 lines."
+    },
+    {
+      "id": "py-38",
+      "label": "Counter and defaultdict",
+      "description": "collections",
+      "detail": "word frequency report",
+      "text": "Use collections.Counter and defaultdict for a word-frequency report.\n\n- Read a text file, normalize case, split words\n- Counter.most_common(10)\n- defaultdict(list) grouping lines by first letter\n- Compare with manual dict.setdefault\n\nNo external libs; sample paragraph included in prompt output."
+    },
+    {
+      "id": "py-39",
+      "label": "heapq top-k largest",
+      "description": "stdlib",
+      "detail": "scores leaderboard",
+      "text": "Teach heapq with a leaderboard of scores.\n\n- heapq.nlargest and nsmallest on a list of tuples (name, score)\n- Push/pop pattern with heapify for streaming top 3\n- When heap beats sorting entire list (big data intuition)\n- One line on PriorityQueue wrapper if relevant\n\nSmall dataset example with printed ranking."
+    },
+    {
+      "id": "py-40",
+      "label": "match case structural patterns",
+      "description": "syntax",
+      "detail": "HTTP-like status codes",
+      "text": "Explain structural pattern matching (match/case) in Python 3.10+.\n\n- Match int status codes 200, 404, default\n- Second example matching dict shapes {\"type\": \"error\", \"code\": ...}\n- Compare readability to if/elif chains\n- Note: not a replacement for isinstance everywhere\n\nTwo concise examples with expected print output."
+    },
+    {
+      "id": "py-41",
+      "label": "Type hints list dict optional",
+      "description": "typing",
+      "detail": "mypy-friendly functions",
+      "text": "Add gradual typing to a small module for learning.\n\n- Functions with list[str], dict[str, int], str | None\n- Typed def process(items: list[str]) -> dict[str, int]\n- Run mypy or pyright one-liner command\n- Explain why hints don't slow runtime\n- Common beginner mistake: using list instead of list[str] in old code\n\nProvide py.typed note only if packaging—skip heavy packaging."
+    },
+    {
+      "id": "py-42",
+      "label": "Pydantic v2 model validation",
+      "description": "libraries",
+      "detail": "UserCreate schema",
+      "text": "Create a Pydantic v2 model for API input validation.\n\n- UserCreate with email, age (ge=18), name min length\n- model_validate from dict and ValidationError pretty printing\n- model_dump for JSON-ready dict\n- Contrast with dataclass + manual checks\n\nrequirements.txt with pydantic>=2. Keep one file example."
+    },
+    {
+      "id": "py-43",
+      "label": "pyproject.toml and pip install -e",
+      "description": "packaging",
+      "detail": "src layout intro",
+      "text": "Walk through making a tiny installable package for learning.\n\n- pyproject.toml with [project] name, version, dependencies\n- src/mypkg/__init__.py and one function\n- pip install -e .\n- Import mypkg from REPL and run\n- Explain src layout vs flat layout in 3 bullets\n\nDo not publish to PyPI; local only."
+    },
+    {
+      "id": "py-44",
+      "label": "black and ruff formatter linter",
+      "description": "tooling",
+      "detail": "pyproject tool config",
+      "text": "Set up black and ruff on a messy sample script.\n\n- pyproject.toml [tool.black] and [tool.ruff] minimal config\n- Commands: black . and ruff check . --fix\n- Show one before/after diff conceptually\n- When to run in pre-commit (mention only, optional snippet)\n\nAssume venv exists; list pip install lines."
+    },
+    {
+      "id": "py-45",
+      "label": "threading basics and the GIL",
+      "description": "concurrency",
+      "detail": "download workers demo",
+      "text": "Introduce threading.Thread for I/O-bound work with honest GIL limits.\n\n- 3 threads fetching fake URLs with time.sleep simulation\n- threading.Lock protecting a shared counter\n- Explain GIL in plain language (CPU-bound vs I/O-bound)\n- When to look at multiprocessing or asyncio instead\n\nUnder 40 lines; no thread pools yet."
+    },
+    {
+      "id": "py-46",
+      "label": "multiprocessing Pool map",
+      "description": "concurrency",
+      "detail": "CPU-bound squares",
+      "text": "Show multiprocessing.Pool for CPU-heavy work on small data.\n\n- if __name__ == \"__main__\" guard explained\n- pool.map(square, range(10)) with timing compare to serial\n- Windows spawn vs fork one sentence\n- Warning: overhead dominates on tiny tasks\n\nRunnable script with print timings."
+    },
+    {
+      "id": "py-47",
+      "label": "Package __init__ and relative imports",
+      "description": "structure",
+      "detail": "myapp submodules",
+      "text": "Explain Python packages beyond a single file.\n\n- Folder myapp/ with __init__.py, utils.py, cli.py\n- Relative import from .utils in cli.py\n- python -m myapp.cli entry pattern\n- Common ImportError causes when running wrong cwd\n\nTree diagram in comments; minimal working code."
+    },
+    {
+      "id": "py-48",
+      "label": "slots and memory on many objects",
+      "description": "performance",
+      "detail": "__slots__ dataclass",
+      "text": "Teach __slots__ when creating many similar instances.\n\n- Regular class vs __slots__ = (\"x\", \"y\") attribute restriction\n- Mention dataclass(slots=True) in 3.10+\n- Trade-off: no dynamic attributes, harder multiple inheritance\n- When beginners should ignore this until profiling says otherwise\n\nMicro-benchmark idea with sys.getsizeof, not rigorous benchmarking."
+    },
+    {
+      "id": "py-49",
+      "label": "ipaddress networks and hosts",
+      "description": "stdlib",
+      "detail": "CIDR membership check",
+      "text": "Use ipaddress for network tasks instead of string hacking.\n\n- ip_address, ip_network, host in subnet check\n- Parse CIDR 192.168.1.0/24 and iterate usable hosts (small range only)\n- IPv6 mention in one sentence\n- Validate user input with try/except ValueError\n\nScript: is_ip_allowed(ip, allowlist_of_networks)."
+    },
+    {
+      "id": "py-50",
+      "label": "Jupyter notebook first steps",
+      "description": "workflow",
+      "detail": "cells markdown and code",
+      "text": "I'm starting with Jupyter for data exploration.\n\n- Install: pip install jupyterlab (or notebook)\n- Launch command and what opens in browser\n- One markdown cell explaining headings, one code cell with import pandas as pd and df.head() on tiny inline CSV or dict data\n- When notebooks beat .py scripts and when they don't (git diff, production)\n- Export to .py tip\n\nKeep notebook content described so I can recreate it; optional .ipynb structure outline."
     }
   ]
 }

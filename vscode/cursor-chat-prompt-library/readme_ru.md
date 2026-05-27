@@ -4,7 +4,7 @@
 
 Библиотека шаблонов для **AI-чата Cursor**: QuickPick → вставка в чат.
 
-**31 категория × 20 промптов = 620 шаблонов:**
+**650 шаблонов** — 31 категория (**Python × 50**, остальные × 20):
 
 | Уровень | Категории |
 |---------|-----------|
@@ -27,7 +27,7 @@
 | Команда | Действие |
 |---------|----------|
 | **Pick Prompt (Category, then Template)** | Как горячая клавиша |
-| **Insert Prompt into Chat (All Categories)** | Один список из 620 промптов |
+| **Insert Prompt into Chat (All Categories)** | Один список из 650 промптов |
 | **Insert Website / Python / JavaScript** | Быстрый вход в одну категорию |
 
 Палитра: `Ctrl+Shift+P` → `Cursor Chat Prompt Library`.
@@ -37,7 +37,7 @@
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-0.4.3.vsix
+cursor --install-extension build\cursor-chat-prompt-library-0.5.0.vsix
 ```
 
 Перезагрузите окно.

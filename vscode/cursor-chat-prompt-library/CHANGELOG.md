@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.0
+
+- **Python** category expanded from 20 to **50** prompts (`py-21` … `py-50`).
+- Total bundled templates: **650** (31 categories; Python × 50, others × 20).
+
 ## 0.4.3
 
 - Cursor referral link in readme **Author** / **Автор** section.

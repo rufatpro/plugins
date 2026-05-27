@@ -4,7 +4,7 @@
 
 **QuickPick** templates for **Cursor AI chat** — pick a prompt and insert into chat (Composer & Agent).
 
-**31 categories × 20 prompts = 620 templates** for beginners and beyond:
+**650 templates** — 31 categories (**Python × 50**, others × 20):
 
 | Tier | Categories |
 |------|------------|
@@ -27,7 +27,7 @@
 | Command | Action |
 |---------|--------|
 | **Pick Prompt (Category, then Template)** | Same as hotkey (two steps) |
-| **Insert Prompt into Chat (All Categories)** | Single list, all 620 prompts |
+| **Insert Prompt into Chat (All Categories)** | Single list, all 650 prompts |
 | **Insert Website / Python / JavaScript Prompt** | One category only (legacy shortcuts) |
 
 Open via **Command Palette** (`Ctrl+Shift+P`) → `Cursor Chat Prompt Library`.
@@ -42,7 +42,7 @@ Open via **Command Palette** (`Ctrl+Shift+P`) → `Cursor Chat Prompt Library`.
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-0.4.3.vsix
+cursor --install-extension build\cursor-chat-prompt-library-0.5.0.vsix
 ```
 
 Reload the window. Press **Ctrl+Alt+P** or run **Pick Prompt**.

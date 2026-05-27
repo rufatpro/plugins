@@ -141,6 +141,216 @@
       "description": "stdlib",
       "detail": "архив папки CSV",
       "text": "Напиши скрипт для новичка: упаковать несколько *.csv в zip с датой в имени через zipfile.\nВключи Path.glob, arcname basename и флаг dry-run в консоль.\nНа высоком уровне — предупреждения о распаковке недоверенных zip.\nКак запускать одинаково на Windows и macOS.\nИдеи для планирования позже без реализации cron."
+    },
+    {
+      "id": "py-21",
+      "label": "Декораторы и functools.wraps",
+      "description": "функции",
+      "detail": "пример декоратора времени",
+      "text": "Объясни декораторы Python с нуля на практическом примере.\n\n- Начни с функции, печатающей время выполнения другой функции\n- Перепиши как @timer с functools.wraps, чтобы __name__ сохранялся\n- Покажи стек из двух декораторов и порядок вызова\n- Один абзац: когда декораторы лучше обычных вызовов\n\nКод до 40 строк, запускаемый."
+    },
+    {
+      "id": "py-22",
+      "label": "Генераторы и yield",
+      "description": "итераторы",
+      "detail": "ленивое чтение строк",
+      "text": "Объясни генераторы vs возврат всего списка в память.\n\n- read_lines_lazy(path), отдающая очищенные строки по одной\n- Сравни использование памяти со списком в одном предложении\n- Generator expression, фильтрующий строки по ключевому слову\n- Когда помогает yield from для вложенных генераторов\n\nДобавь main, печатающий только первые 3 совпадения."
+    },
+    {
+      "id": "py-23",
+      "label": "asyncio: hello и gather",
+      "description": "async",
+      "detail": "asyncio.run симуляция запросов",
+      "text": "Я новичок в asyncio (Python 3.11+).\n\n- Минимальный скрипт: async def main(), asyncio.run(main())\n- Две фейковые задачи с await asyncio.sleep и asyncio.gather\n- Event loop в 3 пунктах для начинающих\n- Когда asyncio уместен vs потоки или синхронный код\n\nБез внешних библиотек; до 35 строк."
+    },
+    {
+      "id": "py-24",
+      "label": "sqlite3: мини-приложение CRUD",
+      "description": "база данных",
+      "detail": "notes.db таблица tasks",
+      "text": "Собери крошечное приложение заметок только на sqlite3 из stdlib.\n\n- notes.db с таблицей tasks (id, title, done)\n- Функции: add_task, list_tasks, mark_done\n- Context manager для соединения и параметризованные запросы (?)\n- Примеры CLI или минимальный input loop\n\nПредупреди про SQL injection при подстановке строк в SQL."
+    },
+    {
+      "id": "py-25",
+      "label": "subprocess: запуск внешних команд",
+      "description": "stdlib",
+      "detail": "безопасный захват вывода",
+      "text": "Покажи безопасные паттерны subprocess.\n\n- subprocess.run со списком аргументов (не shell=True), например git --version\n- Захват stdout/stderr как text, проверка returncode\n- Timeout и CalledProcessError\n- Абзац: почему shell=True опасен для пользовательского ввода\n\nWindows и Unix; кратко про различия путей."
+    },
+    {
+      "id": "py-26",
+      "label": "enum.Enum для констант",
+      "description": "stdlib",
+      "detail": "Status Active Inactive",
+      "text": "Замени magic strings на enum.Enum в примере статуса пользователя.\n\n- class Status(str, Enum): ACTIVE, INACTIVE, PENDING\n- Функция принимает Status и отклоняет неверные строки с понятной ошибкой\n- .value и сравнение enum\n- auto() vs явные значения для новичков\n\nДо 30 строк кода."
+    },
+    {
+      "id": "py-27",
+      "label": "functools.lru_cache мемоизация",
+      "description": "stdlib",
+      "detail": "Фибоначчи или тяжёлый lookup",
+      "text": "Продемонстрируй functools.lru_cache на медленной чистой функции (наивный Фибоначчи или повторный lookup).\n\n- До/после по time.perf_counter\n- maxsize и когда кэш вреден (mutable args, side effects)\n- cache_info() и cache_clear()\n- functools.cache как вариант без лимита — одной строкой\n\nТолько запускаемый скрипт."
+    },
+    {
+      "id": "py-28",
+      "label": "Модуль re: основы regex",
+      "description": "stdlib",
+      "detail": "проверка email-подобной строки",
+      "text": "Научи модулю re без перегруза теорией.\n\n- re.search и re.findall на примере логов\n- re.compile один раз\n- Простой валидатор «похожего на email» (не production)\n- raw-строки r\"...\" и greedy vs non-greedy на одном примере\n\n2–3 тестовые строки и ожидаемый результат."
+    },
+    {
+      "id": "py-29",
+      "label": "json: load/dump и свои типы",
+      "description": "stdlib",
+      "detail": "datetime в JSON",
+      "text": "Работа с json глубже базовых dict/list.\n\n- Сериализация dataclass или dict с datetime через default=\n- Pretty-print с indent=2\n- Загрузка из файла через Path; замечание про лимиты размера\n- json vs orjson — одно предложение на будущее\n\nПример data.json и скрипт read_write_json.py."
+    },
+    {
+      "id": "py-30",
+      "label": "secrets: токены и пароли",
+      "description": "безопасность",
+      "detail": "token_urlsafe",
+      "text": "Почему random.random() не подходит для security-токенов.\n\n- secrets.token_urlsafe и secrets.choice для коротких кодов\n- uuid.uuid4 для session id — когда что уместно\n- Не логировать секреты; паттерн через переменные окружения\n- Хеширование паролей: bcrypt/argon2, не DIY\n\nСкрипт: reset token и заглушка API key."
+    },
+    {
+      "id": "py-31",
+      "label": "hashlib: контрольные суммы файлов",
+      "description": "stdlib",
+      "detail": "SHA-256 по блокам",
+      "text": "Напиши sha256_file(path) с чтением по блокам для больших файлов.\n\n- hashlib.sha256().update(block)\n- CLI: python checksum.py file1 file2\n- Опционально сравнение двух файлов\n- blake2b как более быстрая альтернатива — одной строкой\n\nКак сверить checksum при скачивании."
+    },
+    {
+      "id": "py-32",
+      "label": "tempfile: временные каталоги",
+      "description": "stdlib",
+      "detail": "TemporaryDirectory",
+      "text": "Покажи tempfile.TemporaryDirectory и NamedTemporaryFile с context managers.\n\n- Скрипт пишет промежуточные CSV и склеивает\n- delete=True и кратко про file-lock на Windows\n- Почему не хардкодить /tmp\n- Очистка даже при исключении\n\nПример до 25 строк."
+    },
+    {
+      "id": "py-33",
+      "label": "shutil: копирование и место на диске",
+      "description": "stdlib",
+      "detail": "copytree с ignore",
+      "text": "Научи shutil для типичных файловых операций.\n\n- shutil.copy2 vs copy (метаданные)\n- copytree с ignore=, пропуская __pycache__\n- disk_usage и свободное место в GB\n- Когда лучше pathlib\n\nДемо бэкапа папки только с dry-run print."
+    },
+    {
+      "id": "py-34",
+      "label": "unittest.mock: patch зависимостей",
+      "description": "тестирование",
+      "detail": "mock requests.get",
+      "text": "Представь unittest.mock для изоляции внешних API.\n\n- fetch_title(url) на urllib или requests\n- Тест с @patch и MagicMock с фейковым ответом\n- assert_called_once_with и side_effect для ошибок\n- Сравнение с pytest monkeypatch в 2 предложениях\n\nunittest или pytest — выбери один стиль."
+    },
+    {
+      "id": "py-35",
+      "label": "property: getter, setter, валидация",
+      "description": "ООП",
+      "detail": "поле price > 0",
+      "text": "Объясни @property для контролируемого доступа к атрибутам.\n\n- Product с _price и property price, отклоняющим отрицательные значения\n- Опциональный setter с понятным сообщением\n- Когда @property лучше get_price()\n- Связь с dataclasses field(validator=...) кратко\n\nОдин тест или assert."
+    },
+    {
+      "id": "py-36",
+      "label": "args и kwargs: распаковка",
+      "description": "функции",
+      "detail": "проброс в обёртке",
+      "text": "Разъясни *args и **kwargs для новичков.\n\n- log_call(func, *args, **kwargs) печатает имя и аргументы, затем вызывает func\n- Пример с позиционными и именованными аргументами\n- Распаковка в вызове: func(*items, **options)\n- Типичная ошибка: mutable default dict в сигнатуре\n\nКороткие примеры без классов."
+    },
+    {
+      "id": "py-37",
+      "label": "abc: абстрактные базовые классы",
+      "description": "ООП",
+      "detail": "интерфейс Notifier",
+      "text": "Представь abc.ABC и @abstractmethod на интерфейсе Notifier.\n\n- Абстрактный send(message)\n- EmailNotifier и ConsoleNotifier\n- Что при попытке создать ABC напрямую\n- ABC vs duck typing Protocol\n\nОдин файл до 45 строк, запускаемый."
+    },
+    {
+      "id": "py-38",
+      "label": "Counter и defaultdict",
+      "description": "collections",
+      "detail": "частотность слов",
+      "text": "Используй Counter и defaultdict для отчёта по частоте слов.\n\n- Чтение файла, нормализация регистра, split\n- Counter.most_common(10)\n- defaultdict(list) группирует строки по первой букве\n- Сравнение с dict.setdefault\n\nБез внешних библиотек; включи пример абзаца в ответ."
+    },
+    {
+      "id": "py-39",
+      "label": "heapq: top-k элементов",
+      "description": "stdlib",
+      "detail": "таблица лидеров scores",
+      "text": "Научи heapq на таблице лидеров.\n\n- nlargest и nsmallest для списка (name, score)\n- push/pop с heapify для streaming top 3\n- Когда heap выгоднее полной сортировки\n- PriorityQueue — одной строкой при необходимости\n\nМаленький датасет с печатью рейтинга."
+    },
+    {
+      "id": "py-40",
+      "label": "match/case: структурные шаблоны",
+      "description": "синтаксис",
+      "detail": "коды статуса HTTP-подобные",
+      "text": "Объясни structural pattern matching (match/case) в Python 3.10+.\n\n- match int: 200, 404, default\n- Второй пример для dict {\"type\": \"error\", \"code\": ...}\n- Сравнение с if/elif\n- Не замена isinstance везде\n\nДва коротких примера с ожидаемым выводом."
+    },
+    {
+      "id": "py-41",
+      "label": "Аннотации типов: list, dict, Optional",
+      "description": "typing",
+      "detail": "функции для mypy",
+      "text": "Добавь постепенную типизацию в маленький модуль.\n\n- list[str], dict[str, int], str | None\n- def process(items: list[str]) -> dict[str, int]\n- Команда запуска mypy или pyright\n- Почему hints не замедляют runtime\n- Ошибка новичка: list вместо list[str] в старом коде\n\nБез тяжёлого packaging; py.typed только при упоминании."
+    },
+    {
+      "id": "py-42",
+      "label": "Pydantic v2: валидация моделей",
+      "description": "библиотеки",
+      "detail": "схема UserCreate",
+      "text": "Создай модель Pydantic v2 для валидации входа API.\n\n- UserCreate: email, age (ge=18), name с min length\n- model_validate из dict и красивый ValidationError\n- model_dump для JSON-ready dict\n- Сравнение с dataclass + ручные проверки\n\nrequirements.txt с pydantic>=2. Один файл."
+    },
+    {
+      "id": "py-43",
+      "label": "pyproject.toml и pip install -e",
+      "description": "packaging",
+      "detail": "введение в src layout",
+      "text": "Проведи по созданию локально устанавливаемого пакета.\n\n- pyproject.toml: [project] name, version, dependencies\n- src/mypkg/__init__.py и одна функция\n- pip install -e .\n- Импорт mypkg из REPL\n- src layout vs flat — 3 пункта\n\nБез публикации на PyPI."
+    },
+    {
+      "id": "py-44",
+      "label": "black и ruff: формат и линт",
+      "description": "инструменты",
+      "detail": "конфиг в pyproject",
+      "text": "Настрой black и ruff на «грязном» примере скрипта.\n\n- pyproject.toml: [tool.black] и [tool.ruff] минимально\n- black . и ruff check . --fix\n- Идея before/after diff\n- pre-commit — упомяни, опционально snippet\n\nvenv есть; строки pip install."
+    },
+    {
+      "id": "py-45",
+      "label": "threading: основы и GIL",
+      "description": "параллелизм",
+      "detail": "демо «загрузок»",
+      "text": "Представь threading.Thread для I/O-bound с честными ограничениями GIL.\n\n- 3 потока «качают» URL через time.sleep\n- Lock для общего счётчика\n- GIL простыми словами (CPU vs I/O)\n- Когда смотреть multiprocessing или asyncio\n\nДо 40 строк; без пулов потоков."
+    },
+    {
+      "id": "py-46",
+      "label": "multiprocessing Pool map",
+      "description": "параллелизм",
+      "detail": "CPU-bound квадраты",
+      "text": "Покажи multiprocessing.Pool для CPU-нагрузки на малых данных.\n\n- if __name__ == \"__main__\" — объясни зачем\n- pool.map(square, range(10)) и сравнение времени с serial\n- Windows spawn vs fork — одно предложение\n- На крошечных задачах overhead доминирует\n\nЗапускаемый скрипт с таймингами."
+    },
+    {
+      "id": "py-47",
+      "label": "Пакет __init__ и относительные импорты",
+      "description": "структура",
+      "detail": "подмодули myapp",
+      "text": "Объясни пакеты Python beyond одного файла.\n\n- Папка myapp/: __init__.py, utils.py, cli.py\n- from .utils в cli.py\n- python -m myapp.cli\n- Типичные ImportError при неверном cwd\n\nДерево в комментариях; минимальный рабочий код."
+    },
+    {
+      "id": "py-48",
+      "label": "__slots__ и память на многих объектах",
+      "description": "производительность",
+      "detail": "__slots__ в dataclass",
+      "text": "Научи __slots__ при создании множества однотипных экземпляров.\n\n- Обычный класс vs __slots__ = (\"x\", \"y\")\n- dataclass(slots=True) в 3.10+\n- Минус: нет динамических атрибутов, сложнее множественное наследование\n- Когда новичку игнорировать до profiling\n\nИдея micro-benchmark с sys.getsizeof, без строгого бенчмарка."
+    },
+    {
+      "id": "py-49",
+      "label": "ipaddress: сети и хосты",
+      "description": "stdlib",
+      "detail": "проверка CIDR",
+      "text": "Используй ipaddress вместо разбора строк вручную.\n\n- ip_address, ip_network, проверка host in subnet\n- CIDR 192.168.1.0/24 и перебор хостов (малый диапазон)\n- IPv6 — одно предложение\n- Валидация ввода через ValueError\n\nСкрипт is_ip_allowed(ip, allowlist_of_networks)."
+    },
+    {
+      "id": "py-50",
+      "label": "Jupyter: первые шаги",
+      "description": "workflow",
+      "detail": "ячейки markdown и code",
+      "text": "Начинаю с Jupyter для исследования данных.\n\n- Установка: pip install jupyterlab (или notebook)\n- Команда запуска и что откроется в браузере\n- Markdown-ячейка с заголовками, code-ячейка: import pandas as pd и df.head() на маленьких inline-данных\n- Когда notebook лучше .py и когда нет (git, production)\n- Совет по экспорту в .py\n\nОпиши содержимое notebook, чтобы воспроизвести; опционально outline .ipynb."
     }
   ]
 }

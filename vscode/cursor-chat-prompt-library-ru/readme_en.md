@@ -2,9 +2,9 @@
 
 [Русский](readme.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Repository](https://github.com/rufatpro/ide-plugins)
 
-**620 Russian** prompt templates for **Cursor AI chat** — QuickPick → insert into chat.
+**650 Russian** prompt templates for **Cursor AI chat** — QuickPick → insert into chat.
 
-**31 categories × 20 prompts = 620 templates:**
+**31 categories** (**Python × 50**, others × 20) **= 650 templates:**
 
 | Tier | Categories |
 |------|------------|
@@ -27,7 +27,7 @@
 | Command | Action |
 |---------|--------|
 | **Pick Prompt (Category, then Template)** | Same as hotkey (two steps) |
-| **Insert Prompt into Chat (All Categories)** | Single list, all 620 prompts |
+| **Insert Prompt into Chat (All Categories)** | Single list, all 650 prompts |
 | **Insert Website / Python / JavaScript Prompt** | One category only (legacy shortcuts) |
 
 Open via **Command Palette** (`Ctrl+Shift+P`) → `Cursor Chat Prompt Library RU`.
@@ -42,7 +42,7 @@ Open via **Command Palette** (`Ctrl+Shift+P`) → `Cursor Chat Prompt Library RU
 ```bat
 cd ide-plugins\vscode\cursor-chat-prompt-library-ru
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-ru-0.2.1.vsix
+cursor --install-extension build\cursor-chat-prompt-library-ru-0.3.0.vsix
 ```
 
 Reload the window. Press **Ctrl+Alt+P** or run **Pick Prompt**.
