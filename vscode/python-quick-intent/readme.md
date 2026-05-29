@@ -42,7 +42,7 @@ build.bat
 Install:
 
 ```powershell
-cursor --install-extension build/python-quick-intent-0.4.3.vsix
+cursor --install-extension build/python-quick-intent-0.4.4.vsix
 ```
 
 Or in Cursor/VS Code: Extensions → `...` → **Install from VSIX...**

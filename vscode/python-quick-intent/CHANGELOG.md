@@ -4,6 +4,12 @@ All notable changes to **Python Quick Intent** are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.4.4] - 2026-05-29
+
+### Changed
+
+- Marketplace categories: **Programming Languages**, **Machine Learning**, **Other**.
+
 ## [0.4.3] - 2026-05-29
 
 ### Changed
