@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.5.9
+
+- Marketplace categories: **Programming Languages**, **Machine Learning**, **Other**.
+
+## 0.5.8
+
+- Новые категории **Языки программирования** и **Машинное обучение** (по 20 промптов), переводы на русский.
+- Всего шаблонов: **750** (36 категорий; Python × 50, остальные × 20).
+
 ## 0.5.7
 
 - Readme: removed release guide link from header.

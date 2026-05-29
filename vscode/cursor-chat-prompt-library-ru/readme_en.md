@@ -2,9 +2,9 @@
 
 [Русский](readme.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Repository](https://github.com/rufatpro/plugins)
 
-**710 Russian** prompt templates for **Cursor AI chat** — QuickPick → insert into chat.
+**750 Russian** prompt templates for **Cursor AI chat** — QuickPick → insert into chat.
 
-**34 categories** (**Python × 50**, others × 20) **= 710 templates:**
+**36 categories** (**Python × 50**, others × 20) **= 750 templates:**
 
 | Tier | Categories |
 |------|------------|
@@ -12,6 +12,7 @@
 | High demand | Next.js, FastAPI, Docker, Testing, Tailwind CSS |
 | Strong demand | Node.js, Vue, PHP, Laravel, C#/.NET, Java/Spring, Linux/Bash, CI/CD, REST/OpenAPI, MongoDB, Mobile |
 | Growing / niche | C, C++, Go, Rust, Kubernetes, AWS/Cloud, WordPress, Data/Pandas, Security, GraphQL |
+| Cross-cutting | Programming Languages, Machine Learning |
 
 > Part of the [plugins](https://github.com/rufatpro/plugins) monorepo.
 
@@ -19,7 +20,7 @@
 
 | Key | Action |
 |-----|--------|
-| **Ctrl+Alt+Shift+P** (Windows/Linux) | **Step 1:** category (34 types) → **Step 2:** prompt → insert into chat |
+| **Ctrl+Alt+Shift+P** (Windows/Linux) | **Step 1:** category (36 types) → **Step 2:** prompt → insert into chat |
 | **Cmd+Alt+Shift+P** (macOS) | Same |
 
 ## Commands
@@ -27,7 +28,7 @@
 | Command | Action |
 |---------|--------|
 | **Pick Prompt (Category, then Template)** | Same as hotkey (two steps) |
-| **Insert Prompt into Chat (All Categories)** | Single list, all 710 prompts |
+| **Insert Prompt into Chat (All Categories)** | Single list, all 750 prompts |
 | **Insert Website / Python / JavaScript Prompt** | One category only (legacy shortcuts) |
 
 ### Via Command Palette
@@ -45,7 +46,7 @@
 ```bat
 cd plugins\vscode\cursor-chat-prompt-library-ru
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-ru-0.5.7.vsix
+cursor --install-extension build\cursor-chat-prompt-library-ru-0.5.9.vsix
 ```
 
 Reload the window. Primary: **Ctrl+Alt+Shift+P** (see **Via Command Palette** for **F1**).

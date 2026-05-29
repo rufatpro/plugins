@@ -2,9 +2,9 @@
 
 [English](readme_en.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Репозиторий](https://github.com/rufatpro/plugins)
 
-Библиотека **710 русскоязычных** шаблонов Промптов (Prompts) для AI-Chat в **Cursor**: Быстрый выбор → вставка в ИИ Чат Курсора.
+Библиотека **750 русскоязычных** шаблонов Промптов (Prompts) для AI-Chat в **Cursor**: Быстрый выбор → вставка в ИИ Чат Курсора.
 
-**34 категории** (**Python × 50**, остальные × 20) **= 710 шаблонов:**
+**36 категорий** (**Python × 50**, остальные × 20) **= 750 шаблонов:**
 
 | Уровень | Категории |
 |---------|-----------|
@@ -12,6 +12,7 @@
 | Высокий спрос | Next.js, FastAPI, Docker, Testing, Tailwind CSS |
 | Сильный спрос | Node.js, Vue, PHP, Laravel, C#/.NET, Java/Spring, Linux/Bash, CI/CD, REST/OpenAPI, MongoDB, Mobile |
 | Нишевые / растущие | C, C++, Go, Rust, Kubernetes, AWS, WordPress, Data/Pandas, Security, GraphQL |
+| Сквозные | Языки программирования, Машинное обучение |
 
 > Часть monorepo [plugins](https://github.com/rufatpro/plugins).
 
@@ -19,7 +20,7 @@
 
 | Клавиша | Действие |
 |---------|----------|
-| **Ctrl+Alt+Shift+P** | **Шаг 1:** категория (34 типа) → **шаг 2:** промпт → вставка в чат |
+| **Ctrl+Alt+Shift+P** | **Шаг 1:** категория (36 типов) → **шаг 2:** промпт → вставка в чат |
 | **Cmd+Alt+Shift+P** (macOS) | То же |
 
 ## Команды
@@ -27,7 +28,7 @@
 | Команда | Действие |
 |---------|----------|
 | **Выбрать промпт (категория → шаблон)** | Как горячая клавиша |
-| **Вставить промпт в чат (все категории)** | Один список из 710 промптов |
+| **Вставить промпт в чат (все категории)** | Один список из 750 промптов |
 | **Вставить промпт Website / Python / JavaScript** | Быстрый вход в одну категорию |
 
 ### Через палитру команд
@@ -45,7 +46,7 @@
 ```bat
 cd plugins\vscode\cursor-chat-prompt-library-ru
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-ru-0.5.7.vsix
+cursor --install-extension build\cursor-chat-prompt-library-ru-0.5.9.vsix
 ```
 
 Перезагрузите окно. Основной способ — **Ctrl+Alt+Shift+P** (см. раздел «Через палитру команд» для **F1**).

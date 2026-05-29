@@ -1,0 +1,146 @@
+{
+  "category": "machine-learning",
+  "categoryLabel": "Машинное обучение",
+  "prompts": [
+    {
+      "id": "ml-01",
+      "label": "ML vs ИИ vs глубокое обучение",
+      "description": "концепции",
+      "detail": "определения",
+      "text": "Объясни машинное обучение, искусственный интеллект и глубокое обучение для новичка.\n\n- Связь «круги Эйлера» простыми словами\n- Обучение с учителем, без учителя, с подкреплением — по одному примеру\n- Что строят классическим ML vs нейросетями\n\nБез хайпа — до 10 пунктов."
+    },
+    {
+      "id": "ml-02",
+      "label": "Первый sklearn-пайплайн классификации",
+      "description": "sklearn",
+      "detail": "fit predict",
+      "text": "Собери минимальный пайплайн классификации scikit-learn на Iris или игрушечном CSV.\n\n- Загрузка, train_test_split, StandardScaler, LogisticRegression\n- accuracy_score на тесте\n- fit vs predict — 3 предложения\n\nЗапускаемый Python-скрипт до 40 строк."
+    },
+    {
+      "id": "ml-03",
+      "label": "Разбиение train / validation / test",
+      "description": "workflow",
+      "detail": "утечка данных",
+      "text": "Объясни разбиения train / validation / test и зачем нужны все три.\n\n- Типичные доли и когда cross-validation\n- Примеры утечки (масштабирование на всём датасете до split)\n- Эскиз кода с sklearn model_selection\n\nЧеклист новичка перед доверием метрикам."
+    },
+    {
+      "id": "ml-04",
+      "label": "Матрица ошибок и метрики",
+      "description": "оценка",
+      "detail": "precision recall F1",
+      "text": "Научи confusion matrix, accuracy, precision, recall, F1 при дисбалансе классов.\n\n- Когда accuracy вводит в заблуждение\n- sklearn classification_report и confusion_matrix\n- Пример медицины/фрода, где ложные отрицания дороги\n\nДемо на маленьком синтетическом датасете."
+    },
+    {
+      "id": "ml-05",
+      "label": "Переобучение и недообучение",
+      "description": "теория",
+      "detail": "bias variance",
+      "text": "Объясни overfitting и underfitting через интуицию learning curves.\n\n- Высокая точность на train, низкая на test = переобучение\n- Тизер регуляризации (L1/L2, dropout позже)\n- Что искать на графике ошибки vs сложность модели\n\n3 практических способа борьбы с переобучением."
+    },
+    {
+      "id": "ml-06",
+      "label": "Масштабирование и кодирование признаков",
+      "description": "препроцессинг",
+      "detail": "StandardScaler OneHot",
+      "text": "Подготовь смешанные числовые и категориальные признаки для sklearn.\n\n- StandardScaler для чисел, OneHotEncoder для категорий\n- ColumnTransformer + Pipeline\n- fit только на train внутри pipeline\n\nПолный пример с явными колонками или make_column_selector."
+    },
+    {
+      "id": "ml-07",
+      "label": "Pandas → таблица для ML",
+      "description": "данные",
+      "detail": "пропуски выбросы",
+      "text": "Преврати «грязный» pandas DataFrame в признаки для ML.\n\n- Пропуски, выбросы (IQR или clip), извлечение из datetime\n- Целевая y и матрица признаков X\n- Опционально сохранить очищенный CSV\n\nДанные в духе продаж или оттока (churn)."
+    },
+    {
+      "id": "ml-08",
+      "label": "Основы тензоров PyTorch",
+      "description": "pytorch",
+      "detail": "тизер autograd",
+      "text": "Введи тензоры PyTorch тому, кто знает NumPy.\n\n- Создание, shape, dtype, device cpu/cuda\n- Простая операция и .backward() на скаляре — зачем в одной строке\n- torch.tensor vs numpy\n\nДо 30 строк кода."
+    },
+    {
+      "id": "ml-09",
+      "label": "Последовательная модель Keras",
+      "description": "tensorflow",
+      "detail": "compile fit",
+      "text": "Собери крошечную Keras Sequential для MNIST или синтетической регрессии.\n\n- Dense-слои, compile с optimizer и loss\n- fit на несколько эпох, evaluate на тесте\n- tf.keras vs отдельный keras — одна строка\n\nОбучение быстрое (мало эпох)."
+    },
+    {
+      "id": "ml-10",
+      "label": "Интуиция линейной регрессии",
+      "description": "supervised",
+      "detail": "МНК",
+      "text": "Объясни линейную регрессию как предсказание числа по признакам.\n\n- Интуиция линии наилучшего соответствия, потеря MSE\n- sklearn LinearRegression на одном признаке — наклон в комментариях\n- Когда линейной модели хватает vs нужна нелинейность\n\nМало формул, много смысла."
+    },
+    {
+      "id": "ml-11",
+      "label": "Логистическая регрессия",
+      "description": "supervised",
+      "detail": "вероятности сигмоида",
+      "text": "Научи логистической регрессии для бинарной классификации.\n\n- Сигмоида переводит score в вероятность\n- Порог решения 0.5\n- sklearn LogisticRegression на 2D-игрушке (описание)\n\nСравни с типом цели линейной регрессии."
+    },
+    {
+      "id": "ml-12",
+      "label": "Random forest — когда уместен",
+      "description": "ансамбли",
+      "detail": "табличные данные",
+      "text": "Объясни RandomForestClassifier для табличных данных.\n\n- Бэггинг деревьев, важность признаков\n- Часто сильный baseline до deep learning на таблицах\n- Гиперпараметры n_estimators, max_depth\n\nКороткий код fit на датасете sklearn."
+    },
+    {
+      "id": "ml-13",
+      "label": "K-fold кросс-валидация",
+      "description": "валидация",
+      "detail": "cross_val_score",
+      "text": "Реализуй k-fold кросс-валидацию в sklearn.\n\n- cross_val_score или StratifiedKFold\n- Среднее и std метрики\n- Когда CV лучше одного holdout\n\nУкажи имя небольшого публичного датасета."
+    },
+    {
+      "id": "ml-14",
+      "label": "Grid search гиперпараметров",
+      "description": "тюнинг",
+      "detail": "GridSearchCV",
+      "text": "Подбери гиперпараметры GridSearchCV внутри Pipeline.\n\n- param_grid с именами шагов pipeline\n- Без утечки: препроцессинг внутри pipeline\n- Покажи best params и score — предупреди о стоимости вычислений\n\nПример RandomForest или SVM на digits."
+    },
+    {
+      "id": "ml-15",
+      "label": "Введение в классификацию текста",
+      "description": "nlp",
+      "detail": "TF-IDF + linear",
+      "text": "Классический NLP-baseline: TF-IDF + LogisticRegression для меток текста.\n\n- CountVectorizer или TfidfVectorizer\n- Короткий список строк (стиль spam/ham)\n- Transformers — следующий шаг, не обязателен сейчас\n\nsklearn Pipeline от начала до конца."
+    },
+    {
+      "id": "ml-16",
+      "label": "Обзор CNN для изображений",
+      "description": "vision",
+      "detail": "conv pooling",
+      "text": "Высокоуровневое введение в CNN для классификации изображений.\n\n- Свёртка, pooling, полносвязная голова — роли в пунктах\n- Transfer learning с ResNet (идея, без полного обучения)\n- Когда torchvision/huggingface vs обучение с нуля\n\nПсевдокод или outline keras/torch."
+    },
+    {
+      "id": "ml-17",
+      "label": "Сохранение и загрузка моделей",
+      "description": "деплой",
+      "detail": "joblib pickle onnx",
+      "text": "Покажи, как сохранить обученную sklearn-модель и загрузить для predict.\n\n- joblib.dump / load\n- Предупреждение о безопасности pickle (только доверенные файлы)\n- ONNX как формат обмена — одна строка\n\nКрошечный скрипт predict после load."
+    },
+    {
+      "id": "ml-18",
+      "label": "Чеклист bias и fairness",
+      "description": "этика",
+      "detail": "ответственный ML",
+      "text": "Дай чеклист ответственного ML перед выкладкой модели.\n\n- Репрезентативные данные, чувствительные атрибуты, disparate impact\n- Документировать ограничения и мониторинг в проде\n- Человек в контуре для критичных решений\n\nБез кода — политика и инженерная гигиена."
+    },
+    {
+      "id": "ml-19",
+      "label": "GPU и когда он нужен",
+      "description": "железо",
+      "detail": "cuda colab",
+      "text": "Объясни, когда GPU помогает в ML, а когда хватит CPU.\n\n- Большие нейросети и батчи vs маленький табличный sklearn\n- cuda, device='cuda', облачные ноутбуки (Colab/Kaggle)\n- Стоимость и воспроизводимость окружения\n\nТаблица: размер задачи → железо."
+    },
+    {
+      "id": "ml-20",
+      "label": "Путь от sklearn к PyTorch",
+      "description": "roadmap",
+      "detail": "поэтапный план",
+      "text": "Составь 8-недельный план от табличного sklearn к основам PyTorch.\n\n- Темы по неделям: pandas → sklearn → метрики → ввод в NN → тензоры → простая CNN\n- Проекты (Titanic, MNIST)\n- Типы ресурсов: доки, курсы, статьи — без реферальных ссылок\n\nУкажи реалистичные часы в неделю."
+    }
+  ]
+}
