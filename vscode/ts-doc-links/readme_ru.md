@@ -2,7 +2,7 @@
 
 Идентификатор пакета: `ts-doc-links`.
 
-[English](https://github.com/rufatpro/plugins/blob/main/vscode/ts-doc-links/readme.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Инструкция релиза](https://github.com/rufatpro/plugins/blob/main/readme_github_release_ts-doc-links.md) · [Репозиторий](https://github.com/rufatpro/plugins)
+[English](https://github.com/rufatpro/plugins/blob/main/vscode/ts-doc-links/readme.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Репозиторий](https://github.com/rufatpro/plugins)
 
 **Расширение VS Code / Cursor** для перехода к определению из **комментариев** и **JSDoc** в TypeScript/JavaScript — для форматов, которые **не** обрабатывает TypeScript (Native Preview).
 
@@ -54,7 +54,7 @@ build.bat
 
 1. **F1** / **Ctrl+Shift+P** → `Install from VSIX`
 2. **Extensions: Install from VSIX...**
-3. Указать `vscode/ts-doc-links/build/ts-doc-links-0.1.6.vsix`
+3. Указать `vscode/ts-doc-links/build/ts-doc-links-0.1.7.vsix`
 
 ## Ограничения
 

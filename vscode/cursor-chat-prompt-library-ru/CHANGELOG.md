@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.7
+
+- Readme: removed release guide link from header.
+
 ## 0.5.6
 
 - Repository moved to [github.com/rufatpro/plugins](https://github.com/rufatpro/plugins); updated metadata URLs.

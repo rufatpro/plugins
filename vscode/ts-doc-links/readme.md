@@ -2,7 +2,7 @@
 
 Package id: `ts-doc-links`.
 
-[Русский](https://github.com/rufatpro/plugins/blob/main/vscode/ts-doc-links/readme_ru.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Release guide](https://github.com/rufatpro/plugins/blob/main/readme_github_release_ts-doc-links.md) · [Repository](https://github.com/rufatpro/plugins)
+[Русский](https://github.com/rufatpro/plugins/blob/main/vscode/ts-doc-links/readme_ru.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Repository](https://github.com/rufatpro/plugins)
 
 **VS Code / Cursor extension** that enables go-to-definition from TypeScript/JavaScript **comments** and **JSDoc** — for patterns that **TypeScript (Native Preview)** does not handle.
 
@@ -57,7 +57,7 @@ Then install the generated `.vsix`.
 
 1. **F1** / **Ctrl+Shift+P** → `Install from VSIX`
 2. Select **Extensions: Install from VSIX...**
-3. Pick `vscode/ts-doc-links/build/ts-doc-links-0.1.6.vsix`
+3. Pick `vscode/ts-doc-links/build/ts-doc-links-0.1.7.vsix`
 
 ## Limitations
 

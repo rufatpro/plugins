@@ -45,7 +45,7 @@
 ```bat
 cd plugins\vscode\cursor-chat-prompt-library-ru
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-ru-0.5.6.vsix
+cursor --install-extension build\cursor-chat-prompt-library-ru-0.5.7.vsix
 ```
 
 Reload the window. Primary: **Ctrl+Alt+Shift+P** (see **Via Command Palette** for **F1**).

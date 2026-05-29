@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.9
+
+- Readme: removed release guide link from header.
+
 ## 0.7.8
 
 - Repository moved to [github.com/rufatpro/plugins](https://github.com/rufatpro/plugins); updated `repository`, `homepage`, and `vsce.baseContentUrl` in metadata.

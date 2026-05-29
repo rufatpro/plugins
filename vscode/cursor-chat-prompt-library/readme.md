@@ -1,6 +1,6 @@
 # Cursor Chat Prompt Library
 
-[Русский](readme_ru.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Repository](https://github.com/rufatpro/plugins) · [Release guide](../../../readme_github_release_cursor-chat-prompt-library.md)
+[Русский](readme_ru.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Repository](https://github.com/rufatpro/plugins)
 
 **QuickPick** templates for **Cursor AI chat** — pick a prompt and insert into chat (Composer & Agent).
 
@@ -54,7 +54,7 @@ Press **Ctrl**, **Alt**, and **T** together (**T** = **T**emplate).
 ```bat
 cd plugins\vscode\cursor-chat-prompt-library
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-0.7.8.vsix
+cursor --install-extension build\cursor-chat-prompt-library-0.7.9.vsix
 ```
 
 Reload the window. Primary: **Ctrl+Alt+T**; alternative: **Ctrl+Alt+Shift+P** (see **Via Command Palette** for **F1**).

@@ -1,6 +1,6 @@
 # Cursor Chat Prompt Library RU
 
-[English](readme_en.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Репозиторий](https://github.com/rufatpro/plugins) · [Инструкция релиза](../../../readme_github_release_cursor-chat-prompt-library-ru.md)
+[English](readme_en.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Репозиторий](https://github.com/rufatpro/plugins)
 
 Библиотека **710 русскоязычных** шаблонов Промптов (Prompts) для AI-Chat в **Cursor**: Быстрый выбор → вставка в ИИ Чат Курсора.
 
@@ -45,7 +45,7 @@
 ```bat
 cd plugins\vscode\cursor-chat-prompt-library-ru
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-ru-0.5.6.vsix
+cursor --install-extension build\cursor-chat-prompt-library-ru-0.5.7.vsix
 ```
 
 Перезагрузите окно. Основной способ — **Ctrl+Alt+Shift+P** (см. раздел «Через палитру команд» для **F1**).

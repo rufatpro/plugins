@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.7 — 2026-05-29
+
+- Readme: removed release guide link from header.
+
 ## 0.1.6 — 2026-05-29
 
 - Repository moved to [github.com/rufatpro/plugins](https://github.com/rufatpro/plugins); updated metadata URLs.

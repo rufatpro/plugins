@@ -1,6 +1,6 @@
 # Cursor Chat Prompt Library
 
-[English](readme.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Репозиторий](https://github.com/rufatpro/plugins) · [Инструкция релиза](../../../readme_github_release_cursor-chat-prompt-library.md)
+[English](readme.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Репозиторий](https://github.com/rufatpro/plugins)
 
 Библиотека шаблонов для **AI-чата Cursor**: QuickPick → вставка в чат.
 
@@ -49,7 +49,7 @@
 ```bat
 cd plugins\vscode\cursor-chat-prompt-library
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-0.7.8.vsix
+cursor --install-extension build\cursor-chat-prompt-library-0.7.9.vsix
 ```
 
 Перезагрузите окно. Основной способ — **Ctrl+Alt+T**; альтернатива — **Ctrl+Alt+Shift+P** (см. раздел «Через палитру команд» для **F1**).
