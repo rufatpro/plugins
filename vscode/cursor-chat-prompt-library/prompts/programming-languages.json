@@ -1,0 +1,146 @@
+{
+  "category": "programming-languages",
+  "categoryLabel": "Programming Languages",
+  "prompts": [
+    {
+      "id": "plang-01",
+      "label": "Choose a first language",
+      "description": "beginner",
+      "detail": "goals and tradeoffs",
+      "text": "I'm new to programming. Help me pick a first language based on my goal: web front-end, web back-end, data/ML, mobile, or systems.\n\n- Compare 2–3 realistic options per goal\n- Mention learning curve and job market briefly\n- Suggest a tiny first project for the top pick\n\nNo gatekeeping — practical advice only."
+    },
+    {
+      "id": "plang-02",
+      "label": "Compiled vs interpreted",
+      "description": "concepts",
+      "detail": "runtime model",
+      "text": "Explain compiled vs interpreted languages with examples (C/Rust vs Python/JavaScript).\n\n- What happens at run time vs build time\n- JIT as a middle ground (Java, JS engines)\n- When performance differences actually matter for beginners\n\nUse a simple diagram in ASCII or bullets."
+    },
+    {
+      "id": "plang-03",
+      "label": "Static vs dynamic typing",
+      "description": "types",
+      "detail": "errors caught when",
+      "text": "Compare static typing (TypeScript, Java, Rust) vs dynamic typing (Python, JavaScript).\n\n- When type errors are caught\n- Pros: IDE help, refactoring safety\n- Cons: verbosity, learning curve\n\nGive one bug example that static types catch early."
+    },
+    {
+      "id": "plang-04",
+      "label": "OOP vs functional style",
+      "description": "paradigms",
+      "detail": "when each fits",
+      "text": "Explain OOP vs functional programming styles without fanboy wars.\n\n- Classes/objects vs pure functions and immutability\n- Languages that blend both (Python, JS, C#)\n- When OOP helps modeling and when functions simplify pipelines\n\n3 bullets each side, 2 hybrid tips."
+    },
+    {
+      "id": "plang-05",
+      "label": "Memory management models",
+      "description": "memory",
+      "detail": "GC vs manual vs ownership",
+      "text": "Compare garbage collection, manual malloc/free, and ownership/borrowing (Rust).\n\n- One-sentence how each works\n- Common failure modes (leaks, use-after-free, data races teaser)\n- Which languages use which model\n\nBeginner-friendly, no 20-page essay."
+    },
+    {
+      "id": "plang-06",
+      "label": "Polyglot project boundaries",
+      "description": "architecture",
+      "detail": "microservices",
+      "text": "When is it reasonable to use multiple languages in one product?\n\n- Typical split: UI in TS, API in Python/Go, hot path in Rust/C++\n- Costs: tooling, hiring, deployment complexity\n- Anti-pattern: random language per microservice without reason\n\nDecision checklist in bullets."
+    },
+    {
+      "id": "plang-07",
+      "label": "Learn a second language faster",
+      "description": "learning",
+      "detail": "transferable concepts",
+      "text": "I know one language well and want to learn another. Give a 2-week study plan.\n\n- Map familiar concepts (variables, loops, modules, tests)\n- Focus on what's different: package manager, types, concurrency, idioms\n- One small porting exercise: rewrite a 50-line script\n\nAssume I already know Python or JavaScript — ask which if unclear."
+    },
+    {
+      "id": "plang-08",
+      "label": "Read unfamiliar language code",
+      "description": "skills",
+      "detail": "navigation strategy",
+      "text": "Teach how to read a codebase in a language I barely know.\n\n- Start from entry point, tests, and README\n- Ignore syntax sugar at first; track data flow\n- Use LSP/go-to-definition and grep\n- Build a glossary of 10 keywords in that language\n\nExample workflow on a tiny open-source repo."
+    },
+    {
+      "id": "plang-09",
+      "label": "FFI and calling native code",
+      "description": "interop",
+      "detail": "C ABI boundary",
+      "text": "Explain FFI at a high level: why Python/Rust/Go call C libraries.\n\n- C ABI as common denominator\n- ctypes / cffi / pyo3 / cgo — names only, one line each\n- Safety and ABI stability warnings\n\nWhen to rewrite in native code vs stay in high-level language."
+    },
+    {
+      "id": "plang-10",
+      "label": "Standard library vs ecosystem",
+      "description": "ecosystem",
+      "detail": "batteries included",
+      "text": "Compare languages with rich stdlibs vs thin core + huge package repos.\n\n- Examples: Go stdlib, Python batteries, npm/crates.io scale\n- Supply chain and dependency audit basics\n- Pin versions and lockfiles — why they matter\n\n5 practical rules for picking third-party libs."
+    },
+    {
+      "id": "plang-11",
+      "label": "Package managers compared",
+      "description": "tooling",
+      "detail": "npm pip cargo",
+      "text": "Compare package managers: npm/yarn/pnpm, pip/uv/poetry, cargo, go modules, Maven/Gradle.\n\n- Install, lockfile, publish workflow in one table (markdown)\n- Virtual environments vs global installs\n- Common beginner mistakes (sudo pip install)\n\nNo deep config — orientation map."
+    },
+    {
+      "id": "plang-12",
+      "label": "Concurrency models overview",
+      "description": "concurrency",
+      "detail": "threads async actors",
+      "text": "Survey concurrency approaches: OS threads, async/await, goroutines, actors, CSP.\n\n- Which languages favor which model\n- GIL teaser for Python in one sentence\n- Rule of thumb: I/O-bound vs CPU-bound\n\nPoint to where to learn more in Python asyncio vs Go vs Rust tokio."
+    },
+    {
+      "id": "plang-13",
+      "label": "Benchmarks and when they lie",
+      "description": "performance",
+      "detail": "micro vs macro",
+      "text": "Explain language benchmarks (Benchmarks Game, hello-world myths).\n\n- Micro-benchmark pitfalls\n- Real bottlenecks: I/O, DB, network, algorithm choice\n- Profile before rewriting in another language\n\nGive a sane decision flowchart in bullets."
+    },
+    {
+      "id": "plang-14",
+      "label": "Migrate or rewrite legacy stack",
+      "description": "migration",
+      "detail": "strangler pattern",
+      "text": "We have a legacy monolith in language X. Outline migration options to language Y.\n\n- Strangler fig pattern, incremental modules\n- Rewrite risks and cost estimation factors\n- When NOT to migrate (it works, team skill)\n\nBullet roadmap, no silver bullet."
+    },
+    {
+      "id": "plang-15",
+      "label": "Scripting vs systems languages",
+      "description": "roles",
+      "detail": "glue vs hot path",
+      "text": "Define scripting/glue languages vs systems languages with examples.\n\n- Shell, Python, Lua for automation\n- C, C++, Rust, Zig for kernels, games, embedded\n- Hybrid: Python orchestrating Rust extension\n\nHelp me label my current task which bucket it fits."
+    },
+    {
+      "id": "plang-16",
+      "label": "TypeScript as JavaScript superset",
+      "description": "web",
+      "detail": "gradual typing",
+      "text": "Why TypeScript exists on top of JavaScript for teams.\n\n- Types at compile time, erase to JS\n- any vs unknown, strict mode benefits\n- When plain JS is still fine\n\nTiny example: interface User and a function using it."
+    },
+    {
+      "id": "plang-17",
+      "label": "REPL and exploratory coding",
+      "description": "workflow",
+      "detail": "ipython node repl",
+      "text": "Teach REPL-driven development for learning APIs.\n\n- Python REPL, IPython, Node, Ruby irb — pick one and demo\n- When REPL beats editing files\n- Saving experiments into proper modules\n\n5 commands to try in a REPL session."
+    },
+    {
+      "id": "plang-18",
+      "label": "Idioms and readable style",
+      "description": "style",
+      "detail": "pythonic rustic",
+      "text": "What does idiomatic code mean in a language?\n\n- Examples: list comprehension vs loop, Option vs null, with vs try/finally\n- Linters and formatters (ruff, rustfmt, prettier)\n- Reading style guides for 2 languages side by side\n\nEncourage consistency over clever one-liners."
+    },
+    {
+      "id": "plang-19",
+      "label": "Domain-specific languages (DSL)",
+      "description": "dsl",
+      "detail": "sql regex config",
+      "text": "Introduce DSLs: SQL, regex, HTML/CSS, Terraform, Makefile.\n\n- When a DSL beats a general-purpose language\n- Risks: learning many mini-languages, debugging\n- Building internal DSLs — only mention, not full tutorial\n\nList 5 DSLs I likely already touch as a developer."
+    },
+    {
+      "id": "plang-20",
+      "label": "Breadth vs depth in career",
+      "description": "career",
+      "detail": "T-shaped skills",
+      "text": "Guide on balancing language breadth vs depth for a developer career.\n\n- T-shaped: one primary stack, awareness of others\n- When to specialize (embedded, data, frontend)\n- Learning plan: master one, skim two, revisit yearly\n\nNo code — mentorship tone, 8 bullets max."
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "name": "cursor-chat-prompt-library",
   "displayName": "Cursor Chat Prompt Library",
-  "description": "710 prompt templates for Cursor AI chat. Primary: Ctrl+Alt+T (Cmd+Alt+T on macOS); also Ctrl+Alt+Shift+P. 34 categories (Python × 50, others × 20). QuickPick → insert into chat.",
-  "version": "0.7.9",
+  "description": "750 prompt templates for Cursor AI chat. Primary: Ctrl+Alt+T (Cmd+Alt+T on macOS); also Ctrl+Alt+Shift+P. 36 categories (Python × 50, others × 20). QuickPick → insert into chat.",
+  "version": "0.8.1",
   "publisher": "rufat",
   "license": "MIT",
   "readme": "readme.md",
@@ -16,6 +16,8 @@
     "vscode": "^1.85.0"
   },
   "categories": [
+    "Programming Languages",
+    "Machine Learning",
     "Other"
   ],
   "icon": "images/icon.png",
@@ -59,7 +61,12 @@
     "pandas",
     "security",
     "devops",
-    "beginner"
+    "beginner",
+    "programming languages",
+    "machine learning",
+    "ml",
+    "sklearn",
+    "pytorch"
   ],
   "activationEvents": [
     "onCommand:cursorChatPromptLibrary.pick",

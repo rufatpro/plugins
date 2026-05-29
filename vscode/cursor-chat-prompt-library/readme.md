@@ -4,7 +4,7 @@
 
 **QuickPick** templates for **Cursor AI chat** — pick a prompt and insert into chat (Composer & Agent).
 
-**710 templates** — 34 categories (**Python × 50**, others × 20):
+**750 templates** — 36 categories (**Python × 50**, others × 20):
 
 | Tier | Categories |
 |------|------------|
@@ -12,6 +12,7 @@
 | High demand | Next.js, FastAPI, Docker, Testing, Tailwind CSS |
 | Strong demand | Node.js, Vue, PHP, Laravel, C#/.NET, Java/Spring, Linux/Bash, CI/CD, REST/OpenAPI, MongoDB, Mobile |
 | Growing / niche | C, C++, Go, Rust, Kubernetes, AWS/Cloud, WordPress, Data/Pandas, Security, GraphQL |
+| Cross-cutting | Programming Languages, Machine Learning |
 
 > Part of the [plugins](https://github.com/rufatpro/plugins) monorepo.
 
@@ -19,7 +20,7 @@
 
 | Key | Action |
 |-----|--------|
-| **Ctrl+Alt+T** (Windows/Linux) | **Step 1:** category (34 types) → **Step 2:** prompt → insert into chat |
+| **Ctrl+Alt+T** (Windows/Linux) | **Step 1:** category (36 types) → **Step 2:** prompt → insert into chat |
 | **Cmd+Alt+T** (macOS) | Same |
 
 Press **Ctrl**, **Alt**, and **T** together (**T** = **T**emplate).
@@ -36,7 +37,7 @@ Press **Ctrl**, **Alt**, and **T** together (**T** = **T**emplate).
 | Command | Action |
 |---------|--------|
 | **Pick Prompt (Category, then Template)** | Same as hotkey (two steps) |
-| **Insert Prompt into Chat (All Categories)** | Single list, all 710 prompts |
+| **Insert Prompt into Chat (All Categories)** | Single list, all 750 prompts |
 | **Insert Website / Python / JavaScript Prompt** | One category only (legacy shortcuts) |
 
 ### Via Command Palette
@@ -54,7 +55,7 @@ Press **Ctrl**, **Alt**, and **T** together (**T** = **T**emplate).
 ```bat
 cd plugins\vscode\cursor-chat-prompt-library
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-0.7.9.vsix
+cursor --install-extension build\cursor-chat-prompt-library-0.8.1.vsix
 ```
 
 Reload the window. Primary: **Ctrl+Alt+T**; alternative: **Ctrl+Alt+Shift+P** (see **Via Command Palette** for **F1**).

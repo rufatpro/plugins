@@ -4,7 +4,7 @@
 
 Библиотека шаблонов для **AI-чата Cursor**: QuickPick → вставка в чат.
 
-**710 шаблонов** — 34 категории (**Python × 50**, остальные × 20):
+**750 шаблонов** — 36 категорий (**Python × 50**, остальные × 20):
 
 | Уровень | Категории |
 |---------|-----------|
@@ -12,6 +12,7 @@
 | Высокий спрос | Next.js, FastAPI, Docker, Testing, Tailwind CSS |
 | Сильный спрос | Node.js, Vue, PHP, Laravel, C#/.NET, Java/Spring, Linux/Bash, CI/CD, REST/OpenAPI, MongoDB, Mobile |
 | Нишевые / растущие | C, C++, Go, Rust, Kubernetes, AWS, WordPress, Data/Pandas, Security, GraphQL |
+| Сквозные | Языки программирования, Машинное обучение |
 
 > Часть monorepo [plugins](https://github.com/rufatpro/plugins).
 
@@ -19,7 +20,7 @@
 
 | Клавиша | Действие |
 |---------|----------|
-| **Ctrl+Alt+T** | **Шаг 1:** категория (34 типа) → **шаг 2:** промпт → вставка в чат |
+| **Ctrl+Alt+T** | **Шаг 1:** категория (36 типов) → **шаг 2:** промпт → вставка в чат |
 | **Cmd+Alt+T** (macOS) | То же |
 
 Одновременно **Ctrl**, **Alt** и **T** (**T** = **T**emplate, шаблон).
@@ -36,7 +37,7 @@
 | Команда | Действие |
 |---------|----------|
 | **Pick Prompt (Category, then Template)** | Как горячая клавиша |
-| **Insert Prompt into Chat (All Categories)** | Один список из 710 промптов |
+| **Insert Prompt into Chat (All Categories)** | Один список из 750 промптов |
 | **Insert Website / Python / JavaScript** | Быстрый вход в одну категорию |
 
 ### Через палитру команд
@@ -49,7 +50,7 @@
 ```bat
 cd plugins\vscode\cursor-chat-prompt-library
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-0.7.9.vsix
+cursor --install-extension build\cursor-chat-prompt-library-0.8.1.vsix
 ```
 
 Перезагрузите окно. Основной способ — **Ctrl+Alt+T**; альтернатива — **Ctrl+Alt+Shift+P** (см. раздел «Через палитру команд» для **F1**).

@@ -1,0 +1,146 @@
+{
+  "category": "machine-learning",
+  "categoryLabel": "Machine Learning",
+  "prompts": [
+    {
+      "id": "ml-01",
+      "label": "ML vs AI vs deep learning",
+      "description": "concepts",
+      "detail": "definitions",
+      "text": "Define machine learning, artificial intelligence, and deep learning for a beginner.\n\n- Venn-style relationship in plain language\n- Supervised vs unsupervised vs reinforcement — one example each\n- What you can build with classical ML vs neural nets\n\nNo hype — 10 bullets max."
+    },
+    {
+      "id": "ml-02",
+      "label": "First sklearn classification pipeline",
+      "description": "sklearn",
+      "detail": "fit predict",
+      "text": "Build a minimal scikit-learn classification pipeline on the Iris or a toy CSV dataset.\n\n- Load data, train_test_split, StandardScaler, LogisticRegression\n- accuracy_score on test set\n- Explain fit vs predict in 3 sentences\n\nRunnable Python script under 40 lines."
+    },
+    {
+      "id": "ml-03",
+      "label": "Train validation test split",
+      "description": "workflow",
+      "detail": "data leakage",
+      "text": "Explain train / validation / test splits and why we need all three.\n\n- Typical ratios and when to use cross-validation instead\n- Data leakage examples (scaling on full dataset before split)\n- Sketch code with sklearn model_selection\n\nBeginner checklist before trusting metrics."
+    },
+    {
+      "id": "ml-04",
+      "label": "Confusion matrix and metrics",
+      "description": "evaluation",
+      "detail": "precision recall F1",
+      "text": "Teach confusion matrix, accuracy, precision, recall, F1 for imbalanced classes.\n\n- When accuracy misleads\n- sklearn classification_report and confusion_matrix\n- Pick a medical/fraud-style example where false negatives hurt\n\nSmall synthetic dataset demo."
+    },
+    {
+      "id": "ml-05",
+      "label": "Overfitting and underfitting",
+      "description": "theory",
+      "detail": "bias variance",
+      "text": "Explain overfitting and underfitting with learning curves intuition.\n\n- High train accuracy, low test accuracy = overfit\n- Regularization teaser (L1/L2, dropout later)\n- Plot idea: error vs model complexity — describe what to look for\n\nSuggest 3 practical fixes for overfit."
+    },
+    {
+      "id": "ml-06",
+      "label": "Feature scaling and encoding",
+      "description": "preprocessing",
+      "detail": "StandardScaler OneHot",
+      "text": "Preprocess mixed numeric and categorical features for sklearn.\n\n- StandardScaler for numbers, OneHotEncoder for categories\n- ColumnTransformer + Pipeline pattern\n- Fit only on training data inside pipeline\n\nComplete example with make_column_selector or explicit columns."
+    },
+    {
+      "id": "ml-07",
+      "label": "Pandas to ML-ready table",
+      "description": "data",
+      "detail": "missing outliers",
+      "text": "Turn a messy pandas DataFrame into ML-ready features.\n\n- Handle missing values, outliers (IQR or clip), datetime extraction\n- Target column y and feature matrix X\n- Save cleaned CSV optional\n\nAssume tabular sales or churn-style data."
+    },
+    {
+      "id": "ml-08",
+      "label": "PyTorch tensor basics",
+      "description": "pytorch",
+      "detail": "autograd teaser",
+      "text": "Introduce PyTorch tensors for someone who knows NumPy.\n\n- Create tensor, shape, dtype, device cpu/cuda mention\n- Simple operation and .backward() on scalar — one line why\n- Compare torch.tensor vs numpy array conversion\n\nUnder 30 lines of code."
+    },
+    {
+      "id": "ml-09",
+      "label": "Keras sequential model",
+      "description": "tensorflow",
+      "detail": "compile fit",
+      "text": "Build a tiny Keras Sequential model for MNIST or synthetic regression.\n\n- Dense layers, compile with optimizer and loss\n- fit with epochs, evaluate on test\n- Mention tf.keras vs standalone keras briefly\n\nKeep training fast (few epochs)."
+    },
+    {
+      "id": "ml-10",
+      "label": "Linear regression intuition",
+      "description": "supervised",
+      "detail": "least squares",
+      "text": "Explain linear regression as predicting a number from features.\n\n- Line of best fit intuition, MSE loss\n- sklearn LinearRegression on one feature — plot slope in comments\n- When linear model is enough vs need nonlinear\n\nMath light, intuition heavy."
+    },
+    {
+      "id": "ml-11",
+      "label": "Logistic regression classifier",
+      "description": "supervised",
+      "detail": "probabilities sigmoid",
+      "text": "Teach logistic regression for binary classification.\n\n- Sigmoid maps score to probability\n- decision boundary at 0.5 threshold\n- sklearn LogisticRegression on 2D toy data description\n\nContrast with linear regression target type."
+    },
+    {
+      "id": "ml-12",
+      "label": "Random forest when to use",
+      "description": "ensemble",
+      "detail": "tabular default",
+      "text": "Explain RandomForestClassifier for tabular data.\n\n- Bagging many trees, feature importance\n- Often strong default before deep learning on tables\n- Hyperparams: n_estimators, max_depth — what they do\n\nShort code fit on sklearn dataset."
+    },
+    {
+      "id": "ml-13",
+      "label": "K-fold cross-validation",
+      "description": "validation",
+      "detail": "cross_val_score",
+      "text": "Implement k-fold cross-validation with sklearn.\n\n- cross_val_score or StratifiedKFold for classification\n- Report mean and std of metric\n- When CV beats single holdout split\n\nUse a small public-style dataset name."
+    },
+    {
+      "id": "ml-14",
+      "label": "Grid search hyperparameters",
+      "description": "tuning",
+      "detail": "GridSearchCV",
+      "text": "Tune hyperparameters with GridSearchCV inside a Pipeline.\n\n- param_grid for model step names\n- Avoid leakage: pipeline includes preprocessing\n- Show best params and best score only — warn about compute cost\n\nExample with RandomForest or SVM on digits."
+    },
+    {
+      "id": "ml-15",
+      "label": "Text classification intro NLP",
+      "description": "nlp",
+      "detail": "TF-IDF + linear",
+      "text": "Classic NLP baseline: TF-IDF + LogisticRegression for text labels.\n\n- CountVectorizer or TfidfVectorizer\n- Short list of strings example (spam/ham style)\n- Mention transformers as next step, not required now\n\nsklearn Pipeline end to end."
+    },
+    {
+      "id": "ml-16",
+      "label": "CNN for images overview",
+      "description": "vision",
+      "detail": "conv pooling",
+      "text": "High-level intro to CNNs for image classification.\n\n- Convolution, pooling, fully connected head — roles in bullets\n- Transfer learning with pretrained ResNet idea (no full training)\n- When to use torchvision/huggingface vs train from scratch\n\nPseudocode or keras/torch outline only."
+    },
+    {
+      "id": "ml-17",
+      "label": "Save and load models",
+      "description": "deployment",
+      "detail": "joblib pickle onnx",
+      "text": "Show how to persist a trained sklearn model and reload for prediction.\n\n- joblib.dump / load\n- Warn about pickle security (trusted files only)\n- Mention ONNX as interchange format one line\n\nTiny predict script after load."
+    },
+    {
+      "id": "ml-18",
+      "label": "Bias fairness checklist",
+      "description": "ethics",
+      "detail": "responsible ML",
+      "text": "Give a responsible-ML checklist before shipping a model.\n\n- Representative data, sensitive attributes, disparate impact awareness\n- Document limitations and monitoring in production\n- Human review for high-stakes decisions\n\nNo code — policy and engineering hygiene bullets."
+    },
+    {
+      "id": "ml-19",
+      "label": "GPU and when you need it",
+      "description": "hardware",
+      "detail": "cuda colab",
+      "text": "Explain when GPU helps in ML vs CPU is fine.\n\n- Large neural nets and big batches vs small tabular sklearn\n- cuda, device='cuda', cloud notebooks (Colab/Kaggle) mention\n- Cost and environment reproducibility tips\n\nDecision table: problem size → hardware."
+    },
+    {
+      "id": "ml-20",
+      "label": "Learning path sklearn to PyTorch",
+      "description": "roadmap",
+      "detail": "staged curriculum",
+      "text": "Design a 8-week learning path from sklearn tabular ML to PyTorch basics.\n\n- Week themes: pandas → sklearn → metrics → intro NN → pytorch tensors → simple CNN\n- Projects per stage (Kaggle Titanic, MNIST)\n- Resources types: docs, courses, papers — categories not affiliate links\n\nRealistic hours per week assumption stated."
+    }
+  ]
+}

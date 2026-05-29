@@ -43,6 +43,8 @@ const CATEGORY_FILE_ORDER = [
   "data.json",
   "security.json",
   "graphql.json",
+  "programming-languages.json",
+  "machine-learning.json",
 ];
 
 /**

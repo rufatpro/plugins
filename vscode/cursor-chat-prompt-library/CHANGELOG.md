@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.8.1
+
+- Marketplace categories: **Programming Languages**, **Machine Learning**, **Other**.
+
+## 0.8.0
+
+- New **Programming Languages** and **Machine Learning** categories (20 prompts each).
+- Total bundled templates: **750** (36 categories; Python × 50, others × 20).
+
 ## 0.7.9
 
 - Readme: removed release guide link from header.
