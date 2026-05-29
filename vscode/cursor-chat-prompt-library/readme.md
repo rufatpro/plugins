@@ -54,7 +54,7 @@ Press **Ctrl**, **Alt**, and **T** together (**T** = **T**emplate).
 ```bat
 cd plugins\vscode\cursor-chat-prompt-library
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-0.7.7.vsix
+cursor --install-extension build\cursor-chat-prompt-library-0.7.8.vsix
 ```
 
 Reload the window. Primary: **Ctrl+Alt+T**; alternative: **Ctrl+Alt+Shift+P** (see **Via Command Palette** for **F1**).

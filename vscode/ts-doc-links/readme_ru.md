@@ -54,7 +54,7 @@ build.bat
 
 1. **F1** / **Ctrl+Shift+P** → `Install from VSIX`
 2. **Extensions: Install from VSIX...**
-3. Указать `vscode/ts-doc-links/build/ts-doc-links-0.1.4.vsix`
+3. Указать `vscode/ts-doc-links/build/ts-doc-links-0.1.6.vsix`
 
 ## Ограничения
 

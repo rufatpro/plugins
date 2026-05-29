@@ -4,6 +4,12 @@ All notable changes to **Python Quick Intent** are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.4.3] - 2026-05-29
+
+### Changed
+
+- Repository moved to [github.com/rufatpro/plugins](https://github.com/rufatpro/plugins); updated metadata URLs.
+
 ## [0.4.2] - 2026-05-27
 
 ### Changed

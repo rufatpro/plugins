@@ -64,7 +64,7 @@ Then install the generated `.vsix`.
 
 Resulting package file:
 
-`vscode/py-doc-links/build/py-doc-links-0.2.8.vsix`
+`vscode/py-doc-links/build/py-doc-links-0.2.10.vsix`
 
 ## Limitations
 

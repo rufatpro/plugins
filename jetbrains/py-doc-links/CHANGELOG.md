@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.8
+
+- Repository moved to [github.com/rufatpro/plugins](https://github.com/rufatpro/plugins); updated `vendor` URL in `plugin.xml`.
+
 ## 0.2.7
 
 - Added Sphinx navigation for classes and module-level variables: `:py:class:`, `:class:`, `:py:data:`, `:data:`, `:py:attr:`, `:attr:` (`PySymbolReference`; replaces `PyFuncReference`).

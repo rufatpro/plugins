@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.6
+
+- Repository moved to [github.com/rufatpro/plugins](https://github.com/rufatpro/plugins); updated metadata URLs.
+
 ## 0.5.5
 
 - Maintenance release: version bump and release metadata update.

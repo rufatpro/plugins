@@ -45,7 +45,7 @@
 ```bat
 cd plugins\vscode\cursor-chat-prompt-library-ru
 build.bat
-cursor --install-extension build\cursor-chat-prompt-library-ru-0.5.3.vsix
+cursor --install-extension build\cursor-chat-prompt-library-ru-0.5.6.vsix
 ```
 
 Перезагрузите окно. Основной способ — **Ctrl+Alt+Shift+P** (см. раздел «Через палитру команд» для **F1**).

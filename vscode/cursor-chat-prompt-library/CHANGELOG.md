@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.8
+
+- Repository moved to [github.com/rufatpro/plugins](https://github.com/rufatpro/plugins); updated `repository`, `homepage`, and `vsce.baseContentUrl` in metadata.
+
 ## 0.7.7
 
 - Release: primary **Ctrl+Alt+T** (`Cmd+Alt+T` on macOS), alternative **Ctrl+Alt+Shift+P**.
