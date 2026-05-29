@@ -4,7 +4,7 @@
 
     <name>AI Chat File Links</name>
 
-    <vendor email="ide-plugins@users.noreply.github.com" url="https://github.com/rufatpro/ide-plugins">rufatpro/ide-plugins</vendor>
+    <vendor email="plugins@users.noreply.github.com" url="https://github.com/rufatpro/plugins">rufatpro/plugins</vendor>
 
 
 
@@ -16,7 +16,7 @@
 
         even if the file exists under the project root. Opens project-relative paths from chat and error balloons.
 
-        For VS Code extensions see the ide-plugins repo (VS Code: vscode/).
+        For VS Code extensions see the plugins repo (VS Code: vscode/).
 
         &lt;br&gt;&lt;br&gt;&lt;b&gt;Settings&lt;/b&gt; (Settings → Tools → AI Chat File Links):
 

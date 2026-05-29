@@ -2,13 +2,13 @@
 
 Идентификатор пакета: `ts-doc-links`.
 
-[English](https://github.com/rufatpro/ide-plugins/blob/main/vscode/ts-doc-links/readme.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Инструкция релиза](https://github.com/rufatpro/ide-plugins/blob/main/readme_github_release_ts-doc-links.md) · [Репозиторий](https://github.com/rufatpro/ide-plugins)
+[English](https://github.com/rufatpro/plugins/blob/main/vscode/ts-doc-links/readme.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Инструкция релиза](https://github.com/rufatpro/plugins/blob/main/readme_github_release_ts-doc-links.md) · [Репозиторий](https://github.com/rufatpro/plugins)
 
 **Расширение VS Code / Cursor** для перехода к определению из **комментариев** и **JSDoc** в TypeScript/JavaScript — для форматов, которые **не** обрабатывает TypeScript (Native Preview).
 
 Делает кликабельными `@see ./emailValidator.ts`, `File: utils.ts`, `// See utils.ts:3` через Ctrl+Click (или F12).
 
-> Разработано с помощью AI (Cursor / LLM). Часть монорепозитория [ide-plugins](https://github.com/rufatpro/ide-plugins).  
+> Разработано с помощью AI (Cursor / LLM). Часть монорепозитория [plugins](https://github.com/rufatpro/plugins).  
 
 ## Поддерживаемые паттерны
 
@@ -65,8 +65,8 @@ build.bat
 
 ## Лицензия
 
-[MIT](https://github.com/rufatpro/ide-plugins/blob/main/license) — использование на свой риск.  
-[ide-plugins](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+[MIT](https://github.com/rufatpro/plugins/blob/main/license) — использование на свой риск.  
+[plugins](https://github.com/rufatpro/plugins) · [Releases](https://github.com/rufatpro/plugins/releases)
 
 ## Автор
 

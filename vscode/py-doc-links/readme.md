@@ -1,12 +1,12 @@
 # Python Doc Links (VS Code / Cursor)
 
-[Русский](https://github.com/rufatpro/ide-plugins/blob/main/vscode/py-doc-links/readme_ru.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Repository](https://github.com/rufatpro/ide-plugins)
+[Русский](https://github.com/rufatpro/plugins/blob/main/vscode/py-doc-links/readme_ru.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Repository](https://github.com/rufatpro/plugins)
 
 **VS Code / Cursor extension** that enables go-to-definition from Python docstring/comment references.
 
 It makes references like `submodule.py`, <code>:py:func:`submodule.process_submodule_data`</code>, and <code>:func:`run_main_flow`</code> navigable with Ctrl+Click (or F12).
 
-> Developed with AI assistance (Cursor / LLM). Part of the [ide-plugins](https://github.com/rufatpro/ide-plugins) monorepo.
+> Developed with AI assistance (Cursor / LLM). Part of the [plugins](https://github.com/rufatpro/plugins) monorepo.
 
 ## Supported patterns
 
@@ -79,8 +79,8 @@ Related upstream context:
 
 ## License
 
-[MIT](https://github.com/rufatpro/ide-plugins/blob/main/license) — free to use, modify, and distribute, at your own risk.  
-[ide-plugins monorepo](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+[MIT](https://github.com/rufatpro/plugins/blob/main/license) — free to use, modify, and distribute, at your own risk.  
+[plugins monorepo](https://github.com/rufatpro/plugins) · [Releases](https://github.com/rufatpro/plugins/releases)
 
 ## Author
 

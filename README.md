@@ -1,6 +1,6 @@
-# ide-plugins
+# plugins
 
-[Русский](README_RU.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+[Русский](README_RU.md) · [Releases](https://github.com/rufatpro/plugins/releases)
 
 Monorepo of IDE plugins and extensions — **JetBrains**, **VS Code**, and more.  
 Each plugin lives in its own directory with a `readme.md`.
@@ -25,7 +25,7 @@ Each plugin lives in its own directory with a `readme.md`.
 ## Repository layout
 
 ```
-ide-plugins/            ← git root (plugins)
+plugins/            ← git root (plugins)
   README.md             # index (EN)
   README_RU.md          # index (RU)
   license               # MIT

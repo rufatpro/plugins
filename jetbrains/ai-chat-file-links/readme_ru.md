@@ -1,13 +1,13 @@
 # AI Chat File Links
 
-[English](readme.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Репозиторий](https://github.com/rufatpro/ide-plugins)
+[English](readme.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Репозиторий](https://github.com/rufatpro/plugins)
 
 **Плагин JetBrains** для PyCharm, IntelliJ IDEA, WebStorm и других JetBrains IDE.
 
 Решает распространённую проблему: когда AI-агент (Cursor через ACP и другие ACP-агенты) отвечает в **AI Chat** со ссылкой на файл проекта, **клик по ней в PyCharm часто ничего не делал** — IDE писала «Cannot open a URL» или «файл не существует», хотя файл есть в корне проекта. Плагин открывает такие пути правильно.
 
 > **Только JetBrains** — не устанавливается в VS Code и десктопный Cursor, где ссылки в чате обрабатывает сам редактор.  
-> Разработан с помощью AI (Cursor / LLM). Часть монорепозитория [ide-plugins](https://github.com/rufatpro/ide-plugins).
+> Разработан с помощью AI (Cursor / LLM). Часть монорепозитория [plugins](https://github.com/rufatpro/plugins).
 
 ## Требования
 
@@ -18,7 +18,7 @@
 
 ## Установка
 
-1. Скачайте `ai-chat-file-links-*.zip` из [GitHub Releases](https://github.com/rufatpro/ide-plugins/releases).
+1. Скачайте `ai-chat-file-links-*.zip` из [GitHub Releases](https://github.com/rufatpro/plugins/releases).
 2. **Settings → Plugins → ⚙ → Install Plugin from Disk…**
 3. Выберите zip-файл и **перезапустите IDE**.
 
@@ -145,7 +145,7 @@ clean.bat     # Windows
 ## Лицензия
 
 [MIT](../../license) — свободное использование, изменение и распространение, на свой страх и риск.  
-[Монорепозиторий ide-plugins](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+[Монорепозиторий plugins](https://github.com/rufatpro/plugins) · [Releases](https://github.com/rufatpro/plugins/releases)
 
 ## Автор
 

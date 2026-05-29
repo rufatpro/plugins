@@ -50,7 +50,7 @@
 
 ## 0.4.2
 
-- Author block aligned with other ide-plugins extensions (`## Author` / `## Автор`, link [Rufat](https://rufat.top/)).
+- Author block aligned with other plugins extensions (`## Author` / `## Автор`, link [Rufat](https://rufat.top/)).
 
 ## 0.4.1
 

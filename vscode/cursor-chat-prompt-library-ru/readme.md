@@ -1,6 +1,6 @@
 # Cursor Chat Prompt Library RU
 
-[English](readme_en.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Репозиторий](https://github.com/rufatpro/ide-plugins) · [Инструкция релиза](../../../readme_github_release_cursor-chat-prompt-library-ru.md)
+[English](readme_en.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Репозиторий](https://github.com/rufatpro/plugins) · [Инструкция релиза](../../../readme_github_release_cursor-chat-prompt-library-ru.md)
 
 Библиотека **710 русскоязычных** шаблонов Промптов (Prompts) для AI-Chat в **Cursor**: Быстрый выбор → вставка в ИИ Чат Курсора.
 
@@ -13,7 +13,7 @@
 | Сильный спрос | Node.js, Vue, PHP, Laravel, C#/.NET, Java/Spring, Linux/Bash, CI/CD, REST/OpenAPI, MongoDB, Mobile |
 | Нишевые / растущие | C, C++, Go, Rust, Kubernetes, AWS, WordPress, Data/Pandas, Security, GraphQL |
 
-> Часть monorepo [ide-plugins](https://github.com/rufatpro/ide-plugins).
+> Часть monorepo [plugins](https://github.com/rufatpro/plugins).
 
 ## Горячая клавиша (основной способ)
 
@@ -43,7 +43,7 @@
 ## Установка
 
 ```bat
-cd ide-plugins\vscode\cursor-chat-prompt-library-ru
+cd plugins\vscode\cursor-chat-prompt-library-ru
 build.bat
 cursor --install-extension build\cursor-chat-prompt-library-ru-0.5.3.vsix
 ```
@@ -59,8 +59,8 @@ cursor --install-extension build\cursor-chat-prompt-library-ru-0.5.3.vsix
 
 ## Лицензия
 
-[MIT](https://github.com/rufatpro/ide-plugins/blob/main/license) — свободное использование, изменение и распространение на ваш риск.  
-[monorepo ide-plugins](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+[MIT](https://github.com/rufatpro/plugins/blob/main/license) — свободное использование, изменение и распространение на ваш риск.  
+[monorepo plugins](https://github.com/rufatpro/plugins) · [Releases](https://github.com/rufatpro/plugins/releases)
 
 ## Автор
 

@@ -20,7 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
-- Aligned with [ide-plugins](https://github.com/rufatpro/ide-plugins) monorepo layout: `src/extension.js`, publisher `rufat`, `build/` VSIX output, repository and `vsce.baseContentUrl` for Marketplace.
+- Aligned with [plugins](https://github.com/rufatpro/plugins) monorepo layout: `src/extension.js`, publisher `rufat`, `build/` VSIX output, repository and `vsce.baseContentUrl` for Marketplace.
 - Added `readme_ru.md`, monorepo-style `LICENSE`, and catalog entries in root `README.md` / `README_RU.md`.
 - Removed development `_probe-*.js` scripts from the extension folder.
 

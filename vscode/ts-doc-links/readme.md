@@ -2,13 +2,13 @@
 
 Package id: `ts-doc-links`.
 
-[Русский](https://github.com/rufatpro/ide-plugins/blob/main/vscode/ts-doc-links/readme_ru.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Release guide](https://github.com/rufatpro/ide-plugins/blob/main/readme_github_release_ts-doc-links.md) · [Repository](https://github.com/rufatpro/ide-plugins)
+[Русский](https://github.com/rufatpro/plugins/blob/main/vscode/ts-doc-links/readme_ru.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Release guide](https://github.com/rufatpro/plugins/blob/main/readme_github_release_ts-doc-links.md) · [Repository](https://github.com/rufatpro/plugins)
 
 **VS Code / Cursor extension** that enables go-to-definition from TypeScript/JavaScript **comments** and **JSDoc** — for patterns that **TypeScript (Native Preview)** does not handle.
 
 It makes references like `@see ./emailValidator.ts`, `File: utils.ts`, and `// See utils.ts:3` navigable with Ctrl+Click (or F12).
 
-> Developed with AI assistance (Cursor / LLM). Part of the [ide-plugins](https://github.com/rufatpro/ide-plugins) monorepo.  
+> Developed with AI assistance (Cursor / LLM). Part of the [plugins](https://github.com/rufatpro/plugins) monorepo.  
 
 ## Supported patterns
 
@@ -68,8 +68,8 @@ Then install the generated `.vsix`.
 
 ## License
 
-[MIT](https://github.com/rufatpro/ide-plugins/blob/main/license) — free to use, modify, and distribute, at your own risk.  
-[ide-plugins monorepo](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+[MIT](https://github.com/rufatpro/plugins/blob/main/license) — free to use, modify, and distribute, at your own risk.  
+[plugins monorepo](https://github.com/rufatpro/plugins) · [Releases](https://github.com/rufatpro/plugins/releases)
 
 ## Author
 

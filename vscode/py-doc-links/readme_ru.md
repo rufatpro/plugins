@@ -1,12 +1,12 @@
 # Python Doc Links (VS Code / Cursor)
 
-[English](https://github.com/rufatpro/ide-plugins/blob/main/vscode/py-doc-links/readme.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Репозиторий](https://github.com/rufatpro/ide-plugins)
+[English](https://github.com/rufatpro/plugins/blob/main/vscode/py-doc-links/readme.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Репозиторий](https://github.com/rufatpro/plugins)
 
 **Расширение VS Code / Cursor**, которое добавляет переход к определению из ссылок в Python docstring/комментариях.
 
 Делает навигацию по `submodule.py`, <code>:py:func:`submodule.process_submodule_data`</code>, <code>:func:`run_main_flow`</code> через Ctrl+Click (или F12).
 
-> Разработано с помощью AI (Cursor / LLM). Часть монорепозитория [ide-plugins](https://github.com/rufatpro/ide-plugins).
+> Разработано с помощью AI (Cursor / LLM). Часть монорепозитория [plugins](https://github.com/rufatpro/plugins).
 
 ## Поддерживаемые паттерны
 
@@ -79,8 +79,8 @@ build.bat
 
 ## Лицензия
 
-[MIT](https://github.com/rufatpro/ide-plugins/blob/main/license) — свободное использование, изменение и распространение, на ваш риск.  
-[Монорепозиторий ide-plugins](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+[MIT](https://github.com/rufatpro/plugins/blob/main/license) — свободное использование, изменение и распространение, на ваш риск.  
+[Монорепозиторий plugins](https://github.com/rufatpro/plugins) · [Releases](https://github.com/rufatpro/plugins/releases)
 
 ## Автор
 

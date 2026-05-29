@@ -1,13 +1,13 @@
 # Python Doc Links
 
-[English](readme.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Репозиторий](https://github.com/rufatpro/ide-plugins)
+[English](readme.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Репозиторий](https://github.com/rufatpro/plugins)
 
 **Плагин JetBrains** для PyCharm, IntelliJ IDEA, WebStorm и других JetBrains IDE.
 
 Решает распространённое ограничение: ссылки на Python-файлы и функции внутри **docstring** и **комментариев** обычно остаются обычным текстом. Плагин добавляет Ctrl+Click-навигацию для поддерживаемых паттернов, например `submodule.py` и <code>:py:func:`submodule.process_submodule_data`</code>.
 
 > **Только JetBrains** — не устанавливается в VS Code и десктопный Cursor.  
-> Разработан с помощью AI (Cursor / LLM). Часть монорепозитория [ide-plugins](https://github.com/rufatpro/ide-plugins).
+> Разработан с помощью AI (Cursor / LLM). Часть монорепозитория [plugins](https://github.com/rufatpro/plugins).
 
 ## Требования
 
@@ -17,7 +17,7 @@
 
 ## Установка
 
-1. Скачайте `py-doc-links-*.zip` из [GitHub Releases](https://github.com/rufatpro/ide-plugins/releases).
+1. Скачайте `py-doc-links-*.zip` из [GitHub Releases](https://github.com/rufatpro/plugins/releases).
 2. **Settings -> Plugins -> значок шестерёнки -> Install Plugin from Disk...**
 3. Выберите zip-файл и **перезапустите IDE**.
 
@@ -121,7 +121,7 @@ clean.bat
 ## Лицензия
 
 [MIT](../../license) — свободное использование, изменение и распространение, на ваш риск.  
-[Монорепозиторий ide-plugins](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+[Монорепозиторий plugins](https://github.com/rufatpro/plugins) · [Releases](https://github.com/rufatpro/plugins/releases)
 
 ## Автор
 

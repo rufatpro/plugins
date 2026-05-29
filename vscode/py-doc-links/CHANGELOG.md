@@ -27,7 +27,7 @@
 
 ## 0.2.4
 
-- LICENSE copyright line aligned with monorepo (`Rufat Nuriyev and ide-plugins contributors`).
+- LICENSE copyright line aligned with monorepo (`Rufat Nuriyev and plugins contributors`).
 - Version aligned with JetBrains `0.2.4` release.
 
 ## 0.2.3

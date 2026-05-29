@@ -1,6 +1,6 @@
-# ide-plugins
+# plugins
 
-[English](README.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+[English](README.md) · [Releases](https://github.com/rufatpro/plugins/releases)
 
 Монорепозиторий плагинов и расширений для IDE — **JetBrains**, **VS Code** и другие.  
 Каждый плагин живёт в своём каталоге со своим `readme.md`.
@@ -25,7 +25,7 @@
 ## Структура репозитория
 
 ```
-ide-plugins/            ← корень git (плагины)
+plugins/            ← корень git (плагины)
   README.md             # индекс (EN)
   README_RU.md          # индекс (RU)
   license               # MIT

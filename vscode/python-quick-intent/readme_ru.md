@@ -1,10 +1,10 @@
 # Python Quick Intent (VS Code / Cursor)
 
-[English](readme.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Репозиторий](https://github.com/rufatpro/ide-plugins)
+[English](readme.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Репозиторий](https://github.com/rufatpro/plugins)
 
 **Намерения в стиле PyCharm** для Python в Cursor и VS Code: импорт, исправление через AI и Quick Edit — без перехвата **Alt+Enter** расширениями вроде Roo Code.
 
-> Разработано с помощью AI (Cursor / LLM). Часть монорепозитория [ide-plugins](https://github.com/rufatpro/ide-plugins).
+> Разработано с помощью AI (Cursor / LLM). Часть монорепозитория [plugins](https://github.com/rufatpro/plugins).
 
 ## Проблема
 
@@ -62,8 +62,8 @@ cursor --install-extension build/python-quick-intent-0.4.1.vsix
 
 ## Лицензия
 
-[MIT](https://github.com/rufatpro/ide-plugins/blob/main/license) — свободное использование на свой страх и риск.  
-[ide-plugins](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+[MIT](https://github.com/rufatpro/plugins/blob/main/license) — свободное использование на свой страх и риск.  
+[plugins](https://github.com/rufatpro/plugins) · [Releases](https://github.com/rufatpro/plugins/releases)
 
 ## Автор
 

@@ -1,6 +1,6 @@
 # Cursor Chat Prompt Library
 
-[Русский](readme_ru.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Repository](https://github.com/rufatpro/ide-plugins) · [Release guide](../../../readme_github_release_cursor-chat-prompt-library.md)
+[Русский](readme_ru.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Repository](https://github.com/rufatpro/plugins) · [Release guide](../../../readme_github_release_cursor-chat-prompt-library.md)
 
 **QuickPick** templates for **Cursor AI chat** — pick a prompt and insert into chat (Composer & Agent).
 
@@ -13,7 +13,7 @@
 | Strong demand | Node.js, Vue, PHP, Laravel, C#/.NET, Java/Spring, Linux/Bash, CI/CD, REST/OpenAPI, MongoDB, Mobile |
 | Growing / niche | C, C++, Go, Rust, Kubernetes, AWS/Cloud, WordPress, Data/Pandas, Security, GraphQL |
 
-> Part of the [ide-plugins](https://github.com/rufatpro/ide-plugins) monorepo.
+> Part of the [plugins](https://github.com/rufatpro/plugins) monorepo.
 
 ## Hotkey (primary)
 
@@ -52,7 +52,7 @@ Press **Ctrl**, **Alt**, and **T** together (**T** = **T**emplate).
 ## Install (development)
 
 ```bat
-cd ide-plugins\vscode\cursor-chat-prompt-library
+cd plugins\vscode\cursor-chat-prompt-library
 build.bat
 cursor --install-extension build\cursor-chat-prompt-library-0.7.7.vsix
 ```
@@ -68,8 +68,8 @@ Reload the window. Primary: **Ctrl+Alt+T**; alternative: **Ctrl+Alt+Shift+P** (s
 
 ## License
 
-[MIT](https://github.com/rufatpro/ide-plugins/blob/main/license) — free to use, modify, and distribute, at your own risk.  
-[ide-plugins monorepo](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+[MIT](https://github.com/rufatpro/plugins/blob/main/license) — free to use, modify, and distribute, at your own risk.  
+[plugins monorepo](https://github.com/rufatpro/plugins) · [Releases](https://github.com/rufatpro/plugins/releases)
 
 ## Author
 

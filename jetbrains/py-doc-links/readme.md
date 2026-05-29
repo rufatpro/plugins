@@ -1,13 +1,13 @@
 # Python Doc Links
 
-[Русский](readme_ru.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Repository](https://github.com/rufatpro/ide-plugins)
+[Русский](readme_ru.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Repository](https://github.com/rufatpro/plugins)
 
 **JetBrains plugin** for PyCharm, IntelliJ IDEA, WebStorm, and other JetBrains IDEs.
 
 Fixes a common limitation: Python references inside **docstrings** and **line comments** are usually plain text in PyCharm. This plugin adds Ctrl+Click navigation for supported patterns such as `submodule.py` and <code>:py:func:`submodule.process_submodule_data`</code>.
 
 > **JetBrains only** — does not install in VS Code or the Cursor desktop app.  
-> Developed with AI assistance (Cursor / LLM). Part of the [ide-plugins](https://github.com/rufatpro/ide-plugins) monorepo.
+> Developed with AI assistance (Cursor / LLM). Part of the [plugins](https://github.com/rufatpro/plugins) monorepo.
 
 ## Requirements
 
@@ -17,7 +17,7 @@ Fixes a common limitation: Python references inside **docstrings** and **line co
 
 ## Installation
 
-1. Download `py-doc-links-*.zip` from [GitHub Releases](https://github.com/rufatpro/ide-plugins/releases).
+1. Download `py-doc-links-*.zip` from [GitHub Releases](https://github.com/rufatpro/plugins/releases).
 2. **Settings -> Plugins -> gear icon -> Install Plugin from Disk...**
 3. Select the zip file and **restart** the IDE.
 
@@ -121,7 +121,7 @@ Removes `build/`, `.gradle/`, `.intellijPlatform/`, `.kotlin/`, and log files.
 ## License
 
 [MIT](../../license) — free to use, modify, and distribute, at your own risk.  
-[ide-plugins monorepo](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+[plugins monorepo](https://github.com/rufatpro/plugins) · [Releases](https://github.com/rufatpro/plugins/releases)
 
 ## Author
 

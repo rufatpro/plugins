@@ -1,13 +1,13 @@
 # AI Chat File Links
 
-[Русский](readme_ru.md) · [Releases](https://github.com/rufatpro/ide-plugins/releases) · [Repository](https://github.com/rufatpro/ide-plugins)
+[Русский](readme_ru.md) · [Releases](https://github.com/rufatpro/plugins/releases) · [Repository](https://github.com/rufatpro/plugins)
 
 **JetBrains plugin** for PyCharm, IntelliJ IDEA, WebStorm, and other JetBrains IDEs.
 
 Fixes a common problem: when an AI agent (Cursor via ACP, or other ACP agents) responds in **AI Chat** with a project file path, **clicking the link in PyCharm often did nothing** — the IDE showed «Cannot open a URL» or «File does not exist» instead of opening the file in the editor. This plugin opens those project-relative paths correctly.
 
 > **JetBrains only** — does not install in VS Code or the Cursor desktop app, where chat links are handled by the editor itself.  
-> Developed with AI assistance (Cursor / LLM). Part of the [ide-plugins](https://github.com/rufatpro/ide-plugins) monorepo.
+> Developed with AI assistance (Cursor / LLM). Part of the [plugins](https://github.com/rufatpro/plugins) monorepo.
 
 ## Requirements
 
@@ -18,7 +18,7 @@ Fixes a common problem: when an AI agent (Cursor via ACP, or other ACP agents) r
 
 ## Installation
 
-1. Download `ai-chat-file-links-*.zip` from [GitHub Releases](https://github.com/rufatpro/ide-plugins/releases).
+1. Download `ai-chat-file-links-*.zip` from [GitHub Releases](https://github.com/rufatpro/plugins/releases).
 2. **Settings → Plugins → ⚙ → Install Plugin from Disk…**
 3. Select the zip file and **restart** the IDE.
 
@@ -134,7 +134,7 @@ Full log file reference: [readme_ru.md](readme_ru.md) → section «Отладк
 ## License
 
 [MIT](../../license) — free to use, modify, and distribute, at your own risk.  
-[ide-plugins monorepo](https://github.com/rufatpro/ide-plugins) · [Releases](https://github.com/rufatpro/ide-plugins/releases)
+[plugins monorepo](https://github.com/rufatpro/plugins) · [Releases](https://github.com/rufatpro/plugins/releases)
 
 ## Author
 

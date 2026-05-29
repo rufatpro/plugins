@@ -9,9 +9,9 @@
   "changelog": "CHANGELOG.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rufatpro/ide-plugins.git"
+    "url": "https://github.com/rufatpro/plugins.git"
   },
-  "homepage": "https://github.com/rufatpro/ide-plugins",
+  "homepage": "https://github.com/rufatpro/plugins",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -59,6 +59,6 @@
     "lint": "echo \"No lint configured\""
   },
   "vsce": {
-    "baseContentUrl": "https://github.com/rufatpro/ide-plugins/tree/main/vscode/multiline-find"
+    "baseContentUrl": "https://github.com/rufatpro/plugins/tree/main/vscode/multiline-find"
   }
 }
