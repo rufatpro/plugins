@@ -56,7 +56,7 @@ intellijPlatform {
 
 tasks {
     wrapper {
-        gradleVersion = "8.12"
+        gradleVersion = "8.14.2"
     }
 
     // Headless IDE indexing for settings search; not needed for this plugin and spams WARN in logs.
